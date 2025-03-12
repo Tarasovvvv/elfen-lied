@@ -1,0 +1,41 @@
+html {
+  height: 100%;
+  scrollbar-gutter: stable;
+}
+
+body {
+  min-height: 100%;
+  line-height: 1.5;
+}
+
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+:where(ul[class]) {
+  padding-left: 0;
+  list-style: none;
+}
+
+:where(address[class]) {
+  font-style: normal;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+input,
+textarea,
+select,
+button {
+  font: inherit;
+}
+
+button,
+label {
+  cursor: pointer;
+}

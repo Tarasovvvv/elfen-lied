@@ -1,0 +1,14 @@
+{
+  "name": "elfen-lied",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {
+    "sass": "^1.85.1"
+  },
+  "scripts": {
+    "sass-watch": "sass --watch ."
+  },
+  "author": "Tarasovvvv",
+  "license": "ISC",
+  "description": ""
+}
