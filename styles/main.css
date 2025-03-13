@@ -40,6 +40,48 @@ label {
   cursor: pointer;
 }
 
+@font-face {
+  font-family: "Le Murmure";
+  src: url(/fonts/le-murmure-600.woff2) format(woff2);
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Floreste";
+  src: url(/fonts/floreste-400.woff2) format(woff2);
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Euclid Circular A";
+  src: url(/fonts/euclid-circular-a-500.woff2) format(woff2);
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Euclid Circular A";
+  src: url(/fonts/euclid-circular-a-400.woff2) format(woff2);
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Circe";
+  src: url(/fonts/circe-700.woff2) format(woff2);
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Circe";
+  src: url(/fonts/circe-350.woff2) format(woff2);
+  font-weight: 350;
+  font-style: normal;
+  font-display: swap;
+}
 :root {
   --color-pink: rgb(250, 143, 239);
   --color-blue: rgb(174, 207, 255);
