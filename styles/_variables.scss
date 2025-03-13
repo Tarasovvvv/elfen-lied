@@ -1,10 +1,25 @@
 @use "helpers" as *;
 
 :root {
+  // colors
+  --color-lime: rgb(217, 255, 90);
   --color-pink: rgb(250, 143, 239);
   --color-blue: rgb(174, 207, 255);
-  --color-lavender: rgb(174, 151, 232);
-  --color-lime: rgb(217, 255, 90);
   --color-white: rgb(255, 255, 255);
   --color-delete: rgb(121, 100, 174);
+  --color-lavender: rgb(174, 151, 232);
+
+  // desktop font sizes
+  --desk-font-size-h1: 60px;
+  --desk-font-size-h2: 28px;
+  --desk-font-size-logo: 45px;
+  --desk-font-size-text: 18px;
+  --desk-font-size-curve: 16px;
+  --desk-font-size-button: 20px;
+  --desk-font-size-numbers: 40px;
+  --desk-font-size-subtitle: 15px;
+  --desk-font-size-currency: 20px;
+  --desk-font-size-background: 212px;
+  --desk-font-size-all-rights-resereved: 18px;
+  --desk-font-size-text-caps-no-spacing: 18px;
 }
