@@ -1,19 +1,18 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
 html {
-  height: 100%;
-  scrollbar-gutter: stable;
+  display: flex;
 }
 
 body {
-  min-height: 100%;
-  line-height: 1.5;
+  min-height: 100vh;
 }
 
-::before,
-::after {
-  box-sizing: border-box;
-}
-
-:where(ul[class]) {
+ul {
   padding-left: 0;
   list-style: none;
 }
@@ -38,4 +37,10 @@ button {
 button,
 label {
   cursor: pointer;
+}
+
+a {
+  font-family: inherit;
+  text-decoration: none;
+  color: inherit;
 }

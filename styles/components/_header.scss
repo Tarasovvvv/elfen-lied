@@ -1,0 +1,73 @@
+@use "../helpers" as *;
+
+.mainNav {
+  display: grid;
+  place-items: center;
+  grid-template-areas: "mainNavList . favourites . profile . cart";
+  grid-template-columns: auto minmax(18px, 247px) auto minmax(18px, 35px) auto minmax(18px, 36px) auto;
+
+  margin-top: 53px;
+  margin-left: 60px;
+  margin-right: 123px;
+
+  color: var(--color-white);
+}
+
+.mainNavList {
+  display: grid;
+  place-items: center;
+  grid-template-areas: "logo . catalog . blog . contacts . search";
+  grid-template-columns: max-content minmax(18px, 133px) auto minmax(18px, 387px) auto minmax(18px, 30px) auto minmax(18px, 386px) auto;
+}
+
+.navLink {
+  @include flex-center;
+  gap: 12px;
+
+  font-family: "Euclid Circular A", sans-serif;
+  font-weight: 500;
+  font-size: var(--desk-font-size-text);
+}
+
+.navButton {
+  display: flex;
+  background-color: transparent;
+}
+
+.logo {
+  font-family: "Le Murmure", sans-serif;
+  font-weight: 500;
+  font-size: var(--desk-font-size-logo);
+
+  line-height: 1em;
+
+  grid-area: logo;
+}
+
+.catalog {
+  grid-area: catalog;
+}
+
+.blog {
+  grid-area: blog;
+}
+
+.contacts {
+  grid-area: contacts;
+}
+
+.search {
+  grid-area: search;
+}
+
+.favourites {
+  grid-area: favourites;
+}
+
+.profile {
+  grid-area: profile;
+}
+
+.cart {
+  grid-area: cart;
+}

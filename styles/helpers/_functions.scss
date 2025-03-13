@@ -1,7 +1,7 @@
 @use "sass:math";
 
 @function rem($pixel) {
-  @if unit($pixel) {
+  @if math.unit($pixel) {
     @return math.div($pixel, 16) + rem;
   }
 }

@@ -1,7 +1,7 @@
 @use "functions" as *;
 
-$laptop: 1440.98;
-$mobile: 767.98;
+$laptop: 1919.98;
+$mobile: 389.98;
 
 @mixin laptop-above {
   @media (width > rem($laptop)) {
