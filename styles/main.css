@@ -9,6 +9,9 @@ html {
 }
 
 body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   min-height: 100vh;
 }
 
@@ -87,6 +90,13 @@ a {
   font-style: normal;
   font-display: swap;
 }
+@font-face {
+  font-family: "Gilroy";
+  src: url(/fonts/gilroy-500.woff2) format(woff2);
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
 :root {
   --color-lime: rgb(217, 255, 90);
   --color-pink: rgb(250, 143, 239);
@@ -160,7 +170,7 @@ body {
 
 .logo {
   font-family: "Le Murmure", sans-serif;
-  font-weight: 500;
+  font-weight: 600;
   font-size: var(--desk-font-size-logo);
   line-height: 1em;
   grid-area: logo;
@@ -192,6 +202,22 @@ body {
 
 .cart {
   grid-area: cart;
+}
+
+.mainFooter {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 67px;
+  margin-right: 56px;
+  margin-bottom: 101px;
+}
+
+.text {
+  font-family: "Gilroy";
+  font-size: var(--desk-font-size-all-rights-resereved);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--color-white);
 }
 
 /*# sourceMappingURL=main.css.map */
