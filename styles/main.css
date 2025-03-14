@@ -207,9 +207,10 @@ body {
 .mainFooter {
   display: flex;
   justify-content: space-between;
+  margin-top: 170px;
+  margin-bottom: 101px;
   margin-left: 67px;
   margin-right: 56px;
-  margin-bottom: 101px;
 }
 
 .text {
