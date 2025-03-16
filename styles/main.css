@@ -551,7 +551,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 70px;
-  margin: 60px 170px;
+  margin: 170px 60px;
   text-align: center;
 }
 .categories h1 {
@@ -560,6 +560,10 @@ body {
   font-size: var(--desk-font-size-h1);
   color: var(--color-white);
   text-transform: uppercase;
+}
+.categories ul {
+  display: flex;
+  gap: 30px;
 }
 
 .categoryCard {
