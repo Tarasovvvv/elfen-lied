@@ -4,18 +4,6 @@
   border: none;
 }
 
-html {
-  display: flex;
-}
-
-body {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-
-  min-height: 100vh;
-}
-
 ul {
   padding-left: 0;
   list-style: none;
@@ -23,19 +11,6 @@ ul {
 
 :where(address[class]) {
   font-style: normal;
-}
-
-img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-}
-
-input,
-textarea,
-select,
-button {
-  font: inherit;
 }
 
 button,

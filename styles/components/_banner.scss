@@ -1,0 +1,415 @@
+@use "../helpers" as *;
+
+.banner {
+  display: flex;
+  gap: 20px;
+
+  width: auto;
+  margin: 20px;
+  overflow: hidden;
+}
+
+.bannerItem {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  transition-property: flex-grow;
+  transition-duration: 800ms;
+  transition-timing-function: ease-out;
+  flex-grow: 340;
+
+  height: 1038px;
+  border-radius: 50px;
+
+  overflow: hidden;
+  cursor: pointer;
+
+  &.expdanded {
+    animation: bannerItemExpand 1.9s ease-out forwards;
+
+    & img {
+      animation: imageExpand 1.9s ease-out forwards;
+    }
+
+    & .buyButton {
+      animation: buttonHoist 1.9s ease-out forwards;
+    }
+
+    & .preview {
+      opacity: 0;
+
+      max-width: 0;
+      max-height: 0;
+    }
+
+    & .details {
+      animation: detailsExpand 1.9s ease-out forwards;
+
+      & .productOfTheDay {
+        animation: productOfTheDayExpand 1.9s ease-out forwards;
+      }
+
+      & .backgroundText {
+        animation: backgroundTextExpand 1.9s ease-out forwards;
+      }
+
+      & .description {
+        animation: descriptionExpand 1.9s ease-out forwards;
+      }
+    }
+  }
+
+  &.collapsed {
+    animation: bannerItemCollapse 1.9s ease-out forwards;
+
+    & img {
+      animation: imageCollapse 800ms ease-out forwards;
+    }
+
+    & .buyButton {
+      opacity: 0;
+
+      max-width: 0;
+      max-height: 0;
+
+      animation: buttonDrow 1.9s ease-out forwards;
+    }
+
+    & .details {
+      opacity: 0;
+
+      max-width: 0;
+      max-height: 0;
+    }
+  }
+
+  & img {
+    position: absolute;
+    z-index: 1;
+
+    -webkit-user-drag: none;
+    user-select: none;
+  }
+
+  &:nth-child(1) {
+    background-color: var(--color-lavender-highlight);
+
+    & .backgroundText {
+      color: var(--color-lavender-semi-transparent);
+    }
+
+    & .description {
+      & .number {
+        color: var(--color-lime);
+      }
+    }
+
+    &.expdanded {
+      background-color: transparent;
+    }
+  }
+
+  &:nth-child(2) {
+    background-color: var(--color-pink);
+
+    & .backgroundText {
+      color: var(--color-pink-semi-transparent);
+
+      font-size: var(--desk-font-size-middle-background);
+    }
+  }
+
+  &:nth-child(3) {
+    background-color: var(--color-blue);
+
+    & .backgroundText {
+      color: var(--color-blue-semi-transparent);
+    }
+  }
+}
+
+.productOfTheDay {
+  position: absolute;
+  top: 386px;
+  left: 60px;
+
+  font-family: "Euclid Circular A";
+  font-size: var(--desk-font-size-text-caps-no-spacing);
+  font-weight: 500;
+
+  text-transform: uppercase;
+
+  color: var(--color-lime);
+}
+
+.backgroundText {
+  position: absolute;
+  top: 440px;
+
+  font-family: "Floreste";
+  font-size: var(--desk-font-size-background);
+  font-weight: 500;
+
+  white-space: nowrap;
+  text-transform: uppercase;
+  user-select: none;
+
+  transform: translate(-50%) scale(0.33);
+}
+
+.preview {
+  position: absolute;
+  bottom: 103px;
+
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  gap: 42px;
+
+  text-align: center;
+
+  height: fit-content;
+  width: fit-content;
+
+  & .title {
+    font-family: "Euclid Circular A";
+    font-size: var(--desk-font-size-subtitle);
+    font-weight: 500;
+
+    text-transform: uppercase;
+
+    color: var(--color-white-semi-transparent);
+  }
+}
+
+.details {
+  display: flex;
+  opacity: 0;
+}
+
+.description {
+  position: absolute;
+  left: 41px;
+  bottom: 103px;
+
+  height: fit-content;
+  width: 275px;
+
+  text-align: left;
+
+  color: var(--color-white);
+
+  & .title {
+    text-transform: uppercase;
+
+    font-family: "Euclid Circular A";
+    font-size: var(--desk-font-size-h2);
+    font-weight: 500;
+
+    margin-bottom: 18px;
+  }
+
+  & .text {
+    font-family: "Euclid Circular A";
+    font-size: var(--desk-font-size-description-text);
+    font-weight: 500;
+
+    line-height: 23px;
+  }
+
+  & .hr {
+    background-color: var(--color-white-almost-transparent);
+
+    height: 1px;
+    width: auto;
+    margin: 28px 0;
+  }
+
+  & .currency {
+    font-family: "Euclid Circular A";
+    font-weight: 400;
+    font-size: var(--desk-font-size-currency);
+
+    text-transform: uppercase;
+  }
+}
+
+.number {
+  font-family: "Floreste";
+  font-size: var(--desk-font-size-numbers);
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  text-align: center;
+
+  color: var(--color-white);
+}
+
+.buyButton {
+  position: absolute;
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 356px;
+  height: 135px;
+
+  opacity: 0;
+  background-color: transparent;
+
+  & .ellipse:nth-child(1) {
+    transform: rotate(-2deg);
+
+    z-index: 3;
+  }
+
+  & .ellipse:nth-child(2) {
+    backdrop-filter: blur(150px);
+    background-color: var(--color-white-almost-transparent);
+
+    z-index: 2;
+
+    transform: rotate(-13deg);
+  }
+
+  & .title {
+    font-family: "Euclid Circular A";
+    font-size: var(--desk-font-size-button);
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-align: center;
+
+    margin-left: 12px;
+
+    z-index: 4;
+    color: var(--color-white);
+  }
+
+  & svg {
+    z-index: 4;
+  }
+}
+
+.ellipse {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+
+  width: inherit;
+  height: inherit;
+  border: 2px solid var(--color-lime);
+  border-radius: 50%;
+}
+
+@keyframes bannerItemExpand {
+  0% {
+    flex-grow: 340;
+  }
+  50% {
+    flex-grow: 1230;
+  }
+  100% {
+    flex-grow: 1160;
+  }
+}
+
+@keyframes bannerItemCollapse {
+  from {
+    flex-grow: auto;
+  }
+  to {
+    flex-grow: 340;
+  }
+}
+
+@keyframes imageExpand {
+  0% {
+    transform: scale(0.47) rotate(7deg);
+  }
+  50% {
+    transform: scale(1.02) rotate(0);
+  }
+  100% {
+    transform: scale(1) rotate(0);
+  }
+}
+
+@keyframes imageCollapse {
+  to {
+    transform: scale(0.47) rotate(7deg);
+  }
+}
+
+@keyframes buttonHoist {
+  0% {
+    opacity: 0;
+
+    top: 1060px;
+    right: 62px;
+  }
+  50% {
+    top: 760px;
+    right: 50px;
+  }
+  100% {
+    opacity: 1;
+
+    top: 778px;
+    right: 50px;
+  }
+}
+
+@keyframes buttonDrow {
+  to {
+    top: 1060px;
+    right: 62px;
+  }
+}
+
+@keyframes productOfTheDayExpand {
+  0% {
+    transform: scale(0.33);
+  }
+  50% {
+    transform: scale(1.01);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes backgroundTextExpand {
+  0% {
+    transform: translate(-50%) scale(0.33);
+  }
+  50% {
+    transform: translate(-50%) scale(1.01);
+  }
+  100% {
+    transform: translate(-50%) scale(1);
+  }
+}
+
+@keyframes detailsExpand {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes descriptionExpand {
+  0% {
+    transform: translate(50%);
+  }
+  50% {
+    transform: translate(-1%);
+  }
+  100% {
+    transform: translate();
+  }
+}

@@ -4,10 +4,16 @@
   // colors
   --color-lime: rgb(217, 255, 90);
   --color-pink: rgb(250, 143, 239);
+  --color-pink-semi-transparent: rgb(255, 168, 246);
   --color-blue: rgb(174, 207, 255);
+  --color-blue-semi-transparent: rgb(190, 216, 255);
   --color-white: rgb(255, 255, 255);
+  --color-white-semi-transparent: rgba(255, 255, 255, 0.6);
+  --color-white-almost-transparent: rgba(255, 255, 255, 0.2);
   --color-delete: rgb(121, 100, 174);
   --color-lavender: rgb(174, 151, 232);
+  --color-lavender-highlight: rgb(203, 182, 255);
+  --color-lavender-semi-transparent: rgba(203, 182, 255, 0.6);
 
   // desktop font sizes
   --desk-font-size-h1: 60px;
@@ -20,6 +26,8 @@
   --desk-font-size-subtitle: 15px;
   --desk-font-size-currency: 20px;
   --desk-font-size-background: 212px;
+  --desk-font-size-description-text: 15px;
+  --desk-font-size-middle-background: 205px;
   --desk-font-size-all-rights-resereved: 18px;
   --desk-font-size-text-caps-no-spacing: 18px;
 }

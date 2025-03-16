@@ -1,5 +1,13 @@
 @use "../helpers" as *;
 
+.mainHeader {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  z-index: 1;
+}
+
 .mainNav {
   display: grid;
   place-items: center;
@@ -9,6 +17,7 @@
   margin-top: 53px;
   margin-left: 60px;
   margin-right: 123px;
+  width: auto;
 
   color: var(--color-white);
 }

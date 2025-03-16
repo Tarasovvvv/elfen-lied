@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Elfen lied</title>
     <link rel="stylesheet" href="./styles/main.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="./scripts/main.js" type="module" defer></script>
   </head>
   <body>
-    <header>
+    <header class="mainHeader">
       <nav class="mainNav">
         <ul class="mainNavList">
           <li class="logo">
@@ -78,6 +79,115 @@
         </button>
       </nav>
     </header>
+    <section class="banner">
+      <div class="bannerItem expdanded">
+        <img src="/images/lamp-1.webp" alt="Светильник" />
+        <div class="preview">
+          <span class="title">Слайд</span>
+          <span class="number">01</span>
+        </div>
+        <div class="details">
+          <span class="productOfTheDay">Товар дня</span>
+          <span class="backgroundText">Bengamin Moore</span>
+          <div class="description">
+            <h2 class="title">Светильник</h2>
+            <p class="text">Функциональная дизайнерская лампа для создания максимально комфортного освещения</p>
+            <hr class="hr" />
+            <span class="number">
+              150 000
+              <sup class="currency">₽</sup>
+            </span>
+          </div>
+        </div>
+        <button class="buyButton">
+          <div class="ellipse"></div>
+          <div class="ellipse"></div>
+          <svg class="" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              fillRule="evenodd"
+              clipRule="evenodd"
+              d="M4.84 3.94049L4.64 6.39049C4.6 6.86049 4.97 7.25049 5.44 7.25049H20.75C21.17 7.25049 21.52 6.93049 21.55 6.51049C21.68 4.74049 20.33 3.30049 18.56 3.30049H6.27C6.17 2.86049 5.97 2.44049 5.66 2.09049C5.16 1.56049 4.46 1.25049 3.74 1.25049H2C1.59 1.25049 1.25 1.59049 1.25 2.00049C1.25 2.41049 1.59 2.75049 2 2.75049H3.74C4.05 2.75049 4.34 2.88049 4.55 3.10049C4.76 3.33049 4.86 3.63049 4.84 3.94049ZM10 20.7505C10 21.717 9.2165 22.5005 8.25 22.5005C7.2835 22.5005 6.5 21.717 6.5 20.7505C6.5 19.784 7.2835 19.0005 8.25 19.0005C9.2165 19.0005 10 19.784 10 20.7505ZM18 20.7505C18 21.717 17.2165 22.5005 16.25 22.5005C15.2835 22.5005 14.5 21.717 14.5 20.7505C14.5 19.784 15.2835 19.0005 16.25 19.0005C17.2165 19.0005 18 19.784 18 20.7505ZM5.17005 8.75049H20.5101C20.9801 8.75049 21.3401 9.14049 21.3001 9.60049L20.9701 14.2705C20.8601 15.7705 19.5401 17.0005 18.0401 17.0005H6.92005C5.21005 17.0005 3.87005 15.5405 4.01005 13.8305L4.37005 9.48049C4.41005 9.07049 4.75005 8.75049 5.17005 8.75049Z"
+              fill="#D9FF5A"
+            />
+          </svg>
+          <span class="title">Купить</span>
+        </button>
+      </div>
+      <div class="bannerItem collapsed">
+        <img src="/images/chair-1.webp" alt="Кресло" />
+        <div class="preview">
+          <span class="title">Слайд</span>
+          <span class="number">02</span>
+        </div>
+        <div class="details">
+          <span class="productOfTheDay">Товар дня</span>
+          <span class="backgroundText">Paint Here Glory</span>
+          <div class="description">
+            <h2 class="title">Кресло</h2>
+            <p class="text">Функциональная дизайнерское кресло для создания максимально уюта в помещении</p>
+            <hr class="hr" />
+            <span class="number">
+              120 000
+              <sup class="currency">₽</sup>
+            </span>
+          </div>
+        </div>
+        <button class="buyButton">
+          <div class="ellipse"></div>
+          <div class="ellipse"></div>
+          <svg class="" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              fillRule="evenodd"
+              clipRule="evenodd"
+              d="M4.84 3.94049L4.64 6.39049C4.6 6.86049 4.97 7.25049 5.44 7.25049H20.75C21.17 7.25049 21.52 6.93049 21.55 6.51049C21.68 4.74049 20.33 3.30049 18.56 3.30049H6.27C6.17 2.86049 5.97 2.44049 5.66 2.09049C5.16 1.56049 4.46 1.25049 3.74 1.25049H2C1.59 1.25049 1.25 1.59049 1.25 2.00049C1.25 2.41049 1.59 2.75049 2 2.75049H3.74C4.05 2.75049 4.34 2.88049 4.55 3.10049C4.76 3.33049 4.86 3.63049 4.84 3.94049ZM10 20.7505C10 21.717 9.2165 22.5005 8.25 22.5005C7.2835 22.5005 6.5 21.717 6.5 20.7505C6.5 19.784 7.2835 19.0005 8.25 19.0005C9.2165 19.0005 10 19.784 10 20.7505ZM18 20.7505C18 21.717 17.2165 22.5005 16.25 22.5005C15.2835 22.5005 14.5 21.717 14.5 20.7505C14.5 19.784 15.2835 19.0005 16.25 19.0005C17.2165 19.0005 18 19.784 18 20.7505ZM5.17005 8.75049H20.5101C20.9801 8.75049 21.3401 9.14049 21.3001 9.60049L20.9701 14.2705C20.8601 15.7705 19.5401 17.0005 18.0401 17.0005H6.92005C5.21005 17.0005 3.87005 15.5405 4.01005 13.8305L4.37005 9.48049C4.41005 9.07049 4.75005 8.75049 5.17005 8.75049Z"
+              fill="#D9FF5A"
+            />
+          </svg>
+          <span class="title">Купить</span>
+        </button>
+      </div>
+      <div class="bannerItem collapsed">
+        <img src="/images/table-1.webp" alt="Стол" />
+        <div class="preview">
+          <span class="title">Слайд</span>
+          <span class="number">03</span>
+        </div>
+        <div class="details">
+          <span class="productOfTheDay">Товар дня</span>
+          <span class="backgroundText">Bengamin Moore</span>
+          <div class="description">
+            <h2 class="title">Высокий стол</h2>
+            <p class="text">Функциональная дизайнерская лампа для создания максимально комфортного освещения</p>
+            <hr class="hr" />
+            <span class="number">
+              235 000
+              <sup class="currency">₽</sup>
+            </span>
+          </div>
+        </div>
+        <button class="buyButton">
+          <div class="ellipse"></div>
+          <div class="ellipse"></div>
+          <svg class="" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              fillRule="evenodd"
+              clipRule="evenodd"
+              d="M4.84 3.94049L4.64 6.39049C4.6 6.86049 4.97 7.25049 5.44 7.25049H20.75C21.17 7.25049 21.52 6.93049 21.55 6.51049C21.68 4.74049 20.33 3.30049 18.56 3.30049H6.27C6.17 2.86049 5.97 2.44049 5.66 2.09049C5.16 1.56049 4.46 1.25049 3.74 1.25049H2C1.59 1.25049 1.25 1.59049 1.25 2.00049C1.25 2.41049 1.59 2.75049 2 2.75049H3.74C4.05 2.75049 4.34 2.88049 4.55 3.10049C4.76 3.33049 4.86 3.63049 4.84 3.94049ZM10 20.7505C10 21.717 9.2165 22.5005 8.25 22.5005C7.2835 22.5005 6.5 21.717 6.5 20.7505C6.5 19.784 7.2835 19.0005 8.25 19.0005C9.2165 19.0005 10 19.784 10 20.7505ZM18 20.7505C18 21.717 17.2165 22.5005 16.25 22.5005C15.2835 22.5005 14.5 21.717 14.5 20.7505C14.5 19.784 15.2835 19.0005 16.25 19.0005C17.2165 19.0005 18 19.784 18 20.7505ZM5.17005 8.75049H20.5101C20.9801 8.75049 21.3401 9.14049 21.3001 9.60049L20.9701 14.2705C20.8601 15.7705 19.5401 17.0005 18.0401 17.0005H6.92005C5.21005 17.0005 3.87005 15.5405 4.01005 13.8305L4.37005 9.48049C4.41005 9.07049 4.75005 8.75049 5.17005 8.75049Z"
+              fill="#D9FF5A"
+            />
+          </svg>
+          <span class="title">Купить</span>
+        </button>
+      </div>
+      <script>
+        $(".bannerItem").click(function () {
+          $(".bannerItem").removeClass("expdanded");
+          $(".bannerItem").addClass("collapsed");
+          $(this).removeClass("collapsed");
+          $(this).addClass("expdanded");
+        });
+      </script>
+    </section>
     <footer class="mainFooter">
       <span class="text">@2023</span>
       <span class="text">Все права защищены</span>

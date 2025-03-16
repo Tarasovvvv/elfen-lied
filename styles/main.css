@@ -4,17 +4,6 @@
   border: none;
 }
 
-html {
-  display: flex;
-}
-
-body {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  min-height: 100vh;
-}
-
 ul {
   padding-left: 0;
   list-style: none;
@@ -22,19 +11,6 @@ ul {
 
 :where(address[class]) {
   font-style: normal;
-}
-
-img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-}
-
-input,
-textarea,
-select,
-button {
-  font: inherit;
 }
 
 button,
@@ -100,10 +76,16 @@ a {
 :root {
   --color-lime: rgb(217, 255, 90);
   --color-pink: rgb(250, 143, 239);
+  --color-pink-semi-transparent: rgb(255, 168, 246);
   --color-blue: rgb(174, 207, 255);
+  --color-blue-semi-transparent: rgb(190, 216, 255);
   --color-white: rgb(255, 255, 255);
+  --color-white-semi-transparent: rgba(255, 255, 255, 0.6);
+  --color-white-almost-transparent: rgba(255, 255, 255, 0.2);
   --color-delete: rgb(121, 100, 174);
   --color-lavender: rgb(174, 151, 232);
+  --color-lavender-highlight: rgb(203, 182, 255);
+  --color-lavender-semi-transparent: rgba(203, 182, 255, 0.6);
   --desk-font-size-h1: 60px;
   --desk-font-size-h2: 28px;
   --desk-font-size-logo: 45px;
@@ -114,6 +96,8 @@ a {
   --desk-font-size-subtitle: 15px;
   --desk-font-size-currency: 20px;
   --desk-font-size-background: 212px;
+  --desk-font-size-description-text: 15px;
+  --desk-font-size-middle-background: 205px;
   --desk-font-size-all-rights-resereved: 18px;
   --desk-font-size-text-caps-no-spacing: 18px;
 }
@@ -132,7 +116,15 @@ a {
 }
 
 body {
+  max-width: 100%;
   background-color: var(--color-lavender);
+}
+
+.mainHeader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
 }
 
 .mainNav {
@@ -143,6 +135,7 @@ body {
   margin-top: 53px;
   margin-left: 60px;
   margin-right: 123px;
+  width: auto;
   color: var(--color-white);
 }
 
@@ -219,6 +212,337 @@ body {
   font-weight: 500;
   letter-spacing: 0.02em;
   color: var(--color-white);
+}
+
+.banner {
+  display: flex;
+  gap: 20px;
+  width: auto;
+  margin: 20px;
+  overflow: hidden;
+}
+
+.bannerItem {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition-property: flex-grow;
+  transition-duration: 800ms;
+  transition-timing-function: ease-out;
+  flex-grow: 340;
+  height: 1038px;
+  border-radius: 50px;
+  overflow: hidden;
+  cursor: pointer;
+}
+.bannerItem.expdanded {
+  animation: bannerItemExpand 1.9s ease-out forwards;
+}
+.bannerItem.expdanded img {
+  animation: imageExpand 1.9s ease-out forwards;
+}
+.bannerItem.expdanded .buyButton {
+  animation: buttonHoist 1.9s ease-out forwards;
+}
+.bannerItem.expdanded .preview {
+  opacity: 0;
+  max-width: 0;
+  max-height: 0;
+}
+.bannerItem.expdanded .details {
+  animation: detailsExpand 1.9s ease-out forwards;
+}
+.bannerItem.expdanded .details .productOfTheDay {
+  animation: productOfTheDayExpand 1.9s ease-out forwards;
+}
+.bannerItem.expdanded .details .backgroundText {
+  animation: backgroundTextExpand 1.9s ease-out forwards;
+}
+.bannerItem.expdanded .details .description {
+  animation: descriptionExpand 1.9s ease-out forwards;
+}
+.bannerItem.collapsed {
+  animation: bannerItemCollapse 1.9s ease-out forwards;
+}
+.bannerItem.collapsed img {
+  animation: imageCollapse 800ms ease-out forwards;
+}
+.bannerItem.collapsed .buyButton {
+  opacity: 0;
+  max-width: 0;
+  max-height: 0;
+  animation: buttonDrow 1.9s ease-out forwards;
+}
+.bannerItem.collapsed .details {
+  opacity: 0;
+  max-width: 0;
+  max-height: 0;
+}
+.bannerItem img {
+  position: absolute;
+  z-index: 1;
+  -webkit-user-drag: none;
+  user-select: none;
+}
+.bannerItem:nth-child(1) {
+  background-color: var(--color-lavender-highlight);
+}
+.bannerItem:nth-child(1) .backgroundText {
+  color: var(--color-lavender-semi-transparent);
+}
+.bannerItem:nth-child(1) .description .number {
+  color: var(--color-lime);
+}
+.bannerItem:nth-child(1).expdanded {
+  background-color: transparent;
+}
+.bannerItem:nth-child(2) {
+  background-color: var(--color-pink);
+}
+.bannerItem:nth-child(2) .backgroundText {
+  color: var(--color-pink-semi-transparent);
+  font-size: var(--desk-font-size-middle-background);
+}
+.bannerItem:nth-child(3) {
+  background-color: var(--color-blue);
+}
+.bannerItem:nth-child(3) .backgroundText {
+  color: var(--color-blue-semi-transparent);
+}
+
+.productOfTheDay {
+  position: absolute;
+  top: 386px;
+  left: 60px;
+  font-family: "Euclid Circular A";
+  font-size: var(--desk-font-size-text-caps-no-spacing);
+  font-weight: 500;
+  text-transform: uppercase;
+  color: var(--color-lime);
+}
+
+.backgroundText {
+  position: absolute;
+  top: 440px;
+  font-family: "Floreste";
+  font-size: var(--desk-font-size-background);
+  font-weight: 500;
+  white-space: nowrap;
+  text-transform: uppercase;
+  user-select: none;
+  transform: translate(-50%) scale(0.33);
+}
+
+.preview {
+  position: absolute;
+  bottom: 103px;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  gap: 42px;
+  text-align: center;
+  height: fit-content;
+  width: fit-content;
+}
+.preview .title {
+  font-family: "Euclid Circular A";
+  font-size: var(--desk-font-size-subtitle);
+  font-weight: 500;
+  text-transform: uppercase;
+  color: var(--color-white-semi-transparent);
+}
+
+.details {
+  display: flex;
+  opacity: 0;
+}
+
+.description {
+  position: absolute;
+  left: 41px;
+  bottom: 103px;
+  height: fit-content;
+  width: 275px;
+  text-align: left;
+  color: var(--color-white);
+}
+.description .title {
+  text-transform: uppercase;
+  font-family: "Euclid Circular A";
+  font-size: var(--desk-font-size-h2);
+  font-weight: 500;
+  margin-bottom: 18px;
+}
+.description .text {
+  font-family: "Euclid Circular A";
+  font-size: var(--desk-font-size-description-text);
+  font-weight: 500;
+  line-height: 23px;
+}
+.description .hr {
+  background-color: var(--color-white-almost-transparent);
+  height: 1px;
+  width: auto;
+  margin: 28px 0;
+}
+.description .currency {
+  font-family: "Euclid Circular A";
+  font-weight: 400;
+  font-size: var(--desk-font-size-currency);
+  text-transform: uppercase;
+}
+
+.number {
+  font-family: "Floreste";
+  font-size: var(--desk-font-size-numbers);
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  text-align: center;
+  color: var(--color-white);
+}
+
+.buyButton {
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 356px;
+  height: 135px;
+  opacity: 0;
+  background-color: transparent;
+}
+.buyButton .ellipse:nth-child(1) {
+  transform: rotate(-2deg);
+  z-index: 3;
+}
+.buyButton .ellipse:nth-child(2) {
+  backdrop-filter: blur(150px);
+  background-color: var(--color-white-almost-transparent);
+  z-index: 2;
+  transform: rotate(-13deg);
+}
+.buyButton .title {
+  font-family: "Euclid Circular A";
+  font-size: var(--desk-font-size-button);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-align: center;
+  margin-left: 12px;
+  z-index: 4;
+  color: var(--color-white);
+}
+.buyButton svg {
+  z-index: 4;
+}
+
+.ellipse {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  width: inherit;
+  height: inherit;
+  border: 2px solid var(--color-lime);
+  border-radius: 50%;
+}
+
+@keyframes bannerItemExpand {
+  0% {
+    flex-grow: 340;
+  }
+  50% {
+    flex-grow: 1230;
+  }
+  100% {
+    flex-grow: 1160;
+  }
+}
+@keyframes bannerItemCollapse {
+  from {
+    flex-grow: auto;
+  }
+  to {
+    flex-grow: 340;
+  }
+}
+@keyframes imageExpand {
+  0% {
+    transform: scale(0.47) rotate(7deg);
+  }
+  50% {
+    transform: scale(1.02) rotate(0);
+  }
+  100% {
+    transform: scale(1) rotate(0);
+  }
+}
+@keyframes imageCollapse {
+  to {
+    transform: scale(0.47) rotate(7deg);
+  }
+}
+@keyframes buttonHoist {
+  0% {
+    opacity: 0;
+    top: 1060px;
+    right: 62px;
+  }
+  50% {
+    top: 760px;
+    right: 50px;
+  }
+  100% {
+    opacity: 1;
+    top: 778px;
+    right: 50px;
+  }
+}
+@keyframes buttonDrow {
+  to {
+    top: 1060px;
+    right: 62px;
+  }
+}
+@keyframes productOfTheDayExpand {
+  0% {
+    transform: scale(0.33);
+  }
+  50% {
+    transform: scale(1.01);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes backgroundTextExpand {
+  0% {
+    transform: translate(-50%) scale(0.33);
+  }
+  50% {
+    transform: translate(-50%) scale(1.01);
+  }
+  100% {
+    transform: translate(-50%) scale(1);
+  }
+}
+@keyframes detailsExpand {
+  to {
+    opacity: 1;
+  }
+}
+@keyframes descriptionExpand {
+  0% {
+    transform: translate(50%);
+  }
+  50% {
+    transform: translate(-1%);
+  }
+  100% {
+    transform: translate();
+  }
 }
 
 /*# sourceMappingURL=main.css.map */
