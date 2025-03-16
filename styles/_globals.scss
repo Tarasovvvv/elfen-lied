@@ -4,3 +4,13 @@ body {
   max-width: 100%;
   background-color: var(--color-lavender);
 }
+
+.number {
+  font-family: "Floreste";
+  font-size: var(--desk-font-size-numbers);
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  text-align: center;
+
+  color: var(--color-white);
+}

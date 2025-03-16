@@ -1,0 +1,155 @@
+@use "../helpers" as *;
+
+.categories {
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
+
+  margin: 60px 170px;
+
+  text-align: center;
+
+  & h1 {
+    font-family: "Euclid Circular A";
+    font-weight: 500;
+    font-size: var(--desk-font-size-h1);
+    color: var(--color-white);
+    text-transform: uppercase;
+  }
+}
+
+.categoryCard {
+  position: relative;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  width: 428px;
+  height: 517px;
+
+  cursor: pointer;
+
+  & h2 {
+    position: absolute;
+    top: 37px;
+
+    width: 184px;
+
+    font-family: "Euclid Circular A";
+    font-weight: 500;
+    font-size: var(--desk-font-size-h2);
+    color: var(--color-white);
+
+    text-transform: uppercase;
+    text-align: left;
+  }
+
+  &:hover {
+    & img {
+      transform: scale(1.1);
+    }
+
+    & .categoryQuanity {
+      & .quanityTextWrapper {
+        transform: rotate(0);
+      }
+    }
+
+    & .circleButton {
+      background-color: var(--color-lime);
+
+      & svg {
+        stroke: var(--color-lavender);
+      }
+    }
+  }
+}
+
+.categoryPreview {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: fit-content;
+  height: fit-content;
+  margin-left: 5px;
+
+  & img {
+    position: absolute;
+    height: 248px;
+
+    transition: transform 300ms ease-in-out;
+  }
+
+  & svg {
+    z-index: -1;
+  }
+}
+
+.curvedText {
+  font-family: "Euclid Circular A";
+  font-weight: 500;
+  font-size: var(--desk-font-size-curve);
+  fill: var(--color-white);
+  letter-spacing: 0.12em;
+
+  vertical-align: baseline;
+
+  text-transform: lowercase;
+}
+
+.categoryQuanity {
+  position: absolute;
+  right: 0;
+  top: 29.2%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.quanityTextWrapper {
+  position: absolute;
+  top: 29%;
+
+  transition: transform 450ms ease-out;
+  transform: rotate(-23deg);
+}
+
+.quanityMeasure {
+  font-family: "Euclid Circular A";
+  font-weight: 500;
+  font-size: var(--desk-font-size-quanity-measure);
+  color: var(--color-white);
+  text-transform: uppercase;
+}
+
+.quanityBackground {
+  z-index: -1;
+}
+
+.circleButton {
+  position: absolute;
+  left: 34.8%;
+  bottom: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 101px;
+  height: 101px;
+  border: 2px solid var(--color-lime);
+  border-radius: 100%;
+
+  background-color: var(--color-lavender-dark);
+
+  transition: background-color 500ms ease-out;
+
+  & svg {
+    stroke: var(--color-lime);
+
+    transition: stroke 200ms ease-out;
+  }
+}
