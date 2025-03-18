@@ -124,7 +124,6 @@ a {
 body {
   max-width: 100%;
   background-color: var(--color-lavender);
-  overflow-x: hidden;
 }
 
 .number {
@@ -208,7 +207,7 @@ body {
   grid-area: catalog;
 }
 
-.blog {
+.navBlog {
   grid-area: blog;
 }
 
@@ -1081,6 +1080,7 @@ summary:hover .hoverableRect {
   width: 100%;
   height: 261px;
   margin: 170px 0;
+  overflow-x: hidden;
 }
 
 .srtipe {
@@ -1108,6 +1108,193 @@ summary:hover .hoverableRect {
 }
 .srtipe span {
   transform: translate(0, 10%);
+}
+
+.blog {
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
+  margin: 170px 60px;
+  height: 489px;
+  line-height: 1;
+  font-family: "Euclid Circular A";
+  font-weight: 500;
+  font-size: var(--desk-font-size-subtitle);
+  text-transform: uppercase;
+  color: var(--color-white);
+}
+
+.blogTop {
+  display: flex;
+  justify-content: space-between;
+}
+
+.blogPaginator {
+  display: flex;
+  align-items: center;
+  gap: 45px;
+}
+
+.blogTitle {
+  display: inline-flex;
+  align-items: center;
+  height: 43px;
+  font-size: var(--desk-font-size-h1);
+}
+
+.paginatorDotsWrapper {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.paginatorDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 100%;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+.paginatorDot.selected {
+  background-color: var(--color-white);
+}
+
+.blogSlider {
+  display: flex;
+  align-items: center;
+}
+
+.sliderNumber {
+  height: 28px;
+  font-family: "Floreste";
+  font-weight: 400;
+  font-size: var(--desk-font-size-numbers);
+}
+
+.sliderHr {
+  width: 63px;
+  height: 2px;
+  margin-left: 27px;
+  margin-right: 35px;
+  background-color: var(--color-lavender-highlight);
+}
+
+.blogCardsList {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+
+.blogCard {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  width: 580px;
+  height: 376px;
+}
+.blogCard:hover .cardButton {
+  background-color: var(--color-lime);
+}
+.blogCard:hover .cardButton .number, .blogCard:hover .cardButton .buttonText {
+  color: var(--color-lavender);
+}
+
+.cardBackground {
+  position: absolute;
+  z-index: -1;
+}
+
+.cardButton {
+  position: absolute;
+  bottom: 0;
+  left: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 96px;
+  height: 81px;
+  border: 2px solid var(--color-lime);
+  border-radius: 50%;
+  background-color: var(--color-white-alsmost-transparent);
+  transform: rotate(-15deg);
+  backdrop-filter: blur(20px);
+  transition-property: background-color, color;
+  transition-duration: 800ms;
+  transition-timing-function: ease;
+}
+.cardButton .number {
+  height: 28px;
+}
+
+.buttonText {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  color: var(--color-white);
+  text-transform: uppercase;
+}
+
+.cardLeft,
+.cardRight {
+  display: flex;
+  flex-direction: column;
+  width: 283px;
+  height: 342px;
+}
+
+.cardLeft {
+  padding: 25px;
+}
+
+.cardRight {
+  padding: 13px;
+}
+.cardRight .imgWrapper {
+  border-radius: 28px;
+  overflow: hidden;
+}
+.cardRight .imgWrapper img {
+  object-fit: cover;
+  max-width: 200%;
+  max-height: 100%;
+  transition: transform 800ms ease-out;
+  transform-origin: right;
+}
+.cardRight .imgWrapper img:hover {
+  transform: scale(1.1) translate(3%);
+}
+
+.topTitle {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  height: 36px;
+  margin-bottom: 31px;
+}
+
+.topTitleNumber {
+  color: var(--color-white-semi-transparent);
+}
+
+.topTitleAuthor {
+  width: 90px;
+  font-size: var(--desk-font-size-text);
+  text-transform: capitalize;
+  text-align: right;
+}
+
+.middleTitle {
+  font-size: var(--desk-font-size-h2);
+  line-height: 1.29;
+  margin-bottom: 88px;
+}
+
+.bottomTitle {
+  width: 82px;
+  height: 29px;
+  text-align: left;
 }
 
 /*# sourceMappingURL=main.css.map */
