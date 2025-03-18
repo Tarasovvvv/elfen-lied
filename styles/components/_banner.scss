@@ -1,12 +1,12 @@
 @use "../helpers" as *;
 
 .banner {
+  margin: 20px;
   & ul {
     display: flex;
     gap: 20px;
 
-    width: auto;
-    margin: 20px;
+    width: 100%;
     overflow: hidden;
   }
 }

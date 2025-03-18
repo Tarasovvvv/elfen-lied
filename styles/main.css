@@ -138,6 +138,9 @@ body {
   position: absolute;
   top: 0;
   left: 0;
+  margin-top: 53px;
+  margin-left: 60px;
+  margin-right: 123px;
   z-index: 1;
 }
 
@@ -146,10 +149,6 @@ body {
   place-items: center;
   grid-template-areas: "mainNavList . favourites . profile . cart";
   grid-template-columns: auto minmax(18px, 247px) auto minmax(18px, 35px) auto minmax(18px, 36px) auto;
-  margin-top: 53px;
-  margin-left: 60px;
-  margin-right: 123px;
-  width: auto;
   color: var(--color-white);
 }
 
@@ -228,11 +227,13 @@ body {
   color: var(--color-white);
 }
 
+.banner {
+  margin: 20px;
+}
 .banner ul {
   display: flex;
   gap: 20px;
-  width: auto;
-  margin: 20px;
+  width: 100%;
   overflow: hidden;
 }
 
@@ -678,7 +679,9 @@ body {
 .products {
   display: none;
   flex-direction: column;
+  align-items: center;
   gap: 70px;
+  width: 100%;
   font-family: "Euclid Circular A";
   font-weight: 500;
   color: var(--color-white);
@@ -690,9 +693,12 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 100%;
 }
 .products .menu > span {
   font-size: var(--desk-font-size-subtitle);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
 }
 
 .hoverableRect {
@@ -884,6 +890,7 @@ summary:hover .hoverableRect {
   width: fit-content;
   align-items: center;
   justify-content: center;
+  justify-self: center;
   font-family: "Euclid Circular A";
   font-weight: 500;
   font-size: var(--desk-font-size-button);
