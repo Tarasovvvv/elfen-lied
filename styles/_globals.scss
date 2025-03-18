@@ -3,6 +3,8 @@
 body {
   max-width: 100%;
   background-color: var(--color-lavender);
+
+  overflow-x: hidden;
 }
 
 .number {

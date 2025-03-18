@@ -1,0 +1,44 @@
+.stripes {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+  height: 261px;
+  margin: 170px 0;
+}
+
+.srtipe {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 67px;
+
+  height: 72px;
+  top: 50%;
+
+  font-family: "Floreste";
+  font-size: var(--desk-font-size-numbers);
+  color: var(--color-white);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+
+  text-wrap: nowrap;
+
+  &:nth-child(1) {
+    transform: translate(-33px, -50%) rotate(5deg);
+
+    background-color: var(--color-lavender-highlight);
+  }
+
+  &:nth-child(2) {
+    transform: translate(-190px, -50%) rotate(-2.2deg);
+
+    background-color: var(--color-blue);
+  }
+
+  & span {
+    transform: translate(0, 10%);
+  }
+}
