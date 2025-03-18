@@ -97,6 +97,36 @@
     user-select: none;
   }
 
+  .buyButton {
+    position: absolute;
+    z-index: 2;
+
+    width: 356px;
+    height: 135px;
+
+    opacity: 0;
+    background-color: transparent;
+
+    & .ellipse:nth-child(1) {
+      transform: rotate(-2deg);
+
+      z-index: 3;
+    }
+
+    & .ellipse:nth-child(2) {
+      backdrop-filter: blur(150px);
+      background-color: var(--color-white-almost-transparent);
+
+      z-index: 2;
+
+      transform: rotate(-13deg);
+    }
+
+    & .title {
+      letter-spacing: 0.04em;
+    }
+  }
+
   &:nth-child(1) {
     background-color: var(--color-lavender-highlight);
 
@@ -230,61 +260,14 @@
     width: auto;
     margin: 28px 0;
   }
-
-  & .currency {
-    font-family: "Euclid Circular A";
-    font-weight: 400;
-    font-size: var(--desk-font-size-currency);
-
-    text-transform: uppercase;
-  }
 }
 
-.buyButton {
-  position: absolute;
-  z-index: 2;
+.currency {
+  font-family: "Euclid Circular A";
+  font-weight: 400;
+  font-size: var(--desk-font-size-currency);
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  width: 356px;
-  height: 135px;
-
-  opacity: 0;
-  background-color: transparent;
-
-  & .ellipse:nth-child(1) {
-    transform: rotate(-2deg);
-
-    z-index: 3;
-  }
-
-  & .ellipse:nth-child(2) {
-    backdrop-filter: blur(150px);
-    background-color: var(--color-white-almost-transparent);
-
-    z-index: 2;
-
-    transform: rotate(-13deg);
-  }
-
-  & .title {
-    font-family: "Euclid Circular A";
-    font-size: var(--desk-font-size-button);
-    font-weight: 500;
-    letter-spacing: 0.04em;
-    text-align: center;
-
-    margin-left: 12px;
-
-    z-index: 4;
-    color: var(--color-white);
-  }
-
-  & svg {
-    z-index: 4;
-  }
+  text-transform: uppercase;
 }
 
 .ellipse {

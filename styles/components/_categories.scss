@@ -3,7 +3,6 @@
 .categories {
   display: flex;
   flex-direction: column;
-  gap: 70px;
 
   margin: 170px 60px;
 
@@ -20,6 +19,8 @@
   & > ul {
     display: flex;
     gap: 30px;
+
+    margin-top: 70px;
   }
 }
 
@@ -41,16 +42,16 @@
 
     width: 184px;
 
-    font-family: "Euclid Circular A";
-    font-weight: 500;
-    font-size: var(--desk-font-size-h2);
-    color: var(--color-white);
-
-    text-transform: uppercase;
     text-align: left;
   }
 
   &:hover {
+    &:nth-child(2) {
+      & .curvedText {
+        fill: var(--color-lime);
+      }
+    }
+
     img {
       transform: scale(1.1);
     }
@@ -69,6 +70,15 @@
       }
     }
   }
+}
+
+h2 {
+  font-family: "Euclid Circular A";
+  font-weight: 500;
+  font-size: var(--desk-font-size-h2);
+  color: var(--color-white);
+
+  text-transform: uppercase;
 }
 
 .categoryPreview {
@@ -159,20 +169,34 @@
   }
 }
 
-.products {
-  display: none;
+.category {
+  position: relative;
+
+  display: flex;
   flex-direction: column;
   align-items: center;
   gap: 70px;
 
+  margin-top: 60px;
   width: 100%;
 
   font-family: "Euclid Circular A";
   font-weight: 500;
   color: var(--color-white);
 
+  opacity: 0;
+  max-width: 0;
+  max-height: 0;
+
   &.expanded {
-    display: flex;
+    opacity: 1;
+    max-width: none;
+    max-height: none;
+
+    .menu {
+      max-width: none;
+      max-height: none;
+    }
   }
 
   .menu {
@@ -181,6 +205,9 @@
     justify-content: space-between;
 
     width: 100%;
+
+    max-width: 0;
+    max-height: 0;
 
     & > span {
       font-size: var(--desk-font-size-subtitle);
@@ -220,8 +247,8 @@ summary {
   z-index: 11;
 
   &[open] {
-    & summary {
-      margin-bottom: 32px;
+    & > ul {
+      margin-top: 32px;
     }
   }
 
@@ -415,12 +442,168 @@ summary {
   }
 }
 
+.productsList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  overflow: hidden;
+
+  max-height: 415px;
+  row-gap: 70px;
+  column-gap: 103px;
+
+  list-style: none;
+
+  opacity: 1;
+  transition: opacity 800ms ease;
+
+  &.disabled {
+    display: none;
+  }
+
+  &:not(.open) {
+    opacity: 0;
+    max-width: 0;
+    max-height: 0;
+  }
+
+  &.expanded {
+    max-height: none;
+  }
+}
+
+.product {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  width: 274px;
+  height: 415px;
+
+  & .imgWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 260px;
+    margin-bottom: 32px;
+
+    & img {
+      width: auto;
+      height: 100%;
+    }
+  }
+
+  & p {
+    font-family: "Euclid Circular A";
+    font-weight: 500;
+    font-size: var(--desk-font-size-subtitle);
+    line-height: 23px;
+    margin-bottom: 7px;
+
+    color: var(--color-white);
+  }
+
+  & .sale {
+    display: flex;
+    justify-content: space-between;
+
+    .price {
+      display: inline-flex;
+      align-items: flex-end;
+      font-family: "Floreste";
+      font-weight: 400;
+      letter-spacing: 0.04em;
+      line-height: 1;
+      transform: translate(0, 26.5%);
+    }
+
+    & .number {
+      font-size: var(--desk-font-size-h2);
+    }
+
+    & .currency {
+      align-self: flex-start;
+      font-size: var(--desk-font-size-currency);
+      transform: translate(50%, -10%);
+    }
+
+    & .buyButton {
+      align-items: flex-end;
+    }
+  }
+}
+
+.color {
+  position: absolute;
+  top: 7px;
+  left: 2px;
+
+  width: 22px;
+  height: 22px;
+  border: 3px solid var(--color-white);
+  border-radius: 100%;
+
+  background-color: var(--color-white);
+
+  &.blue {
+    background-color: var(--color-light-blue);
+  }
+
+  &.lavender {
+    background-color: rgb(240, 179, 234);
+  }
+
+  &.orange {
+    background-color: rgb(251, 228, 202);
+  }
+
+  &.gold {
+    background-color: rgb(255, 196, 165);
+  }
+
+  &.green {
+    background-color: rgb(136, 227, 121);
+  }
+
+  &.pink {
+    background-color: rgb(250, 142, 239);
+  }
+
+  &.cyan {
+    background-color: rgb(41, 208, 217);
+  }
+
+  &.sky {
+    background-color: rgb(41, 208, 217);
+  }
+
+  &.black {
+    background-color: rgb(92, 84, 74);
+  }
+
+  &.ohra {
+    background-color: rgba(240, 223, 179, 1);
+  }
+
+  &.gray {
+    background-color: rgba(202, 207, 251, 1);
+  }
+}
+
+.productHr {
+  height: 2px;
+  width: auto;
+  background-color: var(--color-lime);
+
+  margin-bottom: 28px;
+}
+
 .moreButton {
   display: flex;
   width: fit-content;
   align-items: center;
   justify-content: center;
-  justify-self: center;
 
   font-family: "Euclid Circular A";
   font-weight: 500;
@@ -428,6 +611,10 @@ summary {
   color: var(--color-white);
 
   background-color: transparent;
+
+  &:not(.expanded) {
+    display: none;
+  }
 
   div {
     position: absolute;

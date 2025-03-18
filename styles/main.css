@@ -78,6 +78,7 @@ a {
   --color-pink: rgb(250, 143, 239);
   --color-pink-semi-transparent: rgb(255, 168, 246);
   --color-blue: rgb(174, 207, 255);
+  --color-light-blue: rgb(165, 212, 255);
   --color-blue-semi-transparent: rgb(190, 216, 255);
   --color-white: rgb(255, 255, 255);
   --color-white-semi-transparent: rgba(255, 255, 255, 0.6);
@@ -132,6 +133,26 @@ body {
   letter-spacing: 0.04em;
   text-align: center;
   color: var(--color-white);
+}
+
+.buyButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+}
+.buyButton .title {
+  font-family: "Euclid Circular A";
+  font-size: var(--desk-font-size-button);
+  font-weight: 500;
+  text-align: center;
+  line-height: 1.2;
+  margin-left: 12px;
+  z-index: 4;
+  color: var(--color-white);
+}
+.buyButton svg {
+  z-index: 4;
 }
 
 .mainHeader {
@@ -301,6 +322,27 @@ body {
   -webkit-user-drag: none;
   user-select: none;
 }
+.bannerItem .buyButton {
+  position: absolute;
+  z-index: 2;
+  width: 356px;
+  height: 135px;
+  opacity: 0;
+  background-color: transparent;
+}
+.bannerItem .buyButton .ellipse:nth-child(1) {
+  transform: rotate(-2deg);
+  z-index: 3;
+}
+.bannerItem .buyButton .ellipse:nth-child(2) {
+  backdrop-filter: blur(150px);
+  background-color: var(--color-white-almost-transparent);
+  z-index: 2;
+  transform: rotate(-13deg);
+}
+.bannerItem .buyButton .title {
+  letter-spacing: 0.04em;
+}
 .bannerItem:nth-child(1) {
   background-color: var(--color-lavender-highlight);
 }
@@ -402,46 +444,12 @@ body {
   width: auto;
   margin: 28px 0;
 }
-.description .currency {
+
+.currency {
   font-family: "Euclid Circular A";
   font-weight: 400;
   font-size: var(--desk-font-size-currency);
   text-transform: uppercase;
-}
-
-.buyButton {
-  position: absolute;
-  z-index: 2;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 356px;
-  height: 135px;
-  opacity: 0;
-  background-color: transparent;
-}
-.buyButton .ellipse:nth-child(1) {
-  transform: rotate(-2deg);
-  z-index: 3;
-}
-.buyButton .ellipse:nth-child(2) {
-  backdrop-filter: blur(150px);
-  background-color: var(--color-white-almost-transparent);
-  z-index: 2;
-  transform: rotate(-13deg);
-}
-.buyButton .title {
-  font-family: "Euclid Circular A";
-  font-size: var(--desk-font-size-button);
-  font-weight: 500;
-  letter-spacing: 0.04em;
-  text-align: center;
-  margin-left: 12px;
-  z-index: 4;
-  color: var(--color-white);
-}
-.buyButton svg {
-  z-index: 4;
 }
 
 .ellipse {
@@ -553,7 +561,6 @@ body {
 .categories {
   display: flex;
   flex-direction: column;
-  gap: 70px;
   margin: 170px 60px;
   text-align: center;
 }
@@ -567,6 +574,7 @@ body {
 .categories > ul {
   display: flex;
   gap: 30px;
+  margin-top: 70px;
 }
 
 .categoryCard {
@@ -582,12 +590,10 @@ body {
   position: absolute;
   top: 37px;
   width: 184px;
-  font-family: "Euclid Circular A";
-  font-weight: 500;
-  font-size: var(--desk-font-size-h2);
-  color: var(--color-white);
-  text-transform: uppercase;
   text-align: left;
+}
+.categoryCard:hover:nth-child(2) .curvedText {
+  fill: var(--color-lime);
 }
 .categoryCard:hover img {
   transform: scale(1.1);
@@ -600,6 +606,14 @@ body {
 }
 .categoryCard:hover .circleButton svg {
   stroke: var(--color-lavender);
+}
+
+h2 {
+  font-family: "Euclid Circular A";
+  font-weight: 500;
+  font-size: var(--desk-font-size-h2);
+  color: var(--color-white);
+  text-transform: uppercase;
 }
 
 .categoryPreview {
@@ -676,26 +690,39 @@ body {
   transition: stroke 200ms ease-out;
 }
 
-.products {
-  display: none;
+.category {
+  position: relative;
+  display: flex;
   flex-direction: column;
   align-items: center;
   gap: 70px;
+  margin-top: 60px;
   width: 100%;
   font-family: "Euclid Circular A";
   font-weight: 500;
   color: var(--color-white);
+  opacity: 0;
+  max-width: 0;
+  max-height: 0;
 }
-.products.expanded {
-  display: flex;
+.category.expanded {
+  opacity: 1;
+  max-width: none;
+  max-height: none;
 }
-.products .menu {
+.category.expanded .menu {
+  max-width: none;
+  max-height: none;
+}
+.category .menu {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  max-width: 0;
+  max-height: 0;
 }
-.products .menu > span {
+.category .menu > span {
   font-size: var(--desk-font-size-subtitle);
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -725,8 +752,8 @@ summary:hover .hoverableRect {
   line-height: 1.5;
   z-index: 11;
 }
-.filters[open] summary {
-  margin-bottom: 32px;
+.filters[open] > ul {
+  margin-top: 32px;
 }
 .filters > ul {
   position: absolute;
@@ -885,17 +912,145 @@ summary:hover .hoverableRect {
   color: var(--color-white-semi-transparent);
 }
 
+.productsList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  overflow: hidden;
+  max-height: 415px;
+  row-gap: 70px;
+  column-gap: 103px;
+  list-style: none;
+  opacity: 1;
+  transition: opacity 800ms ease;
+}
+.productsList.disabled {
+  display: none;
+}
+.productsList:not(.open) {
+  opacity: 0;
+  max-width: 0;
+  max-height: 0;
+}
+.productsList.expanded {
+  max-height: none;
+}
+
+.product {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 274px;
+  height: 415px;
+}
+.product .imgWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 260px;
+  margin-bottom: 32px;
+}
+.product .imgWrapper img {
+  width: auto;
+  height: 100%;
+}
+.product p {
+  font-family: "Euclid Circular A";
+  font-weight: 500;
+  font-size: var(--desk-font-size-subtitle);
+  line-height: 23px;
+  margin-bottom: 7px;
+  color: var(--color-white);
+}
+.product .sale {
+  display: flex;
+  justify-content: space-between;
+}
+.product .sale .price {
+  display: inline-flex;
+  align-items: flex-end;
+  font-family: "Floreste";
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  line-height: 1;
+  transform: translate(0, 26.5%);
+}
+.product .sale .number {
+  font-size: var(--desk-font-size-h2);
+}
+.product .sale .currency {
+  align-self: flex-start;
+  font-size: var(--desk-font-size-currency);
+  transform: translate(50%, -10%);
+}
+.product .sale .buyButton {
+  align-items: flex-end;
+}
+
+.color {
+  position: absolute;
+  top: 7px;
+  left: 2px;
+  width: 22px;
+  height: 22px;
+  border: 3px solid var(--color-white);
+  border-radius: 100%;
+  background-color: var(--color-white);
+}
+.color.blue {
+  background-color: var(--color-light-blue);
+}
+.color.lavender {
+  background-color: rgb(240, 179, 234);
+}
+.color.orange {
+  background-color: rgb(251, 228, 202);
+}
+.color.gold {
+  background-color: rgb(255, 196, 165);
+}
+.color.green {
+  background-color: rgb(136, 227, 121);
+}
+.color.pink {
+  background-color: rgb(250, 142, 239);
+}
+.color.cyan {
+  background-color: rgb(41, 208, 217);
+}
+.color.sky {
+  background-color: rgb(41, 208, 217);
+}
+.color.black {
+  background-color: rgb(92, 84, 74);
+}
+.color.ohra {
+  background-color: rgb(240, 223, 179);
+}
+.color.gray {
+  background-color: rgb(202, 207, 251);
+}
+
+.productHr {
+  height: 2px;
+  width: auto;
+  background-color: var(--color-lime);
+  margin-bottom: 28px;
+}
+
 .moreButton {
   display: flex;
   width: fit-content;
   align-items: center;
   justify-content: center;
-  justify-self: center;
   font-family: "Euclid Circular A";
   font-weight: 500;
   font-size: var(--desk-font-size-button);
   color: var(--color-white);
   background-color: transparent;
+}
+.moreButton:not(.expanded) {
+  display: none;
 }
 .moreButton div {
   position: absolute;
