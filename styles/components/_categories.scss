@@ -9,7 +9,7 @@
 
   text-align: center;
 
-  & h1 {
+  h1 {
     font-family: "Euclid Circular A";
     font-weight: 500;
     font-size: var(--desk-font-size-h1);
@@ -17,7 +17,7 @@
     text-transform: uppercase;
   }
 
-  & ul {
+  & > ul {
     display: flex;
     gap: 30px;
   }
@@ -35,7 +35,7 @@
 
   cursor: pointer;
 
-  & h2 {
+  h2 {
     position: absolute;
     top: 37px;
 
@@ -51,20 +51,20 @@
   }
 
   &:hover {
-    & img {
+    img {
       transform: scale(1.1);
     }
 
-    & .categoryQuanity {
-      & .quanityTextWrapper {
+    .categoryQuanity {
+      .quanityTextWrapper {
         transform: rotate(0);
       }
     }
 
-    & .circleButton {
+    .circleButton {
       background-color: var(--color-lime);
 
-      & svg {
+      svg {
         stroke: var(--color-lavender);
       }
     }
@@ -80,14 +80,14 @@
   height: fit-content;
   margin-left: 5px;
 
-  & img {
+  img {
     position: absolute;
     height: 248px;
 
     transition: transform 300ms ease-in-out;
   }
 
-  & svg {
+  svg {
     z-index: -1;
   }
 }
@@ -152,9 +152,298 @@
 
   transition: background-color 500ms ease-out;
 
-  & svg {
+  svg {
     stroke: var(--color-lime);
 
     transition: stroke 200ms ease-out;
+  }
+}
+
+.products {
+  display: none;
+  flex-direction: column;
+  gap: 70px;
+
+  font-family: "Euclid Circular A";
+  font-weight: 500;
+  color: var(--color-white);
+
+  &.expanded {
+    display: flex;
+  }
+
+  .menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    & > span {
+      font-size: var(--desk-font-size-subtitle);
+    }
+  }
+}
+
+.hoverableRect {
+  fill: transparent;
+  transition: fill 200ms ease;
+}
+
+summary {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  font-size: var(--desk-font-size-filter-title);
+  text-transform: uppercase;
+
+  user-select: none;
+  list-style: none;
+  cursor: pointer;
+
+  &:hover {
+    .hoverableRect {
+      fill: var(--color-lime);
+    }
+  }
+}
+
+.filters {
+  position: relative;
+  line-height: 1.5;
+  z-index: 11;
+
+  &[open] {
+    & summary {
+      margin-bottom: 32px;
+    }
+  }
+
+  > ul {
+    position: absolute;
+
+    display: flex;
+    flex-direction: column;
+
+    width: 320px;
+
+    font-size: var(--desk-font-size-filter-item-title);
+    line-height: 1.5;
+    text-align: left;
+
+    > li {
+      display: flex;
+      flex-direction: column;
+
+      padding: 22px 30px 24px;
+      border-radius: 40px;
+
+      background-color: var(--color-lavender-highlight);
+    }
+  }
+}
+
+.priceFilter {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+
+  label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 123px;
+    height: 40px;
+    border-radius: 11px;
+
+    font-family: "Euclid Circular A";
+    font-size: var(--desk-font-size-filter-item-text);
+    font-weight: 500;
+    text-align: center;
+
+    color: var(--color-white);
+    background-color: var(--color-lavender);
+
+    outline: none;
+    cursor: default;
+  }
+}
+
+.displays {
+  display: flex;
+  gap: 14px;
+}
+
+.slider {
+  position: relative;
+  height: 3px;
+  width: 100%;
+
+  margin: 11px 0;
+  border-radius: 72px;
+
+  background-color: var(--color-white);
+
+  .thumbDotMin,
+  .thumbDotMax {
+    position: absolute;
+    top: -4px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 11px;
+    height: 11px;
+    border-radius: 100%;
+    background-color: var(--color-lime);
+
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .thumbDotMin {
+    left: calc(7px + var(--min-thumb-dot-position));
+    z-index: 0;
+  }
+
+  .thumbDotMax {
+    left: calc(7px + var(--max-thumb-dot-position));
+  }
+
+  input[type="range"] {
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background: none;
+    pointer-events: none;
+    appearance: none;
+
+    &::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 25px;
+      height: 25px;
+      border: 2px solid var(--color-lime);
+      background-color: var(--color-lavender);
+      border-radius: 50%;
+      cursor: pointer;
+      pointer-events: auto;
+      box-shadow: 2px 4px 13px 0px var(--color-lavender);
+    }
+
+    &::-moz-range-thumb {
+      width: 25px;
+      height: 25px;
+      border: 2px solid var(--color-lime);
+      background-color: var(--color-lavender);
+      border-radius: 50%;
+      cursor: pointer;
+      pointer-events: auto;
+      box-shadow: 2px 4px 13px 0px var(--color-lavender);
+    }
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    height: 3px;
+    background-color: var(--color-lime);
+    left: var(--min-thumb-position);
+    right: calc(100% - var(--max-thumb-position));
+  }
+}
+
+.colorFilter {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    li {
+      font-size: var(--desk-font-size-filter-item-text);
+
+      input {
+        content: "";
+        appearance: none;
+        -moz-appearance: none;
+        -webkit-appearance: none;
+
+        position: relative;
+
+        width: 14px;
+        height: 14px;
+        margin-right: 10px;
+        border: 2px solid var(--color-lavender);
+        border-radius: 4px;
+        background-color: transparent;
+
+        transition: background-color 200ms ease;
+        user-select: none;
+        cursor: pointer;
+      }
+
+      input:checked {
+        content: "";
+        border: 2px solid var(--color-lavender);
+        background-color: var(--color-lime);
+      }
+
+      pre {
+        font-family: "Euclid Circular A";
+        font-size: var(--desk-font-size-filter-item-text);
+        font-weight: 500;
+        cursor: pointer;
+        line-height: 1.5;
+      }
+
+      span {
+        color: var(--color-white-semi-transparent);
+      }
+    }
+  }
+}
+
+.moreButton {
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  justify-content: center;
+
+  font-family: "Euclid Circular A";
+  font-weight: 500;
+  font-size: var(--desk-font-size-button);
+  color: var(--color-white);
+
+  background-color: transparent;
+
+  div {
+    position: absolute;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+
+    transform: translate(0, 15%);
+  }
+
+  &::after {
+    content: "";
+    z-index: -1;
+    width: 319px;
+    height: 135px;
+
+    border: 2px solid var(--color-lime);
+    border-radius: 50%;
+
+    background-color: var(--color-white-almost-transparent);
+    transform: rotate(-13deg);
+    backdrop-filter: blur(30px);
   }
 }

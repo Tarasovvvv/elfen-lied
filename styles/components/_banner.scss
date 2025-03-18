@@ -1,12 +1,14 @@
 @use "../helpers" as *;
 
 .banner {
-  display: flex;
-  gap: 20px;
+  & ul {
+    display: flex;
+    gap: 20px;
 
-  width: auto;
-  margin: 20px;
-  overflow: hidden;
+    width: auto;
+    margin: 20px;
+    overflow: hidden;
+  }
 }
 
 .bannerItem {
@@ -237,7 +239,6 @@
     text-transform: uppercase;
   }
 }
-
 
 .buyButton {
   position: absolute;

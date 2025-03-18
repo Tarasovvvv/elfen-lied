@@ -6,7 +6,6 @@
     <title>Elfen lied</title>
     <link rel="stylesheet" href="./styles/main.css" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="./scripts/main.js" type="module" defer></script>
   </head>
   <body>
     <header class="mainHeader">
@@ -79,272 +78,459 @@
         </button>
       </nav>
     </header>
-    <section class="banner">
-      <div class="bannerItem expdanded">
-        <img src="/images/lamps/lamp-1.webp" alt="Светильник" />
-        <div class="preview">
-          <span class="title">Слайд</span>
-          <span class="number">01</span>
-        </div>
-        <div class="details">
-          <span class="productOfTheDay">Товар дня</span>
-          <span class="backgroundText">Bengamin Moore</span>
-          <div class="description">
-            <h2 class="title">Светильник</h2>
-            <p class="text">Функциональная дизайнерская лампа для создания максимально комфортного освещения</p>
-            <hr class="hr" />
-            <span class="number">
-              150 000
-              <sup class="currency">₽</sup>
-            </span>
-          </div>
-        </div>
-        <button class="buyButton">
-          <div class="ellipse"></div>
-          <div class="ellipse"></div>
-          <svg class="" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path
-              fillRule="evenodd"
-              clipRule="evenodd"
-              d="M4.84 3.94049L4.64 6.39049C4.6 6.86049 4.97 7.25049 5.44 7.25049H20.75C21.17 7.25049 21.52 6.93049 21.55 6.51049C21.68 4.74049 20.33 3.30049 18.56 3.30049H6.27C6.17 2.86049 5.97 2.44049 5.66 2.09049C5.16 1.56049 4.46 1.25049 3.74 1.25049H2C1.59 1.25049 1.25 1.59049 1.25 2.00049C1.25 2.41049 1.59 2.75049 2 2.75049H3.74C4.05 2.75049 4.34 2.88049 4.55 3.10049C4.76 3.33049 4.86 3.63049 4.84 3.94049ZM10 20.7505C10 21.717 9.2165 22.5005 8.25 22.5005C7.2835 22.5005 6.5 21.717 6.5 20.7505C6.5 19.784 7.2835 19.0005 8.25 19.0005C9.2165 19.0005 10 19.784 10 20.7505ZM18 20.7505C18 21.717 17.2165 22.5005 16.25 22.5005C15.2835 22.5005 14.5 21.717 14.5 20.7505C14.5 19.784 15.2835 19.0005 16.25 19.0005C17.2165 19.0005 18 19.784 18 20.7505ZM5.17005 8.75049H20.5101C20.9801 8.75049 21.3401 9.14049 21.3001 9.60049L20.9701 14.2705C20.8601 15.7705 19.5401 17.0005 18.0401 17.0005H6.92005C5.21005 17.0005 3.87005 15.5405 4.01005 13.8305L4.37005 9.48049C4.41005 9.07049 4.75005 8.75049 5.17005 8.75049Z"
-              fill="#D9FF5A"
-            />
-          </svg>
-          <span class="title">Купить</span>
-        </button>
-      </div>
-      <div class="bannerItem collapsed">
-        <img src="/images/chairs/chair-1.webp" alt="Кресло" />
-        <div class="preview">
-          <span class="title">Слайд</span>
-          <span class="number">02</span>
-        </div>
-        <div class="details">
-          <span class="productOfTheDay">Товар дня</span>
-          <span class="backgroundText">Paint Here Glory</span>
-          <div class="description">
-            <h2 class="title">Кресло</h2>
-            <p class="text">Функциональная дизайнерское кресло для создания максимально уюта в помещении</p>
-            <hr class="hr" />
-            <span class="number">
-              120 000
-              <sup class="currency">₽</sup>
-            </span>
-          </div>
-        </div>
-        <button class="buyButton">
-          <div class="ellipse"></div>
-          <div class="ellipse"></div>
-          <svg class="" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path
-              fillRule="evenodd"
-              clipRule="evenodd"
-              d="M4.84 3.94049L4.64 6.39049C4.6 6.86049 4.97 7.25049 5.44 7.25049H20.75C21.17 7.25049 21.52 6.93049 21.55 6.51049C21.68 4.74049 20.33 3.30049 18.56 3.30049H6.27C6.17 2.86049 5.97 2.44049 5.66 2.09049C5.16 1.56049 4.46 1.25049 3.74 1.25049H2C1.59 1.25049 1.25 1.59049 1.25 2.00049C1.25 2.41049 1.59 2.75049 2 2.75049H3.74C4.05 2.75049 4.34 2.88049 4.55 3.10049C4.76 3.33049 4.86 3.63049 4.84 3.94049ZM10 20.7505C10 21.717 9.2165 22.5005 8.25 22.5005C7.2835 22.5005 6.5 21.717 6.5 20.7505C6.5 19.784 7.2835 19.0005 8.25 19.0005C9.2165 19.0005 10 19.784 10 20.7505ZM18 20.7505C18 21.717 17.2165 22.5005 16.25 22.5005C15.2835 22.5005 14.5 21.717 14.5 20.7505C14.5 19.784 15.2835 19.0005 16.25 19.0005C17.2165 19.0005 18 19.784 18 20.7505ZM5.17005 8.75049H20.5101C20.9801 8.75049 21.3401 9.14049 21.3001 9.60049L20.9701 14.2705C20.8601 15.7705 19.5401 17.0005 18.0401 17.0005H6.92005C5.21005 17.0005 3.87005 15.5405 4.01005 13.8305L4.37005 9.48049C4.41005 9.07049 4.75005 8.75049 5.17005 8.75049Z"
-              fill="#D9FF5A"
-            />
-          </svg>
-          <span class="title">Купить</span>
-        </button>
-      </div>
-      <div class="bannerItem collapsed">
-        <img src="/images/tables/table-1.webp" alt="Стол" />
-        <div class="preview">
-          <span class="title">Слайд</span>
-          <span class="number">03</span>
-        </div>
-        <div class="details">
-          <span class="productOfTheDay">Товар дня</span>
-          <span class="backgroundText">Bengamin Moore</span>
-          <div class="description">
-            <h2 class="title">Высокий стол</h2>
-            <p class="text">Функциональная дизайнерская лампа для создания максимально комфортного освещения</p>
-            <hr class="hr" />
-            <span class="number">
-              235 000
-              <sup class="currency">₽</sup>
-            </span>
-          </div>
-        </div>
-        <button class="buyButton">
-          <div class="ellipse"></div>
-          <div class="ellipse"></div>
-          <svg class="" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path
-              fillRule="evenodd"
-              clipRule="evenodd"
-              d="M4.84 3.94049L4.64 6.39049C4.6 6.86049 4.97 7.25049 5.44 7.25049H20.75C21.17 7.25049 21.52 6.93049 21.55 6.51049C21.68 4.74049 20.33 3.30049 18.56 3.30049H6.27C6.17 2.86049 5.97 2.44049 5.66 2.09049C5.16 1.56049 4.46 1.25049 3.74 1.25049H2C1.59 1.25049 1.25 1.59049 1.25 2.00049C1.25 2.41049 1.59 2.75049 2 2.75049H3.74C4.05 2.75049 4.34 2.88049 4.55 3.10049C4.76 3.33049 4.86 3.63049 4.84 3.94049ZM10 20.7505C10 21.717 9.2165 22.5005 8.25 22.5005C7.2835 22.5005 6.5 21.717 6.5 20.7505C6.5 19.784 7.2835 19.0005 8.25 19.0005C9.2165 19.0005 10 19.784 10 20.7505ZM18 20.7505C18 21.717 17.2165 22.5005 16.25 22.5005C15.2835 22.5005 14.5 21.717 14.5 20.7505C14.5 19.784 15.2835 19.0005 16.25 19.0005C17.2165 19.0005 18 19.784 18 20.7505ZM5.17005 8.75049H20.5101C20.9801 8.75049 21.3401 9.14049 21.3001 9.60049L20.9701 14.2705C20.8601 15.7705 19.5401 17.0005 18.0401 17.0005H6.92005C5.21005 17.0005 3.87005 15.5405 4.01005 13.8305L4.37005 9.48049C4.41005 9.07049 4.75005 8.75049 5.17005 8.75049Z"
-              fill="#D9FF5A"
-            />
-          </svg>
-          <span class="title">Купить</span>
-        </button>
-      </div>
-      <script>
-        $(".bannerItem").click(function () {
-          $(".bannerItem").removeClass("expdanded");
-          $(".bannerItem").addClass("collapsed");
-          $(this).removeClass("collapsed");
-          $(this).addClass("expdanded");
-        });
-      </script>
-    </section>
-    <section class="categories">
-      <h1>Категории</h1>
-      <ul>
-        <li class="categoryCard">
-          <h2>Напольные зеркала</h2>
-          <div class="categoryPreview">
-            <img src="/images/mirrors/mirror-1.webp" alt="Зеркало" />
-            <svg width="389" height="462" viewBox="0 0 389 462" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M83.9023 455.625C99.1324 469.226 121.539 458.556 132.362 441.241C146.921 417.948 169.466 403 194.773 403C219.899 403 242.302 417.735 256.871 440.741C267.807 458.011 290.298 468.583 305.47 454.884C355.538 409.675 388.273 334.764 388.273 250C388.273 243.069 382.498 237.709 375.61 236.937C355.712 234.707 338.258 226.446 331.266 211.451C322.182 191.971 330.381 169.463 348.62 150.371C358.21 140.333 363.069 125.802 356.79 113.42C322.158 45.1273 262.305 0 194.273 0C87.1302 0 0.273438 111.929 0.273438 250C0.273438 335.229 33.369 410.496 83.9023 455.625Z"
-                fill="#CBB6FF"
-              />
-              <path
-                id="curve"
-                d="M305.47 454.884C290.298 468.583 267.807 458.011 256.871 440.741C242.302 417.735 219.899 403 194.773 403C169.466 403 146.921 417.948 132.362 441.241C121.539 458.556 99.1324 469.226 83.9023 455.625C33.369 410.496 0.273438 335.229 0.273438 250C0.273438 111.929 87.1302 0 194.273 0C262.305 0 322.158 45.1273 356.79 113.42C363.069 125.802 358.21 140.333 348.62 150.371C330.381 169.463 322.182 191.971 331.266 211.451C338.258 226.446 355.712 234.707 375.61 236.937C382.498 237.709 388.273 243.069 388.273 250C388.273 334.764 355.538 409.675 305.47 454.884Z"
-                transform="translate(194, 250) scale(0.8) translate(-210, -246) rotate(-2, 0, 0)"
-              />
-              <text>
-                <textPath class="curvedText" href="#curve" startOffset="18%">Изготовление на заказ</textPath>
-              </text>
-            </svg>
-          </div>
-          <div class="categoryQuanity">
-            <div class="quanityTextWrapper">
-              <span class="number">4</span>
-              <span class="quanityMeasure">шт</span>
+    <main>
+      <section class="banner">
+        <ul>
+          <li class="bannerItem expdanded">
+            <img src="/images/lamps/lamp-1.webp" alt="Светильник" />
+            <div class="preview">
+              <span class="title">Слайд</span>
+              <span class="number">01</span>
             </div>
-            <svg class="quanityBackground" width="81" height="75" viewBox="0 0 81 75" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <ellipse cx="40.3468" cy="37.3136" rx="40.5" ry="36" transform="rotate(-23 40.3468 37.3136)" fill="#FA8FEF" />
-            </svg>
-          </div>
-          <div class="circleButton">
-            <svg width="22" height="34" viewBox="0 0 22 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M21 22.6667C19.94 22.6667 18.3571 23.7051 17.0286 24.7562C15.3143 26.1077 13.8186 27.7227 12.6771 29.5743C11.8214 30.9627 11 32.6457 11 34M11 34C11 32.6457 10.1786 30.9612 9.32286 29.5743C8.18 27.7227 6.68429 26.1077 4.97286 24.7562C3.64286 23.7051 2.05714 22.6667 1 22.6667M11 34L11 -1.11265e-06"
-                stroke-width="2"
-                strokeLinecap="round"
-              />
-            </svg>
-          </div>
-        </li>
-        <li class="categoryCard">
-          <h2>Торшеры и лампы</h2>
-          <div class="categoryPreview">
-            <img src="/images/lamps/lamp-2.webp" alt="Лампа" />
-            <svg width="389" height="462" viewBox="0 0 389 462" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M83.9023 455.625C99.1324 469.226 121.539 458.556 132.362 441.241C146.921 417.948 169.466 403 194.773 403C219.899 403 242.302 417.735 256.871 440.741C267.807 458.011 290.298 468.583 305.47 454.884C355.538 409.675 388.273 334.764 388.273 250C388.273 243.069 382.498 237.709 375.61 236.937C355.712 234.707 338.258 226.446 331.266 211.451C322.182 191.971 330.381 169.463 348.62 150.371C358.21 140.333 363.069 125.802 356.79 113.42C322.158 45.1273 262.305 0 194.273 0C87.1302 0 0.273438 111.929 0.273438 250C0.273438 335.229 33.369 410.496 83.9023 455.625Z"
-                fill="#CBB6FF"
-              />
-              <path
-                id="curve"
-                d="M305.47 454.884C290.298 468.583 267.807 458.011 256.871 440.741C242.302 417.735 219.899 403 194.773 403C169.466 403 146.921 417.948 132.362 441.241C121.539 458.556 99.1324 469.226 83.9023 455.625C33.369 410.496 0.273438 335.229 0.273438 250C0.273438 111.929 87.1302 0 194.273 0C262.305 0 322.158 45.1273 356.79 113.42C363.069 125.802 358.21 140.333 348.62 150.371C330.381 169.463 322.182 191.971 331.266 211.451C338.258 226.446 355.712 234.707 375.61 236.937C382.498 237.709 388.273 243.069 388.273 250C388.273 334.764 355.538 409.675 305.47 454.884Z"
-                transform="translate(194, 250) scale(0.8) translate(-210, -246) rotate(-2, 0, 0)"
-              />
-              <text>
-                <textPath class="curvedText" href="#curve" startOffset="18%">Изготовление на заказ</textPath>
-              </text>
-            </svg>
-          </div>
-          <div class="categoryQuanity">
-            <div class="quanityTextWrapper">
-              <span class="number">4</span>
-              <span class="quanityMeasure">шт</span>
+            <div class="details">
+              <span class="productOfTheDay">Товар дня</span>
+              <span class="backgroundText">Bengamin Moore</span>
+              <div class="description">
+                <h2 class="title">Светильник</h2>
+                <p class="text">Функциональная дизайнерская лампа для создания максимально комфортного освещения</p>
+                <hr class="hr" />
+                <span class="number">
+                  150 000
+                  <sup class="currency">₽</sup>
+                </span>
+              </div>
             </div>
-            <svg class="quanityBackground" width="81" height="75" viewBox="0 0 81 75" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <ellipse cx="40.3468" cy="37.3136" rx="40.5" ry="36" transform="rotate(-23 40.3468 37.3136)" fill="#FA8FEF" />
-            </svg>
-          </div>
-          <div class="circleButton">
-            <svg width="22" height="34" viewBox="0 0 22 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M21 22.6667C19.94 22.6667 18.3571 23.7051 17.0286 24.7562C15.3143 26.1077 13.8186 27.7227 12.6771 29.5743C11.8214 30.9627 11 32.6457 11 34M11 34C11 32.6457 10.1786 30.9612 9.32286 29.5743C8.18 27.7227 6.68429 26.1077 4.97286 24.7562C3.64286 23.7051 2.05714 22.6667 1 22.6667M11 34L11 -1.11265e-06"
-                stroke-width="2"
-                strokeLinecap="round"
-              />
-            </svg>
-          </div>
-        </li>
-        <li class="categoryCard">
-          <h2>Кресла и стулья</h2>
-          <div class="categoryPreview">
-            <img src="/images/chairs/chair-2.webp" alt="Кресло" />
-            <svg width="389" height="462" viewBox="0 0 389 462" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M83.9023 455.625C99.1324 469.226 121.539 458.556 132.362 441.241C146.921 417.948 169.466 403 194.773 403C219.899 403 242.302 417.735 256.871 440.741C267.807 458.011 290.298 468.583 305.47 454.884C355.538 409.675 388.273 334.764 388.273 250C388.273 243.069 382.498 237.709 375.61 236.937C355.712 234.707 338.258 226.446 331.266 211.451C322.182 191.971 330.381 169.463 348.62 150.371C358.21 140.333 363.069 125.802 356.79 113.42C322.158 45.1273 262.305 0 194.273 0C87.1302 0 0.273438 111.929 0.273438 250C0.273438 335.229 33.369 410.496 83.9023 455.625Z"
-                fill="#CBB6FF"
-              />
-              <path
-                id="curve"
-                d="M305.47 454.884C290.298 468.583 267.807 458.011 256.871 440.741C242.302 417.735 219.899 403 194.773 403C169.466 403 146.921 417.948 132.362 441.241C121.539 458.556 99.1324 469.226 83.9023 455.625C33.369 410.496 0.273438 335.229 0.273438 250C0.273438 111.929 87.1302 0 194.273 0C262.305 0 322.158 45.1273 356.79 113.42C363.069 125.802 358.21 140.333 348.62 150.371C330.381 169.463 322.182 191.971 331.266 211.451C338.258 226.446 355.712 234.707 375.61 236.937C382.498 237.709 388.273 243.069 388.273 250C388.273 334.764 355.538 409.675 305.47 454.884Z"
-                transform="translate(194, 250) scale(0.8) translate(-210, -246) rotate(-2, 0, 0)"
-              />
-              <text>
-                <textPath class="curvedText" href="#curve" startOffset="18%">Изготовление на заказ</textPath>
-              </text>
-            </svg>
-          </div>
-          <div class="categoryQuanity">
-            <div class="quanityTextWrapper">
-              <span class="number">4</span>
-              <span class="quanityMeasure">шт</span>
+            <button class="buyButton">
+              <div class="ellipse"></div>
+              <div class="ellipse"></div>
+              <svg class="" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  fillRule="evenodd"
+                  clipRule="evenodd"
+                  d="M4.84 3.94049L4.64 6.39049C4.6 6.86049 4.97 7.25049 5.44 7.25049H20.75C21.17 7.25049 21.52 6.93049 21.55 6.51049C21.68 4.74049 20.33 3.30049 18.56 3.30049H6.27C6.17 2.86049 5.97 2.44049 5.66 2.09049C5.16 1.56049 4.46 1.25049 3.74 1.25049H2C1.59 1.25049 1.25 1.59049 1.25 2.00049C1.25 2.41049 1.59 2.75049 2 2.75049H3.74C4.05 2.75049 4.34 2.88049 4.55 3.10049C4.76 3.33049 4.86 3.63049 4.84 3.94049ZM10 20.7505C10 21.717 9.2165 22.5005 8.25 22.5005C7.2835 22.5005 6.5 21.717 6.5 20.7505C6.5 19.784 7.2835 19.0005 8.25 19.0005C9.2165 19.0005 10 19.784 10 20.7505ZM18 20.7505C18 21.717 17.2165 22.5005 16.25 22.5005C15.2835 22.5005 14.5 21.717 14.5 20.7505C14.5 19.784 15.2835 19.0005 16.25 19.0005C17.2165 19.0005 18 19.784 18 20.7505ZM5.17005 8.75049H20.5101C20.9801 8.75049 21.3401 9.14049 21.3001 9.60049L20.9701 14.2705C20.8601 15.7705 19.5401 17.0005 18.0401 17.0005H6.92005C5.21005 17.0005 3.87005 15.5405 4.01005 13.8305L4.37005 9.48049C4.41005 9.07049 4.75005 8.75049 5.17005 8.75049Z"
+                  fill="#D9FF5A"
+                />
+              </svg>
+              <span class="title">Купить</span>
+            </button>
+          </li>
+          <li class="bannerItem collapsed">
+            <img src="/images/chairs/chair-1.webp" alt="Кресло" />
+            <div class="preview">
+              <span class="title">Слайд</span>
+              <span class="number">02</span>
             </div>
-            <svg class="quanityBackground" width="81" height="75" viewBox="0 0 81 75" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <ellipse cx="40.3468" cy="37.3136" rx="40.5" ry="36" transform="rotate(-23 40.3468 37.3136)" fill="#FA8FEF" />
-            </svg>
-          </div>
-          <div class="circleButton">
-            <svg width="22" height="34" viewBox="0 0 22 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M21 22.6667C19.94 22.6667 18.3571 23.7051 17.0286 24.7562C15.3143 26.1077 13.8186 27.7227 12.6771 29.5743C11.8214 30.9627 11 32.6457 11 34M11 34C11 32.6457 10.1786 30.9612 9.32286 29.5743C8.18 27.7227 6.68429 26.1077 4.97286 24.7562C3.64286 23.7051 2.05714 22.6667 1 22.6667M11 34L11 -1.11265e-06"
-                stroke-width="2"
-                strokeLinecap="round"
-              />
-            </svg>
-          </div>
-        </li>
-        <li class="categoryCard">
-          <h2>Столы и тумбы</h2>
-          <div class="categoryPreview">
-            <img src="/images/tables/table-2.webp" alt="Стол" />
-            <svg width="389" height="462" viewBox="0 0 389 462" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M83.9023 455.625C99.1324 469.226 121.539 458.556 132.362 441.241C146.921 417.948 169.466 403 194.773 403C219.899 403 242.302 417.735 256.871 440.741C267.807 458.011 290.298 468.583 305.47 454.884C355.538 409.675 388.273 334.764 388.273 250C388.273 243.069 382.498 237.709 375.61 236.937C355.712 234.707 338.258 226.446 331.266 211.451C322.182 191.971 330.381 169.463 348.62 150.371C358.21 140.333 363.069 125.802 356.79 113.42C322.158 45.1273 262.305 0 194.273 0C87.1302 0 0.273438 111.929 0.273438 250C0.273438 335.229 33.369 410.496 83.9023 455.625Z"
-                fill="#CBB6FF"
-              />
-              <path
-                id="curve"
-                d="M305.47 454.884C290.298 468.583 267.807 458.011 256.871 440.741C242.302 417.735 219.899 403 194.773 403C169.466 403 146.921 417.948 132.362 441.241C121.539 458.556 99.1324 469.226 83.9023 455.625C33.369 410.496 0.273438 335.229 0.273438 250C0.273438 111.929 87.1302 0 194.273 0C262.305 0 322.158 45.1273 356.79 113.42C363.069 125.802 358.21 140.333 348.62 150.371C330.381 169.463 322.182 191.971 331.266 211.451C338.258 226.446 355.712 234.707 375.61 236.937C382.498 237.709 388.273 243.069 388.273 250C388.273 334.764 355.538 409.675 305.47 454.884Z"
-                transform="translate(194, 250) scale(0.8) translate(-210, -246) rotate(-2, 0, 0)"
-              />
-              <text>
-                <textPath class="curvedText" href="#curve" startOffset="18%">Изготовление на заказ</textPath>
-              </text>
-            </svg>
-          </div>
-          <div class="categoryQuanity">
-            <div class="quanityTextWrapper">
-              <span class="number">4</span>
-              <span class="quanityMeasure">шт</span>
+            <div class="details">
+              <span class="productOfTheDay">Товар дня</span>
+              <span class="backgroundText">Paint Here Glory</span>
+              <div class="description">
+                <h2 class="title">Кресло</h2>
+                <p class="text">Функциональная дизайнерское кресло для создания максимально уюта в помещении</p>
+                <hr class="hr" />
+                <span class="number">
+                  120 000
+                  <sup class="currency">₽</sup>
+                </span>
+              </div>
             </div>
-            <svg class="quanityBackground" width="81" height="75" viewBox="0 0 81 75" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <ellipse cx="40.3468" cy="37.3136" rx="40.5" ry="36" transform="rotate(-23 40.3468 37.3136)" fill="#FA8FEF" />
-            </svg>
+            <button class="buyButton">
+              <div class="ellipse"></div>
+              <div class="ellipse"></div>
+              <svg class="" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  fillRule="evenodd"
+                  clipRule="evenodd"
+                  d="M4.84 3.94049L4.64 6.39049C4.6 6.86049 4.97 7.25049 5.44 7.25049H20.75C21.17 7.25049 21.52 6.93049 21.55 6.51049C21.68 4.74049 20.33 3.30049 18.56 3.30049H6.27C6.17 2.86049 5.97 2.44049 5.66 2.09049C5.16 1.56049 4.46 1.25049 3.74 1.25049H2C1.59 1.25049 1.25 1.59049 1.25 2.00049C1.25 2.41049 1.59 2.75049 2 2.75049H3.74C4.05 2.75049 4.34 2.88049 4.55 3.10049C4.76 3.33049 4.86 3.63049 4.84 3.94049ZM10 20.7505C10 21.717 9.2165 22.5005 8.25 22.5005C7.2835 22.5005 6.5 21.717 6.5 20.7505C6.5 19.784 7.2835 19.0005 8.25 19.0005C9.2165 19.0005 10 19.784 10 20.7505ZM18 20.7505C18 21.717 17.2165 22.5005 16.25 22.5005C15.2835 22.5005 14.5 21.717 14.5 20.7505C14.5 19.784 15.2835 19.0005 16.25 19.0005C17.2165 19.0005 18 19.784 18 20.7505ZM5.17005 8.75049H20.5101C20.9801 8.75049 21.3401 9.14049 21.3001 9.60049L20.9701 14.2705C20.8601 15.7705 19.5401 17.0005 18.0401 17.0005H6.92005C5.21005 17.0005 3.87005 15.5405 4.01005 13.8305L4.37005 9.48049C4.41005 9.07049 4.75005 8.75049 5.17005 8.75049Z"
+                  fill="#D9FF5A"
+                />
+              </svg>
+              <span class="title">Купить</span>
+            </button>
+          </li>
+          <li class="bannerItem collapsed">
+            <img src="/images/tables/table-1.webp" alt="Стол" />
+            <div class="preview">
+              <span class="title">Слайд</span>
+              <span class="number">03</span>
+            </div>
+            <div class="details">
+              <span class="productOfTheDay">Товар дня</span>
+              <span class="backgroundText">Bengamin Moore</span>
+              <div class="description">
+                <h2 class="title">Высокий стол</h2>
+                <p class="text">Функциональная дизайнерская лампа для создания максимально комфортного освещения</p>
+                <hr class="hr" />
+                <span class="number">
+                  235 000
+                  <sup class="currency">₽</sup>
+                </span>
+              </div>
+            </div>
+            <button class="buyButton">
+              <div class="ellipse"></div>
+              <div class="ellipse"></div>
+              <svg class="" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  fillRule="evenodd"
+                  clipRule="evenodd"
+                  d="M4.84 3.94049L4.64 6.39049C4.6 6.86049 4.97 7.25049 5.44 7.25049H20.75C21.17 7.25049 21.52 6.93049 21.55 6.51049C21.68 4.74049 20.33 3.30049 18.56 3.30049H6.27C6.17 2.86049 5.97 2.44049 5.66 2.09049C5.16 1.56049 4.46 1.25049 3.74 1.25049H2C1.59 1.25049 1.25 1.59049 1.25 2.00049C1.25 2.41049 1.59 2.75049 2 2.75049H3.74C4.05 2.75049 4.34 2.88049 4.55 3.10049C4.76 3.33049 4.86 3.63049 4.84 3.94049ZM10 20.7505C10 21.717 9.2165 22.5005 8.25 22.5005C7.2835 22.5005 6.5 21.717 6.5 20.7505C6.5 19.784 7.2835 19.0005 8.25 19.0005C9.2165 19.0005 10 19.784 10 20.7505ZM18 20.7505C18 21.717 17.2165 22.5005 16.25 22.5005C15.2835 22.5005 14.5 21.717 14.5 20.7505C14.5 19.784 15.2835 19.0005 16.25 19.0005C17.2165 19.0005 18 19.784 18 20.7505ZM5.17005 8.75049H20.5101C20.9801 8.75049 21.3401 9.14049 21.3001 9.60049L20.9701 14.2705C20.8601 15.7705 19.5401 17.0005 18.0401 17.0005H6.92005C5.21005 17.0005 3.87005 15.5405 4.01005 13.8305L4.37005 9.48049C4.41005 9.07049 4.75005 8.75049 5.17005 8.75049Z"
+                  fill="#D9FF5A"
+                />
+              </svg>
+              <span class="title">Купить</span>
+            </button>
+          </li>
+          <script>
+            $(document).ready(function () {
+              $(".bannerItem").click(function () {
+                $(".bannerItem").removeClass("expdanded");
+                $(".bannerItem").addClass("collapsed");
+                $(this).removeClass("collapsed");
+                $(this).addClass("expdanded");
+              });
+            });
+          </script>
+        </ul>
+      </section>
+      <section class="categories">
+        <h1>Категории</h1>
+        <ul>
+          <li class="categoryCard">
+            <h2>Напольные зеркала</h2>
+            <div class="categoryPreview">
+              <img src="/images/mirrors/mirror-1.webp" alt="Зеркало" loading="lazy" />
+              <svg width="389" height="462" viewBox="0 0 389 462" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M83.9023 455.625C99.1324 469.226 121.539 458.556 132.362 441.241C146.921 417.948 169.466 403 194.773 403C219.899 403 242.302 417.735 256.871 440.741C267.807 458.011 290.298 468.583 305.47 454.884C355.538 409.675 388.273 334.764 388.273 250C388.273 243.069 382.498 237.709 375.61 236.937C355.712 234.707 338.258 226.446 331.266 211.451C322.182 191.971 330.381 169.463 348.62 150.371C358.21 140.333 363.069 125.802 356.79 113.42C322.158 45.1273 262.305 0 194.273 0C87.1302 0 0.273438 111.929 0.273438 250C0.273438 335.229 33.369 410.496 83.9023 455.625Z"
+                  fill="#CBB6FF"
+                />
+                <path
+                  id="curve"
+                  d="M305.47 454.884C290.298 468.583 267.807 458.011 256.871 440.741C242.302 417.735 219.899 403 194.773 403C169.466 403 146.921 417.948 132.362 441.241C121.539 458.556 99.1324 469.226 83.9023 455.625C33.369 410.496 0.273438 335.229 0.273438 250C0.273438 111.929 87.1302 0 194.273 0C262.305 0 322.158 45.1273 356.79 113.42C363.069 125.802 358.21 140.333 348.62 150.371C330.381 169.463 322.182 191.971 331.266 211.451C338.258 226.446 355.712 234.707 375.61 236.937C382.498 237.709 388.273 243.069 388.273 250C388.273 334.764 355.538 409.675 305.47 454.884Z"
+                  transform="translate(194, 250) scale(0.8) translate(-210, -246) rotate(-2, 0, 0)"
+                />
+                <text>
+                  <textPath class="curvedText" href="#curve" startOffset="18%">Изготовление на заказ</textPath>
+                </text>
+              </svg>
+            </div>
+            <div class="categoryQuanity">
+              <div class="quanityTextWrapper">
+                <span class="number">7</span>
+                <span class="quanityMeasure">шт</span>
+              </div>
+              <svg class="quanityBackground" width="81" height="75" viewBox="0 0 81 75" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <ellipse cx="40.3468" cy="37.3136" rx="40.5" ry="36" transform="rotate(-23 40.3468 37.3136)" fill="#FA8FEF" />
+              </svg>
+            </div>
+            <div class="circleButton">
+              <svg width="22" height="34" viewBox="0 0 22 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M21 22.6667C19.94 22.6667 18.3571 23.7051 17.0286 24.7562C15.3143 26.1077 13.8186 27.7227 12.6771 29.5743C11.8214 30.9627 11 32.6457 11 34M11 34C11 32.6457 10.1786 30.9612 9.32286 29.5743C8.18 27.7227 6.68429 26.1077 4.97286 24.7562C3.64286 23.7051 2.05714 22.6667 1 22.6667M11 34L11 -1.11265e-06"
+                  stroke-width="2"
+                  strokeLinecap="round"
+                />
+              </svg>
+              <script>
+                $(document).ready(function () {
+                  $(".categoryCard:nth-child(1) .circleButton").click(function () {
+                    $(".quanity").text($(".categoryCard:nth-child(1) .categoryQuanity .quanityTextWrapper .number").text().split(" ")[0] + " позиций в категории");
+                  });
+                });
+              </script>
+            </div>
+          </li>
+          <li class="categoryCard">
+            <h2>Торшеры и лампы</h2>
+            <div class="categoryPreview">
+              <img src="/images/lamps/lamp-2.webp" alt="Лампа" loading="lazy" />
+              <svg width="389" height="462" viewBox="0 0 389 462" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M83.9023 455.625C99.1324 469.226 121.539 458.556 132.362 441.241C146.921 417.948 169.466 403 194.773 403C219.899 403 242.302 417.735 256.871 440.741C267.807 458.011 290.298 468.583 305.47 454.884C355.538 409.675 388.273 334.764 388.273 250C388.273 243.069 382.498 237.709 375.61 236.937C355.712 234.707 338.258 226.446 331.266 211.451C322.182 191.971 330.381 169.463 348.62 150.371C358.21 140.333 363.069 125.802 356.79 113.42C322.158 45.1273 262.305 0 194.273 0C87.1302 0 0.273438 111.929 0.273438 250C0.273438 335.229 33.369 410.496 83.9023 455.625Z"
+                  fill="#CBB6FF"
+                />
+                <path
+                  id="curve"
+                  d="M305.47 454.884C290.298 468.583 267.807 458.011 256.871 440.741C242.302 417.735 219.899 403 194.773 403C169.466 403 146.921 417.948 132.362 441.241C121.539 458.556 99.1324 469.226 83.9023 455.625C33.369 410.496 0.273438 335.229 0.273438 250C0.273438 111.929 87.1302 0 194.273 0C262.305 0 322.158 45.1273 356.79 113.42C363.069 125.802 358.21 140.333 348.62 150.371C330.381 169.463 322.182 191.971 331.266 211.451C338.258 226.446 355.712 234.707 375.61 236.937C382.498 237.709 388.273 243.069 388.273 250C388.273 334.764 355.538 409.675 305.47 454.884Z"
+                  transform="translate(194, 250) scale(0.8) translate(-210, -246) rotate(-2, 0, 0)"
+                />
+                <text>
+                  <textPath class="curvedText" href="#curve" startOffset="18%">Изготовление на заказ</textPath>
+                </text>
+              </svg>
+            </div>
+            <div class="categoryQuanity">
+              <div class="quanityTextWrapper">
+                <span class="number">5</span>
+                <span class="quanityMeasure">шт</span>
+              </div>
+              <svg class="quanityBackground" width="81" height="75" viewBox="0 0 81 75" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <ellipse cx="40.3468" cy="37.3136" rx="40.5" ry="36" transform="rotate(-23 40.3468 37.3136)" fill="#FA8FEF" />
+              </svg>
+            </div>
+            <div class="circleButton">
+              <svg width="22" height="34" viewBox="0 0 22 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M21 22.6667C19.94 22.6667 18.3571 23.7051 17.0286 24.7562C15.3143 26.1077 13.8186 27.7227 12.6771 29.5743C11.8214 30.9627 11 32.6457 11 34M11 34C11 32.6457 10.1786 30.9612 9.32286 29.5743C8.18 27.7227 6.68429 26.1077 4.97286 24.7562C3.64286 23.7051 2.05714 22.6667 1 22.6667M11 34L11 -1.11265e-06"
+                  stroke-width="2"
+                  strokeLinecap="round"
+                />
+              </svg>
+            </div>
+            <script>
+              $(document).ready(function () {
+                $(".categoryCard:nth-child(2) .circleButton").click(function () {
+                  $(".quanity").text($(".categoryCard:nth-child(2) .categoryQuanity .quanityTextWrapper .number").text().split(" ")[0] + " позиций в категории");
+                });
+              });
+            </script>
+          </li>
+          <li class="categoryCard">
+            <h2>Кресла и стулья</h2>
+            <div class="categoryPreview">
+              <img src="/images/chairs/chair-2.webp" alt="Кресло" loading="lazy" />
+              <svg width="389" height="462" viewBox="0 0 389 462" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M83.9023 455.625C99.1324 469.226 121.539 458.556 132.362 441.241C146.921 417.948 169.466 403 194.773 403C219.899 403 242.302 417.735 256.871 440.741C267.807 458.011 290.298 468.583 305.47 454.884C355.538 409.675 388.273 334.764 388.273 250C388.273 243.069 382.498 237.709 375.61 236.937C355.712 234.707 338.258 226.446 331.266 211.451C322.182 191.971 330.381 169.463 348.62 150.371C358.21 140.333 363.069 125.802 356.79 113.42C322.158 45.1273 262.305 0 194.273 0C87.1302 0 0.273438 111.929 0.273438 250C0.273438 335.229 33.369 410.496 83.9023 455.625Z"
+                  fill="#CBB6FF"
+                />
+                <path
+                  id="curve"
+                  d="M305.47 454.884C290.298 468.583 267.807 458.011 256.871 440.741C242.302 417.735 219.899 403 194.773 403C169.466 403 146.921 417.948 132.362 441.241C121.539 458.556 99.1324 469.226 83.9023 455.625C33.369 410.496 0.273438 335.229 0.273438 250C0.273438 111.929 87.1302 0 194.273 0C262.305 0 322.158 45.1273 356.79 113.42C363.069 125.802 358.21 140.333 348.62 150.371C330.381 169.463 322.182 191.971 331.266 211.451C338.258 226.446 355.712 234.707 375.61 236.937C382.498 237.709 388.273 243.069 388.273 250C388.273 334.764 355.538 409.675 305.47 454.884Z"
+                  transform="translate(194, 250) scale(0.8) translate(-210, -246) rotate(-2, 0, 0)"
+                />
+                <text>
+                  <textPath class="curvedText" href="#curve" startOffset="18%">Изготовление на заказ</textPath>
+                </text>
+              </svg>
+            </div>
+            <div class="categoryQuanity">
+              <div class="quanityTextWrapper">
+                <span class="number">4</span>
+                <span class="quanityMeasure">шт</span>
+              </div>
+              <svg class="quanityBackground" width="81" height="75" viewBox="0 0 81 75" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <ellipse cx="40.3468" cy="37.3136" rx="40.5" ry="36" transform="rotate(-23 40.3468 37.3136)" fill="#FA8FEF" />
+              </svg>
+            </div>
+            <div class="circleButton">
+              <svg width="22" height="34" viewBox="0 0 22 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M21 22.6667C19.94 22.6667 18.3571 23.7051 17.0286 24.7562C15.3143 26.1077 13.8186 27.7227 12.6771 29.5743C11.8214 30.9627 11 32.6457 11 34M11 34C11 32.6457 10.1786 30.9612 9.32286 29.5743C8.18 27.7227 6.68429 26.1077 4.97286 24.7562C3.64286 23.7051 2.05714 22.6667 1 22.6667M11 34L11 -1.11265e-06"
+                  stroke-width="2"
+                  strokeLinecap="round"
+                />
+              </svg>
+            </div>
+            <script>
+              $(document).ready(function () {
+                $(".categoryCard:nth-child(3) .circleButton").click(function () {
+                  $(".quanity").text($(".categoryCard:nth-child(3) .categoryQuanity .quanityTextWrapper .number").text().split(" ")[0] + " позиций в категории");
+                });
+              });
+            </script>
+          </li>
+          <li class="categoryCard">
+            <h2>Столы и тумбы</h2>
+            <div class="categoryPreview">
+              <img src="/images/tables/table-2.webp" alt="Стол" loading="lazy" />
+              <svg width="389" height="462" viewBox="0 0 389 462" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M83.9023 455.625C99.1324 469.226 121.539 458.556 132.362 441.241C146.921 417.948 169.466 403 194.773 403C219.899 403 242.302 417.735 256.871 440.741C267.807 458.011 290.298 468.583 305.47 454.884C355.538 409.675 388.273 334.764 388.273 250C388.273 243.069 382.498 237.709 375.61 236.937C355.712 234.707 338.258 226.446 331.266 211.451C322.182 191.971 330.381 169.463 348.62 150.371C358.21 140.333 363.069 125.802 356.79 113.42C322.158 45.1273 262.305 0 194.273 0C87.1302 0 0.273438 111.929 0.273438 250C0.273438 335.229 33.369 410.496 83.9023 455.625Z"
+                  fill="#CBB6FF"
+                />
+                <path
+                  id="curve"
+                  d="M305.47 454.884C290.298 468.583 267.807 458.011 256.871 440.741C242.302 417.735 219.899 403 194.773 403C169.466 403 146.921 417.948 132.362 441.241C121.539 458.556 99.1324 469.226 83.9023 455.625C33.369 410.496 0.273438 335.229 0.273438 250C0.273438 111.929 87.1302 0 194.273 0C262.305 0 322.158 45.1273 356.79 113.42C363.069 125.802 358.21 140.333 348.62 150.371C330.381 169.463 322.182 191.971 331.266 211.451C338.258 226.446 355.712 234.707 375.61 236.937C382.498 237.709 388.273 243.069 388.273 250C388.273 334.764 355.538 409.675 305.47 454.884Z"
+                  transform="translate(194, 250) scale(0.8) translate(-210, -246) rotate(-2, 0, 0)"
+                />
+                <text>
+                  <textPath class="curvedText" href="#curve" startOffset="18%">Изготовление на заказ</textPath>
+                </text>
+              </svg>
+            </div>
+            <div class="categoryQuanity">
+              <div class="quanityTextWrapper">
+                <span class="number">10</span>
+                <span class="quanityMeasure">шт</span>
+              </div>
+              <svg class="quanityBackground" width="81" height="75" viewBox="0 0 81 75" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <ellipse cx="40.3468" cy="37.3136" rx="40.5" ry="36" transform="rotate(-23 40.3468 37.3136)" fill="#FA8FEF" />
+              </svg>
+            </div>
+            <div class="circleButton">
+              <svg width="22" height="34" viewBox="0 0 22 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M21 22.6667C19.94 22.6667 18.3571 23.7051 17.0286 24.7562C15.3143 26.1077 13.8186 27.7227 12.6771 29.5743C11.8214 30.9627 11 32.6457 11 34M11 34C11 32.6457 10.1786 30.9612 9.32286 29.5743C8.18 27.7227 6.68429 26.1077 4.97286 24.7562C3.64286 23.7051 2.05714 22.6667 1 22.6667M11 34L11 -1.11265e-06"
+                  stroke-width="2"
+                  strokeLinecap="round"
+                />
+              </svg>
+            </div>
+            <script>
+              $(document).ready(function () {
+                $(".categoryCard:nth-child(4) .circleButton").click(function () {
+                  $(".quanity").text($(".categoryCard:nth-child(4) .categoryQuanity .quanityTextWrapper .number").text().split(" ")[0] + " позиций в категории");
+                });
+              });
+            </script>
+          </li>
+        </ul>
+        <div class="products expanded">
+          <div class="menu">
+            <form method="get">
+              <details class="filters">
+                <summary>
+                  <svg width="25" height="25" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                      <mask height="100%" width="100%" y="0" x="0" id="mask1" fill="white">
+                        <path
+                          d="m21.9444,3.07022l-16.88884,0c-0.27996,0 -0.54844,0.1109 -0.74639,0.30831c-0.19796,0.19741 -0.30917,0.46515 -0.30917,0.74433l0,2.72634c0,0.55053 0.22483,1.09158 0.61539,1.48106l5.71791,5.70216l0,7.9853c0.0002,0.1794 0.0463,0.3557 0.134,0.5123c0.0876,0.1566 0.2139,0.2883 0.3668,0.3826c0.153,0.0944 0.3275,0.1482 0.5072,0.1565c0.1796,0.0082 0.3584,-0.0294 0.5194,-0.1093l4.2222,-2.1052c0.3579,-0.179 0.5838,-0.5432 0.5838,-0.9422l0,-5.88l5.7179,-5.70216c0.3906,-0.38948 0.6154,-0.93053 0.6154,-1.48106l0,-2.72634c0,-0.27918 -0.1112,-0.54692 -0.3092,-0.74433c-0.1979,-0.19741 -0.4664,-0.30831 -0.7464,-0.30831z"
+                          fill="white"
+                        />
+                      </mask>
+                    </defs>
+                    <path
+                      d="M21.9444 3H5.05556C4.7756 3 4.50712 3.1109 4.30917 3.30831C4.11121 3.50572 4 3.77346 4 4.05264V6.77898C4 7.32951 4.22483 7.87056 4.61539 8.26004L10.3333 13.9622V21.9475C10.3335 22.1269 10.3796 22.3032 10.4673 22.4598C10.5549 22.6164 10.6812 22.7481 10.8341 22.8424C10.9871 22.9368 11.1616 22.9906 11.3413 22.9989C11.5209 23.0071 11.6997 22.9695 11.8607 22.8896L16.0829 20.7844C16.4408 20.6054 16.6667 20.2412 16.6667 19.8422V13.9622L22.3846 8.26004C22.7752 7.87056 23 7.32951 23 6.77898V4.05264C23 3.77346 22.8888 3.50572 22.6908 3.30831C22.4929 3.1109 22.2244 3 21.9444 3ZM14.8648 12.7822C14.7666 12.8798 14.6887 12.9958 14.6357 13.1235C14.5826 13.2512 14.5554 13.3881 14.5556 13.5264V19.1917L12.4444 20.2443V13.5264C12.4446 13.3881 12.4174 13.2512 12.3643 13.1235C12.3113 12.9958 12.2334 12.8798 12.1352 12.7822L6.11111 6.77898V5.10528H20.8899L20.8921 6.77161L14.8648 12.7822Z"
+                      fill="#D9FF5A"
+                    />
+                    <rect class="hoverableRect" x="0" y="0" width="100%" height="100%" mask="url(#mask1)" />
+                  </svg>
+                  Фильтры
+                </summary>
+                <ul>
+                  <li class="priceFilter">
+                    Цена
+                    <div class="displays">
+                      <label id="min-price">от 67 000</label>
+                      <label id="max-price">от 521 000</label>
+                    </div>
+                    <div class="slider">
+                      <input type="range" name="minPrice" id="min-slider" min="0" max="800000" step="1000" value="67000" />
+                      <div class="thumbDotMin"></div>
+                      <input type="range" name="maxPrice" id="max-slider" min="0" max="800000" step="1000" value="521000" />
+                      <div class="thumbDotMax"></div>
+                    </div>
+                    <script>
+                      $(document).ready(function () {
+                        const $minPriceInput = $("#min-price");
+                        const $maxPriceInput = $("#max-price");
+                        const $minSlider = $("#min-slider");
+                        const $maxSlider = $("#max-slider");
+
+                        function formatNumber(value) {
+                          return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+                        }
+
+                        function updateSlider() {
+                          const minPercent = ($minSlider.val() / $minSlider.attr("max")) * 100;
+                          const maxPercent = ($maxSlider.val() / $maxSlider.attr("max")) * 100;
+                          $(".slider").width();
+
+                          $(".slider").css({
+                            "--min-thumb-position": `${minPercent}%`,
+                            "--max-thumb-position": `${maxPercent}%`,
+                            "--min-thumb-dot-position": `${(minPercent * $(".slider").width()) / ($(".slider").width() + 27.7)}%`,
+                            "--max-thumb-dot-position": `${(maxPercent * $(".slider").width()) / ($(".slider").width() + 27.7)}%`,
+                          });
+                        }
+
+                        $minSlider.on("input", function () {
+                          const minValue = parseInt($minSlider.val());
+                          const maxValue = parseInt($maxSlider.val());
+
+                          if (minValue > maxValue) {
+                            $minSlider.val(maxValue);
+                            $minPriceInput.text("от " + formatNumber(maxValue));
+                          } else {
+                            $minPriceInput.text("от " + formatNumber(minValue));
+                          }
+
+                          updateSlider();
+                        });
+
+                        $maxSlider.on("input", function () {
+                          const minValue = parseInt($minSlider.val());
+                          const maxValue = parseInt($maxSlider.val());
+
+                          if (maxValue < minValue) {
+                            $maxSlider.val(minValue);
+                            $maxPriceInput.text("до " + formatNumber(minValue));
+                          } else {
+                            $maxPriceInput.text("до " + formatNumber(maxValue));
+                          }
+
+                          updateSlider();
+                        });
+
+                        updateSlider();
+                      });
+                    </script>
+                  </li>
+                  <li class="colorFilter">
+                    Цвета
+                    <ul>
+                      <li>
+                        <label>
+                          <pre><input type="checkbox" name="color[0]" />Зеленый <span>(580)</span></pre>
+                        </label>
+                      </li>
+                      <li>
+                        <label>
+                          <pre><input type="checkbox" name="color[1]" />Синий <span>(1296)</span></pre>
+                        </label>
+                      </li>
+                      <li>
+                        <label>
+                          <pre><input type="checkbox" name="color[2]" />Синий <span>(2340)</span></pre>
+                        </label>
+                      </li>
+                      <li>
+                        <label>
+                          <pre><input type="checkbox" name="color[3]" />Розовый <span>(656)</span></pre>
+                        </label>
+                      </li>
+                      <li>
+                        <label>
+                          <pre><input type="checkbox" name="color[4]" />Лавандовый <span>(1)</span></pre>
+                        </label>
+                      </li>
+                      <li>
+                        <label>
+                          <pre><input type="checkbox" name="color[5]" />Голубой <span>(113)</span></pre>
+                        </label>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </details>
+            </form>
+            <span class="quanity"></span>
           </div>
-          <div class="circleButton">
-            <svg width="22" height="34" viewBox="0 0 22 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M21 22.6667C19.94 22.6667 18.3571 23.7051 17.0286 24.7562C15.3143 26.1077 13.8186 27.7227 12.6771 29.5743C11.8214 30.9627 11 32.6457 11 34M11 34C11 32.6457 10.1786 30.9612 9.32286 29.5743C8.18 27.7227 6.68429 26.1077 4.97286 24.7562C3.64286 23.7051 2.05714 22.6667 1 22.6667M11 34L11 -1.11265e-06"
-                stroke-width="2"
-                strokeLinecap="round"
-              />
-            </svg>
-          </div>
-        </li>
-      </ul>
-    </section>
+          <ul></ul>
+          <button class="moreButton">
+            <div>
+              Загрузить еще
+              <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18.9296 14L12.9316 20L6.93359 14" stroke="#D9FF5A" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M12.9336 4V21" stroke="#D9FF5A" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </div>
+          </button>
+          <script>
+            $(document).ready(function () {
+              $(".circleButton").click(function () {
+                $(".products").addClass("expanded");
+              });
+
+              $("#moreButton").click(function () {
+                $(".products .menu > ul").toggleClass("expanded");
+              });
+            });
+          </script>
+        </div>
+      </section>
+    </main>
     <footer class="mainFooter">
       <span class="text">@2023</span>
       <span class="text">Все права защищены</span>

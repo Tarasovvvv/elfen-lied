@@ -14,8 +14,7 @@ ul {
   font-style: normal;
 }
 
-button,
-label {
+button {
   cursor: pointer;
 }
 
@@ -98,8 +97,11 @@ a {
   --desk-font-size-subtitle: 15px;
   --desk-font-size-currency: 20px;
   --desk-font-size-background: 212px;
+  --desk-font-size-filter-title: 18px;
   --desk-font-size-quanity-measure: 15px;
   --desk-font-size-description-text: 15px;
+  --desk-font-size-filter-item-text: 18px;
+  --desk-font-size-filter-item-title: 20px;
   --desk-font-size-middle-background: 205px;
   --desk-font-size-all-rights-resereved: 18px;
   --desk-font-size-text-caps-no-spacing: 18px;
@@ -226,7 +228,7 @@ body {
   color: var(--color-white);
 }
 
-.banner {
+.banner ul {
   display: flex;
   gap: 20px;
   width: auto;
@@ -561,7 +563,7 @@ body {
   color: var(--color-white);
   text-transform: uppercase;
 }
-.categories ul {
+.categories > ul {
   display: flex;
   gap: 30px;
 }
@@ -671,6 +673,242 @@ body {
 .circleButton svg {
   stroke: var(--color-lime);
   transition: stroke 200ms ease-out;
+}
+
+.products {
+  display: none;
+  flex-direction: column;
+  gap: 70px;
+  font-family: "Euclid Circular A";
+  font-weight: 500;
+  color: var(--color-white);
+}
+.products.expanded {
+  display: flex;
+}
+.products .menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.products .menu > span {
+  font-size: var(--desk-font-size-subtitle);
+}
+
+.hoverableRect {
+  fill: transparent;
+  transition: fill 200ms ease;
+}
+
+summary {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: var(--desk-font-size-filter-title);
+  text-transform: uppercase;
+  user-select: none;
+  list-style: none;
+  cursor: pointer;
+}
+summary:hover .hoverableRect {
+  fill: var(--color-lime);
+}
+
+.filters {
+  position: relative;
+  line-height: 1.5;
+  z-index: 11;
+}
+.filters[open] summary {
+  margin-bottom: 32px;
+}
+.filters > ul {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  width: 320px;
+  font-size: var(--desk-font-size-filter-item-title);
+  line-height: 1.5;
+  text-align: left;
+}
+.filters > ul > li {
+  display: flex;
+  flex-direction: column;
+  padding: 22px 30px 24px;
+  border-radius: 40px;
+  background-color: var(--color-lavender-highlight);
+}
+
+.priceFilter {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+.priceFilter label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 123px;
+  height: 40px;
+  border-radius: 11px;
+  font-family: "Euclid Circular A";
+  font-size: var(--desk-font-size-filter-item-text);
+  font-weight: 500;
+  text-align: center;
+  color: var(--color-white);
+  background-color: var(--color-lavender);
+  outline: none;
+  cursor: default;
+}
+
+.displays {
+  display: flex;
+  gap: 14px;
+}
+
+.slider {
+  position: relative;
+  height: 3px;
+  width: 100%;
+  margin: 11px 0;
+  border-radius: 72px;
+  background-color: var(--color-white);
+}
+.slider .thumbDotMin,
+.slider .thumbDotMax {
+  position: absolute;
+  top: -4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 11px;
+  height: 11px;
+  border-radius: 100%;
+  background-color: var(--color-lime);
+  z-index: 1;
+  pointer-events: none;
+}
+.slider .thumbDotMin {
+  left: calc(7px + var(--min-thumb-dot-position));
+  z-index: 0;
+}
+.slider .thumbDotMax {
+  left: calc(7px + var(--max-thumb-dot-position));
+}
+.slider input[type=range] {
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background: none;
+  pointer-events: none;
+  appearance: none;
+}
+.slider input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border: 2px solid var(--color-lime);
+  background-color: var(--color-lavender);
+  border-radius: 50%;
+  cursor: pointer;
+  pointer-events: auto;
+  box-shadow: 2px 4px 13px 0px var(--color-lavender);
+}
+.slider input[type=range]::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border: 2px solid var(--color-lime);
+  background-color: var(--color-lavender);
+  border-radius: 50%;
+  cursor: pointer;
+  pointer-events: auto;
+  box-shadow: 2px 4px 13px 0px var(--color-lavender);
+}
+.slider::before {
+  content: "";
+  position: absolute;
+  height: 3px;
+  background-color: var(--color-lime);
+  left: var(--min-thumb-position);
+  right: calc(100% - var(--max-thumb-position));
+}
+
+.colorFilter {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.colorFilter ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.colorFilter ul li {
+  font-size: var(--desk-font-size-filter-item-text);
+}
+.colorFilter ul li input {
+  content: "";
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  position: relative;
+  width: 14px;
+  height: 14px;
+  margin-right: 10px;
+  border: 2px solid var(--color-lavender);
+  border-radius: 4px;
+  background-color: transparent;
+  transition: background-color 200ms ease;
+  user-select: none;
+  cursor: pointer;
+}
+.colorFilter ul li input:checked {
+  content: "";
+  border: 2px solid var(--color-lavender);
+  background-color: var(--color-lime);
+}
+.colorFilter ul li pre {
+  font-family: "Euclid Circular A";
+  font-size: var(--desk-font-size-filter-item-text);
+  font-weight: 500;
+  cursor: pointer;
+  line-height: 1.5;
+}
+.colorFilter ul li span {
+  color: var(--color-white-semi-transparent);
+}
+
+.moreButton {
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  justify-content: center;
+  font-family: "Euclid Circular A";
+  font-weight: 500;
+  font-size: var(--desk-font-size-button);
+  color: var(--color-white);
+  background-color: transparent;
+}
+.moreButton div {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  transform: translate(0, 15%);
+}
+.moreButton::after {
+  content: "";
+  z-index: -1;
+  width: 319px;
+  height: 135px;
+  border: 2px solid var(--color-lime);
+  border-radius: 50%;
+  background-color: var(--color-white-almost-transparent);
+  transform: rotate(-13deg);
+  backdrop-filter: blur(30px);
 }
 
 /*# sourceMappingURL=main.css.map */
