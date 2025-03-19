@@ -130,9 +130,32 @@ a {
 }
 
 body {
-  max-width: 100%;
+  position: relative;
   background-color: var(--color-lavender);
-  overflow-x: hidden;
+}
+body > div {
+  position: absolute;
+}
+body.noScroll {
+  overflow-y: hidden;
+}
+
+.root {
+  top: 0;
+  left: 0;
+  z-index: 0;
+  background-color: var(--color-lavender);
+  width: 100%;
+  scrollbar-gutter: stable;
+}
+
+.modalRoot {
+  z-index: 100;
+  scrollbar-gutter: unset;
+  pointer-events: none;
+}
+.modalRoot > div.open {
+  pointer-events: all;
 }
 
 .number {
@@ -1016,6 +1039,7 @@ summary:hover .hoverableRect {
   align-items: center;
   height: 260px;
   margin-bottom: 32px;
+  cursor: pointer;
 }
 .product .imgWrapper img {
   width: auto;
@@ -1322,9 +1346,8 @@ summary:hover .hoverableRect {
 
 .cartModal {
   position: absolute;
-  top: 116px;
-  right: 61px;
-  z-index: 10;
+  top: 115px;
+  left: 1225px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -1357,6 +1380,12 @@ summary:hover .hoverableRect {
   height: 14px;
   font-size: var(--desk-font-size-currency);
 }
+.cartModal > .closeButton {
+  position: absolute;
+  top: 32px;
+  right: 32px;
+  background-color: transparent;
+}
 
 .products {
   display: flex;
@@ -1367,12 +1396,12 @@ summary:hover .hoverableRect {
 .products .product {
   display: flex;
   flex-direction: row;
-  gap: 41px;
-  width: 100%;
+  justify-content: space-between;
+  width: 522px;
   height: 145px;
 }
 .products .product img {
-  object-fit: cover;
+  max-width: 129px;
   height: 142px;
 }
 
@@ -1380,7 +1409,7 @@ summary:hover .hoverableRect {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 100%;
+  width: 393px;
 }
 .productInner svg {
   margin-top: 4px;
@@ -1493,13 +1522,6 @@ summary:hover .hoverableRect {
   content: "+";
 }
 
-.cartCloseButton {
-  position: absolute;
-  top: 32px;
-  right: 32px;
-  background-color: transparent;
-}
-
 .cartBottom {
   display: flex;
   align-items: center;
@@ -1545,6 +1567,195 @@ summary:hover .hoverableRect {
 .orderButton span {
   position: absolute;
   transform: rotate(6deg);
+}
+
+.productModal {
+  position: fixed;
+  z-index: 11;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 30px 60px;
+  font-family: "Euclid Circular A";
+  font-weight: 500;
+  font-size: var(--desk-font-size-text-spacing);
+  text-transform: uppercase;
+  opacity: 0;
+  transition: opacity 200ms ease-out;
+  color: var(--color-white);
+  background-color: var(--color-lavender);
+}
+.productModal.open {
+  opacity: 1;
+}
+.productModal .currency {
+  display: inline-flex;
+  align-items: center;
+  height: 14px;
+  font-size: var(--desk-font-size-currency);
+}
+.productModal img {
+  position: absolute;
+  top: 96px;
+  left: 50%;
+  z-index: 1;
+  height: 666px;
+  transform: translate(-50%);
+}
+.productModal > div {
+  display: flex;
+  justify-content: space-between;
+}
+.productModal > div:nth-child(1) {
+  margin-bottom: 74px;
+  height: 23px;
+}
+.productModal > div:nth-child(1) span {
+  letter-spacing: 0.1em;
+}
+.productModal > div:nth-child(1) svg {
+  align-self: flex-start;
+}
+.productModal > div:nth-child(2) {
+  font-size: var(--desk-font-size-subtitle);
+  height: 79px;
+  margin-bottom: 73px;
+}
+.productModal > div:nth-child(2) button {
+  border-radius: 100%;
+  background-color: transparent;
+}
+.productModal > div:nth-child(2) button .hearth {
+  stroke: transparent;
+  fill: transparent;
+}
+.productModal > div:nth-child(2) button path {
+  fill: var(--color-lime);
+}
+.productModal > div:nth-child(2) button circle {
+  stroke: var(--color-lime);
+}
+.productModal > div:nth-child(2) button.pressed .hearth {
+  stroke: rgb(255, 177, 247);
+  fill: var(--color-white);
+}
+.productModal > div:nth-child(2) button.pressed path {
+  fill: transparent;
+}
+.productModal > div:nth-child(2) button.pressed circle {
+  stroke: rgb(255, 177, 247);
+}
+.productModal > div:nth-child(3) {
+  display: flex;
+  align-items: center;
+  margin-bottom: 120px;
+  font-size: 18px;
+  letter-spacing: 0.1em;
+  height: 23px;
+}
+.productModal > div:nth-child(3) > div:nth-child(1) {
+  display: flex;
+  height: 23px;
+}
+.productModal > div:nth-child(3) > div:nth-child(1) > span:nth-child(1) {
+  margin-right: 30px;
+}
+.productModal > div:nth-child(3) > div:nth-child(1) div {
+  margin-right: 12px;
+}
+.productModal > div:nth-child(3) .color {
+  width: 22px;
+  height: 22px;
+  border: 3px solid var(--color-white);
+  border-radius: 100%;
+  background-color: rgb(147, 129, 216);
+}
+.productModal > div:nth-child(4) {
+  justify-content: center;
+  height: 248px;
+  margin-bottom: 115px;
+  font-family: "Floreste";
+  font-weight: 400;
+  font-size: 354px;
+  text-transform: uppercase;
+  text-wrap: nowrap;
+  color: rgba(203, 182, 255, 0.4);
+}
+.productModal > div:nth-child(4) span {
+  transform: translate(0, -10px);
+}
+.productModal > div:nth-child(5) {
+  align-items: center;
+  justify-content: flex-start;
+}
+.productModal > div:nth-child(5) > div:nth-child(1) {
+  width: 346px;
+  margin-right: 343px;
+  line-height: 1.54;
+  font-size: 20px;
+  text-transform: none;
+}
+.productModal > div:nth-child(5) > div:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  margin-right: 333px;
+  font-family: "Floreste";
+  font-size: 100px;
+}
+.productModal > div:nth-child(5) > div:nth-child(2) > span {
+  display: inline-flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: 70px;
+  transform: translate(0, -5%);
+}
+.productModal > div:nth-child(5) > div:nth-child(2) > div {
+  display: flex;
+  justify-content: center;
+  height: 28px;
+}
+.productModal > div:nth-child(5) > div:nth-child(2) > div .number,
+.productModal > div:nth-child(5) > div:nth-child(2) > div .currency {
+  color: var(--color-lime);
+}
+.productModal .closeButtonWrapper {
+  justify-content: flex-end;
+}
+.productModal .closeButtonWrapper .closeButton {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+  font: inherit;
+  text-transform: uppercase;
+  color: rgba(218, 209, 242, 0.815);
+  background-color: transparent;
+}
+.productModal .buyButton {
+  position: relative;
+  width: 357px;
+  height: 156px;
+  background-color: transparent;
+}
+.productModal .buyButton .ellipse {
+  top: 50%;
+  left: 50%;
+  width: 356px;
+  height: 135px;
+  transform: translate(-50%, -50%);
+}
+.productModal .buyButton .ellipse:nth-child(1) {
+  z-index: 3;
+  transform: rotate(-2deg);
+}
+.productModal .buyButton .ellipse:nth-child(2) {
+  backdrop-filter: blur(150px);
+  background-color: var(--color-white-almost-transparent);
+  z-index: 2;
+  transform: rotate(-13deg);
+}
+.productModal .buyButton .title {
+  letter-spacing: 0.04em;
 }
 
 /*# sourceMappingURL=main.css.map */

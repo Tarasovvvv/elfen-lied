@@ -2,9 +2,8 @@
 
 .cartModal {
   position: absolute;
-  top: 116px;
-  right: 61px;
-  z-index: 10;
+  top: 115px;
+  left: 1225px;
 
   display: flex;
   flex-direction: column;
@@ -47,6 +46,14 @@
 
     font-size: var(--desk-font-size-currency);
   }
+
+  & > .closeButton {
+    position: absolute;
+    top: 32px;
+    right: 32px;
+
+    background-color: transparent;
+  }
 }
 
 .products {
@@ -59,13 +66,13 @@
   & .product {
     display: flex;
     flex-direction: row;
-    gap: 41px;
+    justify-content: space-between;
 
-    width: 100%;
+    width: 522px;
     height: 145px;
 
     & img {
-      object-fit: cover;
+      max-width: 129px;
       height: 142px;
     }
   }
@@ -75,7 +82,8 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 100%;
+
+  width: 393px;
 
   & svg {
     margin-top: 4px;
@@ -207,14 +215,6 @@
       content: "+";
     }
   }
-}
-
-.cartCloseButton {
-  position: absolute;
-  top: 32px;
-  right: 32px;
-
-  background-color: transparent;
 }
 
 .cartBottom {

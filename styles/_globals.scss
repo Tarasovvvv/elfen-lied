@@ -1,10 +1,35 @@
 @use "helpers" as *;
 
 body {
-  max-width: 100%;
+  position: relative;
   background-color: var(--color-lavender);
 
-  overflow-x: hidden;
+  & > div {
+    position: absolute;
+  }
+
+  &.noScroll {
+    overflow-y: hidden;
+  }
+}
+
+.root {
+  top: 0;
+  left: 0;
+  z-index: 0;
+  background-color: var(--color-lavender);
+  width: 100%;
+  scrollbar-gutter: stable;
+}
+
+.modalRoot {
+  z-index: 100;
+  scrollbar-gutter: unset;
+  pointer-events: none;
+
+  & > div.open {
+    pointer-events: all;
+  }
 }
 
 .number {

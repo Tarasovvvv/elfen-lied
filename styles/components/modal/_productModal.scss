@@ -1,0 +1,245 @@
+.productModal {
+  position: fixed;
+  z-index: 11;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  padding: 30px 60px;
+
+  font-family: "Euclid Circular A";
+  font-weight: 500;
+  font-size: var(--desk-font-size-text-spacing);
+  text-transform: uppercase;
+
+  opacity: 0;
+
+  transition: opacity 200ms ease-out;
+
+  color: var(--color-white);
+  background-color: var(--color-lavender);
+
+  &.open {
+    opacity: 1;
+  }
+
+  & .currency {
+    display: inline-flex;
+    align-items: center;
+    height: 14px;
+
+    font-size: var(--desk-font-size-currency);
+  }
+
+  & img {
+    position: absolute;
+    top: 96px;
+    left: 50%;
+    z-index: 1;
+
+    height: 666px;
+
+    transform: translate(-50%);
+  }
+
+  & > div {
+    display: flex;
+    justify-content: space-between;
+
+    &:nth-child(1) {
+      margin-bottom: 74px;
+      height: 23px;
+      span {
+        letter-spacing: 0.1em;
+      }
+
+      svg {
+        align-self: flex-start;
+      }
+    }
+
+    &:nth-child(2) {
+      font-size: var(--desk-font-size-subtitle);
+      height: 79px;
+      margin-bottom: 73px;
+
+      button {
+        border-radius: 100%;
+        background-color: transparent;
+
+        .hearth {
+          stroke: transparent;
+          fill: transparent;
+        }
+        path {
+          fill: var(--color-lime);
+        }
+        circle {
+          stroke: var(--color-lime);
+        }
+
+        &.pressed {
+          .hearth {
+            stroke: rgb(255, 177, 247);
+            fill: var(--color-white);
+          }
+          path {
+            fill: transparent;
+          }
+          circle {
+            stroke: rgb(255, 177, 247);
+          }
+        }
+      }
+    }
+
+    &:nth-child(3) {
+      display: flex;
+      align-items: center;
+
+      margin-bottom: 120px;
+      font-size: 18px;
+      letter-spacing: 0.1em;
+
+      height: 23px;
+
+      & > div:nth-child(1) {
+        display: flex;
+        height: 23px;
+
+        & > span:nth-child(1) {
+          margin-right: 30px;
+        }
+
+        div {
+          margin-right: 12px;
+        }
+      }
+
+      & .color {
+        width: 22px;
+        height: 22px;
+        border: 3px solid var(--color-white);
+        border-radius: 100%;
+        background-color: rgb(147, 129, 216);
+      }
+    }
+
+    &:nth-child(4) {
+      justify-content: center;
+
+      height: 248px;
+      margin-bottom: 115px;
+
+      font-family: "Floreste";
+      font-weight: 400;
+      font-size: 354px;
+      text-transform: uppercase;
+      text-wrap: nowrap;
+      color: rgba(203, 182, 255, 0.4);
+
+      & span {
+        transform: translate(0, -10px);
+      }
+    }
+
+    &:nth-child(5) {
+      align-items: center;
+      justify-content: flex-start;
+
+      & > div {
+        &:nth-child(1) {
+          width: 346px;
+          margin-right: 343px;
+
+          line-height: 1.54;
+          font-size: 20px;
+
+          text-transform: none;
+        }
+
+        &:nth-child(2) {
+          display: flex;
+          flex-direction: column;
+          gap: 22px;
+
+          margin-right: 333px;
+
+          font-family: "Floreste";
+          font-size: 100px;
+
+          & > span {
+            display: inline-flex;
+            justify-content: center;
+            align-items: flex-start;
+            height: 70px;
+
+            transform: translate(0, -5%);
+          }
+
+          & > div {
+            display: flex;
+            justify-content: center;
+            height: 28px;
+
+            .number,
+            .currency {
+              color: var(--color-lime);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  & .closeButtonWrapper {
+    justify-content: flex-end;
+
+    & .closeButton {
+      display: flex;
+      align-items: center;
+      gap: 17px;
+
+      font: inherit;
+      text-transform: uppercase;
+      color: rgba(218, 209, 242, 0.815);
+      background-color: transparent;
+    }
+  }
+
+  .buyButton {
+    position: relative;
+
+    width: 357px;
+    height: 156px;
+
+    background-color: transparent;
+
+    .ellipse {
+      top: 50%;
+      left: 50%;
+      width: 356px;
+      height: 135px;
+
+      transform: translate(-50%, -50%);
+    }
+
+    & .ellipse:nth-child(1) {
+      z-index: 3;
+      transform: rotate(-2deg);
+    }
+
+    & .ellipse:nth-child(2) {
+      backdrop-filter: blur(150px);
+      background-color: var(--color-white-almost-transparent);
+
+      z-index: 2;
+      transform: rotate(-13deg);
+    }
+
+    & .title {
+      letter-spacing: 0.04em;
+    }
+  }
+}
