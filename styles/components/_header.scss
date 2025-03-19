@@ -9,7 +9,7 @@
   margin-left: 60px;
   margin-right: 123px;
 
-  z-index: 1;
+  z-index: 3;
 }
 
 .mainNav {
@@ -69,6 +69,7 @@
 }
 
 .favourites {
+  position: relative;
   grid-area: favourites;
 }
 
@@ -77,5 +78,21 @@
 }
 
 .cart {
+  position: relative;
   grid-area: cart;
+}
+
+.itemsQuanity {
+  position: absolute;
+  right: -7px;
+  bottom: -2px;
+
+  font-family: "Euclid Circular A";
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--color-white);
+
+  &.empty {
+    display: none;
+  }
 }

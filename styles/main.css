@@ -40,6 +40,13 @@ a {
 }
 @font-face {
   font-family: "Euclid Circular A";
+  src: url(/fonts/euclid-circular-a-700.woff2) format(woff2);
+  font-weight: 700;
+  font-style: bold;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Euclid Circular A";
   src: url(/fonts/euclid-circular-a-500.woff2) format(woff2);
   font-weight: 500;
   font-style: normal;
@@ -98,6 +105,7 @@ a {
   --desk-font-size-subtitle: 15px;
   --desk-font-size-currency: 20px;
   --desk-font-size-background: 212px;
+  --desk-font-size-text-spacing: 20px;
   --desk-font-size-filter-title: 18px;
   --desk-font-size-quanity-measure: 15px;
   --desk-font-size-description-text: 15px;
@@ -124,6 +132,7 @@ a {
 body {
   max-width: 100%;
   background-color: var(--color-lavender);
+  overflow-x: hidden;
 }
 
 .number {
@@ -162,7 +171,7 @@ body {
   margin-top: 53px;
   margin-left: 60px;
   margin-right: 123px;
-  z-index: 1;
+  z-index: 3;
 }
 
 .mainNav {
@@ -220,6 +229,7 @@ body {
 }
 
 .favourites {
+  position: relative;
   grid-area: favourites;
 }
 
@@ -228,7 +238,21 @@ body {
 }
 
 .cart {
+  position: relative;
   grid-area: cart;
+}
+
+.itemsQuanity {
+  position: absolute;
+  right: -7px;
+  bottom: -2px;
+  font-family: "Euclid Circular A";
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--color-white);
+}
+.itemsQuanity.empty {
+  display: none;
 }
 
 .mainFooter {
@@ -943,6 +967,49 @@ summary:hover .hoverableRect {
   width: 274px;
   height: 415px;
 }
+.product > .color {
+  position: absolute;
+  top: 7px;
+  left: 2px;
+  width: 22px;
+  height: 22px;
+  border: 3px solid var(--color-white);
+  border-radius: 100%;
+  background-color: var(--color-white);
+}
+.product > .color.blue {
+  background-color: var(--color-light-blue);
+}
+.product > .color.lavender {
+  background-color: rgb(240, 179, 234);
+}
+.product > .color.orange {
+  background-color: rgb(251, 228, 202);
+}
+.product > .color.gold {
+  background-color: rgb(255, 196, 165);
+}
+.product > .color.green {
+  background-color: rgb(136, 227, 121);
+}
+.product > .color.pink {
+  background-color: rgb(250, 142, 239);
+}
+.product > .color.cyan {
+  background-color: rgb(41, 208, 217);
+}
+.product > .color.sky {
+  background-color: rgb(41, 208, 217);
+}
+.product > .color.black {
+  background-color: rgb(92, 84, 74);
+}
+.product > .color.ohra {
+  background-color: rgb(240, 223, 179);
+}
+.product > .color.gray {
+  background-color: rgb(202, 207, 251);
+}
 .product .imgWrapper {
   display: flex;
   justify-content: center;
@@ -985,50 +1052,6 @@ summary:hover .hoverableRect {
 }
 .product .sale .buyButton {
   align-items: flex-end;
-}
-
-.color {
-  position: absolute;
-  top: 7px;
-  left: 2px;
-  width: 22px;
-  height: 22px;
-  border: 3px solid var(--color-white);
-  border-radius: 100%;
-  background-color: var(--color-white);
-}
-.color.blue {
-  background-color: var(--color-light-blue);
-}
-.color.lavender {
-  background-color: rgb(240, 179, 234);
-}
-.color.orange {
-  background-color: rgb(251, 228, 202);
-}
-.color.gold {
-  background-color: rgb(255, 196, 165);
-}
-.color.green {
-  background-color: rgb(136, 227, 121);
-}
-.color.pink {
-  background-color: rgb(250, 142, 239);
-}
-.color.cyan {
-  background-color: rgb(41, 208, 217);
-}
-.color.sky {
-  background-color: rgb(41, 208, 217);
-}
-.color.black {
-  background-color: rgb(92, 84, 74);
-}
-.color.ohra {
-  background-color: rgb(240, 223, 179);
-}
-.color.gray {
-  background-color: rgb(202, 207, 251);
 }
 
 .productHr {
@@ -1259,7 +1282,7 @@ summary:hover .hoverableRect {
   object-fit: cover;
   max-width: 200%;
   max-height: 100%;
-  transition: transform 800ms ease-out;
+  transition: transform 600ms ease-out;
   transform-origin: right;
 }
 .cardRight .imgWrapper img:hover {
@@ -1295,6 +1318,231 @@ summary:hover .hoverableRect {
   width: 82px;
   height: 29px;
   text-align: left;
+}
+
+.cartModal {
+  position: absolute;
+  top: 70px;
+  right: -63px;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 619px;
+  border-radius: 30px;
+  padding: 48px;
+  font-family: "Euclid Circular A";
+  font-weight: 500;
+  font-size: var(--desk-font-size-text-spacing);
+  text-transform: uppercase;
+  opacity: 0;
+  transition: opacity 500ms ease-out;
+  color: var(--color-white);
+  background-color: rgba(51, 32, 101, 0.18);
+  backdrop-filter: blur(200px);
+}
+.cartModal.open {
+  opacity: 1;
+}
+.cartModal > .title {
+  margin-bottom: 53px;
+  letter-spacing: 0.1em;
+  margin-bottom: 53px;
+}
+.cartModal .currency {
+  display: inline-flex;
+  align-items: center;
+  height: 14px;
+  font-size: var(--desk-font-size-currency);
+}
+
+.products {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  margin-bottom: 83px;
+}
+.products .product {
+  display: flex;
+  flex-direction: row;
+  gap: 41px;
+  width: 100%;
+  height: 145px;
+}
+.products .product img {
+  object-fit: cover;
+  height: 142px;
+}
+
+.productInner {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+}
+.productInner svg {
+  margin-top: 4px;
+}
+
+.deleteButton {
+  display: flex;
+  background-color: transparent;
+}
+
+.innerDescription {
+  display: flex;
+  justify-content: space-between;
+}
+.innerDescription div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 13px;
+  height: 51px;
+}
+.innerDescription div .text {
+  display: inline-flex;
+  align-items: center;
+  height: 13px;
+  font-size: var(--desk-font-size-text);
+  text-transform: none;
+}
+.innerDescription div div {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 11px;
+}
+.innerDescription div div .color {
+  width: 14px;
+  height: 14px;
+  border: 2px solid var(--color-white);
+  border-radius: 100%;
+  background-color: var(--color-white);
+}
+.innerDescription div div .color.cyan {
+  background-color: rgb(41, 208, 217);
+}
+.innerDescription div div .color.ohra {
+  background-color: rgb(255, 196, 165);
+}
+.innerDescription div div .color.pink {
+  background-color: rgb(250, 142, 239);
+}
+.innerDescription div div title {
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+.innerHr {
+  height: 2px;
+  width: 100%;
+  background-color: var(--color-lime);
+  margin-top: 22px;
+  margin-bottom: 22px;
+}
+
+.innerBottom {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+.innerBottom .price {
+  display: flex;
+  align-items: flex-start;
+  gap: 7px;
+  height: 20px;
+  margin-bottom: 9px;
+}
+.innerBottom .number {
+  position: relative;
+  top: -0.5px;
+  display: inline-flex;
+  height: inherit;
+  font-size: 28px;
+}
+
+.innerButtonsWrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.innerButtonsWrapper span {
+  font-size: --desk-font-size-text;
+}
+.innerButtonsWrapper button {
+  width: 45px;
+  height: 45px;
+  border: 2px solid var(--color-white);
+  border-radius: 100%;
+  color: var(--color-white);
+  background-color: var(--color-white-almost-transparent);
+}
+.innerButtonsWrapper button:disabled {
+  cursor: default;
+  color: var(--color-white-semi-transparent);
+  border-color: var(--color-white-semi-transparent);
+  background-color: var(--color-white-almost-transparent);
+}
+.innerButtonsWrapper button:nth-child(1)::after {
+  content: "-";
+}
+.innerButtonsWrapper button:nth-child(3)::after {
+  content: "+";
+}
+
+.cartCloseButton {
+  position: absolute;
+  top: 32px;
+  right: 32px;
+  background-color: transparent;
+}
+
+.cartBottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 96px;
+}
+.cartBottom .number {
+  position: relative;
+  top: -1px;
+  height: 28px;
+}
+
+.orderSum {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  font-size: 20px;
+}
+.orderSum div {
+  display: flex;
+  gap: 7px;
+}
+
+.orderButton {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-white);
+  font-family: "Euclid Circular A";
+  font-weight: 500;
+  font-size: var(--desk-font-size-button);
+  line-height: 1.2;
+  letter-spacing: 0%;
+  text-align: center;
+  border: 2px solid var(--color-lime);
+  border-radius: 50%;
+  width: 189px;
+  height: 93px;
+  transform: rotate(-6deg);
+  background-color: rgba(235, 227, 255, 0.19);
+}
+.orderButton span {
+  position: absolute;
+  transform: rotate(6deg);
 }
 
 /*# sourceMappingURL=main.css.map */

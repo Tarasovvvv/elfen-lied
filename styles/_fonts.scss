@@ -19,6 +19,14 @@
 // Euclid Circular A
 @font-face {
   font-family: "Euclid Circular A";
+  src: url(/fonts/euclid-circular-a-700.woff2) format(woff2);
+  font-weight: 700;
+  font-style: bold;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Euclid Circular A";
   src: url(/fonts/euclid-circular-a-500.woff2) format(woff2);
   font-weight: 500;
   font-style: normal;

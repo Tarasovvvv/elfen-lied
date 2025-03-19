@@ -481,6 +481,63 @@ summary {
   width: 274px;
   height: 415px;
 
+  & > .color {
+    position: absolute;
+    top: 7px;
+    left: 2px;
+
+    width: 22px;
+    height: 22px;
+    border: 3px solid var(--color-white);
+    border-radius: 100%;
+
+    background-color: var(--color-white);
+
+    &.blue {
+      background-color: var(--color-light-blue);
+    }
+
+    &.lavender {
+      background-color: rgb(240, 179, 234);
+    }
+
+    &.orange {
+      background-color: rgb(251, 228, 202);
+    }
+
+    &.gold {
+      background-color: rgb(255, 196, 165);
+    }
+
+    &.green {
+      background-color: rgb(136, 227, 121);
+    }
+
+    &.pink {
+      background-color: rgb(250, 142, 239);
+    }
+
+    &.cyan {
+      background-color: rgb(41, 208, 217);
+    }
+
+    &.sky {
+      background-color: rgb(41, 208, 217);
+    }
+
+    &.black {
+      background-color: rgb(92, 84, 74);
+    }
+
+    &.ohra {
+      background-color: rgba(240, 223, 179, 1);
+    }
+
+    &.gray {
+      background-color: rgba(202, 207, 251, 1);
+    }
+  }
+
   & .imgWrapper {
     display: flex;
     justify-content: center;
@@ -531,63 +588,6 @@ summary {
     & .buyButton {
       align-items: flex-end;
     }
-  }
-}
-
-.color {
-  position: absolute;
-  top: 7px;
-  left: 2px;
-
-  width: 22px;
-  height: 22px;
-  border: 3px solid var(--color-white);
-  border-radius: 100%;
-
-  background-color: var(--color-white);
-
-  &.blue {
-    background-color: var(--color-light-blue);
-  }
-
-  &.lavender {
-    background-color: rgb(240, 179, 234);
-  }
-
-  &.orange {
-    background-color: rgb(251, 228, 202);
-  }
-
-  &.gold {
-    background-color: rgb(255, 196, 165);
-  }
-
-  &.green {
-    background-color: rgb(136, 227, 121);
-  }
-
-  &.pink {
-    background-color: rgb(250, 142, 239);
-  }
-
-  &.cyan {
-    background-color: rgb(41, 208, 217);
-  }
-
-  &.sky {
-    background-color: rgb(41, 208, 217);
-  }
-
-  &.black {
-    background-color: rgb(92, 84, 74);
-  }
-
-  &.ohra {
-    background-color: rgba(240, 223, 179, 1);
-  }
-
-  &.gray {
-    background-color: rgba(202, 207, 251, 1);
   }
 }
 
