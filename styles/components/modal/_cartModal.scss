@@ -2,8 +2,8 @@
 
 .cartModal {
   position: absolute;
-  top: 70px;
-  right: -63px;
+  top: 116px;
+  right: 61px;
   z-index: 10;
 
   display: flex;
@@ -26,9 +26,11 @@
   color: var(--color-white);
   background-color: rgba(51, 32, 101, 0.18);
   backdrop-filter: blur(200px);
+  pointer-events: none;
 
   &.open {
     opacity: 1;
+    pointer-events: all;
   }
 
   & > .title {

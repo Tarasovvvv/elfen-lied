@@ -1322,8 +1322,8 @@ summary:hover .hoverableRect {
 
 .cartModal {
   position: absolute;
-  top: 70px;
-  right: -63px;
+  top: 116px;
+  right: 61px;
   z-index: 10;
   display: flex;
   flex-direction: column;
@@ -1340,9 +1340,11 @@ summary:hover .hoverableRect {
   color: var(--color-white);
   background-color: rgba(51, 32, 101, 0.18);
   backdrop-filter: blur(200px);
+  pointer-events: none;
 }
 .cartModal.open {
   opacity: 1;
+  pointer-events: all;
 }
 .cartModal > .title {
   margin-bottom: 53px;
