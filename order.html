@@ -195,11 +195,11 @@
           </div>
         </div>
       </div>
-      <form class="order" action="/">
+      <form class="order" action="/orderSuccess.html">
         <h1>Оформление заказа</h1>
-        <input class="formInput" type="text" name="fio" placeholder="Ваше имя" />
-        <input class="formInput" type="email" name="email" placeholder="Адрес" />
-        <input class="formInput" type="tel" name="phone" placeholder="Телефон" />
+        <input class="formInput" type="text" name="fio" placeholder="Ваше имя" required />
+        <input class="formInput" type="text" name="address" placeholder="Адрес" required />
+        <input class="formInput" type="tel" name="phone" placeholder="Телефон" required />
         <button class="buyButton" type="submit">Заказть</button>
       </form>
     </div>

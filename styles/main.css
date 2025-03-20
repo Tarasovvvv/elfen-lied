@@ -1459,6 +1459,107 @@ summary:hover .hoverableRect {
   text-transform: lowercase;
 }
 
+.orderSuccess {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 145px;
+  width: 100%;
+  height: 100%;
+}
+.orderSuccess > div:nth-child(1) {
+  display: flex;
+  justify-content: space-between;
+  height: 23px;
+  margin-top: 322px;
+  padding: 0 60px;
+  color: var(--color-white);
+  font-family: "Euclid Circular A";
+  font-weight: 500;
+  font-size: var(--desk-font-size-tex);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.orderSuccess > div:nth-child(1) span:nth-child(1) {
+  animation: slideLeft 800ms ease;
+}
+.orderSuccess > div:nth-child(1) span:nth-child(2) {
+  animation: slideRight 800ms ease;
+}
+.orderSuccess > div:nth-child(2) {
+  text-align: center;
+  overflow-x: hidden;
+}
+.orderSuccess > div:nth-child(2) span {
+  color: var(--color-lavender-semi-transparent);
+  font-family: "Floreste";
+  font-weight: 400;
+  font-size: var(--desk-font-size-background);
+  text-transform: uppercase;
+  text-wrap: nowrap;
+}
+.orderSuccess img {
+  position: absolute;
+  animation: successful 800ms ease;
+}
+.orderSuccess img:nth-child(3) {
+  top: 181px;
+  left: 50%;
+  height: 759px;
+  transform: translate(-50%);
+}
+.orderSuccess img:nth-child(4) {
+  top: 540px;
+  left: 112px;
+  height: 224px;
+}
+.orderSuccess img:nth-child(5) {
+  top: 686px;
+  left: 500px;
+  height: 200px;
+  transform: rotate(-13deg);
+}
+.orderSuccess img:nth-child(6) {
+  top: 524px;
+  left: 1315px;
+  height: 258px;
+  transform: rotate(7deg);
+}
+.orderSuccess img:nth-child(7) {
+  top: 725px;
+  left: 1665px;
+  height: 197px;
+  transform: rotate(17deg);
+}
+
+@keyframes successful {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes slideLeft {
+  from {
+    margin-left: 100px;
+    opacity: 0;
+  }
+  to {
+    margin-left: 0;
+    opacity: 1;
+  }
+}
+@keyframes slideRight {
+  from {
+    margin-right: 100px;
+    opacity: 0;
+  }
+  to {
+    margin-right: 0;
+    opacity: 1;
+  }
+}
 .cartModal {
   position: absolute;
   top: 115px;
