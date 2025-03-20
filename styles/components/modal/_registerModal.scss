@@ -1,0 +1,109 @@
+@use "../../helpers" as *;
+
+.registerModal {
+  position: absolute;
+  top: 115px;
+  left: 1225px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  width: 619px;
+  border-radius: 30px;
+  padding: 48px;
+
+  font-family: "Euclid Circular A";
+  font-weight: 500;
+  font-size: var(--desk-font-size-text-spacing);
+  text-transform: uppercase;
+
+  opacity: 0;
+
+  transition: opacity 500ms ease-out;
+
+  color: var(--color-white);
+  background-color: rgba(51, 32, 101, 0.18);
+  backdrop-filter: blur(200px);
+  pointer-events: none;
+
+  &.open {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  & > .title {
+    margin-bottom: 66px;
+    letter-spacing: 0.1em;
+    font-size: var(--desk-font-size-text-caps-no-spacing);
+  }
+
+  & > .closeButton {
+    position: absolute;
+    top: 32px;
+    right: 32px;
+
+    background-color: transparent;
+  }
+
+  div {
+    display: flex;
+  }
+
+  & > div:nth-child(3) {
+    flex-direction: column;
+    gap: 49px;
+    margin-bottom: 70px;
+  }
+
+  & > div:nth-child(4) {
+    gap: 24px;
+    font-size: var(--desk-font-size-subtitle);
+    letter-spacing: 0.1em;
+  }
+
+  button[type="submit"] {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: fit-content;
+    background-color: transparent;
+
+    span {
+      position: absolute;
+
+      color: var(--color-white);
+      font-family: "Euclid Circular A";
+      font-weight: 500;
+      font-size: var(--desk-font-size-button);
+      line-height: 1.2;
+    }
+
+    &::after {
+      content: "";
+
+      width: 189px;
+      height: 93px;
+      border: 2px solid var(--color-lime);
+      border-radius: 50%;
+
+      background-color: var(--color-white-almost-transparent);
+      transform: rotate(-6deg);
+    }
+  }
+
+  .authButton {
+    width: fit-content;
+    background-color: transparent;
+
+    color: var(--color-white);
+    font-family: "Euclid Circular A";
+    font-weight: 500;
+    font-size: var(--desk-font-size-subtitle);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+}
