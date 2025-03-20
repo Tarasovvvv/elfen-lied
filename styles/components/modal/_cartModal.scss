@@ -32,6 +32,31 @@
     pointer-events: all;
   }
 
+  &.inOrder {
+    top: 193px;
+    left: 1240px;
+    opacity: 1;
+    pointer-events: all;
+    margin: 0;
+
+    .innerButtonsWrapper {
+      display: none;
+    }
+
+    .products {
+      margin-bottom: 60px;
+    }
+
+    .currency {
+      font-size: var(--desk-font-size-button);
+      transform: translate(0, -40%);
+    }
+
+    .cartBottom {
+      height: 122px;
+    }
+  }
+
   & > .title {
     margin-bottom: 53px;
     letter-spacing: 0.1em;
@@ -241,24 +266,31 @@
   align-items: center;
   justify-content: center;
 
+  gap: 7px;
+
+  width: 189px;
+
   color: var(--color-white);
   font-family: "Euclid Circular A";
   font-weight: 500;
   font-size: var(--desk-font-size-button);
   line-height: 1.2;
-  letter-spacing: 0%;
   text-align: center;
+  background-color: transparent;
 
-  border: 2px solid var(--color-lime);
-  border-radius: 50%;
+  a {
+    z-index: 1;
+  }
 
-  width: 189px;
-  height: 93px;
-  transform: rotate(-6deg);
-  background-color: rgba(235, 227, 255, 0.19);
-
-  & span {
+  &::after {
+    content: "";
     position: absolute;
-    transform: rotate(6deg);
+    border: 2px solid var(--color-lime);
+    border-radius: 50%;
+
+    width: 189px;
+    height: 93px;
+    transform: rotate(-6deg);
+    background-color: rgba(235, 227, 255, 0.19);
   }
 }
