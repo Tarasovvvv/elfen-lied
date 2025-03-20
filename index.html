@@ -1762,15 +1762,9 @@
                     <span class="title">Coppelia</span>
                   </div>
                   <span class="text">Лампа настольная</span>
-                </div>        
+                </div>
                 <button class="favouriteButton">
                   <svg width="54" height="54" viewBox="0 0 79 79" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <foreignObject x="-30.2703" y="-30.2703" width="139.541" height="139.541"
-                      ><div
-                        xmlns="http://www.w3.org/1999/xhtml"
-                        style="backdrop-filter: blur(15.14px); clip-path: url(#bgblur_0_2504_1250_clip_path); height: 100%; width: 100%"
-                      ></div
-                    ></foreignObject>
                     <circle cx="39.5" cy="39.5" r="38.5" fill="white" fill-opacity="0.19" stroke-width="2" />
                     <path
                       class="hearth"
@@ -1806,15 +1800,9 @@
                     <span class="title">Facchetta</span>
                   </div>
                   <span class="text">Лампа настольная</span>
-                </div> 
+                </div>
                 <button class="favouriteButton">
                   <svg width="54" height="54" viewBox="0 0 79 79" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <foreignObject x="-30.2703" y="-30.2703" width="139.541" height="139.541"
-                      ><div
-                        xmlns="http://www.w3.org/1999/xhtml"
-                        style="backdrop-filter: blur(15.14px); clip-path: url(#bgblur_0_2504_1250_clip_path); height: 100%; width: 100%"
-                      ></div
-                    ></foreignObject>
                     <circle cx="39.5" cy="39.5" r="38.5" fill="white" fill-opacity="0.19" stroke-width="2" />
                     <path
                       class="hearth"
@@ -1829,14 +1817,14 @@
                       </clipPath>
                     </defs>
                   </svg>
-                </button>               
+                </button>
               </div>
               <hr class="innerHr" />
               <div class="innerBottom">
                 <div class="price">
                   <span class="number">150 000</span>
                   <span class="currency">₽</span>
-                </div>               
+                </div>
               </div>
             </div>
           </li>
@@ -1850,15 +1838,9 @@
                     <span class="title">Coppelia</span>
                   </div>
                   <span class="text">Лампа настольная</span>
-                </div>  
+                </div>
                 <button class="favouriteButton">
                   <svg width="54" height="54" viewBox="0 0 79 79" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <foreignObject x="-30.2703" y="-30.2703" width="139.541" height="139.541"
-                      ><div
-                        xmlns="http://www.w3.org/1999/xhtml"
-                        style="backdrop-filter: blur(15.14px); clip-path: url(#bgblur_0_2504_1250_clip_path); height: 100%; width: 100%"
-                      ></div
-                    ></foreignObject>
                     <circle cx="39.5" cy="39.5" r="38.5" fill="white" fill-opacity="0.19" stroke-width="2" />
                     <path
                       class="hearth"
@@ -1873,41 +1855,79 @@
                       </clipPath>
                     </defs>
                   </svg>
-                </button>              
+                </button>
               </div>
               <hr class="innerHr" />
               <div class="innerBottom">
                 <div class="price">
                   <span class="number">150 000</span>
                   <span class="currency">₽</span>
-                </div>                
+                </div>
+              </div>
             </div>
           </li>
         </ul>
       </div>
+      <form class="authModal" method="get">
+        <button class="closeButton" type="button">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M27 9L9 27" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M9 9L27 27" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </button>
+        <span class="title">Вход</span>
+        <div>
+          <input class="authInput" type="email" name="email" placeholder="e-mail" />
+          <input class="authInput" type="password" name="password" placeholder="пароль" required />
+          <button type="submit">
+            <span>Войти</span>
+          </button>
+        </div>
+        <div>
+          <span>Нет аккаунта?</span>
+          <button class="registerButton" type="button">Регистрация</button>
+          <svg width="42" height="16" viewBox="0 0 42 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M41.7071 8.70711C42.0976 8.31658 42.0976 7.68342 41.7071 7.29289L35.3431 0.928932C34.9526 0.538408 34.3195 0.538408 33.9289 0.928932C33.5384 1.31946 33.5384 1.95262 33.9289 2.34315L39.5858 8L33.9289 13.6569C33.5384 14.0474 33.5384 14.6805 33.9289 15.0711C34.3195 15.4616 34.9526 15.4616 35.3431 15.0711L41.7071 8.70711ZM0 9H41V7H0V9Z"
+              fill="white"
+            />
+          </svg>
+        </div>
+      </form>
     </div>
 
     <script>
       $(document).ready(function () {
-        $(".favourites").click(function () {
-          if($(".favouritesModal").hasClass("open")){
-            $(".favouritesModal").removeClass("open")
-          } else{
-            $(".favouritesModal").addClass("open");
-          }
+        function closeModals() {
           $(".cartModal").removeClass("open");
+          $(".authModal").removeClass("open");
+          $(".registerModal").removeClass("open");
+          $(".favouritesModal").removeClass("open");
+        }
+        function toggleModal(name) {
+          const modal = $(`.${name}Modal`);
+          const isOpen = $(modal).hasClass("open");
+          closeModals();
+          if (!isOpen) modal.addClass("open");
+        }
+        $(".favourites").click(function () {
+          $(".favourites").blur();
+          toggleModal("favourites");
         });
         $(".cart").click(function () {
-          if($(".cartModal").hasClass("open")){
-            $(".cartModal").removeClass("open")
-          } else{
-            $(".cartModal").addClass("open");
-          }
-          $(".favouritesModal").removeClass("open");
+          $(".cart").blur();
+          toggleModal("cart");
+        });
+        $(".profile").click(function () {
+          $(".profile").blur();
+          toggleModal("auth");
+        });
+        $(".registerButton").click(function () {
+          $(".registerButton").blur();
+          toggleModal("register");
         });
         $(".closeButton").click(function () {
-          $(".cartModal").removeClass("open");
-          $(".favouritesModal").removeClass("open");
+          closeModals();
         });
         $(".product > .imgWrapper").click(function () {
           $("body").toggleClass("noScroll");

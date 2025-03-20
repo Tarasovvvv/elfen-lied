@@ -35,8 +35,7 @@
   & > .title {
     margin-bottom: 53px;
     letter-spacing: 0.1em;
-
-    margin-bottom: 53px;
+    font-size: var(--desk-font-size-text-caps-no-spacing);
   }
 
   & .currency {
@@ -205,95 +204,5 @@
     display: inline-flex;
     height: inherit;
     font-size: 28px;
-  }
-}
-
-.innerButtonsWrapper {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-
-  & span {
-    font-size: --desk-font-size-text;
-  }
-
-  & button {
-    width: 45px;
-    height: 45px;
-    border: 2px solid var(--color-white);
-    border-radius: 100%;
-
-    color: var(--color-white);
-    background-color: var(--color-white-almost-transparent);
-
-    &:disabled {
-      cursor: default;
-      color: var(--color-white-semi-transparent);
-      border-color: var(--color-white-semi-transparent);
-      background-color: var(--color-white-almost-transparent);
-    }
-
-    &:nth-child(1)::after {
-      content: "-";
-    }
-
-    &:nth-child(3)::after {
-      content: "+";
-    }
-  }
-}
-
-.cartBottom {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 96px;
-
-  & .number {
-    position: relative;
-    top: -1px;
-    height: 28px;
-  }
-}
-
-.orderSum {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-
-  font-size: 20px;
-
-  & div {
-    display: flex;
-    gap: 7px;
-  }
-}
-
-.orderButton {
-  position: relative;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  color: var(--color-white);
-  font-family: "Euclid Circular A";
-  font-weight: 500;
-  font-size: var(--desk-font-size-button);
-  line-height: 1.2;
-  letter-spacing: 0%;
-  text-align: center;
-
-  border: 2px solid var(--color-lime);
-  border-radius: 50%;
-
-  width: 189px;
-  height: 93px;
-  transform: rotate(-6deg);
-  background-color: rgba(235, 227, 255, 0.19);
-
-  & span {
-    position: absolute;
-    transform: rotate(6deg);
   }
 }

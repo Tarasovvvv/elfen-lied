@@ -195,6 +195,23 @@ body.noScroll {
   margin-bottom: 22px;
 }
 
+.authInput {
+  font-family: "Euclid Circular A";
+  font-weight: 500;
+  font-size: var(--desk-font-size-subtitle);
+  padding-bottom: 19px;
+  border-bottom: 2px solid var(--color-lime);
+  color: var(--color-white);
+  background-color: transparent;
+}
+.authInput:user-invalid {
+  border-bottom-color: red;
+}
+.authInput::placeholder {
+  color: var(--color-white);
+  text-transform: uppercase;
+}
+
 .mainHeader {
   position: absolute;
   top: 0;
@@ -1380,7 +1397,7 @@ summary:hover .hoverableRect {
 .cartModal > .title {
   margin-bottom: 53px;
   letter-spacing: 0.1em;
-  margin-bottom: 53px;
+  font-size: var(--desk-font-size-text-caps-no-spacing);
 }
 .cartModal .currency {
   display: inline-flex;
@@ -1791,7 +1808,7 @@ summary:hover .hoverableRect {
 .favouritesModal > .title {
   margin-bottom: 53px;
   letter-spacing: 0.1em;
-  margin-bottom: 53px;
+  font-size: var(--desk-font-size-text-caps-no-spacing);
 }
 .favouritesModal .currency {
   display: inline-flex;
@@ -1933,80 +1950,89 @@ summary:hover .hoverableRect {
   font-size: 28px;
 }
 
-.innerButtonsWrapper {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-.innerButtonsWrapper span {
-  font-size: --desk-font-size-text;
-}
-.innerButtonsWrapper button {
-  width: 45px;
-  height: 45px;
-  border: 2px solid var(--color-white);
-  border-radius: 100%;
-  color: var(--color-white);
-  background-color: var(--color-white-almost-transparent);
-}
-.innerButtonsWrapper button:disabled {
-  cursor: default;
-  color: var(--color-white-semi-transparent);
-  border-color: var(--color-white-semi-transparent);
-  background-color: var(--color-white-almost-transparent);
-}
-.innerButtonsWrapper button:nth-child(1)::after {
-  content: "-";
-}
-.innerButtonsWrapper button:nth-child(3)::after {
-  content: "+";
-}
-
-.cartBottom {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 96px;
-}
-.cartBottom .number {
-  position: relative;
-  top: -1px;
-  height: 28px;
-}
-
-.orderSum {
+.authModal {
+  position: absolute;
+  top: 115px;
+  left: 1225px;
   display: flex;
   flex-direction: column;
-  gap: 15px;
-  font-size: 20px;
+  justify-content: space-between;
+  width: 619px;
+  border-radius: 30px;
+  padding: 48px;
+  font-family: "Euclid Circular A";
+  font-weight: 500;
+  font-size: var(--desk-font-size-text-spacing);
+  text-transform: uppercase;
+  opacity: 0;
+  transition: opacity 500ms ease-out;
+  color: var(--color-white);
+  background-color: rgba(51, 32, 101, 0.18);
+  backdrop-filter: blur(200px);
+  pointer-events: none;
 }
-.orderSum div {
+.authModal.open {
+  opacity: 1;
+  pointer-events: all;
+}
+.authModal > .title {
+  margin-bottom: 66px;
+  letter-spacing: 0.1em;
+  font-size: var(--desk-font-size-text-caps-no-spacing);
+}
+.authModal > .closeButton {
+  position: absolute;
+  top: 32px;
+  right: 32px;
+  background-color: transparent;
+}
+.authModal div {
   display: flex;
-  gap: 7px;
 }
-
-.orderButton {
+.authModal > div:nth-child(3) {
+  flex-direction: column;
+  gap: 49px;
+  margin-bottom: 70px;
+}
+.authModal > div:nth-child(4) {
+  gap: 24px;
+  font-size: var(--desk-font-size-subtitle);
+  letter-spacing: 0.1em;
+}
+.authModal button[type=submit] {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
+  width: fit-content;
+  background-color: transparent;
+}
+.authModal button[type=submit] span {
+  position: absolute;
   color: var(--color-white);
   font-family: "Euclid Circular A";
   font-weight: 500;
   font-size: var(--desk-font-size-button);
   line-height: 1.2;
-  letter-spacing: 0%;
-  text-align: center;
+}
+.authModal button[type=submit]::after {
+  content: "";
+  width: 120px;
+  height: 81px;
   border: 2px solid var(--color-lime);
   border-radius: 50%;
-  width: 189px;
-  height: 93px;
-  transform: rotate(-6deg);
-  background-color: rgba(235, 227, 255, 0.19);
+  background-color: var(--color-white-almost-transparent);
+  transform: rotate(-15deg);
 }
-.orderButton span {
-  position: absolute;
-  transform: rotate(6deg);
+.authModal .registerButton {
+  width: fit-content;
+  background-color: transparent;
+  color: var(--color-white);
+  font-family: "Euclid Circular A";
+  font-weight: 500;
+  font-size: var(--desk-font-size-subtitle);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
 }
 
 /*# sourceMappingURL=main.css.map */

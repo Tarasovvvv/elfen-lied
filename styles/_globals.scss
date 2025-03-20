@@ -74,3 +74,23 @@ body {
   margin-top: 22px;
   margin-bottom: 22px;
 }
+
+.authInput {
+  font-family: "Euclid Circular A";
+  font-weight: 500;
+  font-size: var(--desk-font-size-subtitle);
+
+  padding-bottom: 19px;
+  border-bottom: 2px solid var(--color-lime);
+  color: var(--color-white);
+  background-color: transparent;
+
+  &:user-invalid {
+    border-bottom-color: red;
+  }
+
+  &::placeholder {
+    color: var(--color-white);
+    text-transform: uppercase;
+  }
+}
