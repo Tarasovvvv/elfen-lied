@@ -66,3 +66,11 @@ body {
     z-index: 4;
   }
 }
+
+.innerHr {
+  height: 2px;
+  width: 100%;
+  background-color: var(--color-lime);
+  margin-top: 22px;
+  margin-bottom: 22px;
+}

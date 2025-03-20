@@ -1,6 +1,6 @@
 @use "../../helpers" as *;
 
-.cartModal {
+.favouritesModal {
   position: absolute;
   top: 115px;
   left: 1225px;
@@ -60,8 +60,6 @@
     flex-direction: column;
     gap: 60px;
 
-    margin-bottom: 83px;
-
     & .product {
       display: flex;
       flex-direction: row;
@@ -86,7 +84,7 @@
   width: 393px;
 
   & svg {
-    margin-top: 4px;
+    margin-top: 0;
   }
 }
 
@@ -98,6 +96,42 @@
 .innerDescription {
   display: flex;
   justify-content: space-between;
+
+  & .favouriteButton {
+    height: 54px;
+    border-radius: 100%;
+    background-color: var(--color-white-almost-transparent);
+    margin-bottom: 0;
+
+    .hearth {
+      stroke: transparent;
+      fill: transparent;
+    }
+    path {
+      fill: var(--color-lime);
+      transition-property: fill;
+      transition-duration: 200ms;
+      transition-timing-function: ease;
+    }
+    circle {
+      stroke: var(--color-lime);
+      transition-property: stroke;
+      transition-duration: 200ms;
+      transition-timing-function: ease;
+    }
+
+    &.pressed {
+      .hearth {
+        stroke: rgb(255, 177, 247);
+      }
+      path {
+        fill: var(--color-white);
+      }
+      circle {
+        stroke: rgb(255, 177, 247);
+      }
+    }
+  }
 
   & div {
     display: flex;

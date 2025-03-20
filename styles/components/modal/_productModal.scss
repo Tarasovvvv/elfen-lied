@@ -74,9 +74,15 @@
         }
         path {
           fill: var(--color-lime);
+          transition-property: fill;
+          transition-duration: 200ms;
+          transition-timing-function: ease;
         }
         circle {
           stroke: var(--color-lime);
+          transition-property: stroke;
+          transition-duration: 200ms;
+          transition-timing-function: ease;
         }
 
         &.pressed {

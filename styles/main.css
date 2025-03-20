@@ -187,6 +187,14 @@ body.noScroll {
   z-index: 4;
 }
 
+.innerHr {
+  height: 2px;
+  width: 100%;
+  background-color: var(--color-lime);
+  margin-top: 22px;
+  margin-bottom: 22px;
+}
+
 .mainHeader {
   position: absolute;
   top: 0;
@@ -1386,21 +1394,20 @@ summary:hover .hoverableRect {
   right: 32px;
   background-color: transparent;
 }
-
-.products {
+.cartModal .products {
   display: flex;
   flex-direction: column;
   gap: 60px;
   margin-bottom: 83px;
 }
-.products .product {
+.cartModal .products .product {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   width: 522px;
   height: 145px;
 }
-.products .product img {
+.cartModal .products .product img {
   max-width: 129px;
   height: 142px;
 }
@@ -1463,14 +1470,6 @@ summary:hover .hoverableRect {
 .innerDescription div div title {
   font-size: 20px;
   text-transform: uppercase;
-}
-
-.innerHr {
-  height: 2px;
-  width: 100%;
-  background-color: var(--color-lime);
-  margin-top: 22px;
-  margin-bottom: 22px;
 }
 
 .innerBottom {
@@ -1631,9 +1630,15 @@ summary:hover .hoverableRect {
 }
 .productModal > div:nth-child(2) button path {
   fill: var(--color-lime);
+  transition-property: fill;
+  transition-duration: 200ms;
+  transition-timing-function: ease;
 }
 .productModal > div:nth-child(2) button circle {
   stroke: var(--color-lime);
+  transition-property: stroke;
+  transition-duration: 200ms;
+  transition-timing-function: ease;
 }
 .productModal > div:nth-child(2) button.pressed .hearth {
   stroke: rgb(255, 177, 247);
@@ -1756,6 +1761,252 @@ summary:hover .hoverableRect {
 }
 .productModal .buyButton .title {
   letter-spacing: 0.04em;
+}
+
+.favouritesModal {
+  position: absolute;
+  top: 115px;
+  left: 1225px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 619px;
+  border-radius: 30px;
+  padding: 48px;
+  font-family: "Euclid Circular A";
+  font-weight: 500;
+  font-size: var(--desk-font-size-text-spacing);
+  text-transform: uppercase;
+  opacity: 0;
+  transition: opacity 500ms ease-out;
+  color: var(--color-white);
+  background-color: rgba(51, 32, 101, 0.18);
+  backdrop-filter: blur(200px);
+  pointer-events: none;
+}
+.favouritesModal.open {
+  opacity: 1;
+  pointer-events: all;
+}
+.favouritesModal > .title {
+  margin-bottom: 53px;
+  letter-spacing: 0.1em;
+  margin-bottom: 53px;
+}
+.favouritesModal .currency {
+  display: inline-flex;
+  align-items: center;
+  height: 14px;
+  font-size: var(--desk-font-size-currency);
+}
+.favouritesModal > .closeButton {
+  position: absolute;
+  top: 32px;
+  right: 32px;
+  background-color: transparent;
+}
+.favouritesModal .products {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+.favouritesModal .products .product {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 522px;
+  height: 145px;
+}
+.favouritesModal .products .product img {
+  max-width: 129px;
+  height: 142px;
+}
+
+.productInner {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 393px;
+}
+.productInner svg {
+  margin-top: 0;
+}
+
+.deleteButton {
+  display: flex;
+  background-color: transparent;
+}
+
+.innerDescription {
+  display: flex;
+  justify-content: space-between;
+}
+.innerDescription .favouriteButton {
+  height: 54px;
+  border-radius: 100%;
+  background-color: var(--color-white-almost-transparent);
+  margin-bottom: 0;
+}
+.innerDescription .favouriteButton .hearth {
+  stroke: transparent;
+  fill: transparent;
+}
+.innerDescription .favouriteButton path {
+  fill: var(--color-lime);
+  transition-property: fill;
+  transition-duration: 200ms;
+  transition-timing-function: ease;
+}
+.innerDescription .favouriteButton circle {
+  stroke: var(--color-lime);
+  transition-property: stroke;
+  transition-duration: 200ms;
+  transition-timing-function: ease;
+}
+.innerDescription .favouriteButton.pressed .hearth {
+  stroke: rgb(255, 177, 247);
+}
+.innerDescription .favouriteButton.pressed path {
+  fill: var(--color-white);
+}
+.innerDescription .favouriteButton.pressed circle {
+  stroke: rgb(255, 177, 247);
+}
+.innerDescription div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 13px;
+  height: 51px;
+}
+.innerDescription div .text {
+  display: inline-flex;
+  align-items: center;
+  height: 13px;
+  font-size: var(--desk-font-size-text);
+  text-transform: none;
+}
+.innerDescription div div {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 11px;
+}
+.innerDescription div div .color {
+  width: 14px;
+  height: 14px;
+  border: 2px solid var(--color-white);
+  border-radius: 100%;
+  background-color: var(--color-white);
+}
+.innerDescription div div .color.cyan {
+  background-color: rgb(41, 208, 217);
+}
+.innerDescription div div .color.ohra {
+  background-color: rgb(255, 196, 165);
+}
+.innerDescription div div .color.pink {
+  background-color: rgb(250, 142, 239);
+}
+.innerDescription div div title {
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+.innerBottom {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+.innerBottom .price {
+  display: flex;
+  align-items: flex-start;
+  gap: 7px;
+  height: 20px;
+  margin-bottom: 9px;
+}
+.innerBottom .number {
+  position: relative;
+  top: -0.5px;
+  display: inline-flex;
+  height: inherit;
+  font-size: 28px;
+}
+
+.innerButtonsWrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.innerButtonsWrapper span {
+  font-size: --desk-font-size-text;
+}
+.innerButtonsWrapper button {
+  width: 45px;
+  height: 45px;
+  border: 2px solid var(--color-white);
+  border-radius: 100%;
+  color: var(--color-white);
+  background-color: var(--color-white-almost-transparent);
+}
+.innerButtonsWrapper button:disabled {
+  cursor: default;
+  color: var(--color-white-semi-transparent);
+  border-color: var(--color-white-semi-transparent);
+  background-color: var(--color-white-almost-transparent);
+}
+.innerButtonsWrapper button:nth-child(1)::after {
+  content: "-";
+}
+.innerButtonsWrapper button:nth-child(3)::after {
+  content: "+";
+}
+
+.cartBottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 96px;
+}
+.cartBottom .number {
+  position: relative;
+  top: -1px;
+  height: 28px;
+}
+
+.orderSum {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  font-size: 20px;
+}
+.orderSum div {
+  display: flex;
+  gap: 7px;
+}
+
+.orderButton {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-white);
+  font-family: "Euclid Circular A";
+  font-weight: 500;
+  font-size: var(--desk-font-size-button);
+  line-height: 1.2;
+  letter-spacing: 0%;
+  text-align: center;
+  border: 2px solid var(--color-lime);
+  border-radius: 50%;
+  width: 189px;
+  height: 93px;
+  transform: rotate(-6deg);
+  background-color: rgba(235, 227, 255, 0.19);
+}
+.orderButton span {
+  position: absolute;
+  transform: rotate(6deg);
 }
 
 /*# sourceMappingURL=main.css.map */
