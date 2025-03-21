@@ -7,6 +7,7 @@
     <link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="./styles/main.css" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="/scripts/main.js" defer></script>
   </head>
   <body>
     <div class="root">
@@ -82,6 +83,146 @@
         </nav>
       </header>
       <main>
+        <div class="searchResults">
+          <h2>Результаты поиска</h2>
+          <ul class="productsList open">
+            <li class="product">
+              <div class="color blue"></div>
+              <div class="imgWrapper">
+                <img src="/images/mirrors/mirror-6.webp" alt="Зеркало" />
+              </div>
+              <h2>KRISTIN</h2>
+              <p>Зеркало напольное</p>
+              <div class="productHr"></div>
+              <div class="sale">
+                <div class="price">
+                  <span class="number">150 000</span>
+                  <span class="currency">₽</span>
+                </div>
+                <button class="buyButton">
+                  <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M5.11344 3.94L4.91344 6.39C4.87344 6.86 5.24344 7.25 5.71344 7.25H21.0234C21.4434 7.25 21.7934 6.93 21.8234 6.51C21.9534 4.74 20.6034 3.3 18.8334 3.3H6.54344C6.44344 2.86 6.24344 2.44 5.93344 2.09C5.43344 1.56 4.73344 1.25 4.01344 1.25H2.27344C1.86344 1.25 1.52344 1.59 1.52344 2C1.52344 2.41 1.86344 2.75 2.27344 2.75H4.01344C4.32344 2.75 4.61344 2.88 4.82344 3.1C5.03344 3.33 5.13344 3.63 5.11344 3.94ZM10.2734 20.75C10.2734 21.7165 9.48994 22.5 8.52344 22.5C7.55694 22.5 6.77344 21.7165 6.77344 20.75C6.77344 19.7835 7.55694 19 8.52344 19C9.48994 19 10.2734 19.7835 10.2734 20.75ZM18.2734 20.75C18.2734 21.7165 17.4899 22.5 16.5234 22.5C15.5569 22.5 14.7734 21.7165 14.7734 20.75C14.7734 19.7835 15.5569 19 16.5234 19C17.4899 19 18.2734 19.7835 18.2734 20.75ZM5.44349 8.75H20.7835C21.2535 8.75 21.6135 9.14 21.5735 9.6L21.2435 14.27C21.1335 15.77 19.8135 17 18.3135 17H7.19349C5.48349 17 4.14349 15.54 4.28349 13.83L4.64349 9.48C4.68349 9.07 5.02349 8.75 5.44349 8.75Z"
+                      fill="#D9FF5A"
+                    />
+                  </svg>
+
+                  <span class="title">Купить</span>
+                </button>
+              </div>
+            </li>
+            <li class="product">
+              <div class="color lavender"></div>
+              <div class="imgWrapper">
+                <img src="/images/mirrors/mirror-2.webp" alt="Зеркало" />
+              </div>
+              <h2>coppelia</h2>
+              <p>Зеркало напольное</p>
+              <div class="productHr"></div>
+              <div class="sale">
+                <div class="price">
+                  <span class="number">150 000</span>
+                  <span class="currency">₽</span>
+                </div>
+                <button class="buyButton">
+                  <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M5.11344 3.94L4.91344 6.39C4.87344 6.86 5.24344 7.25 5.71344 7.25H21.0234C21.4434 7.25 21.7934 6.93 21.8234 6.51C21.9534 4.74 20.6034 3.3 18.8334 3.3H6.54344C6.44344 2.86 6.24344 2.44 5.93344 2.09C5.43344 1.56 4.73344 1.25 4.01344 1.25H2.27344C1.86344 1.25 1.52344 1.59 1.52344 2C1.52344 2.41 1.86344 2.75 2.27344 2.75H4.01344C4.32344 2.75 4.61344 2.88 4.82344 3.1C5.03344 3.33 5.13344 3.63 5.11344 3.94ZM10.2734 20.75C10.2734 21.7165 9.48994 22.5 8.52344 22.5C7.55694 22.5 6.77344 21.7165 6.77344 20.75C6.77344 19.7835 7.55694 19 8.52344 19C9.48994 19 10.2734 19.7835 10.2734 20.75ZM18.2734 20.75C18.2734 21.7165 17.4899 22.5 16.5234 22.5C15.5569 22.5 14.7734 21.7165 14.7734 20.75C14.7734 19.7835 15.5569 19 16.5234 19C17.4899 19 18.2734 19.7835 18.2734 20.75ZM5.44349 8.75H20.7835C21.2535 8.75 21.6135 9.14 21.5735 9.6L21.2435 14.27C21.1335 15.77 19.8135 17 18.3135 17H7.19349C5.48349 17 4.14349 15.54 4.28349 13.83L4.64349 9.48C4.68349 9.07 5.02349 8.75 5.44349 8.75Z"
+                      fill="#D9FF5A"
+                    />
+                  </svg>
+
+                  <span class="title">Купить</span>
+                </button>
+              </div>
+            </li>
+            <li class="product">
+              <div class="color blue"></div>
+              <div class="imgWrapper">
+                <img src="/images/mirrors/mirror-3.webp" alt="Зеркало" />
+              </div>
+              <h2>Arlene</h2>
+              <p>Зеркало напольное</p>
+              <div class="productHr"></div>
+              <div class="sale">
+                <div class="price">
+                  <span class="number">150 000</span>
+                  <span class="currency">₽</span>
+                </div>
+                <button class="buyButton">
+                  <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M5.11344 3.94L4.91344 6.39C4.87344 6.86 5.24344 7.25 5.71344 7.25H21.0234C21.4434 7.25 21.7934 6.93 21.8234 6.51C21.9534 4.74 20.6034 3.3 18.8334 3.3H6.54344C6.44344 2.86 6.24344 2.44 5.93344 2.09C5.43344 1.56 4.73344 1.25 4.01344 1.25H2.27344C1.86344 1.25 1.52344 1.59 1.52344 2C1.52344 2.41 1.86344 2.75 2.27344 2.75H4.01344C4.32344 2.75 4.61344 2.88 4.82344 3.1C5.03344 3.33 5.13344 3.63 5.11344 3.94ZM10.2734 20.75C10.2734 21.7165 9.48994 22.5 8.52344 22.5C7.55694 22.5 6.77344 21.7165 6.77344 20.75C6.77344 19.7835 7.55694 19 8.52344 19C9.48994 19 10.2734 19.7835 10.2734 20.75ZM18.2734 20.75C18.2734 21.7165 17.4899 22.5 16.5234 22.5C15.5569 22.5 14.7734 21.7165 14.7734 20.75C14.7734 19.7835 15.5569 19 16.5234 19C17.4899 19 18.2734 19.7835 18.2734 20.75ZM5.44349 8.75H20.7835C21.2535 8.75 21.6135 9.14 21.5735 9.6L21.2435 14.27C21.1335 15.77 19.8135 17 18.3135 17H7.19349C5.48349 17 4.14349 15.54 4.28349 13.83L4.64349 9.48C4.68349 9.07 5.02349 8.75 5.44349 8.75Z"
+                      fill="#D9FF5A"
+                    />
+                  </svg>
+
+                  <span class="title">Купить</span>
+                </button>
+              </div>
+            </li>
+            <li class="product">
+              <div class="color orange"></div>
+              <div class="imgWrapper">
+                <img src="/images/mirrors/mirror-4.webp" alt="Зеркало" />
+              </div>
+              <h2>Colleen</h2>
+              <p>Зеркало настенное</p>
+              <div class="productHr"></div>
+              <div class="sale">
+                <div class="price">
+                  <span class="number">150 000</span>
+                  <span class="currency">₽</span>
+                </div>
+                <button class="buyButton">
+                  <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M5.11344 3.94L4.91344 6.39C4.87344 6.86 5.24344 7.25 5.71344 7.25H21.0234C21.4434 7.25 21.7934 6.93 21.8234 6.51C21.9534 4.74 20.6034 3.3 18.8334 3.3H6.54344C6.44344 2.86 6.24344 2.44 5.93344 2.09C5.43344 1.56 4.73344 1.25 4.01344 1.25H2.27344C1.86344 1.25 1.52344 1.59 1.52344 2C1.52344 2.41 1.86344 2.75 2.27344 2.75H4.01344C4.32344 2.75 4.61344 2.88 4.82344 3.1C5.03344 3.33 5.13344 3.63 5.11344 3.94ZM10.2734 20.75C10.2734 21.7165 9.48994 22.5 8.52344 22.5C7.55694 22.5 6.77344 21.7165 6.77344 20.75C6.77344 19.7835 7.55694 19 8.52344 19C9.48994 19 10.2734 19.7835 10.2734 20.75ZM18.2734 20.75C18.2734 21.7165 17.4899 22.5 16.5234 22.5C15.5569 22.5 14.7734 21.7165 14.7734 20.75C14.7734 19.7835 15.5569 19 16.5234 19C17.4899 19 18.2734 19.7835 18.2734 20.75ZM5.44349 8.75H20.7835C21.2535 8.75 21.6135 9.14 21.5735 9.6L21.2435 14.27C21.1335 15.77 19.8135 17 18.3135 17H7.19349C5.48349 17 4.14349 15.54 4.28349 13.83L4.64349 9.48C4.68349 9.07 5.02349 8.75 5.44349 8.75Z"
+                      fill="#D9FF5A"
+                    />
+                  </svg>
+
+                  <span class="title">Купить</span>
+                </button>
+              </div>
+            </li>
+            <li class="product">
+              <div class="color lavender"></div>
+              <div class="imgWrapper">
+                <img src="/images/mirrors/mirror-5.webp" alt="Зеркало" />
+              </div>
+              <h2>artemide</h2>
+              <p>Зеркало напольное</p>
+              <div class="productHr"></div>
+              <div class="sale">
+                <div class="price">
+                  <span class="number">150 000</span>
+                  <span class="currency">₽</span>
+                </div>
+                <button class="buyButton">
+                  <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M5.11344 3.94L4.91344 6.39C4.87344 6.86 5.24344 7.25 5.71344 7.25H21.0234C21.4434 7.25 21.7934 6.93 21.8234 6.51C21.9534 4.74 20.6034 3.3 18.8334 3.3H6.54344C6.44344 2.86 6.24344 2.44 5.93344 2.09C5.43344 1.56 4.73344 1.25 4.01344 1.25H2.27344C1.86344 1.25 1.52344 1.59 1.52344 2C1.52344 2.41 1.86344 2.75 2.27344 2.75H4.01344C4.32344 2.75 4.61344 2.88 4.82344 3.1C5.03344 3.33 5.13344 3.63 5.11344 3.94ZM10.2734 20.75C10.2734 21.7165 9.48994 22.5 8.52344 22.5C7.55694 22.5 6.77344 21.7165 6.77344 20.75C6.77344 19.7835 7.55694 19 8.52344 19C9.48994 19 10.2734 19.7835 10.2734 20.75ZM18.2734 20.75C18.2734 21.7165 17.4899 22.5 16.5234 22.5C15.5569 22.5 14.7734 21.7165 14.7734 20.75C14.7734 19.7835 15.5569 19 16.5234 19C17.4899 19 18.2734 19.7835 18.2734 20.75ZM5.44349 8.75H20.7835C21.2535 8.75 21.6135 9.14 21.5735 9.6L21.2435 14.27C21.1335 15.77 19.8135 17 18.3135 17H7.19349C5.48349 17 4.14349 15.54 4.28349 13.83L4.64349 9.48C4.68349 9.07 5.02349 8.75 5.44349 8.75Z"
+                      fill="#D9FF5A"
+                    />
+                  </svg>
+
+                  <span class="title">Купить</span>
+                </button>
+              </div>
+            </li>
+          </ul>
+        </div>
       </main>
     </div>
     <div class="modalRoot">
@@ -90,12 +231,12 @@
           <button class="closeButton">
             <span>Закрыть</span>
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <g clip-path="url(#clip0_2504_1256)">
+              <g clip-path="url(#r)">
                 <path d="M19 1L1 19" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                 <path d="M1 1L19 19" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
               </g>
               <defs>
-                <clipPath id="clip0_2504_1256">
+                <clipPath id="r">
                   <rect width="20" height="20" fill="white" />
                 </clipPath>
               </defs>
@@ -472,7 +613,7 @@
           <button class="auth" type="button">Вход</button>
         </div>
       </form>
-      <form class="searchModal open" method="get" action="/search.html">
+      <form class="searchModal unclosable" method="get" action="/search.html">
         <button type="submit">
           <svg width="24" height="23" viewBox="0 0 24 23" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
@@ -488,47 +629,5 @@
         <input type="text" name="search" placeholder="Поиск.." autocomplete="no" required />
       </form>
     </div>
-    <script>
-      $(document).ready(function () {
-        const urlParams = new URLSearchParams(window.location.search);
-
-        if (urlParams.get("search") === "noresults") {
-          window.location.href = "/noresults.html";
-        }
-
-        const modalsNames = [".favourites", ".cart", ".profile", ".auth", ".register", ".contacts"];
-
-        const closeModals = () => {
-          modalsNames.forEach((name) => {
-            $(`${name}Modal`).removeClass("open");
-          });
-        };
-
-        const toggleModal = (name) => {
-          const modal = $(`${name}Modal`);
-          const isOpen = modal.hasClass("open");
-          closeModals();
-          if (!isOpen) {
-            $(`${name}Modal input`).val("");
-            modal.addClass("open");
-          }
-        };
-
-        modalsNames.forEach((name) => {
-          $(name).click(() => {
-            $(name).blur();
-            toggleModal(name);
-          });
-        });
-
-        $(".closeButton").click(() => {
-          closeModals();
-        });
-
-        $(".favouriteButton").click(function () {
-          $(this).toggleClass("pressed");
-        });
-      });
-    </script>
   </body>
 </html>

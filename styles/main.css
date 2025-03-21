@@ -155,11 +155,44 @@ body.noScroll {
   position: absolute;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 800ms ease;
+  transform: scale(0);
+}
+.modalRoot > *.open, .modalRoot > *.unclosable {
+  pointer-events: all;
+}
+.modalRoot > *.unclosable {
+  opacity: 1;
+  transform: scale(1);
 }
 .modalRoot > *.open {
-  opacity: 1;
-  pointer-events: all;
+  animation: openModal 800ms ease forwards;
+}
+@keyframes openModal {
+  0% {
+    opacity: 0;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.modalRoot > *.closed {
+  animation: closeModal 300ms ease forwards;
+}
+@keyframes closeModal {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  99% {
+    opacity: 0;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0);
+  }
 }
 .modalRoot > *.fullscreen {
   position: fixed;
@@ -578,7 +611,6 @@ body.noScroll {
   height: 197px;
   transform: rotate(17deg);
 }
-
 @keyframes successful {
   from {
     opacity: 0;
@@ -607,6 +639,7 @@ body.noScroll {
     opacity: 1;
   }
 }
+
 .mainHeader {
   position: absolute;
   top: 0;
@@ -1582,18 +1615,27 @@ summary:hover .hoverableRect {
 .searchResults {
   display: flex;
   flex-direction: column;
-  gap: 156px;
-  margin: 362px 60px 0;
-  width: 100%;
-  height: 100%;
+  gap: 118px;
+  margin: 280px 60px 0;
 }
-.searchResults h2 {
+.searchResults .currency {
+  color: var(--color-white);
+}
+.searchResults h2:not(:nth-child(1)),
+.searchResults p {
+  text-align: center;
+}
+.searchResults.noresults {
+  margin-top: 362px;
+  gap: 156px;
+}
+.searchResults.noresults h2 {
   font-family: "Euclid Circular A";
   font-weight: 500;
   font-size: var(--desk-font-size-h2);
   color: var(--color-white);
 }
-.searchResults span {
+.searchResults.noresults span {
   font-family: "Floreste";
   font-weight: 400;
   font-size: var(--desk-font-size-background);
@@ -1601,7 +1643,7 @@ summary:hover .hoverableRect {
   text-transform: uppercase;
   color: var(--color-lavender-semi-transparent);
 }
-.searchResults img {
+.searchResults.noresults img {
   position: absolute;
   top: 620px;
   left: 47.7%;
@@ -2337,7 +2379,7 @@ summary:hover .hoverableRect {
 .searchModal {
   left: 60px;
   right: 60px;
-  z-index: 90;
+  z-index: -1;
   display: flex;
   align-items: center;
   justify-content: space-between;

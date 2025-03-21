@@ -7,6 +7,7 @@
     <link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="./styles/main.css" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="/scripts/main.js" defer></script>
   </head>
   <body>
     <div class="root">
@@ -92,7 +93,7 @@
       </main>
     </div>
     <div class="modalRoot">
-      <div class="cartModal inOrder">
+      <div class="cartModal open inOrder">
         <span class="title">Ваша корзина</span>
         <ul class="products">
           <li class="product">
@@ -407,46 +408,5 @@
         </button>
       </form>
     </div>
-    <script>
-      $(document).ready(function () {
-        console.log(window.location.search);
-        const modalsNames = [".favourites", ".profile", ".search", ".auth", ".register", ".contacts"];
-
-        const closeModals = () => {
-          modalsNames.forEach((name) => {
-            $(`${name}Modal`).removeClass("open");
-          });
-        };
-
-        const toggleModal = (name) => {
-          const modal = $(`${name}Modal`);
-          const isOpen = modal.hasClass("open");
-          closeModals();
-          if (!isOpen) {
-            $(`${name}Modal input`).val("");
-            modal.addClass("open");
-          }
-        };
-
-        modalsNames.forEach((name) => {
-          $(name).click(() => {
-            $(name).blur();
-            toggleModal(name);
-          });
-        });
-
-        $(".closeButton").click(() => {
-          closeModals();
-        });
-
-        $(".search").click(() => {
-          $(".searchModal > input[type='text']").focus();
-        });
-        
-        $(".favouriteButton").click(function () {
-          $(this).toggleClass("pressed");
-        });
-      });
-    </script>
   </body>
 </html>

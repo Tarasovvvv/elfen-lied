@@ -30,11 +30,50 @@ body {
     position: absolute;
     opacity: 0;
     pointer-events: none;
-    transition: opacity 800ms ease;
+    transform: scale(0);
+
+    &.open,
+    &.unclosable {
+      pointer-events: all;
+    }
+
+    &.unclosable {
+      opacity: 1;
+      transform: scale(1);
+    }
 
     &.open {
-      opacity: 1;
-      pointer-events: all;
+      animation: openModal 800ms ease forwards;
+
+      @keyframes openModal {
+        0% {
+          opacity: 0;
+          transform: scale(1);
+        }
+        100% {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+    }
+
+    &.closed {
+      animation: closeModal 300ms ease forwards;
+
+      @keyframes closeModal {
+        0% {
+          opacity: 1;
+          transform: scale(1);
+        }
+        99% {
+          opacity: 0;
+          transform: scale(1);
+        }
+        100% {
+          opacity: 0;
+          transform: scale(0);
+        }
+      }
     }
 
     &.fullscreen {
