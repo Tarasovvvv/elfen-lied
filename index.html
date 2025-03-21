@@ -1852,8 +1852,8 @@
         </button>
         <span class="title">Вход</span>
         <div>
-          <input class="formInput" type="email" name="email" placeholder="e-mail" required />
-          <input class="formInput" type="password" name="password" placeholder="пароль" required />
+          <input class="formInput" type="email" name="email" placeholder="e-mail" autocomplete="email" required />
+          <input class="formInput" type="password" name="password" placeholder="пароль" autocomplete="password" required />
           <button type="submit">
             <span>Войти</span>
           </button>
@@ -1878,7 +1878,7 @@
         </button>
         <span class="title">Регистрация</span>
         <div>
-          <input class="formInput" type="email" name="email" placeholder="e-mail" required />
+          <input class="formInput" type="email" name="email" placeholder="e-mail" autocomplete="email" required />
           <input class="formInput" type="password" name="password" placeholder="пароль" required />
           <input class="formInput" type="password" name="password" placeholder="повторите пароль" required />
           <button type="submit">
@@ -1895,9 +1895,20 @@
           <button class="auth" type="button">Вход</button>
         </div>
       </form>
-      <form class="searchModal" method="get">
-        <input type="text" name="search" placeholder="Поиск.." />
-        <button type="submit"></button>
+      <form class="searchModal" method="get" action="/search.html">
+        <button type="submit">
+          <svg width="24" height="23" viewBox="0 0 24 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M11 20C15.9706 20 20 15.9706 20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20Z"
+              stroke="#D9FF5A"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path d="M23 22L18 17" stroke="#D9FF5A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </button>
+        <input type="text" name="search" placeholder="Поиск.." autocomplete="no" required />
         <button class="closeButton" type="button">
           <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M27 9L9 27" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
@@ -1920,7 +1931,10 @@
           const modal = $(`${name}Modal`);
           const isOpen = modal.hasClass("open");
           closeModals();
-          if (!isOpen) modal.addClass("open");
+          if (!isOpen) {
+            $(`${name}Modal input`).val("");
+            modal.addClass("open");
+          }
         };
 
         modalsNames.forEach((name) => {
@@ -1934,6 +1948,10 @@
           closeModals();
         });
 
+        $(".search").click(() => {
+          $(".searchModal > input[type='text']").focus();
+        });
+
         $(".product > .imgWrapper").click(() => {
           $("body").toggleClass("noScroll");
           $(".productModal").toggleClass("open");
@@ -1944,7 +1962,7 @@
           $(".productModal").toggleClass("open");
         });
 
-        $(".favouriteButton").click(() => {
+        $(".favouriteButton").click(function () {
           $(this).toggleClass("pressed");
         });
       });

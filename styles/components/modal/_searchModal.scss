@@ -1,13 +1,19 @@
 .searchModal {
+  left: 60px;
+  right: 60px;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
 
-  inset: 60px 138px 60px 100px;
+  margin: 0 60px;
+  max-width: 1800px;
+  height: 70px;
   border-radius: 100px;
 
   color: var(--color-white);
   background-color: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(60px);
 
   & > .closeButton {
     margin: 25px;
@@ -15,29 +21,29 @@
   }
 
   input[type="text"] {
-    width: 100%;
-    height: 70px;
+    flex-grow: 1;
+    height: 100%;
+
+    font-family: "Euclid Circular A";
+    font-weight: 500;
+    font-size: var(--desk-font-size-text);
+
+    color: var(--color-white);
     background-color: transparent;
+    outline: none;
+
+    &::placeholder {
+      color: var(--color-white);
+    }
   }
 
   button[type="submit"] {
-    position: relative;
+    margin: 7px;
+    width: 57px;
+    height: 57px;
+    border: 1px solid var(--color-white);
+    border-radius: 100%;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    width: fit-content;
-    background-color: transparent;
-
-    span {
-      position: absolute;
-
-      color: var(--color-white);
-      font-family: "Euclid Circular A";
-      font-weight: 500;
-      font-size: var(--desk-font-size-button);
-      line-height: 1.2;
-    }
+    background-color: var(--color-lavender);
   }
 }
