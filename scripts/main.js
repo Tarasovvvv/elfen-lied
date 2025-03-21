@@ -48,7 +48,37 @@ $(document).ready(function () {
     $("body").toggleClass("noScroll");
   });
 
+  $(".contacts").click(() => {
+    $("body").toggleClass("noScroll");
+  });
+
+  $(".productModal .closeButtonWrapper > .closeButton").click(() => {
+    $("body").toggleClass("noScroll");
+  });
+
   $(".favouriteButton").click(function () {
     $(this).toggleClass("pressed");
   });
+
+  ymaps.ready(init);
+
+  function init() {
+    const myMap = new ymaps.Map("map", {
+      center: [55.7568, 37.6434],
+      zoom: 16,
+    });
+
+    const myPlacemark = new ymaps.Placemark(
+      [55.7568, 37.6434],
+      {},
+      {
+        iconLayout: "default#image",
+        iconImageHref: "/images/map-pin.png",
+        iconImageSize: [70, 96],
+        iconImageOffset: [-35, -96],
+      }
+    );
+
+    myMap.geoObjects.add(myPlacemark);
+  }
 });

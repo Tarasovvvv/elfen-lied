@@ -22,6 +22,10 @@
 
     margin-top: 70px;
   }
+
+  @media (width < 1000px) {
+    overflow-x: scroll;
+  }
 }
 
 .categoryCard {
@@ -146,7 +150,7 @@ h2 {
 
 .circleButton {
   position: absolute;
-  left: 34.8%;
+  left: 147.5px;
   bottom: 0;
 
   display: flex;
