@@ -1,12 +1,12 @@
 .searchModal {
   left: 60px;
   right: 60px;
+  z-index: 90;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
 
-  margin: 0 60px;
   max-width: 1800px;
   height: 70px;
   border-radius: 100px;
@@ -23,6 +23,7 @@
   input[type="text"] {
     flex-grow: 1;
     height: 100%;
+    min-width: 360px;
 
     font-family: "Euclid Circular A";
     font-weight: 500;
@@ -39,8 +40,8 @@
 
   button[type="submit"] {
     margin: 7px;
-    width: 57px;
-    height: 57px;
+    min-width: 57px;
+    min-height: 57px;
     border: 1px solid var(--color-white);
     border-radius: 100%;
 
