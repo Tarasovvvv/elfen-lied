@@ -6,6 +6,7 @@ body {
 
   & > div {
     position: absolute;
+    width: 100%;
   }
 
   &.noScroll {
@@ -14,21 +15,36 @@ body {
 }
 
 .root {
-  top: 0;
-  left: 0;
   z-index: 0;
-  background-color: var(--color-lavender);
-  width: 100%;
+
   scrollbar-gutter: stable;
+  background-color: var(--color-lavender);
 }
 
 .modalRoot {
   z-index: 100;
-  scrollbar-gutter: unset;
-  pointer-events: none;
 
-  & > div.open {
-    pointer-events: all;
+  scrollbar-gutter: unset;
+
+  & > * {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 800ms ease;
+
+    &.open {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    &.fullscreen {
+      position: fixed;
+    }
+
+    &:not(.fullscreen) {
+      top: 115px;
+      right: 61px;
+    }
   }
 }
 

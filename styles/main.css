@@ -14,7 +14,7 @@ ul {
   font-style: normal;
 }
 
-button {
+button:not(:disabled) {
   cursor: pointer;
 }
 
@@ -135,27 +135,38 @@ body {
 }
 body > div {
   position: absolute;
+  width: 100%;
 }
 body.noScroll {
   overflow-y: hidden;
 }
 
 .root {
-  top: 0;
-  left: 0;
   z-index: 0;
-  background-color: var(--color-lavender);
-  width: 100%;
   scrollbar-gutter: stable;
+  background-color: var(--color-lavender);
 }
 
 .modalRoot {
   z-index: 100;
   scrollbar-gutter: unset;
-  pointer-events: none;
 }
-.modalRoot > div.open {
+.modalRoot > * {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 800ms ease;
+}
+.modalRoot > *.open {
+  opacity: 1;
   pointer-events: all;
+}
+.modalRoot > *.fullscreen {
+  position: fixed;
+}
+.modalRoot > *:not(.fullscreen) {
+  top: 115px;
+  right: 61px;
 }
 
 .number {
@@ -225,7 +236,7 @@ body.noScroll {
 .mainNav {
   display: grid;
   place-items: center;
-  grid-template-areas: "mainNavList . favourites . profile . cart";
+  grid-template-areas: "mainNavList . favourites . auth . cart";
   grid-template-columns: auto minmax(18px, 247px) auto minmax(18px, 35px) auto minmax(18px, 36px) auto;
   color: var(--color-white);
 }
@@ -242,6 +253,8 @@ body.noScroll {
   justify-content: center;
   align-items: center;
   gap: 12px;
+  background-color: transparent;
+  color: var(--color-white);
   font-family: "Euclid Circular A", sans-serif;
   font-weight: 500;
   font-size: var(--desk-font-size-text);
@@ -281,8 +294,8 @@ body.noScroll {
   grid-area: favourites;
 }
 
-.profile {
-  grid-area: profile;
+.auth {
+  grid-area: auth;
 }
 
 .cart {
@@ -1185,6 +1198,7 @@ summary:hover .hoverableRect {
 .blog {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   gap: 70px;
   margin: 170px 60px;
   height: 489px;
@@ -1379,7 +1393,7 @@ summary:hover .hoverableRect {
   height: 1201px;
   margin-left: 60px;
 }
-.order button button {
+.order button {
   width: 100%;
   margin-top: -4px;
 }
@@ -1441,6 +1455,10 @@ summary:hover .hoverableRect {
   font-weight: 400;
   font-size: var(--desk-font-size-numbers);
   letter-spacing: 0.04em;
+}
+.total .currency {
+  font-size: var(--desk-font-size-button);
+  transform: translate(0, -40%);
 }
 .total::after {
   content: "";
@@ -1561,9 +1579,6 @@ summary:hover .hoverableRect {
   }
 }
 .cartModal {
-  position: absolute;
-  top: 115px;
-  left: 1225px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -1574,20 +1589,12 @@ summary:hover .hoverableRect {
   font-weight: 500;
   font-size: var(--desk-font-size-text-spacing);
   text-transform: uppercase;
-  opacity: 0;
-  transition: opacity 500ms ease-out;
   color: var(--color-white);
   background-color: rgba(51, 32, 101, 0.18);
   backdrop-filter: blur(200px);
   pointer-events: none;
 }
-.cartModal.open {
-  opacity: 1;
-  pointer-events: all;
-}
 .cartModal.inOrder {
-  top: 193px;
-  left: 1240px;
   opacity: 1;
   pointer-events: all;
   margin: 0;
@@ -1597,10 +1604,6 @@ summary:hover .hoverableRect {
 }
 .cartModal.inOrder .products {
   margin-bottom: 60px;
-}
-.cartModal.inOrder .currency {
-  font-size: var(--desk-font-size-button);
-  transform: translate(0, -40%);
 }
 .cartModal.inOrder .cartBottom {
   height: 122px;
@@ -1804,6 +1807,7 @@ summary:hover .hoverableRect {
 .productModal {
   position: fixed;
   z-index: 11;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -1812,13 +1816,8 @@ summary:hover .hoverableRect {
   font-weight: 500;
   font-size: var(--desk-font-size-text-spacing);
   text-transform: uppercase;
-  opacity: 0;
-  transition: opacity 200ms ease-out;
   color: var(--color-white);
   background-color: var(--color-lavender);
-}
-.productModal.open {
-  opacity: 1;
 }
 .productModal .currency {
   display: inline-flex;
@@ -1924,11 +1923,10 @@ summary:hover .hoverableRect {
 }
 .productModal > div:nth-child(5) {
   align-items: center;
-  justify-content: flex-start;
 }
 .productModal > div:nth-child(5) > div:nth-child(1) {
   width: 346px;
-  margin-right: 343px;
+  margin-right: 10px;
   line-height: 1.54;
   font-size: 20px;
   text-transform: none;
@@ -1937,7 +1935,6 @@ summary:hover .hoverableRect {
   display: flex;
   flex-direction: column;
   gap: 22px;
-  margin-right: 333px;
   font-family: "Floreste";
   font-size: 100px;
 }
@@ -1946,6 +1943,7 @@ summary:hover .hoverableRect {
   justify-content: center;
   align-items: flex-start;
   height: 70px;
+  text-wrap: nowrap;
   transform: translate(0, -5%);
 }
 .productModal > div:nth-child(5) > div:nth-child(2) > div {
@@ -1997,9 +1995,6 @@ summary:hover .hoverableRect {
 }
 
 .favouritesModal {
-  position: absolute;
-  top: 115px;
-  left: 1225px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -2010,16 +2005,9 @@ summary:hover .hoverableRect {
   font-weight: 500;
   font-size: var(--desk-font-size-text-spacing);
   text-transform: uppercase;
-  opacity: 0;
-  transition: opacity 500ms ease-out;
   color: var(--color-white);
   background-color: rgba(51, 32, 101, 0.18);
   backdrop-filter: blur(200px);
-  pointer-events: none;
-}
-.favouritesModal.open {
-  opacity: 1;
-  pointer-events: all;
 }
 .favouritesModal > .title {
   margin-bottom: 53px;
@@ -2167,9 +2155,6 @@ summary:hover .hoverableRect {
 }
 
 .authModal {
-  position: absolute;
-  top: 115px;
-  left: 1225px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -2180,16 +2165,9 @@ summary:hover .hoverableRect {
   font-weight: 500;
   font-size: var(--desk-font-size-text-spacing);
   text-transform: uppercase;
-  opacity: 0;
-  transition: opacity 500ms ease-out;
   color: var(--color-white);
   background-color: rgba(51, 32, 101, 0.18);
   backdrop-filter: blur(200px);
-  pointer-events: none;
-}
-.authModal.open {
-  opacity: 1;
-  pointer-events: all;
 }
 .authModal > .title {
   margin-bottom: 66px;
@@ -2240,7 +2218,7 @@ summary:hover .hoverableRect {
   background-color: var(--color-white-almost-transparent);
   transform: rotate(-15deg);
 }
-.authModal .registerButton {
+.authModal .register {
   width: fit-content;
   background-color: transparent;
   color: var(--color-white);
@@ -2252,9 +2230,6 @@ summary:hover .hoverableRect {
 }
 
 .registerModal {
-  position: absolute;
-  top: 115px;
-  left: 1225px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -2265,16 +2240,9 @@ summary:hover .hoverableRect {
   font-weight: 500;
   font-size: var(--desk-font-size-text-spacing);
   text-transform: uppercase;
-  opacity: 0;
-  transition: opacity 500ms ease-out;
   color: var(--color-white);
   background-color: rgba(51, 32, 101, 0.18);
   backdrop-filter: blur(200px);
-  pointer-events: none;
-}
-.registerModal.open {
-  opacity: 1;
-  pointer-events: all;
 }
 .registerModal > .title {
   margin-bottom: 66px;
@@ -2325,7 +2293,7 @@ summary:hover .hoverableRect {
   background-color: var(--color-white-almost-transparent);
   transform: rotate(-6deg);
 }
-.registerModal .authButton {
+.registerModal .auth {
   width: fit-content;
   background-color: transparent;
   color: var(--color-white);
@@ -2334,6 +2302,41 @@ summary:hover .hoverableRect {
   font-size: var(--desk-font-size-subtitle);
   letter-spacing: 0.1em;
   text-transform: uppercase;
+}
+
+.searchModal {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  inset: 60px 138px 60px 100px;
+  border-radius: 100px;
+  color: var(--color-white);
+  background-color: rgba(255, 255, 255, 0.3);
+}
+.searchModal > .closeButton {
+  margin: 25px;
+  background-color: transparent;
+}
+.searchModal input[type=text] {
+  width: 100%;
+  height: 70px;
+  background-color: transparent;
+}
+.searchModal button[type=submit] {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  background-color: transparent;
+}
+.searchModal button[type=submit] span {
+  position: absolute;
+  color: var(--color-white);
+  font-family: "Euclid Circular A";
+  font-weight: 500;
+  font-size: var(--desk-font-size-button);
+  line-height: 1.2;
 }
 
 /*# sourceMappingURL=main.css.map */

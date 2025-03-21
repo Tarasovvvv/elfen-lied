@@ -1,10 +1,6 @@
 @use "../../helpers" as *;
 
 .favouritesModal {
-  position: absolute;
-  top: 115px;
-  left: 1225px;
-
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -18,19 +14,9 @@
   font-size: var(--desk-font-size-text-spacing);
   text-transform: uppercase;
 
-  opacity: 0;
-
-  transition: opacity 500ms ease-out;
-
   color: var(--color-white);
   background-color: rgba(51, 32, 101, 0.18);
   backdrop-filter: blur(200px);
-  pointer-events: none;
-
-  &.open {
-    opacity: 1;
-    pointer-events: all;
-  }
 
   & > .title {
     margin-bottom: 53px;

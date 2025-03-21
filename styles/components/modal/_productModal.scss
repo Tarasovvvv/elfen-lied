@@ -2,6 +2,7 @@
   position: fixed;
   z-index: 11;
 
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -13,16 +14,8 @@
   font-size: var(--desk-font-size-text-spacing);
   text-transform: uppercase;
 
-  opacity: 0;
-
-  transition: opacity 200ms ease-out;
-
   color: var(--color-white);
   background-color: var(--color-lavender);
-
-  &.open {
-    opacity: 1;
-  }
 
   & .currency {
     display: inline-flex;
@@ -152,12 +145,11 @@
 
     &:nth-child(5) {
       align-items: center;
-      justify-content: flex-start;
 
       & > div {
         &:nth-child(1) {
           width: 346px;
-          margin-right: 343px;
+          margin-right: 10px;
 
           line-height: 1.54;
           font-size: 20px;
@@ -170,8 +162,6 @@
           flex-direction: column;
           gap: 22px;
 
-          margin-right: 333px;
-
           font-family: "Floreste";
           font-size: 100px;
 
@@ -180,6 +170,7 @@
             justify-content: center;
             align-items: flex-start;
             height: 70px;
+            text-wrap: nowrap;
 
             transform: translate(0, -5%);
           }

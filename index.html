@@ -31,10 +31,10 @@
               <a class="navLink" href="/#blog">Блог</a>
             </li>
             <li class="contacts">
-              <a class="navLink" href="/#contacts">Контакты</a>
+              <button class="navLink">Контакты</button>
             </li>
             <li class="search">
-              <a class="navLink">
+              <button class="navLink">
                 <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path
                     d="M11.5 20C16.1944 20 20 16.1944 20 11.5C20 6.80558 16.1944 3 11.5 3C6.80558 3 3 6.80558 3 11.5C3 16.1944 6.80558 20 11.5 20Z"
@@ -45,8 +45,8 @@
                   />
                   <path d="M23 23L18 18" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
-                Поиск</a
-              >
+                Поиск
+              </button>
             </li>
           </ul>
           <button class="navButton favourites">
@@ -58,7 +58,7 @@
             </svg>
             <span class="itemsQuanity">2</span>
           </button>
-          <button class="navButton profile">
+          <button class="navButton auth">
             <svg width="18" height="21" viewBox="0 0 18 21" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path
                 fillRule="evenodd"
@@ -195,7 +195,7 @@
             </script>
           </ul>
         </section>
-        <section class="categories">
+        <section class="categories" id="catalog">
           <h1>Категории</h1>
           <ul>
             <li class="categoryCard">
@@ -1359,7 +1359,7 @@
             </svg>
           </span>
         </div>
-        <section class="blog">
+        <section class="blog" id="blog">
           <div class="blogTop">
             <div class="blogPaginator">
               <div class="paginatorDotsWrapper">
@@ -1507,7 +1507,6 @@
         <span class="text">Все права защищены</span>
       </footer>
     </div>
-
     <div class="modalRoot">
       <div class="cartModal">
         <button class="closeButton">
@@ -1646,7 +1645,7 @@
           </button>
         </div>
       </div>
-      <div class="productModal">
+      <div class="productModal fullscreen">
         <div class="closeButtonWrapper">
           <button class="closeButton">
             <span>Закрыть</span>
@@ -1861,7 +1860,7 @@
         </div>
         <div>
           <span>Нет аккаунта?</span>
-          <button class="registerButton" type="button">Регистрация</button>
+          <button class="register" type="button">Регистрация</button>
           <svg width="42" height="16" viewBox="0 0 42 16" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
               d="M41.7071 8.70711C42.0976 8.31658 42.0976 7.68342 41.7071 7.29289L35.3431 0.928932C34.9526 0.538408 34.3195 0.538408 33.9289 0.928932C33.5384 1.31946 33.5384 1.95262 33.9289 2.34315L39.5858 8L33.9289 13.6569C33.5384 14.0474 33.5384 14.6805 33.9289 15.0711C34.3195 15.4616 34.9526 15.4616 35.3431 15.0711L41.7071 8.70711ZM0 9H41V7H0V9Z"
@@ -1893,57 +1892,59 @@
               fill="white"
             />
           </svg>
-          <button class="authButton" type="button">Вход</button>
+          <button class="auth" type="button">Вход</button>
         </div>
       </form>
+      <form class="searchModal" method="get">
+        <input type="text" name="search" placeholder="Поиск.." />
+        <button type="submit"></button>
+        <button class="closeButton" type="button">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M27 9L9 27" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M9 9L27 27" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </button>
+      </form>
     </div>
-
     <script>
       $(document).ready(function () {
-        function closeModals() {
-          $(".cartModal").removeClass("open");
-          $(".authModal").removeClass("open");
-          $(".registerModal").removeClass("open");
-          $(".favouritesModal").removeClass("open");
-        }
-        function toggleModal(name) {
-          const modal = $(`.${name}Modal`);
-          const isOpen = $(modal).hasClass("open");
+        const modalsNames = [".favourites", ".cart", ".profile", ".search", ".auth", ".register", ".contacts"];
+
+        const closeModals = () => {
+          modalsNames.forEach((name) => {
+            $(`${name}Modal`).removeClass("open");
+          });
+        };
+
+        const toggleModal = (name) => {
+          const modal = $(`${name}Modal`);
+          const isOpen = modal.hasClass("open");
           closeModals();
           if (!isOpen) modal.addClass("open");
-        }
-        $(".favourites").click(function () {
-          $(".favourites").blur();
-          toggleModal("favourites");
+        };
+
+        modalsNames.forEach((name) => {
+          $(name).click(() => {
+            $(name).blur();
+            toggleModal(name);
+          });
         });
-        $(".cart").click(function () {
-          $(".cart").blur();
-          toggleModal("cart");
-        });
-        $(".profile").click(function () {
-          $(".profile").blur();
-          toggleModal("auth");
-        });
-        $(".registerButton").click(function () {
-          $(".registerButton").blur();
-          toggleModal("register");
-        });
-        $(".authButton").click(function () {
-          $(".authButton").blur();
-          toggleModal("auth");
-        });
-        $(".closeButton").click(function () {
+
+        $(".closeButton").click(() => {
           closeModals();
         });
-        $(".product > .imgWrapper").click(function () {
+
+        $(".product > .imgWrapper").click(() => {
           $("body").toggleClass("noScroll");
           $(".productModal").toggleClass("open");
         });
-        $(".productModal .closeButtonWrapper > .closeButton").click(function () {
+
+        $(".productModal .closeButtonWrapper > .closeButton").click(() => {
           $("body").toggleClass("noScroll");
           $(".productModal").toggleClass("open");
         });
-        $(".favouriteButton").click(function () {
+
+        $(".favouriteButton").click(() => {
           $(this).toggleClass("pressed");
         });
       });

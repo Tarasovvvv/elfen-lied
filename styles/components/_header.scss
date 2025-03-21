@@ -15,7 +15,7 @@
 .mainNav {
   display: grid;
   place-items: center;
-  grid-template-areas: "mainNavList . favourites . profile . cart";
+  grid-template-areas: "mainNavList . favourites . auth . cart";
   grid-template-columns: auto minmax(18px, 247px) auto minmax(18px, 35px) auto minmax(18px, 36px) auto;
 
   color: var(--color-white);
@@ -32,6 +32,8 @@
   @include flex-center;
   gap: 12px;
 
+  background-color: transparent;
+  color: var(--color-white);
   font-family: "Euclid Circular A", sans-serif;
   font-weight: 500;
   font-size: var(--desk-font-size-text);
@@ -73,8 +75,8 @@
   grid-area: favourites;
 }
 
-.profile {
-  grid-area: profile;
+.auth {
+  grid-area: auth;
 }
 
 .cart {

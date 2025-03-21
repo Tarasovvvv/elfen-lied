@@ -11,7 +11,7 @@
   height: 1201px;
   margin-left: 60px;
 
-  button button {
+  button {
     width: 100%;
     margin-top: -4px;
   }
@@ -87,6 +87,11 @@
     font-weight: 400;
     font-size: var(--desk-font-size-numbers);
     letter-spacing: 0.04em;
+  }
+
+  .currency {
+    font-size: var(--desk-font-size-button);
+    transform: translate(0, -40%);
   }
 
   &::after {
