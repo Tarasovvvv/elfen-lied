@@ -24,7 +24,7 @@
   top: 50%;
 
   font-family: "Floreste";
-  font-size: setFontSize("numbers");
+  font-size: getFontSize("numbers");
   color: getColor("white");
   text-transform: uppercase;
   letter-spacing: 0.04em;

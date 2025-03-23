@@ -3,6 +3,7 @@
 
 body {
   position: relative;
+
   background-color: getColor("lavender");
 
   & > div {
@@ -98,7 +99,7 @@ body {
 
 .number {
   font-family: "Floreste";
-  font-size: setFontSize("numbers");
+  font-size: getFontSize("numbers");
   font-weight: 400;
   letter-spacing: 0.04em;
   text-align: center;

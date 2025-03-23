@@ -83,7 +83,7 @@
 
   font-family: "Floreste";
   font-weight: 400;
-  font-size: setFontSize("numbers");
+  font-size:getFontSize("numbers");
 }
 
 .sliderHr {

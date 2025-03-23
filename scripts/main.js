@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  const modalsNames = [".product", ".favourites", ".cart", ".search", ".profile", ".auth", ".register", ".contacts"];
+  const modalsNames = [".contacts", ".search", ".favourites", ".auth", ".cart", ".register"];
 
   const closeModals = () => {
     modalsNames.forEach((name) => {
@@ -25,11 +25,21 @@ $(document).ready(function () {
     }
   };
 
-  modalsNames.forEach((name) => {
-    $(name).click(() => {
-      $(name).blur();
-      toggleModal(name);
+  for (let i = 4; i < 9; i++) {
+    $(`header li:nth-child(${i})`).click(() => {
+      $(this).blur();
+      toggleModal(modalsNames[i - 4]);
     });
+  }
+
+  $(".register").click(() => {
+    $(this).blur();
+    toggleModal(".register");
+  });
+
+  $(".auth").click(() => {
+    $(this).blur();
+    toggleModal(".auth");
   });
 
   $(".closeButton").click(() => {
@@ -40,19 +50,21 @@ $(document).ready(function () {
     $(".searchModal > input[type='text']").focus();
   });
 
-  $(".product > .imgWrapper").click(() => {
+  $(".product .imgWrapper").click(() => {
     $("body").toggleClass("noScroll");
+    $(".productModal").addClass("open");
   });
 
-  $(".productModal .closeButtonWrapper > .closeButton").click(() => {
+  $(".productModal .closeButton").click(() => {
     $("body").toggleClass("noScroll");
+    $(".productModal").removeClass("open");
   });
 
   $(".contacts").click(() => {
     $("body").toggleClass("noScroll");
   });
 
-  $(".productModal .closeButtonWrapper > .closeButton").click(() => {
+  $(".contacts .closeButton").click(() => {
     $("body").toggleClass("noScroll");
   });
 

@@ -6,14 +6,3 @@
   justify-content: center;
   align-items: center;
 }
-
-@mixin ellipseBackground($width, $height, $angle) {
-  border: 2px solid getColor("lime");
-  border-radius: 50%;
-
-  width: $width;
-  height: $height;
-  transform: rotate($angle);
-
-  background-color: getColor("white-0.2");
-}

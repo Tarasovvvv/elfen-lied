@@ -1,5 +1,5 @@
+@use "../../helpers" as *;
 @use "../../variables" as *;
-
 .cartModal {
   display: flex;
   flex-direction: column;
@@ -11,7 +11,7 @@
 
   font-family: "Euclid Circular A";
   font-weight: 500;
-  font-size: getFontSize("text-spacing");
+  font-size: getFontSize("text");
   text-transform: uppercase;
 
   color: getColor("white");

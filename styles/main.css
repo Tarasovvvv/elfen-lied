@@ -172,7 +172,7 @@ body.noScroll {
 
 .number {
   font-family: "Floreste";
-  font-size: setFontSize("numbers");
+  font-size: clamp(1.75rem, 1.5428921569rem + 0.8496732026vw, 2.5625rem);
   font-weight: 400;
   letter-spacing: 0.04em;
   text-align: center;
@@ -303,7 +303,7 @@ hr {
   height: 28px;
   font-family: "Floreste";
   font-weight: 400;
-  font-size: setFontSize("numbers");
+  font-size: clamp(1.75rem, 1.5428921569rem + 0.8496732026vw, 2.5625rem);
 }
 
 .sliderHr {
@@ -496,7 +496,7 @@ hr {
 .total .number {
   font-family: "Floreste";
   font-weight: 400;
-  font-size: setFontSize("numbers");
+  font-size: clamp(1.75rem, 1.5428921569rem + 0.8496732026vw, 2.5625rem);
   letter-spacing: 0.04em;
 }
 .total .currency {
@@ -555,7 +555,7 @@ hr {
   color: rgba(203, 182, 255, 0.6);
   font-family: "Floreste";
   font-weight: 400;
-  font-size: clamp(4.4375rem, 2.1911764706rem + 9.2156862745vw, 13.25rem);
+  font-size: clamp(4.1875rem, 1.8774509804rem + 9.477124183vw, 13.25rem);
   text-transform: uppercase;
   text-wrap: nowrap;
 }
@@ -681,7 +681,7 @@ header ul > :nth-child(8) span {
   font-size: 13px;
   font-weight: 700;
 }
-@media (width < 760px) {
+@media (width < 901px) {
   header ul > :nth-child(2),
   header ul > :nth-child(3) {
     display: none;
@@ -778,8 +778,29 @@ header a {
 .banner ul {
   display: flex;
   gap: 20px;
-  width: 100%;
-  overflow: hidden;
+}
+@media (width < 1485px) {
+  .banner ul > :nth-child(3) {
+    display: none;
+  }
+}
+@media (width < 901px) {
+  .banner ul > :nth-child(1):not(.collapsed) {
+    border-radius: 0;
+  }
+  .banner ul > :nth-child(1) hr {
+    display: none;
+  }
+  .banner ul > :nth-child(1) .title {
+    margin-bottom: 14px;
+  }
+  .banner ul > :nth-child(1) .text {
+    margin-bottom: 35px;
+    line-height: 20px;
+  }
+  .banner ul > :nth-child(2) {
+    display: none;
+  }
 }
 @media (width <= 500px) {
   .banner {
@@ -795,7 +816,7 @@ header a {
   align-items: center;
   transition: flex-grow 800ms ease-out;
   flex-grow: 340;
-  height: 1038px;
+  height: clamp(41.375rem, 35.3848039216rem + 24.5751633987vw, 64.875rem);
   border-radius: 50px;
   overflow: hidden;
   cursor: pointer;
@@ -845,6 +866,7 @@ header a {
 }
 .bannerItem img {
   position: absolute;
+  top: clamp(5.6875rem, 4.6678921569rem + 4.1830065359vw, 9.6875rem);
   z-index: 1;
   width: clamp(13.875rem, 9.5416666667rem + 17.7777777778vw, 30.875rem);
   -webkit-user-drag: none;
@@ -853,8 +875,8 @@ header a {
 .bannerItem .buyButton {
   position: absolute;
   z-index: 2;
-  width: 356px;
-  height: 135px;
+  width: clamp(12.875rem, 10.4852941176rem + 9.8039215686vw, 22.25rem);
+  height: clamp(4.875rem, 3.9669117647rem + 3.7254901961vw, 8.4375rem);
   opacity: 0;
   background-color: transparent;
 }
@@ -878,7 +900,7 @@ header a {
   color: rgba(203, 182, 255, 0.6);
 }
 .bannerItem:nth-child(1) .description .number {
-  font-size: setFontSize("numbers");
+  font-size: clamp(1.75rem, 1.5428921569rem + 0.8496732026vw, 2.5625rem);
   color: rgb(217, 255, 90);
 }
 .bannerItem:nth-child(1).expdanded {
@@ -900,25 +922,47 @@ header a {
 
 .productOfTheDay {
   position: absolute;
-  top: 386px;
-  left: 60px;
+  top: clamp(12.5rem, 9.2181372549rem + 13.4640522876vw, 25.375rem);
+  left: clamp(-5.625rem, -8.0147058824rem + 9.8039215686vw, 3.75rem);
   font-family: "Euclid Circular A";
   font-size: clamp(0.8125rem, 0.7328431373rem + 0.3267973856vw, 1.125rem);
   font-weight: 500;
   text-transform: uppercase;
   color: rgb(217, 255, 90);
 }
+@media (900px < width < 1485px) {
+  .productOfTheDay {
+    left: clamp(-1.875rem, -5.0612745098rem + 13.0718954248vw, 10.625rem);
+  }
+}
+@media (width < 901px) {
+  .productOfTheDay {
+    top: clamp(19.8125rem, 15.3039215686rem + 18.4967320261vw, 37.5rem);
+    left: clamp(0rem, -6.2132352941rem + 25.4901960784vw, 24.375rem);
+  }
+}
 
 .backgroundText {
   position: absolute;
-  top: 440px;
+  top: clamp(14.625rem, 11.0245098039rem + 14.7712418301vw, 28.75rem);
   font-family: "Floreste";
-  font-size: clamp(4.4375rem, 2.1911764706rem + 9.2156862745vw, 13.25rem);
+  font-size: clamp(4.1875rem, 1.8774509804rem + 9.477124183vw, 13.25rem);
   font-weight: 500;
   white-space: nowrap;
   text-transform: uppercase;
   user-select: none;
-  transform: translate(-50%) scale(0.33);
+  will-change: contents;
+}
+@keyframes backgroundTextExpand {
+  0% {
+    transform: translateX(-50%) scale(0.33);
+  }
+  50% {
+    transform: translateX(-50%) scale(1.01);
+  }
+  100% {
+    transform: translateX(-50%) scale(1);
+  }
 }
 
 .preview {
@@ -944,28 +988,65 @@ header a {
   display: flex;
   opacity: 0;
 }
+.details > div:nth-child(4) {
+  position: absolute;
+  top: clamp(30.5625rem, 25.6078431373rem + 20.3267973856vw, 50rem);
+  right: clamp(0rem, -0.7965686275rem + 3.2679738562vw, 3.125rem);
+  display: none;
+  width: 52px;
+  height: 143px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+  color: rgb(174, 151, 232);
+  background-color: rgb(255, 255, 255);
+  border-radius: 50px;
+}
+.details > div:nth-child(4) span {
+  display: inline-flex;
+  height: 18px;
+  font-family: "Floreste";
+  font-weight: 40;
+  font-size: 25px;
+  letter-spacing: 0.04em;
+}
+.details > div:nth-child(4) div {
+  height: 36px;
+  width: 1px;
+  background-color: rgb(174, 151, 232);
+}
+@media (width < 901px) {
+  .details > div:nth-child(4) {
+    display: flex;
+  }
+}
 
 .description {
   position: absolute;
-  left: 41px;
+  top: clamp(30.25rem, 26.6335784314rem + 14.8366013072vw, 44.4375rem);
+  left: clamp(0rem, -0.6531862745rem + 2.6797385621vw, 2.5625rem);
   bottom: 103px;
   height: fit-content;
-  width: 275px;
+  width: clamp(13.875rem, 13.0306372549rem + 3.4640522876vw, 17.1875rem);
   text-align: left;
   color: rgb(255, 255, 255);
+  font-family: "Euclid Circular A";
+  font-weight: 500;
 }
 .description .title {
   text-transform: uppercase;
-  font-family: "Euclid Circular A";
   font-size: clamp(1.4375rem, 1.3578431373rem + 0.3267973856vw, 1.75rem);
-  font-weight: 500;
   margin-bottom: 18px;
 }
 .description .text {
+  display: inline-flex;
+  align-items: center;
+  width: clamp(15.625rem, 14.3504901961rem + 5.2287581699vw, 20.625rem);
   font-family: "Euclid Circular A";
-  font-size: clamp(0.8125rem, 0.7806372549rem + 0.1307189542vw, 0.9375rem);
   font-weight: 500;
-  line-height: 23px;
+  font-size: clamp(0.8125rem, 0.7328431373rem + 0.3267973856vw, 1.125rem);
+  line-height: 100%;
 }
 .description .hr {
   background-color: rgba(255, 255, 255, 0.2);
@@ -1027,17 +1108,17 @@ header a {
 @keyframes buttonHoist {
   0% {
     opacity: 0;
-    top: 1060px;
-    right: 62px;
+    top: clamp(29.125rem, 19.6617647059rem + 38.8235294118vw, 66.25rem);
+    right: clamp(0.8125rem, 0.0318627451rem + 3.2026143791vw, 3.875rem);
   }
   50% {
-    top: 760px;
-    right: 50px;
+    top: clamp(21.5rem, 14.8725490196rem + 27.1895424837vw, 47.5rem);
+    right: clamp(0rem, -0.7965686275rem + 3.2679738562vw, 3.125rem);
   }
   100% {
     opacity: 1;
-    top: 778px;
-    right: 50px;
+    top: clamp(22.625rem, 15.9975490196rem + 27.1895424837vw, 48.625rem);
+    right: clamp(0rem, -0.7965686275rem + 3.2679738562vw, 3.125rem);
   }
 }
 @keyframes buttonDrow {
@@ -1057,17 +1138,6 @@ header a {
     transform: scale(1);
   }
 }
-@keyframes backgroundTextExpand {
-  0% {
-    transform: translate(-50%) scale(0.33);
-  }
-  50% {
-    transform: translate(-50%) scale(1.01);
-  }
-  100% {
-    transform: translate(-50%) scale(1);
-  }
-}
 @keyframes detailsExpand {
   to {
     opacity: 1;
@@ -1081,7 +1151,7 @@ header a {
     transform: translate(-1%);
   }
   100% {
-    transform: translate();
+    transform: translate(0);
   }
 }
 .stripes {
@@ -1103,7 +1173,7 @@ header a {
   height: 72px;
   top: 50%;
   font-family: "Floreste";
-  font-size: setFontSize("numbers");
+  font-size: clamp(1.75rem, 1.5428921569rem + 0.8496732026vw, 2.5625rem);
   color: rgb(255, 255, 255);
   text-transform: uppercase;
   letter-spacing: 0.04em;
@@ -1693,9 +1763,9 @@ summary:hover .hoverableRect {
   padding: 48px;
   font-family: "Euclid Circular A";
   font-weight: 500;
-  font-size: getFontSize("text-spacing");
+  font-size: clamp(0.8125rem, 0.7328431373rem + 0.3267973856vw, 1.125rem);
   text-transform: uppercase;
-  color: getColor("white");
+  color: rgb(255, 255, 255);
   background-color: rgba(51, 32, 101, 0.18);
   backdrop-filter: blur(200px);
   pointer-events: none;
@@ -1717,13 +1787,13 @@ summary:hover .hoverableRect {
 .cartModal > .title {
   margin-bottom: 53px;
   letter-spacing: 0.1em;
-  font-size: getFontSize("text");
+  font-size: clamp(0.8125rem, 0.7328431373rem + 0.3267973856vw, 1.125rem);
 }
 .cartModal .currency {
   display: inline-flex;
   align-items: center;
   height: 14px;
-  font-size: getFontSize("currency");
+  font-size: clamp(0.9375rem, 0.8578431373rem + 0.3267973856vw, 1.25rem);
 }
 .cartModal > .closeButton {
   position: absolute;
@@ -1779,7 +1849,7 @@ summary:hover .hoverableRect {
   display: inline-flex;
   align-items: center;
   height: 13px;
-  font-size: getFontSize("text");
+  font-size: clamp(0.8125rem, 0.7328431373rem + 0.3267973856vw, 1.125rem);
   text-transform: none;
 }
 .innerDescription div div {
@@ -1791,9 +1861,9 @@ summary:hover .hoverableRect {
 .innerDescription div div .color {
   width: 14px;
   height: 14px;
-  border: 2px solid getColor("white");
+  border: 2px solid rgb(255, 255, 255);
   border-radius: 100%;
-  background-color: getColor("white");
+  background-color: rgb(255, 255, 255);
 }
 .innerDescription div div .color.cyan {
   background-color: rgb(41, 208, 217);
@@ -1840,16 +1910,16 @@ summary:hover .hoverableRect {
 .innerButtonsWrapper button {
   width: 45px;
   height: 45px;
-  border: 2px solid getColor("white");
+  border: 2px solid rgb(255, 255, 255);
   border-radius: 100%;
-  color: getColor("white");
-  background-color: getColor("white-0.2");
+  color: rgb(255, 255, 255);
+  background-color: rgba(255, 255, 255, 0.2);
 }
 .innerButtonsWrapper button:disabled {
   cursor: default;
-  color: getColor("white-0.6");
-  border-color: getColor("white-0.6");
-  background-color: getColor("white-0.2");
+  color: rgba(255, 255, 255, 0.6);
+  border-color: rgba(255, 255, 255, 0.6);
+  background-color: rgba(255, 255, 255, 0.2);
 }
 .innerButtonsWrapper button:nth-child(1)::after {
   content: "-";
@@ -1888,10 +1958,10 @@ summary:hover .hoverableRect {
   justify-content: center;
   gap: 7px;
   width: 189px;
-  color: getColor("white");
+  color: rgb(255, 255, 255);
   font-family: "Euclid Circular A";
   font-weight: 500;
-  font-size: getFontSize("button");
+  font-size: clamp(1rem, 0.9362745098rem + 0.2614379085vw, 1.25rem);
   line-height: 1.2;
   text-align: center;
   background-color: transparent;
@@ -1902,7 +1972,7 @@ summary:hover .hoverableRect {
 .orderButton::after {
   content: "";
   position: absolute;
-  border: 2px solid getColor("lime");
+  border: 2px solid rgb(217, 255, 90);
   border-radius: 50%;
   width: 189px;
   height: 93px;
@@ -1920,16 +1990,16 @@ summary:hover .hoverableRect {
   padding: 30px 60px;
   font-family: "Euclid Circular A";
   font-weight: 500;
-  font-size: getFontSize("text-spacing");
+  font-size: clamp(0.8125rem, 0.7328431373rem + 0.3267973856vw, 1.125rem);
   text-transform: uppercase;
-  color: getColor("white");
-  background-color: getColor("lavender");
+  color: rgb(255, 255, 255);
+  background-color: rgb(174, 151, 232);
 }
 .productModal .currency {
   display: inline-flex;
   align-items: center;
   height: 14px;
-  font-size: getFontSize("currency");
+  font-size: clamp(0.9375rem, 0.8578431373rem + 0.3267973856vw, 1.25rem);
 }
 .productModal img {
   position: absolute;
@@ -1954,7 +2024,7 @@ summary:hover .hoverableRect {
   align-self: flex-start;
 }
 .productModal > div:nth-child(2) {
-  font-size: getFontSize("subtitle");
+  font-size: clamp(0.75rem, 0.7022058824rem + 0.1960784314vw, 0.9375rem);
   height: 79px;
   margin-bottom: 73px;
 }
@@ -1967,20 +2037,20 @@ summary:hover .hoverableRect {
   fill: transparent;
 }
 .productModal > div:nth-child(2) button path {
-  fill: getColor("lime");
+  fill: rgb(217, 255, 90);
   transition-property: fill;
   transition-duration: 200ms;
   transition-timing-function: ease;
 }
 .productModal > div:nth-child(2) button circle {
-  stroke: getColor("lime");
+  stroke: rgb(217, 255, 90);
   transition-property: stroke;
   transition-duration: 200ms;
   transition-timing-function: ease;
 }
 .productModal > div:nth-child(2) button.pressed .hearth {
   stroke: rgb(255, 177, 247);
-  fill: getColor("white");
+  fill: rgb(255, 255, 255);
 }
 .productModal > div:nth-child(2) button.pressed path {
   fill: transparent;
@@ -2009,7 +2079,7 @@ summary:hover .hoverableRect {
 .productModal > div:nth-child(3) .color {
   width: 22px;
   height: 22px;
-  border: 3px solid getColor("white");
+  border: 3px solid rgb(255, 255, 255);
   border-radius: 100%;
   background-color: rgb(147, 129, 216);
 }
@@ -2059,7 +2129,7 @@ summary:hover .hoverableRect {
 }
 .productModal > div:nth-child(5) > div:nth-child(2) > div .number,
 .productModal > div:nth-child(5) > div:nth-child(2) > div .currency {
-  color: getColor("lime");
+  color: rgb(217, 255, 90);
 }
 .productModal .closeButtonWrapper {
   justify-content: flex-end;
@@ -2092,7 +2162,7 @@ summary:hover .hoverableRect {
 }
 .productModal .buyButton .ellipse:nth-child(2) {
   backdrop-filter: blur(150px);
-  background-color: getColor("white-0.2");
+  background-color: rgba(255, 255, 255, 0.2);
   z-index: 2;
   transform: rotate(-13deg);
 }
@@ -2109,22 +2179,22 @@ summary:hover .hoverableRect {
   padding: 48px;
   font-family: "Euclid Circular A";
   font-weight: 500;
-  font-size: getFontSize("text-spacing");
+  font-size: clamp(0.8125rem, 0.7328431373rem + 0.3267973856vw, 1.125rem);
   text-transform: uppercase;
-  color: getColor("white");
+  color: rgb(255, 255, 255);
   background-color: rgba(51, 32, 101, 0.18);
   backdrop-filter: blur(200px);
 }
 .favouritesModal > .title {
   margin-bottom: 53px;
   letter-spacing: 0.1em;
-  font-size: getFontSize("text");
+  font-size: clamp(0.8125rem, 0.7328431373rem + 0.3267973856vw, 1.125rem);
 }
 .favouritesModal .currency {
   display: inline-flex;
   align-items: center;
   height: 14px;
-  font-size: getFontSize("currency");
+  font-size: clamp(0.9375rem, 0.8578431373rem + 0.3267973856vw, 1.25rem);
 }
 .favouritesModal > .closeButton {
   position: absolute;
@@ -2171,7 +2241,7 @@ summary:hover .hoverableRect {
 .innerDescription .favouriteButton {
   height: 54px;
   border-radius: 100%;
-  background-color: getColor("white-0.2");
+  background-color: rgba(255, 255, 255, 0.2);
   margin-bottom: 0;
 }
 .innerDescription .favouriteButton .hearth {
@@ -2179,13 +2249,13 @@ summary:hover .hoverableRect {
   fill: transparent;
 }
 .innerDescription .favouriteButton path {
-  fill: getColor("lime");
+  fill: rgb(217, 255, 90);
   transition-property: fill;
   transition-duration: 200ms;
   transition-timing-function: ease;
 }
 .innerDescription .favouriteButton circle {
-  stroke: getColor("lime");
+  stroke: rgb(217, 255, 90);
   transition-property: stroke;
   transition-duration: 200ms;
   transition-timing-function: ease;
@@ -2194,7 +2264,7 @@ summary:hover .hoverableRect {
   stroke: rgb(255, 177, 247);
 }
 .innerDescription .favouriteButton.pressed path {
-  fill: getColor("white");
+  fill: rgb(255, 255, 255);
 }
 .innerDescription .favouriteButton.pressed circle {
   stroke: rgb(255, 177, 247);
@@ -2210,7 +2280,7 @@ summary:hover .hoverableRect {
   display: inline-flex;
   align-items: center;
   height: 13px;
-  font-size: getFontSize("text");
+  font-size: clamp(0.8125rem, 0.7328431373rem + 0.3267973856vw, 1.125rem);
   text-transform: none;
 }
 .innerDescription div div {
@@ -2222,9 +2292,9 @@ summary:hover .hoverableRect {
 .innerDescription div div .color {
   width: 14px;
   height: 14px;
-  border: 2px solid getColor("white");
+  border: 2px solid rgb(255, 255, 255);
   border-radius: 100%;
-  background-color: getColor("white");
+  background-color: rgb(255, 255, 255);
 }
 .innerDescription div div .color.cyan {
   background-color: rgb(41, 208, 217);
@@ -2269,16 +2339,16 @@ summary:hover .hoverableRect {
   padding: 48px;
   font-family: "Euclid Circular A";
   font-weight: 500;
-  font-size: getFontSize("text-spacing");
+  font-size: clamp(0.8125rem, 0.7328431373rem + 0.3267973856vw, 1.125rem);
   text-transform: uppercase;
-  color: getColor("white");
+  color: rgb(255, 255, 255);
   background-color: rgba(51, 32, 101, 0.18);
   backdrop-filter: blur(200px);
 }
 .authModal > .title {
   margin-bottom: 66px;
   letter-spacing: 0.1em;
-  font-size: getFontSize("text");
+  font-size: clamp(0.8125rem, 0.7328431373rem + 0.3267973856vw, 1.125rem);
 }
 .authModal > .closeButton {
   position: absolute;
@@ -2296,7 +2366,7 @@ summary:hover .hoverableRect {
 }
 .authModal > div:nth-child(4) {
   gap: 24px;
-  font-size: getFontSize("subtitle");
+  font-size: clamp(0.75rem, 0.7022058824rem + 0.1960784314vw, 0.9375rem);
   letter-spacing: 0.1em;
 }
 .authModal button[type=submit] {
@@ -2309,28 +2379,28 @@ summary:hover .hoverableRect {
 }
 .authModal button[type=submit] span {
   position: absolute;
-  color: getColor("white");
+  color: rgb(255, 255, 255);
   font-family: "Euclid Circular A";
   font-weight: 500;
-  font-size: getFontSize("button");
+  font-size: clamp(1rem, 0.9362745098rem + 0.2614379085vw, 1.25rem);
   line-height: 1.2;
 }
 .authModal button[type=submit]::after {
   content: "";
   width: 120px;
   height: 81px;
-  border: 2px solid getColor("lime");
+  border: 2px solid rgb(217, 255, 90);
   border-radius: 50%;
-  background-color: getColor("white-0.2");
+  background-color: rgba(255, 255, 255, 0.2);
   transform: rotate(-15deg);
 }
 .authModal .register {
   width: fit-content;
   background-color: transparent;
-  color: getColor("white");
+  color: rgb(255, 255, 255);
   font-family: "Euclid Circular A";
   font-weight: 500;
-  font-size: getFontSize("subtitle");
+  font-size: clamp(0.75rem, 0.7022058824rem + 0.1960784314vw, 0.9375rem);
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
@@ -2344,16 +2414,16 @@ summary:hover .hoverableRect {
   padding: 48px;
   font-family: "Euclid Circular A";
   font-weight: 500;
-  font-size: getFontSize("text-spacing");
+  font-size: clamp(0.8125rem, 0.7328431373rem + 0.3267973856vw, 1.125rem);
   text-transform: uppercase;
-  color: getColor("white");
+  color: rgb(255, 255, 255);
   background-color: rgba(51, 32, 101, 0.18);
   backdrop-filter: blur(200px);
 }
 .registerModal > .title {
   margin-bottom: 66px;
   letter-spacing: 0.1em;
-  font-size: getFontSize("text");
+  font-size: clamp(0.8125rem, 0.7328431373rem + 0.3267973856vw, 1.125rem);
 }
 .registerModal > .closeButton {
   position: absolute;
@@ -2371,7 +2441,7 @@ summary:hover .hoverableRect {
 }
 .registerModal > div:nth-child(4) {
   gap: 24px;
-  font-size: getFontSize("subtitle");
+  font-size: clamp(0.75rem, 0.7022058824rem + 0.1960784314vw, 0.9375rem);
   letter-spacing: 0.1em;
 }
 .registerModal button[type=submit] {
@@ -2384,28 +2454,28 @@ summary:hover .hoverableRect {
 }
 .registerModal button[type=submit] span {
   position: absolute;
-  color: getColor("white");
+  color: rgb(255, 255, 255);
   font-family: "Euclid Circular A";
   font-weight: 500;
-  font-size: getFontSize("button");
+  font-size: clamp(1rem, 0.9362745098rem + 0.2614379085vw, 1.25rem);
   line-height: 1.2;
 }
 .registerModal button[type=submit]::after {
   content: "";
   width: 189px;
   height: 93px;
-  border: 2px solid getColor("lime");
+  border: 2px solid rgb(217, 255, 90);
   border-radius: 50%;
-  background-color: getColor("white-0.2");
+  background-color: rgba(255, 255, 255, 0.2);
   transform: rotate(-6deg);
 }
 .registerModal .auth {
   width: fit-content;
   background-color: transparent;
-  color: getColor("white");
+  color: rgb(255, 255, 255);
   font-family: "Euclid Circular A";
   font-weight: 500;
-  font-size: getFontSize("subtitle");
+  font-size: clamp(0.75rem, 0.7022058824rem + 0.1960784314vw, 0.9375rem);
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
@@ -2420,7 +2490,7 @@ summary:hover .hoverableRect {
   max-width: 1800px;
   height: 70px;
   border-radius: 100px;
-  color: getColor("white");
+  color: rgb(255, 255, 255);
   background-color: rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(60px);
 }
@@ -2434,21 +2504,21 @@ summary:hover .hoverableRect {
   min-width: 360px;
   font-family: "Euclid Circular A";
   font-weight: 500;
-  font-size: getFontSize("text");
-  color: getColor("white");
+  font-size: clamp(0.8125rem, 0.7328431373rem + 0.3267973856vw, 1.125rem);
+  color: rgb(255, 255, 255);
   background-color: transparent;
   outline: none;
 }
 .searchModal input[type=text]::placeholder {
-  color: getColor("white");
+  color: rgb(255, 255, 255);
 }
 .searchModal button[type=submit] {
   margin: 7px;
   min-width: 57px;
   min-height: 57px;
-  border: 1px solid getColor("white");
+  border: 1px solid rgb(255, 255, 255);
   border-radius: 100%;
-  background-color: getColor("lavender");
+  background-color: rgb(174, 151, 232);
 }
 
 .contactsModal {
@@ -2461,9 +2531,9 @@ summary:hover .hoverableRect {
   height: 100%;
   font-family: "Euclid Circular A";
   font-weight: 500;
-  font-size: getFontSize("text-spacing");
-  color: getColor("white");
-  background-color: getColor("white-0.2");
+  font-size: clamp(0.75rem, 0.7022058824rem + 0.1960784314vw, 0.9375rem);
+  color: rgb(255, 255, 255);
+  background-color: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(200px);
 }
 .contactsModal > div:nth-child(1), .contactsModal > div:nth-child(2) {
@@ -2472,13 +2542,14 @@ summary:hover .hoverableRect {
   height: 466px;
 }
 .contactsModal > div:nth-child(1) > div:nth-child(1) {
-  flex-grow: 1125;
+  width: 52.28%;
   max-width: 954px;
   display: flex;
   padding: 83px;
+  padding-bottom: 74px;
   gap: 153px;
   border-top-left-radius: 50px;
-  background-color: getColor("lavender");
+  background-color: rgb(174, 151, 232);
 }
 .contactsModal > div:nth-child(1) .address {
   display: flex;
@@ -2486,23 +2557,26 @@ summary:hover .hoverableRect {
   align-items: flex-start;
   font-family: "Euclid Circular A";
   font-weight: 500;
-  font-size: getFontSize("text");
+  font-size: clamp(0.8125rem, 0.7328431373rem + 0.3267973856vw, 1.125rem);
 }
 .contactsModal > div:nth-child(1) .address > span:nth-child(1) {
-  font-size: getFontSize("subtitle");
+  margin-bottom: 51px;
+  font-size: clamp(0.75rem, 0.7022058824rem + 0.1960784314vw, 0.9375rem);
   text-transform: uppercase;
-  color: getColor("white-0.6");
+  color: rgba(255, 255, 255, 0.6);
 }
 .contactsModal > div:nth-child(1) .address address {
   font-style: normal;
-  margin-bottom: 51px;
 }
 .contactsModal > div:nth-child(1) .address h1 {
+  display: inline-flex;
+  align-items: center;
   font-family: "Euclid Circular A";
   font-weight: 500;
-  font-size: getFontSize("h1");
+  font-size: clamp(1.4375rem, 0.8480392157rem + 2.4183006536vw, 3.75rem);
   text-transform: uppercase;
   margin-bottom: 33px;
+  height: 43px;
 }
 .contactsModal > div:nth-child(1) .address > span:nth-child(4) {
   display: inline-flex;
@@ -2515,12 +2589,14 @@ summary:hover .hoverableRect {
   flex-direction: column;
 }
 .contactsModal > div:nth-child(1) .phone > span:nth-child(1) {
-  font-size: getFontSize("subtitle");
+  font-size: clamp(0.75rem, 0.7022058824rem + 0.1960784314vw, 0.9375rem);
   text-transform: uppercase;
-  color: getColor("white-0.6");
+  color: rgba(255, 255, 255, 0.6);
   margin-bottom: 59px;
 }
 .contactsModal > div:nth-child(1) .phone > span:nth-child(2) {
+  display: inline-flex;
+  align-items: center;
   font-family: Floreste;
   font-weight: 400;
   font-size: 40px;
@@ -2539,13 +2615,30 @@ summary:hover .hoverableRect {
 .contactsModal form {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: flex-start;
-  flex-grow: 1000;
+  width: 47.72%;
   max-width: 848px;
   padding: 83px;
   border-top-right-radius: 50px;
-  background-color: getColor("pink");
+  background-color: rgb(250, 143, 239);
+}
+.contactsModal form > :nth-child(1) {
+  margin-bottom: 53px;
+  color: rgba(255, 255, 255, 0.6);
+  text-transform: uppercase;
+}
+.contactsModal form > :nth-child(2) {
+  box-sizing: content-box;
+  height: 11px;
+  padding-bottom: 14px;
+  margin-bottom: 64px;
+}
+.contactsModal form > :nth-child(3) {
+  box-sizing: content-box;
+  height: 11px;
+  padding-bottom: 14px;
+  margin-bottom: 59px;
 }
 .contactsModal form button {
   position: relative;
@@ -2558,24 +2651,24 @@ summary:hover .hoverableRect {
 }
 .contactsModal form button span {
   position: absolute;
-  font-size: getFontSize("button");
+  font-size: clamp(1rem, 0.9362745098rem + 0.2614379085vw, 1.25rem);
   line-height: 1.2;
-  color: getColor("white");
+  color: rgb(255, 255, 255);
 }
 .contactsModal form button::after {
   content: "";
   width: 189px;
   height: 93px;
   transform: rotate(-6deg);
-  border: 2px solid getColor("lime");
+  border: 2px solid rgb(217, 255, 90);
   border-radius: 50%;
-  background-color: getColor("white-0.6");
+  background-color: rgba(255, 255, 255, 0.6);
 }
 .contactsModal .closeButton {
   position: absolute;
   top: 91px;
   right: 89px;
-  stroke: getColor("white");
+  stroke: rgb(255, 255, 255);
   background-color: transparent;
 }
 .contactsModal #map {

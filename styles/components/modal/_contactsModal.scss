@@ -1,3 +1,4 @@
+@use "../../helpers" as *;
 @use "../../variables" as *;
 
 .contactsModal {
@@ -12,7 +13,7 @@
 
   font-family: "Euclid Circular A";
   font-weight: 500;
-  font-size: getFontSize("text-spacing");
+  font-size: getFontSize("subtitle");
 
   color: getColor("white");
   background-color: getColor("white-0.2");
@@ -27,10 +28,11 @@
 
   & > div:nth-child(1) {
     & > div:nth-child(1) {
-      flex-grow: 1125;
+      width: 52.28%;
       max-width: 954px;
       display: flex;
       padding: 83px;
+      padding-bottom: 74px;
       gap: 153px;
       border-top-left-radius: 50px;
       background-color: getColor("lavender");
@@ -46,6 +48,7 @@
       font-size: getFontSize("text");
 
       & > span:nth-child(1) {
+        margin-bottom: 51px;
         font-size: getFontSize("subtitle");
         text-transform: uppercase;
         color: getColor("white-0.6");
@@ -53,15 +56,17 @@
 
       address {
         font-style: normal;
-        margin-bottom: 51px;
       }
 
       h1 {
+        display: inline-flex;
+        align-items: center;
         font-family: "Euclid Circular A";
         font-weight: 500;
         font-size: getFontSize("h1");
         text-transform: uppercase;
         margin-bottom: 33px;
+        height: 43px;
       }
 
       & > span:nth-child(4) {
@@ -84,6 +89,8 @@
       }
 
       & > span:nth-child(2) {
+        display: inline-flex;
+        align-items: center;
         font-family: Floreste;
         font-weight: 400;
         font-size: 40px;
@@ -108,13 +115,33 @@
   form {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: flex-start;
-    flex-grow: 1000;
+    width: 47.72%;
     max-width: 848px;
     padding: 83px;
     border-top-right-radius: 50px;
     background-color: getColor("pink");
+
+    > :nth-child(1) {
+      margin-bottom: 53px;
+      color: getColor("white-0.6");
+      text-transform: uppercase;
+    }
+
+    > :nth-child(2) {
+      box-sizing: content-box;
+      height: 11px;
+      padding-bottom: 14px;
+      margin-bottom: 64px;
+    }
+
+    > :nth-child(3) {
+      box-sizing: content-box;
+      height: 11px;
+      padding-bottom: 14px;
+      margin-bottom: 59px;
+    }
 
     button {
       position: relative;
@@ -125,6 +152,7 @@
       width: 189px;
       height: 93px;
       background-color: transparent;
+
       span {
         position: absolute;
         font-size: getFontSize("button");
