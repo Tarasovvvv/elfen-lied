@@ -1,40 +1,32 @@
-@use "helpers" as *;
+@use "sass:map";
 
-:root {
-  // colors
-  --color-lime: rgb(217, 255, 90);
-  --color-pink: rgb(250, 143, 239);
-  --color-pink-semi-transparent: rgb(255, 168, 246);
-  --color-blue: rgb(174, 207, 255);
-  --color-light-blue: rgb(165, 212, 255);
-  --color-blue-semi-transparent: rgb(190, 216, 255);
-  --color-white: rgb(255, 255, 255);
-  --color-white-semi-transparent: rgba(255, 255, 255, 0.6);
-  --color-white-almost-transparent: rgba(255, 255, 255, 0.2);
-  --color-delete: rgb(121, 100, 174);
-  --color-lavender: rgb(174, 151, 232);
-  --color-lavender-highlight: rgb(203, 182, 255);
-  --color-lavender-semi-transparent: rgba(203, 182, 255, 0.6);
-  --color-lavender-dark: rgba(235, 227, 255, 0.2);
+$colors: (
+  "lime": rgb(217, 255, 90),
+  "pink": rgb(250, 143, 239),
+  "blue": rgb(174, 207, 255),
+  "white": rgb(255, 255, 255),
+  "white-0.2": rgba(255, 255, 255, 0.2),
+  "white-0.6": rgba(255, 255, 255, 0.6),
+  "lavender": rgb(174, 151, 232),
+  "lavender-light": rgb(203, 182, 255),
+  "lavender-light-0.6": rgba(203, 182, 255, 0.6),
+);
 
-  // desktop font sizes
-  --desk-font-size-h1: 60px;
-  --desk-font-size-h2: 28px;
-  --desk-font-size-logo: 45px;
-  --desk-font-size-text: 18px;
-  --desk-font-size-curve: 16px;
-  --desk-font-size-button: 20px;
-  --desk-font-size-numbers: 40px;
-  --desk-font-size-subtitle: 15px;
-  --desk-font-size-currency: 20px;
-  --desk-font-size-background: 212px;
-  --desk-font-size-text-spacing: 20px;
-  --desk-font-size-filter-title: 18px;
-  --desk-font-size-quanity-measure: 15px;
-  --desk-font-size-description-text: 15px;
-  --desk-font-size-filter-item-text: 18px;
-  --desk-font-size-filter-item-title: 20px;
-  --desk-font-size-middle-background: 205px;
-  --desk-font-size-all-rights-resereved: 18px;
-  --desk-font-size-text-caps-no-spacing: 18px;
-}
+$fontSizes: (
+  "h1-min": 23,
+  "h1-max": 60,
+  "h2-min": 23,
+  "h2-max": 28,
+  "text-min": 13,
+  "text-max": 18,
+  "button-min": 16,
+  "button-max": 20,
+  "numbers-min": 28,
+  "numbers-max": 41,
+  "subtitle-min": 12,
+  "subtitle-max": 15,
+  "currency-min": 15,
+  "currency-max": 20,
+  "background-min": 71,
+  "background-max": 212,
+);

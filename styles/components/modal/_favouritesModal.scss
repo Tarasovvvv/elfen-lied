@@ -1,3 +1,5 @@
+@use "../../variables" as *;
+
 .favouritesModal {
   display: flex;
   flex-direction: column;
@@ -9,17 +11,17 @@
 
   font-family: "Euclid Circular A";
   font-weight: 500;
-  font-size: var(--desk-font-size-text-spacing);
+  font-size: getFontSize("text-spacing");
   text-transform: uppercase;
 
-  color: var(--color-white);
+  color: getColor("white");
   background-color: rgba(51, 32, 101, 0.18);
   backdrop-filter: blur(200px);
 
   & > .title {
     margin-bottom: 53px;
     letter-spacing: 0.1em;
-    font-size: var(--desk-font-size-text-caps-no-spacing);
+    font-size: getFontSize("text");
   }
 
   & .currency {
@@ -27,7 +29,7 @@
     align-items: center;
     height: 14px;
 
-    font-size: var(--desk-font-size-currency);
+    font-size: getFontSize("currency");
   }
 
   & > .closeButton {
@@ -83,7 +85,7 @@
   & .favouriteButton {
     height: 54px;
     border-radius: 100%;
-    background-color: var(--color-white-almost-transparent);
+    background-color: getColor("white-0.2");
     margin-bottom: 0;
 
     .hearth {
@@ -91,13 +93,13 @@
       fill: transparent;
     }
     path {
-      fill: var(--color-lime);
+      fill: getColor("lime");
       transition-property: fill;
       transition-duration: 200ms;
       transition-timing-function: ease;
     }
     circle {
-      stroke: var(--color-lime);
+      stroke: getColor("lime");
       transition-property: stroke;
       transition-duration: 200ms;
       transition-timing-function: ease;
@@ -108,7 +110,7 @@
         stroke: rgb(255, 177, 247);
       }
       path {
-        fill: var(--color-white);
+        fill: getColor("white");
       }
       circle {
         stroke: rgb(255, 177, 247);
@@ -129,7 +131,7 @@
       align-items: center;
 
       height: 13px;
-      font-size: var(--desk-font-size-text);
+      font-size: getFontSize("text");
       text-transform: none;
     }
 
@@ -143,9 +145,9 @@
         width: 14px;
         height: 14px;
 
-        border: 2px solid var(--color-white);
+        border: 2px solid getColor("white");
         border-radius: 100%;
-        background-color: var(--color-white);
+        background-color: getColor("white");
 
         &.cyan {
           background-color: rgb(41, 208, 217);

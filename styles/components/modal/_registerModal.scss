@@ -1,3 +1,5 @@
+@use "../../variables" as *;
+
 .registerModal {
   display: flex;
   flex-direction: column;
@@ -9,17 +11,17 @@
 
   font-family: "Euclid Circular A";
   font-weight: 500;
-  font-size: var(--desk-font-size-text-spacing);
+  font-size: getFontSize("text-spacing");
   text-transform: uppercase;
 
-  color: var(--color-white);
+  color: getColor("white");
   background-color: rgba(51, 32, 101, 0.18);
   backdrop-filter: blur(200px);
 
   & > .title {
     margin-bottom: 66px;
     letter-spacing: 0.1em;
-    font-size: var(--desk-font-size-text-caps-no-spacing);
+    font-size: getFontSize("text");
   }
 
   & > .closeButton {
@@ -42,7 +44,7 @@
 
   & > div:nth-child(4) {
     gap: 24px;
-    font-size: var(--desk-font-size-subtitle);
+    font-size: getFontSize("subtitle");
     letter-spacing: 0.1em;
   }
 
@@ -59,10 +61,10 @@
     span {
       position: absolute;
 
-      color: var(--color-white);
+      color: getColor("white");
       font-family: "Euclid Circular A";
       font-weight: 500;
-      font-size: var(--desk-font-size-button);
+      font-size: getFontSize("button");
       line-height: 1.2;
     }
 
@@ -71,10 +73,10 @@
 
       width: 189px;
       height: 93px;
-      border: 2px solid var(--color-lime);
+      border: 2px solid getColor("lime");
       border-radius: 50%;
 
-      background-color: var(--color-white-almost-transparent);
+      background-color: getColor("white-0.2");
       transform: rotate(-6deg);
     }
   }
@@ -83,10 +85,10 @@
     width: fit-content;
     background-color: transparent;
 
-    color: var(--color-white);
+    color: getColor("white");
     font-family: "Euclid Circular A";
     font-weight: 500;
-    font-size: var(--desk-font-size-subtitle);
+    font-size: getFontSize("subtitle");
     letter-spacing: 0.1em;
     text-transform: uppercase;
   }

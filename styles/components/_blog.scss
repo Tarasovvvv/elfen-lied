@@ -1,19 +1,38 @@
+@use "../helpers" as *;
+@use "../variables" as *;
+
 .blog {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
   gap: 70px;
 
   margin: 170px 60px;
-  height: 489px;
   line-height: 1;
 
   font-family: "Euclid Circular A";
   font-weight: 500;
-  font-size: var(--desk-font-size-subtitle);
+  font-size: getFontSize("subtitle");
   text-transform: uppercase;
-  color: var(--color-white);
+  color: getColor("white");
 
+  & > ul {
+    display: flex;
+    gap: 30px;
+
+    @include mobile() {
+      margin-left: 15px;
+      margin-right: 15px;
+
+      & > :not(:nth-child(1)) {
+        display: none;
+      }
+    }
+  }
+
+  @include mobile() {
+    margin-left: 15px;
+    margin-right: 15px;
+  }
 }
 
 .blogTop {
@@ -33,7 +52,7 @@
   align-items: center;
   height: 43px;
 
-  font-size: var(--desk-font-size-h1);
+  font-size: getFontSize("h1");
 }
 
 .paginatorDotsWrapper {
@@ -50,7 +69,7 @@
   background-color: rgba(255, 255, 255, 0.3);
 
   &.selected {
-    background-color: var(--color-white);
+    background-color: getColor("white");
   }
 }
 
@@ -64,7 +83,7 @@
 
   font-family: "Floreste";
   font-weight: 400;
-  font-size: var(--desk-font-size-numbers);
+  font-size: setFontSize("numbers");
 }
 
 .sliderHr {
@@ -73,14 +92,7 @@
   margin-left: 27px;
   margin-right: 35px;
 
-  background-color: var(--color-lavender-highlight);
-}
-
-.blogCardsList {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 30px;
+  background-color: getColor("lavender-light");
 }
 
 .blogCard {
@@ -95,11 +107,11 @@
 
   &:hover {
     .cardButton {
-      background-color: var(--color-lime);
+      background-color: getColor("lime");
 
       & .number,
       & .buttonText {
-        color: var(--color-lavender);
+        color: getColor("lavender");
       }
     }
   }
@@ -121,7 +133,7 @@
 
   width: 96px;
   height: 81px;
-  border: 2px solid var(--color-lime);
+  border: 2px solid getColor("lime");
   border-radius: 50%;
 
   background-color: var(--color-white-alsmost-transparent);
@@ -145,7 +157,7 @@
   flex-direction: column;
   gap: 5px;
 
-  color: var(--color-white);
+  color: getColor("white");
   text-transform: uppercase;
 }
 
@@ -195,19 +207,19 @@
 }
 
 .topTitleNumber {
-  color: var(--color-white-semi-transparent);
+  color: getColor("white");
 }
 
 .topTitleAuthor {
   width: 90px;
 
-  font-size: var(--desk-font-size-text);
+  font-size: getFontSize("text");
   text-transform: capitalize;
   text-align: right;
 }
 
 .middleTitle {
-  font-size: var(--desk-font-size-h2);
+  font-size: getFontSize("h2");
   line-height: 1.29;
 
   margin-bottom: 88px;

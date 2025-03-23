@@ -5,23 +5,31 @@
   box-sizing: border-box;
 }
 
-ul {
-  padding-left: 0;
-  list-style: none;
+a,
+pre,
+button,
+input {
+  font: inherit;
+  color: inherit;
 }
 
-:where(address[class]) {
-  font-style: normal;
+a,
+address {
+  text-decoration: none;
 }
 
+a,
+button {
+  background-color: transparent;
+}
+a:not(:disabled),
 button:not(:disabled) {
   cursor: pointer;
 }
 
-a {
-  font-family: inherit;
-  text-decoration: none;
-  color: inherit;
+ul {
+  padding-left: 0;
+  list-style: none;
 }
 
 @font-face {
@@ -80,58 +88,9 @@ a {
   font-style: normal;
   font-display: swap;
 }
-:root {
-  --color-lime: rgb(217, 255, 90);
-  --color-pink: rgb(250, 143, 239);
-  --color-pink-semi-transparent: rgb(255, 168, 246);
-  --color-blue: rgb(174, 207, 255);
-  --color-light-blue: rgb(165, 212, 255);
-  --color-blue-semi-transparent: rgb(190, 216, 255);
-  --color-white: rgb(255, 255, 255);
-  --color-white-semi-transparent: rgba(255, 255, 255, 0.6);
-  --color-white-almost-transparent: rgba(255, 255, 255, 0.2);
-  --color-delete: rgb(121, 100, 174);
-  --color-lavender: rgb(174, 151, 232);
-  --color-lavender-highlight: rgb(203, 182, 255);
-  --color-lavender-semi-transparent: rgba(203, 182, 255, 0.6);
-  --color-lavender-dark: rgba(235, 227, 255, 0.2);
-  --desk-font-size-h1: 60px;
-  --desk-font-size-h2: 28px;
-  --desk-font-size-logo: 45px;
-  --desk-font-size-text: 18px;
-  --desk-font-size-curve: 16px;
-  --desk-font-size-button: 20px;
-  --desk-font-size-numbers: 40px;
-  --desk-font-size-subtitle: 15px;
-  --desk-font-size-currency: 20px;
-  --desk-font-size-background: 212px;
-  --desk-font-size-text-spacing: 20px;
-  --desk-font-size-filter-title: 18px;
-  --desk-font-size-quanity-measure: 15px;
-  --desk-font-size-description-text: 15px;
-  --desk-font-size-filter-item-text: 18px;
-  --desk-font-size-filter-item-title: 20px;
-  --desk-font-size-middle-background: 205px;
-  --desk-font-size-all-rights-resereved: 18px;
-  --desk-font-size-text-caps-no-spacing: 18px;
-}
-
-.visually-hidden {
-  position: absolute !important;
-  width: 1px !important;
-  height: 1px !important;
-  margin: -1px !important;
-  border: 0 !important;
-  padding: 0 !important;
-  white-space: nowrap !important;
-  clip-path: inset(100%) !important;
-  clip: rect(0 0 0 0) !important;
-  overflow: hidden !important;
-}
-
 body {
   position: relative;
-  background-color: var(--color-lavender);
+  background-color: rgb(174, 151, 232);
 }
 body > div {
   position: absolute;
@@ -144,7 +103,6 @@ body.noScroll {
 .root {
   z-index: 0;
   scrollbar-gutter: stable;
-  background-color: var(--color-lavender);
 }
 
 .modalRoot {
@@ -202,39 +160,51 @@ body.noScroll {
   right: 61px;
 }
 
+.price {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 7px;
+}
+.price :nth-child(1) {
+  align-self: flex-start;
+}
+
 .number {
   font-family: "Floreste";
-  font-size: var(--desk-font-size-numbers);
+  font-size: setFontSize("numbers");
   font-weight: 400;
   letter-spacing: 0.04em;
   text-align: center;
-  color: var(--color-white);
+  color: rgb(255, 255, 255);
 }
 
 .buyButton {
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 11px;
   background-color: transparent;
 }
 .buyButton .title {
   font-family: "Euclid Circular A";
-  font-size: var(--desk-font-size-button);
+  font-size: clamp(1rem, 0.9362745098rem + 0.2614379085vw, 1.25rem);
   font-weight: 500;
   text-align: center;
   line-height: 1.2;
-  margin-left: 12px;
   z-index: 4;
-  color: var(--color-white);
+  color: rgb(255, 255, 255);
 }
 .buyButton svg {
   z-index: 4;
+  width: clamp(1.25rem, 1.1862745098rem + 0.2614379085vw, 1.5rem);
+  height: clamp(1.25rem, 1.1862745098rem + 0.2614379085vw, 1.5rem);
 }
 
-.innerHr {
+hr {
   height: 2px;
   width: 100%;
-  background-color: var(--color-lime);
+  background-color: rgb(217, 255, 90);
   margin-top: 22px;
   margin-bottom: 22px;
 }
@@ -242,34 +212,51 @@ body.noScroll {
 .formInput {
   font-family: "Euclid Circular A";
   font-weight: 500;
-  font-size: var(--desk-font-size-subtitle);
+  font-size: clamp(0.75rem, 0.7022058824rem + 0.1960784314vw, 0.9375rem);
   width: 100%;
   padding-bottom: 19px;
-  border-bottom: 2px solid var(--color-lime);
-  color: var(--color-white);
+  border-bottom: 2px solid rgb(217, 255, 90);
+  color: rgb(255, 255, 255);
   background-color: transparent;
 }
 .formInput:user-invalid {
   border-bottom-color: red;
 }
 .formInput::placeholder {
-  color: var(--color-white);
+  color: rgb(255, 255, 255);
   text-transform: uppercase;
 }
 
 .blog {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
   gap: 70px;
   margin: 170px 60px;
-  height: 489px;
   line-height: 1;
   font-family: "Euclid Circular A";
   font-weight: 500;
-  font-size: var(--desk-font-size-subtitle);
+  font-size: clamp(0.75rem, 0.7022058824rem + 0.1960784314vw, 0.9375rem);
   text-transform: uppercase;
-  color: var(--color-white);
+  color: rgb(255, 255, 255);
+}
+.blog > ul {
+  display: flex;
+  gap: 30px;
+}
+@media (width <= 500px) {
+  .blog > ul {
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+  .blog > ul > :not(:nth-child(1)) {
+    display: none;
+  }
+}
+@media (width <= 500px) {
+  .blog {
+    margin-left: 15px;
+    margin-right: 15px;
+  }
 }
 
 .blogTop {
@@ -288,7 +275,7 @@ body.noScroll {
   display: inline-flex;
   align-items: center;
   height: 43px;
-  font-size: var(--desk-font-size-h1);
+  font-size: clamp(1.4375rem, 0.8480392157rem + 2.4183006536vw, 3.75rem);
 }
 
 .paginatorDotsWrapper {
@@ -304,7 +291,7 @@ body.noScroll {
   background-color: rgba(255, 255, 255, 0.3);
 }
 .paginatorDot.selected {
-  background-color: var(--color-white);
+  background-color: rgb(255, 255, 255);
 }
 
 .blogSlider {
@@ -316,7 +303,7 @@ body.noScroll {
   height: 28px;
   font-family: "Floreste";
   font-weight: 400;
-  font-size: var(--desk-font-size-numbers);
+  font-size: setFontSize("numbers");
 }
 
 .sliderHr {
@@ -324,14 +311,7 @@ body.noScroll {
   height: 2px;
   margin-left: 27px;
   margin-right: 35px;
-  background-color: var(--color-lavender-highlight);
-}
-
-.blogCardsList {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 30px;
+  background-color: rgb(203, 182, 255);
 }
 
 .blogCard {
@@ -343,10 +323,10 @@ body.noScroll {
   height: 376px;
 }
 .blogCard:hover .cardButton {
-  background-color: var(--color-lime);
+  background-color: rgb(217, 255, 90);
 }
 .blogCard:hover .cardButton .number, .blogCard:hover .cardButton .buttonText {
-  color: var(--color-lavender);
+  color: rgb(174, 151, 232);
 }
 
 .cardBackground {
@@ -363,7 +343,7 @@ body.noScroll {
   justify-content: center;
   width: 96px;
   height: 81px;
-  border: 2px solid var(--color-lime);
+  border: 2px solid rgb(217, 255, 90);
   border-radius: 50%;
   background-color: var(--color-white-alsmost-transparent);
   transform: rotate(-15deg);
@@ -381,7 +361,7 @@ body.noScroll {
   display: flex;
   flex-direction: column;
   gap: 5px;
-  color: var(--color-white);
+  color: rgb(255, 255, 255);
   text-transform: uppercase;
 }
 
@@ -424,18 +404,18 @@ body.noScroll {
 }
 
 .topTitleNumber {
-  color: var(--color-white-semi-transparent);
+  color: rgb(255, 255, 255);
 }
 
 .topTitleAuthor {
   width: 90px;
-  font-size: var(--desk-font-size-text);
+  font-size: clamp(0.8125rem, 0.7328431373rem + 0.3267973856vw, 1.125rem);
   text-transform: capitalize;
   text-align: right;
 }
 
 .middleTitle {
-  font-size: var(--desk-font-size-h2);
+  font-size: clamp(1.4375rem, 1.3578431373rem + 0.3267973856vw, 1.75rem);
   line-height: 1.29;
   margin-bottom: 88px;
 }
@@ -465,7 +445,7 @@ body.noScroll {
   padding-bottom: 11px;
 }
 .order input::placeholder {
-  font-size: var(--desk-font-size-subtitle);
+  font-size: clamp(0.75rem, 0.7022058824rem + 0.1960784314vw, 0.9375rem);
 }
 .order h1 {
   display: inline-flex;
@@ -473,10 +453,10 @@ body.noScroll {
   width: 100%;
   height: 41px;
   margin-bottom: 34px;
-  color: var(--color-white);
+  color: rgb(255, 255, 255);
   font-family: "Euclid Circular A";
   font-weight: 500;
-  font-size: var(--desk-font-size-h1);
+  font-size: clamp(1.4375rem, 0.8480392157rem + 2.4183006536vw, 3.75rem);
   text-transform: uppercase;
 }
 .order .buyButton {
@@ -485,10 +465,10 @@ body.noScroll {
   margin-top: 59px;
   width: 189px;
   background-color: transparent;
-  color: var(--color-white);
+  color: rgb(255, 255, 255);
   font-family: "Euclid Circular A";
   font-weight: 500;
-  font-size: var(--desk-font-size-button);
+  font-size: clamp(1rem, 0.9362745098rem + 0.2614379085vw, 1.25rem);
   line-height: 1.2;
 }
 .order .buyButton::after {
@@ -496,10 +476,10 @@ body.noScroll {
   position: absolute;
   width: 189px;
   height: 93px;
-  border: 2px solid var(--color-lime);
+  border: 2px solid rgb(217, 255, 90);
   border-radius: 50%;
   transform: rotate(-13deg);
-  background-color: var(--color-white-almost-transparent);
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
 .total {
@@ -509,24 +489,24 @@ body.noScroll {
   justify-content: center;
   gap: 7px;
   width: 241px;
-  color: var(--color-white);
+  color: rgb(255, 255, 255);
   font-family: "Euclid Circular A";
   font-weight: 500;
 }
 .total .number {
   font-family: "Floreste";
   font-weight: 400;
-  font-size: var(--desk-font-size-numbers);
+  font-size: setFontSize("numbers");
   letter-spacing: 0.04em;
 }
 .total .currency {
-  font-size: var(--desk-font-size-button);
+  font-size: clamp(1rem, 0.9362745098rem + 0.2614379085vw, 1.25rem);
   transform: translate(0, -40%);
 }
 .total::after {
   content: "";
   position: absolute;
-  border: 2px solid var(--color-lime);
+  border: 2px solid rgb(217, 255, 90);
   border-radius: 50%;
   width: 241px;
   height: 111px;
@@ -554,10 +534,10 @@ body.noScroll {
   height: 23px;
   margin-top: 322px;
   padding: 0 60px;
-  color: var(--color-white);
+  color: rgb(255, 255, 255);
   font-family: "Euclid Circular A";
   font-weight: 500;
-  font-size: var(--desk-font-size-tex);
+  font-size: clamp(0.8125rem, 0.7328431373rem + 0.3267973856vw, 1.125rem);
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
@@ -572,10 +552,10 @@ body.noScroll {
   overflow-x: hidden;
 }
 .orderSuccess > div:nth-child(2) span {
-  color: var(--color-lavender-semi-transparent);
+  color: rgba(203, 182, 255, 0.6);
   font-family: "Floreste";
   font-weight: 400;
-  font-size: var(--desk-font-size-background);
+  font-size: clamp(4.4375rem, 2.1911764706rem + 9.2156862745vw, 13.25rem);
   text-transform: uppercase;
   text-wrap: nowrap;
 }
@@ -641,97 +621,112 @@ body.noScroll {
   }
 }
 
-.mainHeader {
+header {
   position: absolute;
   top: 0;
   left: 0;
+  right: 0;
+  z-index: 1;
+  width: auto;
   margin-top: 53px;
   margin-left: 60px;
   margin-right: 123px;
-  z-index: 3;
 }
-
-.mainNav {
-  display: grid;
-  place-items: center;
-  grid-template-areas: "mainNavList . favourites . auth . cart";
-  grid-template-columns: auto minmax(18px, 247px) auto minmax(18px, 35px) auto minmax(18px, 36px) auto;
-  color: var(--color-white);
+@media (width < 760px) {
+  header {
+    margin-top: 26px;
+    margin-left: 15px;
+    margin-right: 15px;
+  }
 }
-
-.mainNavList {
-  display: grid;
-  place-items: center;
-  grid-template-areas: "logo . catalog . blog . contacts . search";
-  grid-template-columns: max-content minmax(18px, 133px) auto minmax(18px, 387px) auto minmax(18px, 30px) auto minmax(18px, 386px) auto;
+header ul {
+  display: flex;
 }
-
-.navLink {
+header ul > :nth-child(1) {
+  flex-grow: 0;
+  font-family: "Le Murmure", sans-serif;
+  font-size: clamp(2.0625rem, 1.8713235294rem + 0.7843137255vw, 2.8125rem);
+  font-weight: 600;
+  text-wrap: nowrap;
+}
+header ul > :nth-child(2) {
+  flex-grow: 133;
+}
+header ul > :nth-child(3),
+header ul > :nth-child(5) {
+  flex-grow: 386;
+}
+header ul > :nth-child(4) {
+  flex-grow: 30;
+}
+header ul > :nth-child(4) svg {
+  display: none;
+}
+header ul > :nth-child(6) {
+  flex-grow: 250;
+  position: relative;
+}
+header ul > :nth-child(7),
+header ul > :nth-child(8) {
+  flex-grow: 40;
+}
+header ul > :nth-child(6) button,
+header ul > :nth-child(8) button {
+  gap: 0;
+}
+header ul > :nth-child(6) span,
+header ul > :nth-child(8) span {
+  align-self: flex-end;
+  padding-bottom: 9px;
+  font-size: 13px;
+  font-weight: 700;
+}
+@media (width < 760px) {
+  header ul > :nth-child(2),
+  header ul > :nth-child(3) {
+    display: none;
+  }
+  header ul > :nth-child(4) {
+    flex-grow: 17;
+  }
+  header ul > :nth-child(5) {
+    flex-grow: 92;
+  }
+  header ul > :nth-child(7) {
+    flex-grow: 21;
+  }
+  header ul > :nth-child(6) {
+    flex-grow: 24;
+  }
+  header ul > :nth-child(8) {
+    order: 4;
+    flex-grow: 21;
+  }
+  header ul > :nth-child(4) {
+    order: 8;
+  }
+  header ul > :nth-child(4) svg {
+    display: flex;
+  }
+  header ul > :nth-child(n+2):nth-child(-n+5) span,
+  header ul > :nth-child(n+2):nth-child(-n+5) a {
+    display: none;
+  }
+}
+header li {
+  display: flex;
+  justify-content: flex-end;
+  color: rgb(255, 255, 255);
+  font-size: clamp(0.8125rem, 0.7328431373rem + 0.3267973856vw, 1.125rem);
+  font-family: "Euclid Circular A", sans-serif;
+  font-weight: 500;
+}
+header button,
+header a {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 12px;
-  background-color: transparent;
-  color: var(--color-white);
-  font-family: "Euclid Circular A", sans-serif;
-  font-weight: 500;
-  font-size: var(--desk-font-size-text);
-}
-
-.navButton {
-  display: flex;
-  background-color: transparent;
-}
-
-.logo {
-  font-family: "Le Murmure", sans-serif;
-  font-weight: 600;
-  font-size: var(--desk-font-size-logo);
-  line-height: 1em;
-  grid-area: logo;
-}
-
-.catalog {
-  grid-area: catalog;
-}
-
-.navBlog {
-  grid-area: blog;
-}
-
-.contacts {
-  grid-area: contacts;
-}
-
-.search {
-  grid-area: search;
-}
-
-.favourites {
-  position: relative;
-  grid-area: favourites;
-}
-
-.auth {
-  grid-area: auth;
-}
-
-.cart {
-  position: relative;
-  grid-area: cart;
-}
-
-.itemsQuanity {
-  position: absolute;
-  right: -7px;
-  bottom: -2px;
-  font-family: "Euclid Circular A";
-  font-size: 13px;
-  font-weight: 700;
-  color: var(--color-white);
-}
-.itemsQuanity.empty {
-  display: none;
 }
 
 .mainFooter {
@@ -742,13 +737,39 @@ body.noScroll {
   margin-left: 67px;
   margin-right: 56px;
 }
+@media (width <= 500px) {
+  .mainFooter {
+    flex-direction: column-reverse;
+    gap: 18px;
+    justify-content: center;
+    margin-bottom: 70px;
+  }
+  .mainFooter span {
+    letter-spacing: 0;
+  }
+  .mainFooter .footerLogo {
+    display: block;
+  }
+  .mainFooter > :nth-child(2) {
+    width: 98px;
+    line-height: 20px;
+  }
+}
 
 .text {
   font-family: "Gilroy";
-  font-size: var(--desk-font-size-all-rights-resereved);
+  font-size: var(--font-size-all-rights-resereved);
   font-weight: 500;
   letter-spacing: 0.02em;
-  color: var(--color-white);
+  color: rgb(255, 255, 255);
+}
+
+.footerLogo {
+  position: absolute;
+  bottom: 59px;
+  right: 15px;
+  display: none;
+  transform: rotate(-15deg);
 }
 
 .banner {
@@ -760,6 +781,11 @@ body.noScroll {
   width: 100%;
   overflow: hidden;
 }
+@media (width <= 500px) {
+  .banner {
+    margin: 15px;
+  }
+}
 
 .bannerItem {
   position: relative;
@@ -767,9 +793,7 @@ body.noScroll {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  transition-property: flex-grow;
-  transition-duration: 800ms;
-  transition-timing-function: ease-out;
+  transition: flex-grow 800ms ease-out;
   flex-grow: 340;
   height: 1038px;
   border-radius: 50px;
@@ -822,6 +846,7 @@ body.noScroll {
 .bannerItem img {
   position: absolute;
   z-index: 1;
+  width: clamp(13.875rem, 9.5416666667rem + 17.7777777778vw, 30.875rem);
   -webkit-user-drag: none;
   user-select: none;
 }
@@ -839,7 +864,7 @@ body.noScroll {
 }
 .bannerItem .buyButton .ellipse:nth-child(2) {
   backdrop-filter: blur(150px);
-  background-color: var(--color-white-almost-transparent);
+  background-color: rgba(255, 255, 255, 0.2);
   z-index: 2;
   transform: rotate(-13deg);
 }
@@ -847,29 +872,30 @@ body.noScroll {
   letter-spacing: 0.04em;
 }
 .bannerItem:nth-child(1) {
-  background-color: var(--color-lavender-highlight);
+  background-color: rgb(203, 182, 255);
 }
 .bannerItem:nth-child(1) .backgroundText {
-  color: var(--color-lavender-semi-transparent);
+  color: rgba(203, 182, 255, 0.6);
 }
 .bannerItem:nth-child(1) .description .number {
-  color: var(--color-lime);
+  font-size: setFontSize("numbers");
+  color: rgb(217, 255, 90);
 }
 .bannerItem:nth-child(1).expdanded {
   background-color: transparent;
 }
 .bannerItem:nth-child(2) {
-  background-color: var(--color-pink);
+  background-color: rgb(250, 143, 239);
 }
 .bannerItem:nth-child(2) .backgroundText {
-  color: var(--color-pink-semi-transparent);
-  font-size: var(--desk-font-size-middle-background);
+  color: rgb(255, 168, 246);
+  font-size: clamp(4.1875rem, 1.9889705882rem + 9.0196078431vw, 12.8125rem);
 }
 .bannerItem:nth-child(3) {
-  background-color: var(--color-blue);
+  background-color: rgb(174, 207, 255);
 }
 .bannerItem:nth-child(3) .backgroundText {
-  color: var(--color-blue-semi-transparent);
+  color: rgb(190, 216, 255);
 }
 
 .productOfTheDay {
@@ -877,17 +903,17 @@ body.noScroll {
   top: 386px;
   left: 60px;
   font-family: "Euclid Circular A";
-  font-size: var(--desk-font-size-text-caps-no-spacing);
+  font-size: clamp(0.8125rem, 0.7328431373rem + 0.3267973856vw, 1.125rem);
   font-weight: 500;
   text-transform: uppercase;
-  color: var(--color-lime);
+  color: rgb(217, 255, 90);
 }
 
 .backgroundText {
   position: absolute;
   top: 440px;
   font-family: "Floreste";
-  font-size: var(--desk-font-size-background);
+  font-size: clamp(4.4375rem, 2.1911764706rem + 9.2156862745vw, 13.25rem);
   font-weight: 500;
   white-space: nowrap;
   text-transform: uppercase;
@@ -908,10 +934,10 @@ body.noScroll {
 }
 .preview .title {
   font-family: "Euclid Circular A";
-  font-size: var(--desk-font-size-subtitle);
+  font-size: clamp(0.75rem, 0.7022058824rem + 0.1960784314vw, 0.9375rem);
   font-weight: 500;
   text-transform: uppercase;
-  color: var(--color-white-semi-transparent);
+  color: rgba(255, 255, 255, 0.6);
 }
 
 .details {
@@ -926,23 +952,23 @@ body.noScroll {
   height: fit-content;
   width: 275px;
   text-align: left;
-  color: var(--color-white);
+  color: rgb(255, 255, 255);
 }
 .description .title {
   text-transform: uppercase;
   font-family: "Euclid Circular A";
-  font-size: var(--desk-font-size-h2);
+  font-size: clamp(1.4375rem, 1.3578431373rem + 0.3267973856vw, 1.75rem);
   font-weight: 500;
   margin-bottom: 18px;
 }
 .description .text {
   font-family: "Euclid Circular A";
-  font-size: var(--desk-font-size-description-text);
+  font-size: clamp(0.8125rem, 0.7806372549rem + 0.1307189542vw, 0.9375rem);
   font-weight: 500;
   line-height: 23px;
 }
 .description .hr {
-  background-color: var(--color-white-almost-transparent);
+  background-color: rgba(255, 255, 255, 0.2);
   height: 1px;
   width: auto;
   margin: 28px 0;
@@ -951,7 +977,7 @@ body.noScroll {
 .currency {
   font-family: "Euclid Circular A";
   font-weight: 400;
-  font-size: var(--desk-font-size-currency);
+  font-size: clamp(0.9375rem, 0.8578431373rem + 0.3267973856vw, 1.25rem);
   text-transform: uppercase;
 }
 
@@ -962,7 +988,7 @@ body.noScroll {
   translate: -50% -50%;
   width: inherit;
   height: inherit;
-  border: 2px solid var(--color-lime);
+  border: 2px solid rgb(217, 255, 90);
   border-radius: 50%;
 }
 
@@ -978,9 +1004,6 @@ body.noScroll {
   }
 }
 @keyframes bannerItemCollapse {
-  from {
-    flex-grow: auto;
-  }
   to {
     flex-grow: 340;
   }
@@ -1080,20 +1103,19 @@ body.noScroll {
   height: 72px;
   top: 50%;
   font-family: "Floreste";
-  font-size: var(--desk-font-size-numbers);
-  color: var(--color-white);
+  font-size: setFontSize("numbers");
+  color: rgb(255, 255, 255);
   text-transform: uppercase;
   letter-spacing: 0.04em;
+  text-wrap: nowrap;
 }
 .srtipe:nth-child(1) {
   transform: translate(-33px, -50%) rotate(5deg);
-  background-color: var(--color-lavender-highlight);
-  text-wrap: nowrap;
+  background-color: rgb(203, 182, 255);
 }
 .srtipe:nth-child(2) {
   transform: translate(-190px, -50%) rotate(-2.2deg);
-  background-color: var(--color-blue);
-  text-wrap: nowrap;
+  background-color: rgb(174, 207, 255);
 }
 .srtipe span {
   transform: translate(0, 10%);
@@ -1108,18 +1130,23 @@ body.noScroll {
 .categories h1 {
   font-family: "Euclid Circular A";
   font-weight: 500;
-  font-size: var(--desk-font-size-h1);
-  color: var(--color-white);
+  font-size: clamp(1.4375rem, 0.8480392157rem + 2.4183006536vw, 3.75rem);
+  color: rgb(255, 255, 255);
   text-transform: uppercase;
 }
 .categories > ul {
   display: flex;
   gap: 30px;
   margin-top: 70px;
+  overflow-x: scroll;
 }
-@media (width < 1000px) {
+.categories > ul::-webkit-scrollbar {
+  display: none;
+}
+@media (width <= 500px) {
   .categories {
-    overflow-x: scroll;
+    margin-left: 15px;
+    margin-right: 15px;
   }
 }
 
@@ -1139,7 +1166,7 @@ body.noScroll {
   text-align: left;
 }
 .categoryCard:hover:nth-child(2) .curvedText {
-  fill: var(--color-lime);
+  fill: rgb(217, 255, 90);
 }
 .categoryCard:hover img {
   transform: scale(1.1);
@@ -1148,17 +1175,17 @@ body.noScroll {
   transform: rotate(0);
 }
 .categoryCard:hover .circleButton {
-  background-color: var(--color-lime);
+  background-color: rgb(217, 255, 90);
 }
 .categoryCard:hover .circleButton svg {
-  stroke: var(--color-lavender);
+  stroke: rgb(174, 151, 232);
 }
 
 h2 {
   font-family: "Euclid Circular A";
   font-weight: 500;
-  font-size: var(--desk-font-size-h2);
-  color: var(--color-white);
+  font-size: clamp(1.4375rem, 1.3578431373rem + 0.3267973856vw, 1.75rem);
+  color: rgb(255, 255, 255);
   text-transform: uppercase;
 }
 
@@ -1182,8 +1209,8 @@ h2 {
 .curvedText {
   font-family: "Euclid Circular A";
   font-weight: 500;
-  font-size: var(--desk-font-size-curve);
-  fill: var(--color-white);
+  font-size: clamp(0.625rem, 0.5294117647rem + 0.3921568627vw, 1rem);
+  fill: rgb(255, 255, 255);
   letter-spacing: 0.12em;
   vertical-align: baseline;
   text-transform: lowercase;
@@ -1208,8 +1235,8 @@ h2 {
 .quanityMeasure {
   font-family: "Euclid Circular A";
   font-weight: 500;
-  font-size: var(--desk-font-size-quanity-measure);
-  color: var(--color-white);
+  font-size: clamp(0.8125rem, 0.7806372549rem + 0.1307189542vw, 0.9375rem);
+  color: rgb(255, 255, 255);
   text-transform: uppercase;
 }
 
@@ -1226,13 +1253,13 @@ h2 {
   justify-content: center;
   width: 101px;
   height: 101px;
-  border: 2px solid var(--color-lime);
+  border: 2px solid rgb(217, 255, 90);
   border-radius: 100%;
-  background-color: var(--color-lavender-dark);
+  background-color: rgba(235, 227, 255, 0.2);
   transition: background-color 500ms ease-out;
 }
 .circleButton svg {
-  stroke: var(--color-lime);
+  stroke: rgb(217, 255, 90);
   transition: stroke 200ms ease-out;
 }
 
@@ -1246,7 +1273,7 @@ h2 {
   width: 100%;
   font-family: "Euclid Circular A";
   font-weight: 500;
-  color: var(--color-white);
+  color: rgb(255, 255, 255);
   opacity: 0;
   max-width: 0;
   max-height: 0;
@@ -1269,7 +1296,7 @@ h2 {
   max-height: 0;
 }
 .category .menu > span {
-  font-size: var(--desk-font-size-subtitle);
+  font-size: clamp(0.75rem, 0.7022058824rem + 0.1960784314vw, 0.9375rem);
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
@@ -1283,14 +1310,14 @@ summary {
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: var(--desk-font-size-filter-title);
+  font-size: clamp(0.8125rem, 0.7328431373rem + 0.3267973856vw, 1.125rem);
   text-transform: uppercase;
   user-select: none;
   list-style: none;
   cursor: pointer;
 }
 summary:hover .hoverableRect {
-  fill: var(--color-lime);
+  fill: rgb(217, 255, 90);
 }
 
 .filters {
@@ -1306,7 +1333,7 @@ summary:hover .hoverableRect {
   display: flex;
   flex-direction: column;
   width: 320px;
-  font-size: var(--desk-font-size-filter-item-title);
+  font-size: clamp(1rem, 0.9362745098rem + 0.2614379085vw, 1.25rem);
   line-height: 1.5;
   text-align: left;
 }
@@ -1315,7 +1342,7 @@ summary:hover .hoverableRect {
   flex-direction: column;
   padding: 22px 30px 24px;
   border-radius: 40px;
-  background-color: var(--color-lavender-highlight);
+  background-color: rgb(203, 182, 255);
 }
 
 .priceFilter {
@@ -1331,11 +1358,11 @@ summary:hover .hoverableRect {
   height: 40px;
   border-radius: 11px;
   font-family: "Euclid Circular A";
-  font-size: var(--desk-font-size-filter-item-text);
+  font-size: clamp(0.8125rem, 0.7328431373rem + 0.3267973856vw, 1.125rem);
   font-weight: 500;
   text-align: center;
-  color: var(--color-white);
-  background-color: var(--color-lavender);
+  color: rgb(255, 255, 255);
+  background-color: rgb(174, 151, 232);
   outline: none;
   cursor: default;
 }
@@ -1351,7 +1378,7 @@ summary:hover .hoverableRect {
   width: 100%;
   margin: 11px 0;
   border-radius: 72px;
-  background-color: var(--color-white);
+  background-color: rgb(255, 255, 255);
 }
 .slider .thumbDotMin,
 .slider .thumbDotMax {
@@ -1363,7 +1390,7 @@ summary:hover .hoverableRect {
   width: 11px;
   height: 11px;
   border-radius: 100%;
-  background-color: var(--color-lime);
+  background-color: rgb(217, 255, 90);
   z-index: 1;
   pointer-events: none;
 }
@@ -1387,28 +1414,28 @@ summary:hover .hoverableRect {
   appearance: none;
   width: 25px;
   height: 25px;
-  border: 2px solid var(--color-lime);
-  background-color: var(--color-lavender);
+  border: 2px solid rgb(217, 255, 90);
+  background-color: rgb(174, 151, 232);
   border-radius: 50%;
   cursor: pointer;
   pointer-events: auto;
-  box-shadow: 2px 4px 13px 0px var(--color-lavender);
+  box-shadow: 2px 4px 13px 0px rgb(174, 151, 232);
 }
 .slider input[type=range]::-moz-range-thumb {
   width: 25px;
   height: 25px;
-  border: 2px solid var(--color-lime);
-  background-color: var(--color-lavender);
+  border: 2px solid rgb(217, 255, 90);
+  background-color: rgb(174, 151, 232);
   border-radius: 50%;
   cursor: pointer;
   pointer-events: auto;
-  box-shadow: 2px 4px 13px 0px var(--color-lavender);
+  box-shadow: 2px 4px 13px 0px rgb(174, 151, 232);
 }
 .slider::before {
   content: "";
   position: absolute;
   height: 3px;
-  background-color: var(--color-lime);
+  background-color: rgb(217, 255, 90);
   left: var(--min-thumb-position);
   right: calc(100% - var(--max-thumb-position));
 }
@@ -1424,7 +1451,7 @@ summary:hover .hoverableRect {
   gap: 10px;
 }
 .colorFilter ul li {
-  font-size: var(--desk-font-size-filter-item-text);
+  font-size: clamp(0.8125rem, 0.7328431373rem + 0.3267973856vw, 1.125rem);
 }
 .colorFilter ul li input {
   content: "";
@@ -1435,7 +1462,7 @@ summary:hover .hoverableRect {
   width: 14px;
   height: 14px;
   margin-right: 10px;
-  border: 2px solid var(--color-lavender);
+  border: 2px solid rgb(174, 151, 232);
   border-radius: 4px;
   background-color: transparent;
   transition: background-color 200ms ease;
@@ -1444,18 +1471,18 @@ summary:hover .hoverableRect {
 }
 .colorFilter ul li input:checked {
   content: "";
-  border: 2px solid var(--color-lavender);
-  background-color: var(--color-lime);
+  border: 2px solid rgb(174, 151, 232);
+  background-color: rgb(217, 255, 90);
 }
 .colorFilter ul li pre {
   font-family: "Euclid Circular A";
-  font-size: var(--desk-font-size-filter-item-text);
+  font-size: clamp(0.8125rem, 0.7328431373rem + 0.3267973856vw, 1.125rem);
   font-weight: 500;
   cursor: pointer;
   line-height: 1.5;
 }
 .colorFilter ul li span {
-  color: var(--color-white-semi-transparent);
+  color: rgba(255, 255, 255, 0.6);
 }
 
 .productsList {
@@ -1495,12 +1522,12 @@ summary:hover .hoverableRect {
   left: 2px;
   width: 22px;
   height: 22px;
-  border: 3px solid var(--color-white);
+  border: 3px solid rgb(255, 255, 255);
   border-radius: 100%;
-  background-color: var(--color-white);
+  background-color: rgb(255, 255, 255);
 }
 .product > .color.blue {
-  background-color: var(--color-light-blue);
+  background-color: rgb(165, 212, 255);
 }
 .product > .color.lavender {
   background-color: rgb(240, 179, 234);
@@ -1547,10 +1574,10 @@ summary:hover .hoverableRect {
 .product p {
   font-family: "Euclid Circular A";
   font-weight: 500;
-  font-size: var(--desk-font-size-subtitle);
+  font-size: clamp(0.75rem, 0.7022058824rem + 0.1960784314vw, 0.9375rem);
   line-height: 23px;
   margin-bottom: 7px;
-  color: var(--color-white);
+  color: rgb(255, 255, 255);
 }
 .product .sale {
   display: flex;
@@ -1566,11 +1593,11 @@ summary:hover .hoverableRect {
   transform: translate(0, 26.5%);
 }
 .product .sale .number {
-  font-size: var(--desk-font-size-h2);
+  font-size: clamp(1.4375rem, 1.3578431373rem + 0.3267973856vw, 1.75rem);
 }
 .product .sale .currency {
   align-self: flex-start;
-  font-size: var(--desk-font-size-currency);
+  font-size: clamp(0.9375rem, 0.8578431373rem + 0.3267973856vw, 1.25rem);
   transform: translate(50%, -10%);
 }
 .product .sale .buyButton {
@@ -1580,7 +1607,7 @@ summary:hover .hoverableRect {
 .productHr {
   height: 2px;
   width: auto;
-  background-color: var(--color-lime);
+  background-color: rgb(217, 255, 90);
   margin-bottom: 28px;
 }
 
@@ -1591,8 +1618,8 @@ summary:hover .hoverableRect {
   justify-content: center;
   font-family: "Euclid Circular A";
   font-weight: 500;
-  font-size: var(--desk-font-size-button);
-  color: var(--color-white);
+  font-size: clamp(1rem, 0.9362745098rem + 0.2614379085vw, 1.25rem);
+  color: rgb(255, 255, 255);
   background-color: transparent;
 }
 .moreButton:not(.expanded) {
@@ -1612,9 +1639,9 @@ summary:hover .hoverableRect {
   z-index: -1;
   width: 319px;
   height: 135px;
-  border: 2px solid var(--color-lime);
+  border: 2px solid rgb(217, 255, 90);
   border-radius: 50%;
-  background-color: var(--color-white-almost-transparent);
+  background-color: rgba(255, 255, 255, 0.2);
   transform: rotate(-13deg);
   backdrop-filter: blur(30px);
 }
@@ -1626,7 +1653,7 @@ summary:hover .hoverableRect {
   margin: 280px 60px 0;
 }
 .searchResults .currency {
-  color: var(--color-white);
+  color: getColor("white");
 }
 .searchResults h2:not(:nth-child(1)),
 .searchResults p {
@@ -1639,16 +1666,16 @@ summary:hover .hoverableRect {
 .searchResults.noresults h2 {
   font-family: "Euclid Circular A";
   font-weight: 500;
-  font-size: var(--desk-font-size-h2);
-  color: var(--color-white);
+  font-size: getFontSize("h2");
+  color: getColor("white");
 }
 .searchResults.noresults span {
   font-family: "Floreste";
   font-weight: 400;
-  font-size: var(--desk-font-size-background);
+  font-size: getFontSize("background");
   text-align: center;
   text-transform: uppercase;
-  color: var(--color-lavender-semi-transparent);
+  color: getColor("lavender-light-0.6");
 }
 .searchResults.noresults img {
   position: absolute;
@@ -1666,9 +1693,9 @@ summary:hover .hoverableRect {
   padding: 48px;
   font-family: "Euclid Circular A";
   font-weight: 500;
-  font-size: var(--desk-font-size-text-spacing);
+  font-size: getFontSize("text-spacing");
   text-transform: uppercase;
-  color: var(--color-white);
+  color: getColor("white");
   background-color: rgba(51, 32, 101, 0.18);
   backdrop-filter: blur(200px);
   pointer-events: none;
@@ -1690,13 +1717,13 @@ summary:hover .hoverableRect {
 .cartModal > .title {
   margin-bottom: 53px;
   letter-spacing: 0.1em;
-  font-size: var(--desk-font-size-text-caps-no-spacing);
+  font-size: getFontSize("text");
 }
 .cartModal .currency {
   display: inline-flex;
   align-items: center;
   height: 14px;
-  font-size: var(--desk-font-size-currency);
+  font-size: getFontSize("currency");
 }
 .cartModal > .closeButton {
   position: absolute;
@@ -1752,7 +1779,7 @@ summary:hover .hoverableRect {
   display: inline-flex;
   align-items: center;
   height: 13px;
-  font-size: var(--desk-font-size-text);
+  font-size: getFontSize("text");
   text-transform: none;
 }
 .innerDescription div div {
@@ -1764,9 +1791,9 @@ summary:hover .hoverableRect {
 .innerDescription div div .color {
   width: 14px;
   height: 14px;
-  border: 2px solid var(--color-white);
+  border: 2px solid getColor("white");
   border-radius: 100%;
-  background-color: var(--color-white);
+  background-color: getColor("white");
 }
 .innerDescription div div .color.cyan {
   background-color: rgb(41, 208, 217);
@@ -1808,21 +1835,21 @@ summary:hover .hoverableRect {
   gap: 10px;
 }
 .innerButtonsWrapper span {
-  font-size: --desk-font-size-text;
+  font-size: --font-size-text;
 }
 .innerButtonsWrapper button {
   width: 45px;
   height: 45px;
-  border: 2px solid var(--color-white);
+  border: 2px solid getColor("white");
   border-radius: 100%;
-  color: var(--color-white);
-  background-color: var(--color-white-almost-transparent);
+  color: getColor("white");
+  background-color: getColor("white-0.2");
 }
 .innerButtonsWrapper button:disabled {
   cursor: default;
-  color: var(--color-white-semi-transparent);
-  border-color: var(--color-white-semi-transparent);
-  background-color: var(--color-white-almost-transparent);
+  color: getColor("white-0.6");
+  border-color: getColor("white-0.6");
+  background-color: getColor("white-0.2");
 }
 .innerButtonsWrapper button:nth-child(1)::after {
   content: "-";
@@ -1861,10 +1888,10 @@ summary:hover .hoverableRect {
   justify-content: center;
   gap: 7px;
   width: 189px;
-  color: var(--color-white);
+  color: getColor("white");
   font-family: "Euclid Circular A";
   font-weight: 500;
-  font-size: var(--desk-font-size-button);
+  font-size: getFontSize("button");
   line-height: 1.2;
   text-align: center;
   background-color: transparent;
@@ -1875,7 +1902,7 @@ summary:hover .hoverableRect {
 .orderButton::after {
   content: "";
   position: absolute;
-  border: 2px solid var(--color-lime);
+  border: 2px solid getColor("lime");
   border-radius: 50%;
   width: 189px;
   height: 93px;
@@ -1893,16 +1920,16 @@ summary:hover .hoverableRect {
   padding: 30px 60px;
   font-family: "Euclid Circular A";
   font-weight: 500;
-  font-size: var(--desk-font-size-text-spacing);
+  font-size: getFontSize("text-spacing");
   text-transform: uppercase;
-  color: var(--color-white);
-  background-color: var(--color-lavender);
+  color: getColor("white");
+  background-color: getColor("lavender");
 }
 .productModal .currency {
   display: inline-flex;
   align-items: center;
   height: 14px;
-  font-size: var(--desk-font-size-currency);
+  font-size: getFontSize("currency");
 }
 .productModal img {
   position: absolute;
@@ -1927,7 +1954,7 @@ summary:hover .hoverableRect {
   align-self: flex-start;
 }
 .productModal > div:nth-child(2) {
-  font-size: var(--desk-font-size-subtitle);
+  font-size: getFontSize("subtitle");
   height: 79px;
   margin-bottom: 73px;
 }
@@ -1940,20 +1967,20 @@ summary:hover .hoverableRect {
   fill: transparent;
 }
 .productModal > div:nth-child(2) button path {
-  fill: var(--color-lime);
+  fill: getColor("lime");
   transition-property: fill;
   transition-duration: 200ms;
   transition-timing-function: ease;
 }
 .productModal > div:nth-child(2) button circle {
-  stroke: var(--color-lime);
+  stroke: getColor("lime");
   transition-property: stroke;
   transition-duration: 200ms;
   transition-timing-function: ease;
 }
 .productModal > div:nth-child(2) button.pressed .hearth {
   stroke: rgb(255, 177, 247);
-  fill: var(--color-white);
+  fill: getColor("white");
 }
 .productModal > div:nth-child(2) button.pressed path {
   fill: transparent;
@@ -1982,7 +2009,7 @@ summary:hover .hoverableRect {
 .productModal > div:nth-child(3) .color {
   width: 22px;
   height: 22px;
-  border: 3px solid var(--color-white);
+  border: 3px solid getColor("white");
   border-radius: 100%;
   background-color: rgb(147, 129, 216);
 }
@@ -2032,7 +2059,7 @@ summary:hover .hoverableRect {
 }
 .productModal > div:nth-child(5) > div:nth-child(2) > div .number,
 .productModal > div:nth-child(5) > div:nth-child(2) > div .currency {
-  color: var(--color-lime);
+  color: getColor("lime");
 }
 .productModal .closeButtonWrapper {
   justify-content: flex-end;
@@ -2065,7 +2092,7 @@ summary:hover .hoverableRect {
 }
 .productModal .buyButton .ellipse:nth-child(2) {
   backdrop-filter: blur(150px);
-  background-color: var(--color-white-almost-transparent);
+  background-color: getColor("white-0.2");
   z-index: 2;
   transform: rotate(-13deg);
 }
@@ -2082,22 +2109,22 @@ summary:hover .hoverableRect {
   padding: 48px;
   font-family: "Euclid Circular A";
   font-weight: 500;
-  font-size: var(--desk-font-size-text-spacing);
+  font-size: getFontSize("text-spacing");
   text-transform: uppercase;
-  color: var(--color-white);
+  color: getColor("white");
   background-color: rgba(51, 32, 101, 0.18);
   backdrop-filter: blur(200px);
 }
 .favouritesModal > .title {
   margin-bottom: 53px;
   letter-spacing: 0.1em;
-  font-size: var(--desk-font-size-text-caps-no-spacing);
+  font-size: getFontSize("text");
 }
 .favouritesModal .currency {
   display: inline-flex;
   align-items: center;
   height: 14px;
-  font-size: var(--desk-font-size-currency);
+  font-size: getFontSize("currency");
 }
 .favouritesModal > .closeButton {
   position: absolute;
@@ -2144,7 +2171,7 @@ summary:hover .hoverableRect {
 .innerDescription .favouriteButton {
   height: 54px;
   border-radius: 100%;
-  background-color: var(--color-white-almost-transparent);
+  background-color: getColor("white-0.2");
   margin-bottom: 0;
 }
 .innerDescription .favouriteButton .hearth {
@@ -2152,13 +2179,13 @@ summary:hover .hoverableRect {
   fill: transparent;
 }
 .innerDescription .favouriteButton path {
-  fill: var(--color-lime);
+  fill: getColor("lime");
   transition-property: fill;
   transition-duration: 200ms;
   transition-timing-function: ease;
 }
 .innerDescription .favouriteButton circle {
-  stroke: var(--color-lime);
+  stroke: getColor("lime");
   transition-property: stroke;
   transition-duration: 200ms;
   transition-timing-function: ease;
@@ -2167,7 +2194,7 @@ summary:hover .hoverableRect {
   stroke: rgb(255, 177, 247);
 }
 .innerDescription .favouriteButton.pressed path {
-  fill: var(--color-white);
+  fill: getColor("white");
 }
 .innerDescription .favouriteButton.pressed circle {
   stroke: rgb(255, 177, 247);
@@ -2183,7 +2210,7 @@ summary:hover .hoverableRect {
   display: inline-flex;
   align-items: center;
   height: 13px;
-  font-size: var(--desk-font-size-text);
+  font-size: getFontSize("text");
   text-transform: none;
 }
 .innerDescription div div {
@@ -2195,9 +2222,9 @@ summary:hover .hoverableRect {
 .innerDescription div div .color {
   width: 14px;
   height: 14px;
-  border: 2px solid var(--color-white);
+  border: 2px solid getColor("white");
   border-radius: 100%;
-  background-color: var(--color-white);
+  background-color: getColor("white");
 }
 .innerDescription div div .color.cyan {
   background-color: rgb(41, 208, 217);
@@ -2242,16 +2269,16 @@ summary:hover .hoverableRect {
   padding: 48px;
   font-family: "Euclid Circular A";
   font-weight: 500;
-  font-size: var(--desk-font-size-text-spacing);
+  font-size: getFontSize("text-spacing");
   text-transform: uppercase;
-  color: var(--color-white);
+  color: getColor("white");
   background-color: rgba(51, 32, 101, 0.18);
   backdrop-filter: blur(200px);
 }
 .authModal > .title {
   margin-bottom: 66px;
   letter-spacing: 0.1em;
-  font-size: var(--desk-font-size-text-caps-no-spacing);
+  font-size: getFontSize("text");
 }
 .authModal > .closeButton {
   position: absolute;
@@ -2269,7 +2296,7 @@ summary:hover .hoverableRect {
 }
 .authModal > div:nth-child(4) {
   gap: 24px;
-  font-size: var(--desk-font-size-subtitle);
+  font-size: getFontSize("subtitle");
   letter-spacing: 0.1em;
 }
 .authModal button[type=submit] {
@@ -2282,28 +2309,28 @@ summary:hover .hoverableRect {
 }
 .authModal button[type=submit] span {
   position: absolute;
-  color: var(--color-white);
+  color: getColor("white");
   font-family: "Euclid Circular A";
   font-weight: 500;
-  font-size: var(--desk-font-size-button);
+  font-size: getFontSize("button");
   line-height: 1.2;
 }
 .authModal button[type=submit]::after {
   content: "";
   width: 120px;
   height: 81px;
-  border: 2px solid var(--color-lime);
+  border: 2px solid getColor("lime");
   border-radius: 50%;
-  background-color: var(--color-white-almost-transparent);
+  background-color: getColor("white-0.2");
   transform: rotate(-15deg);
 }
 .authModal .register {
   width: fit-content;
   background-color: transparent;
-  color: var(--color-white);
+  color: getColor("white");
   font-family: "Euclid Circular A";
   font-weight: 500;
-  font-size: var(--desk-font-size-subtitle);
+  font-size: getFontSize("subtitle");
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
@@ -2317,16 +2344,16 @@ summary:hover .hoverableRect {
   padding: 48px;
   font-family: "Euclid Circular A";
   font-weight: 500;
-  font-size: var(--desk-font-size-text-spacing);
+  font-size: getFontSize("text-spacing");
   text-transform: uppercase;
-  color: var(--color-white);
+  color: getColor("white");
   background-color: rgba(51, 32, 101, 0.18);
   backdrop-filter: blur(200px);
 }
 .registerModal > .title {
   margin-bottom: 66px;
   letter-spacing: 0.1em;
-  font-size: var(--desk-font-size-text-caps-no-spacing);
+  font-size: getFontSize("text");
 }
 .registerModal > .closeButton {
   position: absolute;
@@ -2344,7 +2371,7 @@ summary:hover .hoverableRect {
 }
 .registerModal > div:nth-child(4) {
   gap: 24px;
-  font-size: var(--desk-font-size-subtitle);
+  font-size: getFontSize("subtitle");
   letter-spacing: 0.1em;
 }
 .registerModal button[type=submit] {
@@ -2357,28 +2384,28 @@ summary:hover .hoverableRect {
 }
 .registerModal button[type=submit] span {
   position: absolute;
-  color: var(--color-white);
+  color: getColor("white");
   font-family: "Euclid Circular A";
   font-weight: 500;
-  font-size: var(--desk-font-size-button);
+  font-size: getFontSize("button");
   line-height: 1.2;
 }
 .registerModal button[type=submit]::after {
   content: "";
   width: 189px;
   height: 93px;
-  border: 2px solid var(--color-lime);
+  border: 2px solid getColor("lime");
   border-radius: 50%;
-  background-color: var(--color-white-almost-transparent);
+  background-color: getColor("white-0.2");
   transform: rotate(-6deg);
 }
 .registerModal .auth {
   width: fit-content;
   background-color: transparent;
-  color: var(--color-white);
+  color: getColor("white");
   font-family: "Euclid Circular A";
   font-weight: 500;
-  font-size: var(--desk-font-size-subtitle);
+  font-size: getFontSize("subtitle");
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
@@ -2393,7 +2420,7 @@ summary:hover .hoverableRect {
   max-width: 1800px;
   height: 70px;
   border-radius: 100px;
-  color: var(--color-white);
+  color: getColor("white");
   background-color: rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(60px);
 }
@@ -2407,21 +2434,21 @@ summary:hover .hoverableRect {
   min-width: 360px;
   font-family: "Euclid Circular A";
   font-weight: 500;
-  font-size: var(--desk-font-size-text);
-  color: var(--color-white);
+  font-size: getFontSize("text");
+  color: getColor("white");
   background-color: transparent;
   outline: none;
 }
 .searchModal input[type=text]::placeholder {
-  color: var(--color-white);
+  color: getColor("white");
 }
 .searchModal button[type=submit] {
   margin: 7px;
   min-width: 57px;
   min-height: 57px;
-  border: 1px solid var(--color-white);
+  border: 1px solid getColor("white");
   border-radius: 100%;
-  background-color: var(--color-lavender);
+  background-color: getColor("lavender");
 }
 
 .contactsModal {
@@ -2434,9 +2461,9 @@ summary:hover .hoverableRect {
   height: 100%;
   font-family: "Euclid Circular A";
   font-weight: 500;
-  font-size: var(--desk-font-size-text-spacing);
-  color: var(--color-white);
-  background-color: var(--color-white-almost-transparent);
+  font-size: getFontSize("text-spacing");
+  color: getColor("white");
+  background-color: getColor("white-0.2");
   backdrop-filter: blur(200px);
 }
 .contactsModal > div:nth-child(1), .contactsModal > div:nth-child(2) {
@@ -2451,7 +2478,7 @@ summary:hover .hoverableRect {
   padding: 83px;
   gap: 153px;
   border-top-left-radius: 50px;
-  background-color: var(--color-lavender);
+  background-color: getColor("lavender");
 }
 .contactsModal > div:nth-child(1) .address {
   display: flex;
@@ -2459,12 +2486,12 @@ summary:hover .hoverableRect {
   align-items: flex-start;
   font-family: "Euclid Circular A";
   font-weight: 500;
-  font-size: var(--desk-font-size-text);
+  font-size: getFontSize("text");
 }
 .contactsModal > div:nth-child(1) .address > span:nth-child(1) {
-  font-size: var(--desk-font-size-subtitle);
+  font-size: getFontSize("subtitle");
   text-transform: uppercase;
-  color: var(--color-white-semi-transparent);
+  color: getColor("white-0.6");
 }
 .contactsModal > div:nth-child(1) .address address {
   font-style: normal;
@@ -2473,7 +2500,7 @@ summary:hover .hoverableRect {
 .contactsModal > div:nth-child(1) .address h1 {
   font-family: "Euclid Circular A";
   font-weight: 500;
-  font-size: var(--desk-font-size-h1);
+  font-size: getFontSize("h1");
   text-transform: uppercase;
   margin-bottom: 33px;
 }
@@ -2488,9 +2515,9 @@ summary:hover .hoverableRect {
   flex-direction: column;
 }
 .contactsModal > div:nth-child(1) .phone > span:nth-child(1) {
-  font-size: var(--desk-font-size-subtitle);
+  font-size: getFontSize("subtitle");
   text-transform: uppercase;
-  color: var(--color-white-semi-transparent);
+  color: getColor("white-0.6");
   margin-bottom: 59px;
 }
 .contactsModal > div:nth-child(1) .phone > span:nth-child(2) {
@@ -2518,7 +2545,7 @@ summary:hover .hoverableRect {
   max-width: 848px;
   padding: 83px;
   border-top-right-radius: 50px;
-  background-color: var(--color-pink);
+  background-color: getColor("pink");
 }
 .contactsModal form button {
   position: relative;
@@ -2531,24 +2558,24 @@ summary:hover .hoverableRect {
 }
 .contactsModal form button span {
   position: absolute;
-  font-size: var(--desk-font-size-button);
+  font-size: getFontSize("button");
   line-height: 1.2;
-  color: var(--color-white);
+  color: getColor("white");
 }
 .contactsModal form button::after {
   content: "";
   width: 189px;
   height: 93px;
   transform: rotate(-6deg);
-  border: 2px solid var(--color-lime);
+  border: 2px solid getColor("lime");
   border-radius: 50%;
-  background-color: var(--color-white-semi-transparent);
+  background-color: getColor("white-0.6");
 }
 .contactsModal .closeButton {
   position: absolute;
   top: 91px;
   right: 89px;
-  stroke: var(--color-white);
+  stroke: getColor("white");
   background-color: transparent;
 }
 .contactsModal #map {

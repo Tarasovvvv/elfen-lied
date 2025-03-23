@@ -1,8 +1,9 @@
 @use "helpers" as *;
+@use "variables" as *;
 
 body {
   position: relative;
-  background-color: var(--color-lavender);
+  background-color: getColor("lavender");
 
   & > div {
     position: absolute;
@@ -18,7 +19,6 @@ body {
   z-index: 0;
 
   scrollbar-gutter: stable;
-  background-color: var(--color-lavender);
 }
 
 .modalRoot {
@@ -87,45 +87,56 @@ body {
   }
 }
 
+.price {
+  @include flexCenter;
+  gap: 7px;
+
+  :nth-child(1) {
+    align-self: flex-start;
+  }
+}
+
 .number {
   font-family: "Floreste";
-  font-size: var(--desk-font-size-numbers);
+  font-size: setFontSize("numbers");
   font-weight: 400;
   letter-spacing: 0.04em;
   text-align: center;
 
-  color: var(--color-white);
+  color: getColor("white");
 }
 
 .buyButton {
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 11px;
 
   background-color: transparent;
 
   & .title {
     font-family: "Euclid Circular A";
-    font-size: var(--desk-font-size-button);
+    font-size: getFontSize("button");
     font-weight: 500;
     text-align: center;
     line-height: 1.2;
 
-    margin-left: 12px;
-
     z-index: 4;
-    color: var(--color-white);
+    color: getColor("white");
   }
 
   & svg {
     z-index: 4;
+    $edge: fluid(20, 24);
+    width: $edge;
+    height: $edge;
   }
 }
 
-.innerHr {
+hr {
   height: 2px;
   width: 100%;
-  background-color: var(--color-lime);
+  background-color: getColor("lime");
   margin-top: 22px;
   margin-bottom: 22px;
 }
@@ -133,12 +144,12 @@ body {
 .formInput {
   font-family: "Euclid Circular A";
   font-weight: 500;
-  font-size: var(--desk-font-size-subtitle);
+  font-size: getFontSize("subtitle");
   width: 100%;
 
   padding-bottom: 19px;
-  border-bottom: 2px solid var(--color-lime);
-  color: var(--color-white);
+  border-bottom: 2px solid getColor("lime");
+  color: getColor("white");
   background-color: transparent;
 
   &:user-invalid {
@@ -146,7 +157,7 @@ body {
   }
 
   &::placeholder {
-    color: var(--color-white);
+    color: getColor("white");
     text-transform: uppercase;
   }
 }

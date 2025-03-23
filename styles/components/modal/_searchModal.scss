@@ -1,3 +1,5 @@
+@use "../../variables" as *;
+
 .searchModal {
   left: 60px;
   right: 60px;
@@ -11,7 +13,7 @@
   height: 70px;
   border-radius: 100px;
 
-  color: var(--color-white);
+  color: getColor("white");
   background-color: rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(60px);
 
@@ -27,14 +29,14 @@
 
     font-family: "Euclid Circular A";
     font-weight: 500;
-    font-size: var(--desk-font-size-text);
+    font-size: getFontSize("text");
 
-    color: var(--color-white);
+    color: getColor("white");
     background-color: transparent;
     outline: none;
 
     &::placeholder {
-      color: var(--color-white);
+      color: getColor("white");
     }
   }
 
@@ -42,9 +44,9 @@
     margin: 7px;
     min-width: 57px;
     min-height: 57px;
-    border: 1px solid var(--color-white);
+    border: 1px solid getColor("white");
     border-radius: 100%;
 
-    background-color: var(--color-lavender);
+    background-color: getColor("lavender");
   }
 }

@@ -1,3 +1,6 @@
+@use "../helpers" as *;
+@use "../variables" as *;
+
 .stripes {
   position: relative;
   display: flex;
@@ -21,23 +24,22 @@
   top: 50%;
 
   font-family: "Floreste";
-  font-size: var(--desk-font-size-numbers);
-  color: var(--color-white);
+  font-size: setFontSize("numbers");
+  color: getColor("white");
   text-transform: uppercase;
   letter-spacing: 0.04em;
 
+  text-wrap: nowrap;
   &:nth-child(1) {
     transform: translate(-33px, -50%) rotate(5deg);
 
-    background-color: var(--color-lavender-highlight);
-    text-wrap: nowrap;
+    background-color: getColor("lavender-light");
   }
 
   &:nth-child(2) {
     transform: translate(-190px, -50%) rotate(-2.2deg);
 
-    background-color: var(--color-blue);
-    text-wrap: nowrap;
+    background-color: getColor("blue");
   }
 
   & span {

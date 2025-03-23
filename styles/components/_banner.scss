@@ -1,13 +1,19 @@
 @use "../helpers" as *;
+@use "../variables" as *;
 
 .banner {
   margin: 20px;
+
   & ul {
     display: flex;
     gap: 20px;
 
     width: 100%;
     overflow: hidden;
+  }
+
+  @include mobile() {
+    margin: 15px;
   }
 }
 
@@ -19,9 +25,7 @@
   justify-content: center;
   align-items: center;
 
-  transition-property: flex-grow;
-  transition-duration: 800ms;
-  transition-timing-function: ease-out;
+  transition: flex-grow 800ms ease-out;
   flex-grow: 340;
 
   height: 1038px;
@@ -43,7 +47,6 @@
 
     & .preview {
       opacity: 0;
-
       max-width: 0;
       max-height: 0;
     }
@@ -92,6 +95,7 @@
   & img {
     position: absolute;
     z-index: 1;
+    width: fluid(222, 494);
 
     -webkit-user-drag: none;
     user-select: none;
@@ -115,7 +119,7 @@
 
     & .ellipse:nth-child(2) {
       backdrop-filter: blur(150px);
-      background-color: var(--color-white-almost-transparent);
+      background-color: getColor("white-0.2");
 
       z-index: 2;
 
@@ -128,15 +132,16 @@
   }
 
   &:nth-child(1) {
-    background-color: var(--color-lavender-highlight);
+    background-color: getColor("lavender-light");
 
     & .backgroundText {
-      color: var(--color-lavender-semi-transparent);
+      color: getColor("lavender-light-0.6");
     }
 
     & .description {
       & .number {
-        color: var(--color-lime);
+        font-size: setFontSize("numbers");
+        color: getColor("lime");
       }
     }
 
@@ -146,20 +151,20 @@
   }
 
   &:nth-child(2) {
-    background-color: var(--color-pink);
+    background-color: getColor("pink");
 
     & .backgroundText {
-      color: var(--color-pink-semi-transparent);
+      color: rgb(255, 168, 246);
 
-      font-size: var(--desk-font-size-middle-background);
+      font-size: fluid(67, 205);
     }
   }
 
   &:nth-child(3) {
-    background-color: var(--color-blue);
+    background-color: getColor("blue");
 
     & .backgroundText {
-      color: var(--color-blue-semi-transparent);
+      color: rgb(190, 216, 255);
     }
   }
 }
@@ -170,12 +175,12 @@
   left: 60px;
 
   font-family: "Euclid Circular A";
-  font-size: var(--desk-font-size-text-caps-no-spacing);
+  font-size: getFontSize("text");
   font-weight: 500;
 
   text-transform: uppercase;
 
-  color: var(--color-lime);
+  color: getColor("lime");
 }
 
 .backgroundText {
@@ -183,7 +188,7 @@
   top: 440px;
 
   font-family: "Floreste";
-  font-size: var(--desk-font-size-background);
+  font-size: getFontSize("background");
   font-weight: 500;
 
   white-space: nowrap;
@@ -209,12 +214,12 @@
 
   & .title {
     font-family: "Euclid Circular A";
-    font-size: var(--desk-font-size-subtitle);
+    font-size: getFontSize("subtitle");
     font-weight: 500;
 
     text-transform: uppercase;
 
-    color: var(--color-white-semi-transparent);
+    color: getColor("white-0.6");
   }
 }
 
@@ -233,13 +238,13 @@
 
   text-align: left;
 
-  color: var(--color-white);
+  color: getColor("white");
 
   & .title {
     text-transform: uppercase;
 
     font-family: "Euclid Circular A";
-    font-size: var(--desk-font-size-h2);
+    font-size: getFontSize("h2");
     font-weight: 500;
 
     margin-bottom: 18px;
@@ -247,14 +252,14 @@
 
   & .text {
     font-family: "Euclid Circular A";
-    font-size: var(--desk-font-size-description-text);
+    font-size: fluid(13, 15);
     font-weight: 500;
 
     line-height: 23px;
   }
 
   & .hr {
-    background-color: var(--color-white-almost-transparent);
+    background-color: getColor("white-0.2");
 
     height: 1px;
     width: auto;
@@ -265,7 +270,7 @@
 .currency {
   font-family: "Euclid Circular A";
   font-weight: 400;
-  font-size: var(--desk-font-size-currency);
+  font-size: getFontSize("currency");
 
   text-transform: uppercase;
 }
@@ -278,7 +283,7 @@
 
   width: inherit;
   height: inherit;
-  border: 2px solid var(--color-lime);
+  border: 2px solid getColor("lime");
   border-radius: 50%;
 }
 
@@ -295,9 +300,6 @@
 }
 
 @keyframes bannerItemCollapse {
-  from {
-    flex-grow: auto;
-  }
   to {
     flex-grow: 340;
   }

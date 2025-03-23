@@ -2,27 +2,32 @@
   margin: 0;
   padding: 0;
   border: none;
-
   box-sizing: border-box;
 }
 
-ul {
-  padding-left: 0;
-  list-style: none;
+a,
+pre,
+button,
+input {
+  font: inherit;
+  color: inherit;
 }
 
-:where(address[class]) {
-  font-style: normal;
+a,
+address {
+  text-decoration: none;
 }
 
+a,
 button {
+  background-color: transparent;
+
   &:not(:disabled) {
     cursor: pointer;
   }
 }
 
-a {
-  font-family: inherit;
-  text-decoration: none;
-  color: inherit;
+ul {
+  padding-left: 0;
+  list-style: none;
 }

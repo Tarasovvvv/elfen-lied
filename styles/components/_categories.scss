@@ -1,4 +1,5 @@
 @use "../helpers" as *;
+@use "../variables" as *;
 
 .categories {
   display: flex;
@@ -11,8 +12,8 @@
   h1 {
     font-family: "Euclid Circular A";
     font-weight: 500;
-    font-size: var(--desk-font-size-h1);
-    color: var(--color-white);
+    font-size: getFontSize("h1");
+    color: getColor("white");
     text-transform: uppercase;
   }
 
@@ -21,10 +22,17 @@
     gap: 30px;
 
     margin-top: 70px;
+
+    overflow-x: scroll;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
 
-  @media (width < 1000px) {
-    overflow-x: scroll;
+  @include mobile() {
+    margin-left: 15px;
+    margin-right: 15px;
   }
 }
 
@@ -52,7 +60,7 @@
   &:hover {
     &:nth-child(2) {
       & .curvedText {
-        fill: var(--color-lime);
+        fill: getColor("lime");
       }
     }
 
@@ -67,10 +75,10 @@
     }
 
     .circleButton {
-      background-color: var(--color-lime);
+      background-color: getColor("lime");
 
       svg {
-        stroke: var(--color-lavender);
+        stroke: getColor("lavender");
       }
     }
   }
@@ -79,8 +87,8 @@
 h2 {
   font-family: "Euclid Circular A";
   font-weight: 500;
-  font-size: var(--desk-font-size-h2);
-  color: var(--color-white);
+  font-size: getFontSize("h2");
+  color: getColor("white");
 
   text-transform: uppercase;
 }
@@ -109,8 +117,8 @@ h2 {
 .curvedText {
   font-family: "Euclid Circular A";
   font-weight: 500;
-  font-size: var(--desk-font-size-curve);
-  fill: var(--color-white);
+  font-size: fluid(10, 16);
+  fill: getColor("white");
   letter-spacing: 0.12em;
 
   vertical-align: baseline;
@@ -139,8 +147,8 @@ h2 {
 .quanityMeasure {
   font-family: "Euclid Circular A";
   font-weight: 500;
-  font-size: var(--desk-font-size-quanity-measure);
-  color: var(--color-white);
+  font-size: fluid(13, 15);
+  color: getColor("white");
   text-transform: uppercase;
 }
 
@@ -159,15 +167,15 @@ h2 {
 
   width: 101px;
   height: 101px;
-  border: 2px solid var(--color-lime);
+  border: 2px solid getColor("lime");
   border-radius: 100%;
 
-  background-color: var(--color-lavender-dark);
+  background-color: rgba(235, 227, 255, 0.2);
 
   transition: background-color 500ms ease-out;
 
   svg {
-    stroke: var(--color-lime);
+    stroke: getColor("lime");
 
     transition: stroke 200ms ease-out;
   }
@@ -186,7 +194,7 @@ h2 {
 
   font-family: "Euclid Circular A";
   font-weight: 500;
-  color: var(--color-white);
+  color: getColor("white");
 
   opacity: 0;
   max-width: 0;
@@ -214,7 +222,7 @@ h2 {
     max-height: 0;
 
     & > span {
-      font-size: var(--desk-font-size-subtitle);
+      font-size: getFontSize("subtitle");
       letter-spacing: 0.1em;
       text-transform: uppercase;
     }
@@ -231,7 +239,7 @@ summary {
   align-items: center;
   gap: 8px;
 
-  font-size: var(--desk-font-size-filter-title);
+  font-size: fluid(13, 18);
   text-transform: uppercase;
 
   user-select: none;
@@ -240,7 +248,7 @@ summary {
 
   &:hover {
     .hoverableRect {
-      fill: var(--color-lime);
+      fill: getColor("lime");
     }
   }
 }
@@ -264,7 +272,7 @@ summary {
 
     width: 320px;
 
-    font-size: var(--desk-font-size-filter-item-title);
+    font-size: fluid(16, 20);
     line-height: 1.5;
     text-align: left;
 
@@ -275,7 +283,7 @@ summary {
       padding: 22px 30px 24px;
       border-radius: 40px;
 
-      background-color: var(--color-lavender-highlight);
+      background-color: getColor("lavender-light");
     }
   }
 }
@@ -295,12 +303,12 @@ summary {
     border-radius: 11px;
 
     font-family: "Euclid Circular A";
-    font-size: var(--desk-font-size-filter-item-text);
+    font-size: fluid(13, 18);
     font-weight: 500;
     text-align: center;
 
-    color: var(--color-white);
-    background-color: var(--color-lavender);
+    color: getColor("white");
+    background-color: getColor("lavender");
 
     outline: none;
     cursor: default;
@@ -320,7 +328,7 @@ summary {
   margin: 11px 0;
   border-radius: 72px;
 
-  background-color: var(--color-white);
+  background-color: getColor("white");
 
   .thumbDotMin,
   .thumbDotMax {
@@ -334,7 +342,7 @@ summary {
     width: 11px;
     height: 11px;
     border-radius: 100%;
-    background-color: var(--color-lime);
+    background-color: getColor("lime");
 
     z-index: 1;
     pointer-events: none;
@@ -362,23 +370,23 @@ summary {
       appearance: none;
       width: 25px;
       height: 25px;
-      border: 2px solid var(--color-lime);
-      background-color: var(--color-lavender);
+      border: 2px solid getColor("lime");
+      background-color: getColor("lavender");
       border-radius: 50%;
       cursor: pointer;
       pointer-events: auto;
-      box-shadow: 2px 4px 13px 0px var(--color-lavender);
+      box-shadow: 2px 4px 13px 0px getColor("lavender");
     }
 
     &::-moz-range-thumb {
       width: 25px;
       height: 25px;
-      border: 2px solid var(--color-lime);
-      background-color: var(--color-lavender);
+      border: 2px solid getColor("lime");
+      background-color: getColor("lavender");
       border-radius: 50%;
       cursor: pointer;
       pointer-events: auto;
-      box-shadow: 2px 4px 13px 0px var(--color-lavender);
+      box-shadow: 2px 4px 13px 0px getColor("lavender");
     }
   }
 
@@ -386,7 +394,7 @@ summary {
     content: "";
     position: absolute;
     height: 3px;
-    background-color: var(--color-lime);
+    background-color: getColor("lime");
     left: var(--min-thumb-position);
     right: calc(100% - var(--max-thumb-position));
   }
@@ -403,7 +411,7 @@ summary {
     gap: 10px;
 
     li {
-      font-size: var(--desk-font-size-filter-item-text);
+      font-size: fluid(13, 18);
 
       input {
         content: "";
@@ -416,7 +424,7 @@ summary {
         width: 14px;
         height: 14px;
         margin-right: 10px;
-        border: 2px solid var(--color-lavender);
+        border: 2px solid getColor("lavender");
         border-radius: 4px;
         background-color: transparent;
 
@@ -427,20 +435,20 @@ summary {
 
       input:checked {
         content: "";
-        border: 2px solid var(--color-lavender);
-        background-color: var(--color-lime);
+        border: 2px solid getColor("lavender");
+        background-color: getColor("lime");
       }
 
       pre {
         font-family: "Euclid Circular A";
-        font-size: var(--desk-font-size-filter-item-text);
+        font-size: fluid(13, 18);
         font-weight: 500;
         cursor: pointer;
         line-height: 1.5;
       }
 
       span {
-        color: var(--color-white-semi-transparent);
+        color: getColor("white-0.6");
       }
     }
   }
@@ -492,13 +500,13 @@ summary {
 
     width: 22px;
     height: 22px;
-    border: 3px solid var(--color-white);
+    border: 3px solid getColor("white");
     border-radius: 100%;
 
-    background-color: var(--color-white);
+    background-color: getColor("white");
 
     &.blue {
-      background-color: var(--color-light-blue);
+      background-color: rgb(165, 212, 255);
     }
 
     &.lavender {
@@ -560,11 +568,11 @@ summary {
   & p {
     font-family: "Euclid Circular A";
     font-weight: 500;
-    font-size: var(--desk-font-size-subtitle);
+    font-size: getFontSize("subtitle");
     line-height: 23px;
     margin-bottom: 7px;
 
-    color: var(--color-white);
+    color: getColor("white");
   }
 
   & .sale {
@@ -582,12 +590,12 @@ summary {
     }
 
     & .number {
-      font-size: var(--desk-font-size-h2);
+      font-size: getFontSize("h2");
     }
 
     & .currency {
       align-self: flex-start;
-      font-size: var(--desk-font-size-currency);
+      font-size: getFontSize("currency");
       transform: translate(50%, -10%);
     }
 
@@ -600,7 +608,7 @@ summary {
 .productHr {
   height: 2px;
   width: auto;
-  background-color: var(--color-lime);
+  background-color: getColor("lime");
 
   margin-bottom: 28px;
 }
@@ -613,8 +621,8 @@ summary {
 
   font-family: "Euclid Circular A";
   font-weight: 500;
-  font-size: var(--desk-font-size-button);
-  color: var(--color-white);
+  font-size: getFontSize("button");
+  color: getColor("white");
 
   background-color: transparent;
 
@@ -640,10 +648,10 @@ summary {
     width: 319px;
     height: 135px;
 
-    border: 2px solid var(--color-lime);
+    border: 2px solid getColor("lime");
     border-radius: 50%;
 
-    background-color: var(--color-white-almost-transparent);
+    background-color: getColor("white-0.2");
     transform: rotate(-13deg);
     backdrop-filter: blur(30px);
   }

@@ -1,3 +1,5 @@
+@use "../variables" as *;
+
 .searchResults {
   display: flex;
   flex-direction: column;
@@ -6,7 +8,7 @@
   margin: 280px 60px 0;
 
   .currency {
-    color: var(--color-white);
+    color: getColor("white");
   }
 
   h2:not(:nth-child(1)),
@@ -21,17 +23,17 @@
     h2 {
       font-family: "Euclid Circular A";
       font-weight: 500;
-      font-size: var(--desk-font-size-h2);
-      color: var(--color-white);
+      font-size: getFontSize("h2");
+      color: getColor("white");
     }
 
     span {
       font-family: "Floreste";
       font-weight: 400;
-      font-size: var(--desk-font-size-background);
+      font-size: getFontSize("background");
       text-align: center;
       text-transform: uppercase;
-      color: var(--color-lavender-semi-transparent);
+      color: getColor("lavender-light-0.6");
     }
 
     img {

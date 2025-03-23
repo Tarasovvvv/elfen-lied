@@ -1,12 +1,8 @@
 @use "sass:math";
+@use "sass:map";
+@use "../variables" as *;
 
-@function rem($pixel) {
-  @if math.unit($pixel) {
-    @return math.div($pixel, 16) + rem;
-  }
-}
-
-@function fluid($max: 100, $min: 10) {
+@function fluid($min: 10, $max: 100) {
   $maxViewportWidth: 1920;
   $minViewportWidth: 390;
 
@@ -18,5 +14,13 @@
   $slope: math.div(($maxSize - $minSize), ($maxWidth - $minWidth));
   $yAxisIntersection: -$minWidth * $slope + $minSize;
 
-  @return clamp(#{$minSize * 1rem}, #{$yAxisIntersection * 1rem} + #{$slope * 100vw}, #{$maxSize * 1rem});
+  @return clamp(#{$minSize}rem, #{$yAxisIntersection}rem + #{$slope * 100}vw, #{$maxSize}rem);
+}
+
+@function getColor($name) {
+  @return map.get($colors, $name);
+}
+
+@function getFontSize($name) {
+  @return fluid(map.get($fontSizes, $name + "-min"), map.get($fontSizes, $name + "-max"));
 }

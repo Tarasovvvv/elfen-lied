@@ -1,3 +1,5 @@
+@use "../../variables" as *;
+
 .productModal {
   position: fixed;
   z-index: 11;
@@ -11,18 +13,18 @@
 
   font-family: "Euclid Circular A";
   font-weight: 500;
-  font-size: var(--desk-font-size-text-spacing);
+  font-size: getFontSize("text-spacing");
   text-transform: uppercase;
 
-  color: var(--color-white);
-  background-color: var(--color-lavender);
+  color: getColor("white");
+  background-color: getColor("lavender");
 
   & .currency {
     display: inline-flex;
     align-items: center;
     height: 14px;
 
-    font-size: var(--desk-font-size-currency);
+    font-size: getFontSize("currency");
   }
 
   & img {
@@ -53,7 +55,7 @@
     }
 
     &:nth-child(2) {
-      font-size: var(--desk-font-size-subtitle);
+      font-size: getFontSize("subtitle");
       height: 79px;
       margin-bottom: 73px;
 
@@ -66,13 +68,13 @@
           fill: transparent;
         }
         path {
-          fill: var(--color-lime);
+          fill: getColor("lime");
           transition-property: fill;
           transition-duration: 200ms;
           transition-timing-function: ease;
         }
         circle {
-          stroke: var(--color-lime);
+          stroke: getColor("lime");
           transition-property: stroke;
           transition-duration: 200ms;
           transition-timing-function: ease;
@@ -81,7 +83,7 @@
         &.pressed {
           .hearth {
             stroke: rgb(255, 177, 247);
-            fill: var(--color-white);
+            fill: getColor("white");
           }
           path {
             fill: transparent;
@@ -119,7 +121,7 @@
       & .color {
         width: 22px;
         height: 22px;
-        border: 3px solid var(--color-white);
+        border: 3px solid getColor("white");
         border-radius: 100%;
         background-color: rgb(147, 129, 216);
       }
@@ -182,7 +184,7 @@
 
             .number,
             .currency {
-              color: var(--color-lime);
+              color: getColor("lime");
             }
           }
         }
@@ -229,7 +231,7 @@
 
     & .ellipse:nth-child(2) {
       backdrop-filter: blur(150px);
-      background-color: var(--color-white-almost-transparent);
+      background-color: getColor("white-0.2");
 
       z-index: 2;
       transform: rotate(-13deg);

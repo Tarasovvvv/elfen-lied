@@ -1,3 +1,5 @@
+@use "../../variables" as *;
+
 .cartModal {
   display: flex;
   flex-direction: column;
@@ -9,10 +11,10 @@
 
   font-family: "Euclid Circular A";
   font-weight: 500;
-  font-size: var(--desk-font-size-text-spacing);
+  font-size: getFontSize("text-spacing");
   text-transform: uppercase;
 
-  color: var(--color-white);
+  color: getColor("white");
   background-color: rgba(51, 32, 101, 0.18);
   backdrop-filter: blur(200px);
   pointer-events: none;
@@ -38,7 +40,7 @@
   & > .title {
     margin-bottom: 53px;
     letter-spacing: 0.1em;
-    font-size: var(--desk-font-size-text-caps-no-spacing);
+    font-size: getFontSize("text");
   }
 
   & .currency {
@@ -46,7 +48,7 @@
     align-items: center;
     height: 14px;
 
-    font-size: var(--desk-font-size-currency);
+    font-size: getFontSize("currency");
   }
 
   & > .closeButton {
@@ -114,7 +116,7 @@
       align-items: center;
 
       height: 13px;
-      font-size: var(--desk-font-size-text);
+      font-size: getFontSize("text");
       text-transform: none;
     }
 
@@ -128,9 +130,9 @@
         width: 14px;
         height: 14px;
 
-        border: 2px solid var(--color-white);
+        border: 2px solid getColor("white");
         border-radius: 100%;
-        background-color: var(--color-white);
+        background-color: getColor("white");
 
         &.cyan {
           background-color: rgb(41, 208, 217);
@@ -182,23 +184,23 @@
   gap: 10px;
 
   & span {
-    font-size: --desk-font-size-text;
+    font-size: --font-size-text;
   }
 
   & button {
     width: 45px;
     height: 45px;
-    border: 2px solid var(--color-white);
+    border: 2px solid getColor("white");
     border-radius: 100%;
 
-    color: var(--color-white);
-    background-color: var(--color-white-almost-transparent);
+    color: getColor("white");
+    background-color: getColor("white-0.2");
 
     &:disabled {
       cursor: default;
-      color: var(--color-white-semi-transparent);
-      border-color: var(--color-white-semi-transparent);
-      background-color: var(--color-white-almost-transparent);
+      color: getColor("white-0.6");
+      border-color: getColor("white-0.6");
+      background-color: getColor("white-0.2");
     }
 
     &:nth-child(1)::after {
@@ -248,10 +250,10 @@
 
   width: 189px;
 
-  color: var(--color-white);
+  color: getColor("white");
   font-family: "Euclid Circular A";
   font-weight: 500;
-  font-size: var(--desk-font-size-button);
+  font-size: getFontSize("button");
   line-height: 1.2;
   text-align: center;
   background-color: transparent;
@@ -263,7 +265,7 @@
   &::after {
     content: "";
     position: absolute;
-    border: 2px solid var(--color-lime);
+    border: 2px solid getColor("lime");
     border-radius: 50%;
 
     width: 189px;

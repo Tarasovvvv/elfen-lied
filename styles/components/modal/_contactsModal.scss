@@ -1,3 +1,5 @@
+@use "../../variables" as *;
+
 .contactsModal {
   position: fixed;
   z-index: 11;
@@ -10,10 +12,10 @@
 
   font-family: "Euclid Circular A";
   font-weight: 500;
-  font-size: var(--desk-font-size-text-spacing);
+  font-size: getFontSize("text-spacing");
 
-  color: var(--color-white);
-  background-color: var(--color-white-almost-transparent);
+  color: getColor("white");
+  background-color: getColor("white-0.2");
   backdrop-filter: blur(200px);
 
   & > div:nth-child(1),
@@ -31,7 +33,7 @@
       padding: 83px;
       gap: 153px;
       border-top-left-radius: 50px;
-      background-color: var(--color-lavender);
+      background-color: getColor("lavender");
     }
 
     .address {
@@ -41,12 +43,12 @@
 
       font-family: "Euclid Circular A";
       font-weight: 500;
-      font-size: var(--desk-font-size-text);
+      font-size: getFontSize("text");
 
       & > span:nth-child(1) {
-        font-size: var(--desk-font-size-subtitle);
+        font-size: getFontSize("subtitle");
         text-transform: uppercase;
-        color: var(--color-white-semi-transparent);
+        color: getColor("white-0.6");
       }
 
       address {
@@ -57,7 +59,7 @@
       h1 {
         font-family: "Euclid Circular A";
         font-weight: 500;
-        font-size: var(--desk-font-size-h1);
+        font-size: getFontSize("h1");
         text-transform: uppercase;
         margin-bottom: 33px;
       }
@@ -75,9 +77,9 @@
       flex-direction: column;
 
       & > span:nth-child(1) {
-        font-size: var(--desk-font-size-subtitle);
+        font-size: getFontSize("subtitle");
         text-transform: uppercase;
-        color: var(--color-white-semi-transparent);
+        color: getColor("white-0.6");
         margin-bottom: 59px;
       }
 
@@ -112,7 +114,7 @@
     max-width: 848px;
     padding: 83px;
     border-top-right-radius: 50px;
-    background-color: var(--color-pink);
+    background-color: getColor("pink");
 
     button {
       position: relative;
@@ -125,10 +127,10 @@
       background-color: transparent;
       span {
         position: absolute;
-        font-size: var(--desk-font-size-button);
+        font-size: getFontSize("button");
         line-height: 1.2;
 
-        color: var(--color-white);
+        color: getColor("white");
       }
 
       &::after {
@@ -136,9 +138,9 @@
         width: 189px;
         height: 93px;
         transform: rotate(-6deg);
-        border: 2px solid var(--color-lime);
+        border: 2px solid getColor("lime");
         border-radius: 50%;
-        background-color: var(--color-white-semi-transparent);
+        background-color: getColor("white-0.6");
       }
     }
   }
@@ -148,7 +150,7 @@
     top: 91px;
     right: 89px;
 
-    stroke: var(--color-white);
+    stroke: getColor("white");
     background-color: transparent;
   }
 
