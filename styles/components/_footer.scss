@@ -6,11 +6,11 @@
   justify-content: space-between;
 
   margin-top: 170px;
-  margin-bottom: 101px;
-  margin-left: 67px;
+  margin-bottom: fluid(70, 101);
+  margin-left: fluid(15, 67);
   margin-right: 56px;
 
-  @include mobile() {
+  @media (width < 901px) {
     flex-direction: column-reverse;
     gap: 18px;
     justify-content: center;

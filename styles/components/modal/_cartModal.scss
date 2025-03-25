@@ -80,17 +80,17 @@
       }
     }
   }
-}
 
-.productInner {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  .productInner {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 
-  width: 393px;
+    width: 393px;
 
-  & svg {
-    margin-top: 4px;
+    & svg {
+      margin-top: 4px;
+    }
   }
 }
 

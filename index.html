@@ -100,7 +100,7 @@
       <main>
         <section class="banner">
           <ul>
-            <li class="bannerItem expdanded">
+            <li class="bannerItem expanded">
               <img src="/images/lamps/lamp-1.webp" alt="Светильник" />
               <div class="preview">
                 <span class="title">Слайд</span>
@@ -204,16 +204,6 @@
                 <span class="title">Купить</span>
               </button>
             </li>
-            <script>
-              $(document).ready(function () {
-                $(".bannerItem").click(function () {
-                  $(".bannerItem").removeClass("expdanded");
-                  $(".bannerItem").addClass("collapsed");
-                  $(this).removeClass("collapsed");
-                  $(this).addClass("expdanded");
-                });
-              });
-            </script>
           </ul>
         </section>
         <section class="categories" id="catalog">
@@ -223,7 +213,7 @@
               <h2>Напольные зеркала</h2>
               <div class="categoryPreview">
                 <img src="/images/mirrors/mirror-1.webp" alt="Зеркало" loading="lazy" />
-                <svg width="389" height="462" viewBox="0 0 389 462" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg viewBox="0 0 389 462" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path
                     d="M83.9023 455.625C99.1324 469.226 121.539 458.556 132.362 441.241C146.921 417.948 169.466 403 194.773 403C219.899 403 242.302 417.735 256.871 440.741C267.807 458.011 290.298 468.583 305.47 454.884C355.538 409.675 388.273 334.764 388.273 250C388.273 243.069 382.498 237.709 375.61 236.937C355.712 234.707 338.258 226.446 331.266 211.451C322.182 191.971 330.381 169.463 348.62 150.371C358.21 140.333 363.069 125.802 356.79 113.42C322.158 45.1273 262.305 0 194.273 0C87.1302 0 0.273438 111.929 0.273438 250C0.273438 335.229 33.369 410.496 83.9023 455.625Z"
                     fill="#CBB6FF"
@@ -243,7 +233,7 @@
                   <span class="number">7</span>
                   <span class="quanityMeasure">шт</span>
                 </div>
-                <svg class="quanityBackground" width="81" height="75" viewBox="0 0 81 75" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg viewBox="0 0 81 75" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <ellipse cx="40.3468" cy="37.3136" rx="40.5" ry="36" transform="rotate(-23 40.3468 37.3136)" fill="#FA8FEF" />
                 </svg>
               </div>
@@ -255,30 +245,13 @@
                     strokeLinecap="round"
                   />
                 </svg>
-                <script>
-                  $(document).ready(function () {
-                    $(".categoryCard:nth-child(1) .circleButton").click(function () {
-                      const amount = $(".categoryCard:nth-child(1) .categoryQuanity .quanityTextWrapper .number").text().split(" ")[0];
-                      if (amount <= 5) {
-                        $(".moreButton").removeClass("expanded");
-                      } else {
-                        $(".moreButton").addClass("expanded");
-                      }
-                      $(".quanity").text(amount + " позиций в категории");
-                      $(".productsList").addClass("disabled");
-                      $(".productsList").removeClass("open");
-                      $(".productsList:nth-child(2)").addClass("open");
-                      $(".productsList:nth-child(2)").removeClass("disabled");
-                    });
-                  });
-                </script>
               </div>
             </li>
             <li class="categoryCard">
               <h2>Торшеры и лампы</h2>
               <div class="categoryPreview">
                 <img src="/images/lamps/lamp-2.webp" alt="Лампа" loading="lazy" />
-                <svg width="389" height="462" viewBox="0 0 389 462" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg viewBox="0 0 389 462" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path
                     d="M83.9023 455.625C99.1324 469.226 121.539 458.556 132.362 441.241C146.921 417.948 169.466 403 194.773 403C219.899 403 242.302 417.735 256.871 440.741C267.807 458.011 290.298 468.583 305.47 454.884C355.538 409.675 388.273 334.764 388.273 250C388.273 243.069 382.498 237.709 375.61 236.937C355.712 234.707 338.258 226.446 331.266 211.451C322.182 191.971 330.381 169.463 348.62 150.371C358.21 140.333 363.069 125.802 356.79 113.42C322.158 45.1273 262.305 0 194.273 0C87.1302 0 0.273438 111.929 0.273438 250C0.273438 335.229 33.369 410.496 83.9023 455.625Z"
                     fill="#CBB6FF"
@@ -311,29 +284,12 @@
                   />
                 </svg>
               </div>
-              <script>
-                $(document).ready(function () {
-                  $(".categoryCard:nth-child(2) .circleButton").click(function () {
-                    const amount = $(".categoryCard:nth-child(2) .categoryQuanity .quanityTextWrapper .number").text().split(" ")[0];
-                    if (amount <= 5) {
-                      $(".moreButton").removeClass("expanded");
-                    } else {
-                      $(".moreButton").addClass("expanded");
-                    }
-                    $(".quanity").text(amount + " позиций в категории");
-                    $(".productsList").addClass("disabled");
-                    $(".productsList").removeClass("open");
-                    $(".productsList:nth-child(3)").addClass("open");
-                    $(".productsList:nth-child(3)").removeClass("disabled");
-                  });
-                });
-              </script>
             </li>
             <li class="categoryCard">
               <h2>Кресла и стулья</h2>
               <div class="categoryPreview">
                 <img src="/images/chairs/chair-2.webp" alt="Кресло" loading="lazy" />
-                <svg width="389" height="462" viewBox="0 0 389 462" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg viewBox="0 0 389 462" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path
                     d="M83.9023 455.625C99.1324 469.226 121.539 458.556 132.362 441.241C146.921 417.948 169.466 403 194.773 403C219.899 403 242.302 417.735 256.871 440.741C267.807 458.011 290.298 468.583 305.47 454.884C355.538 409.675 388.273 334.764 388.273 250C388.273 243.069 382.498 237.709 375.61 236.937C355.712 234.707 338.258 226.446 331.266 211.451C322.182 191.971 330.381 169.463 348.62 150.371C358.21 140.333 363.069 125.802 356.79 113.42C322.158 45.1273 262.305 0 194.273 0C87.1302 0 0.273438 111.929 0.273438 250C0.273438 335.229 33.369 410.496 83.9023 455.625Z"
                     fill="#CBB6FF"
@@ -366,23 +322,6 @@
                   />
                 </svg>
               </div>
-              <script>
-                $(document).ready(function () {
-                  $(".categoryCard:nth-child(3) .circleButton").click(function () {
-                    const amount = $(".categoryCard:nth-child(3) .categoryQuanity .quanityTextWrapper .number").text().split(" ")[0];
-                    if (amount <= 5) {
-                      $(".moreButton").removeClass("expanded");
-                    } else {
-                      $(".moreButton").addClass("expanded");
-                    }
-                    $(".quanity").text(amount + " позиций в категории");
-                    $(".productsList").addClass("disabled");
-                    $(".productsList").removeClass("open");
-                    $(".productsList:nth-child(4)").addClass("open");
-                    $(".productsList:nth-child(4)").removeClass("disabled");
-                  });
-                });
-              </script>
             </li>
             <li class="categoryCard">
               <h2>Столы и тумбы</h2>
@@ -421,23 +360,6 @@
                   />
                 </svg>
               </div>
-              <script>
-                $(document).ready(function () {
-                  $(".categoryCard:nth-child(4) .circleButton").click(function () {
-                    const amount = $(".categoryCard:nth-child(4) .categoryQuanity .quanityTextWrapper .number").text().split(" ")[0];
-                    if (amount <= 5) {
-                      $(".moreButton").removeClass("expanded");
-                    } else {
-                      $(".moreButton").addClass("expanded");
-                    }
-                    $(".quanity").text(amount + " позиций в категории");
-                    $(".productsList").addClass("disabled");
-                    $(".productsList").removeClass("open");
-                    $(".productsList:nth-child(5)").addClass("open");
-                    $(".productsList:nth-child(5)").removeClass("disabled");
-                  });
-                });
-              </script>
             </li>
           </ul>
           <div class="category">
@@ -573,9 +495,200 @@
             </div>
             <ul class="productsList">
               <li class="product">
+                <div class="color blue"></div>
+                <div class="imgWrapper">
+                  <img src="/images/mirrors/mirror-6.webp" alt="Зеркало" />
+                </div>
+                <h2>KRISTIN</h2>
+                <p>Зеркало напольное</p>
+                <div class="productHr"></div>
+                <div class="sale">
+                  <div class="price">
+                    <span class="number">150 000</span>
+                    <span class="currency">₽</span>
+                  </div>
+                  <button class="buyButton">
+                    <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M5.11344 3.94L4.91344 6.39C4.87344 6.86 5.24344 7.25 5.71344 7.25H21.0234C21.4434 7.25 21.7934 6.93 21.8234 6.51C21.9534 4.74 20.6034 3.3 18.8334 3.3H6.54344C6.44344 2.86 6.24344 2.44 5.93344 2.09C5.43344 1.56 4.73344 1.25 4.01344 1.25H2.27344C1.86344 1.25 1.52344 1.59 1.52344 2C1.52344 2.41 1.86344 2.75 2.27344 2.75H4.01344C4.32344 2.75 4.61344 2.88 4.82344 3.1C5.03344 3.33 5.13344 3.63 5.11344 3.94ZM10.2734 20.75C10.2734 21.7165 9.48994 22.5 8.52344 22.5C7.55694 22.5 6.77344 21.7165 6.77344 20.75C6.77344 19.7835 7.55694 19 8.52344 19C9.48994 19 10.2734 19.7835 10.2734 20.75ZM18.2734 20.75C18.2734 21.7165 17.4899 22.5 16.5234 22.5C15.5569 22.5 14.7734 21.7165 14.7734 20.75C14.7734 19.7835 15.5569 19 16.5234 19C17.4899 19 18.2734 19.7835 18.2734 20.75ZM5.44349 8.75H20.7835C21.2535 8.75 21.6135 9.14 21.5735 9.6L21.2435 14.27C21.1335 15.77 19.8135 17 18.3135 17H7.19349C5.48349 17 4.14349 15.54 4.28349 13.83L4.64349 9.48C4.68349 9.07 5.02349 8.75 5.44349 8.75Z"
+                        fill="#D9FF5A"
+                      />
+                    </svg>
+
+                    <span class="title">Купить</span>
+                  </button>
+                </div>
+              </li>
+              <li class="product">
+                <div class="color lavender"></div>
+                <div class="imgWrapper">
+                  <img src="/images/mirrors/mirror-2.webp" alt="Зеркало" />
+                </div>
+                <h2>coppelia</h2>
+                <p>Зеркало напольное</p>
+                <div class="productHr"></div>
+                <div class="sale">
+                  <div class="price">
+                    <span class="number">150 000</span>
+                    <span class="currency">₽</span>
+                  </div>
+                  <button class="buyButton">
+                    <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M5.11344 3.94L4.91344 6.39C4.87344 6.86 5.24344 7.25 5.71344 7.25H21.0234C21.4434 7.25 21.7934 6.93 21.8234 6.51C21.9534 4.74 20.6034 3.3 18.8334 3.3H6.54344C6.44344 2.86 6.24344 2.44 5.93344 2.09C5.43344 1.56 4.73344 1.25 4.01344 1.25H2.27344C1.86344 1.25 1.52344 1.59 1.52344 2C1.52344 2.41 1.86344 2.75 2.27344 2.75H4.01344C4.32344 2.75 4.61344 2.88 4.82344 3.1C5.03344 3.33 5.13344 3.63 5.11344 3.94ZM10.2734 20.75C10.2734 21.7165 9.48994 22.5 8.52344 22.5C7.55694 22.5 6.77344 21.7165 6.77344 20.75C6.77344 19.7835 7.55694 19 8.52344 19C9.48994 19 10.2734 19.7835 10.2734 20.75ZM18.2734 20.75C18.2734 21.7165 17.4899 22.5 16.5234 22.5C15.5569 22.5 14.7734 21.7165 14.7734 20.75C14.7734 19.7835 15.5569 19 16.5234 19C17.4899 19 18.2734 19.7835 18.2734 20.75ZM5.44349 8.75H20.7835C21.2535 8.75 21.6135 9.14 21.5735 9.6L21.2435 14.27C21.1335 15.77 19.8135 17 18.3135 17H7.19349C5.48349 17 4.14349 15.54 4.28349 13.83L4.64349 9.48C4.68349 9.07 5.02349 8.75 5.44349 8.75Z"
+                        fill="#D9FF5A"
+                      />
+                    </svg>
+
+                    <span class="title">Купить</span>
+                  </button>
+                </div>
+              </li>
+              <li class="product">
+                <div class="color blue"></div>
+                <div class="imgWrapper">
+                  <img src="/images/mirrors/mirror-3.webp" alt="Зеркало" />
+                </div>
+                <h2>Arlene</h2>
+                <p>Зеркало напольное</p>
+                <div class="productHr"></div>
+                <div class="sale">
+                  <div class="price">
+                    <span class="number">150 000</span>
+                    <span class="currency">₽</span>
+                  </div>
+                  <button class="buyButton">
+                    <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M5.11344 3.94L4.91344 6.39C4.87344 6.86 5.24344 7.25 5.71344 7.25H21.0234C21.4434 7.25 21.7934 6.93 21.8234 6.51C21.9534 4.74 20.6034 3.3 18.8334 3.3H6.54344C6.44344 2.86 6.24344 2.44 5.93344 2.09C5.43344 1.56 4.73344 1.25 4.01344 1.25H2.27344C1.86344 1.25 1.52344 1.59 1.52344 2C1.52344 2.41 1.86344 2.75 2.27344 2.75H4.01344C4.32344 2.75 4.61344 2.88 4.82344 3.1C5.03344 3.33 5.13344 3.63 5.11344 3.94ZM10.2734 20.75C10.2734 21.7165 9.48994 22.5 8.52344 22.5C7.55694 22.5 6.77344 21.7165 6.77344 20.75C6.77344 19.7835 7.55694 19 8.52344 19C9.48994 19 10.2734 19.7835 10.2734 20.75ZM18.2734 20.75C18.2734 21.7165 17.4899 22.5 16.5234 22.5C15.5569 22.5 14.7734 21.7165 14.7734 20.75C14.7734 19.7835 15.5569 19 16.5234 19C17.4899 19 18.2734 19.7835 18.2734 20.75ZM5.44349 8.75H20.7835C21.2535 8.75 21.6135 9.14 21.5735 9.6L21.2435 14.27C21.1335 15.77 19.8135 17 18.3135 17H7.19349C5.48349 17 4.14349 15.54 4.28349 13.83L4.64349 9.48C4.68349 9.07 5.02349 8.75 5.44349 8.75Z"
+                        fill="#D9FF5A"
+                      />
+                    </svg>
+
+                    <span class="title">Купить</span>
+                  </button>
+                </div>
+              </li>
+              <li class="product">
+                <div class="color orange"></div>
+                <div class="imgWrapper">
+                  <img src="/images/mirrors/mirror-4.webp" alt="Зеркало" />
+                </div>
+                <h2>Colleen</h2>
+                <p>Зеркало настенное</p>
+                <div class="productHr"></div>
+                <div class="sale">
+                  <div class="price">
+                    <span class="number">150 000</span>
+                    <span class="currency">₽</span>
+                  </div>
+                  <button class="buyButton">
+                    <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M5.11344 3.94L4.91344 6.39C4.87344 6.86 5.24344 7.25 5.71344 7.25H21.0234C21.4434 7.25 21.7934 6.93 21.8234 6.51C21.9534 4.74 20.6034 3.3 18.8334 3.3H6.54344C6.44344 2.86 6.24344 2.44 5.93344 2.09C5.43344 1.56 4.73344 1.25 4.01344 1.25H2.27344C1.86344 1.25 1.52344 1.59 1.52344 2C1.52344 2.41 1.86344 2.75 2.27344 2.75H4.01344C4.32344 2.75 4.61344 2.88 4.82344 3.1C5.03344 3.33 5.13344 3.63 5.11344 3.94ZM10.2734 20.75C10.2734 21.7165 9.48994 22.5 8.52344 22.5C7.55694 22.5 6.77344 21.7165 6.77344 20.75C6.77344 19.7835 7.55694 19 8.52344 19C9.48994 19 10.2734 19.7835 10.2734 20.75ZM18.2734 20.75C18.2734 21.7165 17.4899 22.5 16.5234 22.5C15.5569 22.5 14.7734 21.7165 14.7734 20.75C14.7734 19.7835 15.5569 19 16.5234 19C17.4899 19 18.2734 19.7835 18.2734 20.75ZM5.44349 8.75H20.7835C21.2535 8.75 21.6135 9.14 21.5735 9.6L21.2435 14.27C21.1335 15.77 19.8135 17 18.3135 17H7.19349C5.48349 17 4.14349 15.54 4.28349 13.83L4.64349 9.48C4.68349 9.07 5.02349 8.75 5.44349 8.75Z"
+                        fill="#D9FF5A"
+                      />
+                    </svg>
+
+                    <span class="title">Купить</span>
+                  </button>
+                </div>
+              </li>
+              <li class="product">
+                <div class="color lavender"></div>
+                <div class="imgWrapper">
+                  <img src="/images/mirrors/mirror-5.webp" alt="Зеркало" />
+                </div>
+                <h2>artemide</h2>
+                <p>Зеркало напольное</p>
+                <div class="productHr"></div>
+                <div class="sale">
+                  <div class="price">
+                    <span class="number">150 000</span>
+                    <span class="currency">₽</span>
+                  </div>
+                  <button class="buyButton">
+                    <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M5.11344 3.94L4.91344 6.39C4.87344 6.86 5.24344 7.25 5.71344 7.25H21.0234C21.4434 7.25 21.7934 6.93 21.8234 6.51C21.9534 4.74 20.6034 3.3 18.8334 3.3H6.54344C6.44344 2.86 6.24344 2.44 5.93344 2.09C5.43344 1.56 4.73344 1.25 4.01344 1.25H2.27344C1.86344 1.25 1.52344 1.59 1.52344 2C1.52344 2.41 1.86344 2.75 2.27344 2.75H4.01344C4.32344 2.75 4.61344 2.88 4.82344 3.1C5.03344 3.33 5.13344 3.63 5.11344 3.94ZM10.2734 20.75C10.2734 21.7165 9.48994 22.5 8.52344 22.5C7.55694 22.5 6.77344 21.7165 6.77344 20.75C6.77344 19.7835 7.55694 19 8.52344 19C9.48994 19 10.2734 19.7835 10.2734 20.75ZM18.2734 20.75C18.2734 21.7165 17.4899 22.5 16.5234 22.5C15.5569 22.5 14.7734 21.7165 14.7734 20.75C14.7734 19.7835 15.5569 19 16.5234 19C17.4899 19 18.2734 19.7835 18.2734 20.75ZM5.44349 8.75H20.7835C21.2535 8.75 21.6135 9.14 21.5735 9.6L21.2435 14.27C21.1335 15.77 19.8135 17 18.3135 17H7.19349C5.48349 17 4.14349 15.54 4.28349 13.83L4.64349 9.48C4.68349 9.07 5.02349 8.75 5.44349 8.75Z"
+                        fill="#D9FF5A"
+                      />
+                    </svg>
+
+                    <span class="title">Купить</span>
+                  </button>
+                </div>
+              </li>
+              <li class="product">
+                <div class="color blue"></div>
+                <div class="imgWrapper">
+                  <img src="/images/mirrors/mirror-6.webp" alt="Зеркало" />
+                </div>
+                <h2>KRISTIN</h2>
+                <p>Зеркало напольное</p>
+                <div class="productHr"></div>
+                <div class="sale">
+                  <div class="price">
+                    <span class="number">150 000</span>
+                    <span class="currency">₽</span>
+                  </div>
+                  <button class="buyButton">
+                    <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M5.11344 3.94L4.91344 6.39C4.87344 6.86 5.24344 7.25 5.71344 7.25H21.0234C21.4434 7.25 21.7934 6.93 21.8234 6.51C21.9534 4.74 20.6034 3.3 18.8334 3.3H6.54344C6.44344 2.86 6.24344 2.44 5.93344 2.09C5.43344 1.56 4.73344 1.25 4.01344 1.25H2.27344C1.86344 1.25 1.52344 1.59 1.52344 2C1.52344 2.41 1.86344 2.75 2.27344 2.75H4.01344C4.32344 2.75 4.61344 2.88 4.82344 3.1C5.03344 3.33 5.13344 3.63 5.11344 3.94ZM10.2734 20.75C10.2734 21.7165 9.48994 22.5 8.52344 22.5C7.55694 22.5 6.77344 21.7165 6.77344 20.75C6.77344 19.7835 7.55694 19 8.52344 19C9.48994 19 10.2734 19.7835 10.2734 20.75ZM18.2734 20.75C18.2734 21.7165 17.4899 22.5 16.5234 22.5C15.5569 22.5 14.7734 21.7165 14.7734 20.75C14.7734 19.7835 15.5569 19 16.5234 19C17.4899 19 18.2734 19.7835 18.2734 20.75ZM5.44349 8.75H20.7835C21.2535 8.75 21.6135 9.14 21.5735 9.6L21.2435 14.27C21.1335 15.77 19.8135 17 18.3135 17H7.19349C5.48349 17 4.14349 15.54 4.28349 13.83L4.64349 9.48C4.68349 9.07 5.02349 8.75 5.44349 8.75Z"
+                        fill="#D9FF5A"
+                      />
+                    </svg>
+
+                    <span class="title">Купить</span>
+                  </button>
+                </div>
+              </li>
+              <li class="product">
+                <div class="color lavender"></div>
+                <div class="imgWrapper">
+                  <img src="/images/mirrors/mirror-2.webp" alt="Зеркало" />
+                </div>
+                <h2>coppelia</h2>
+                <p>Зеркало напольное</p>
+                <div class="productHr"></div>
+                <div class="sale">
+                  <div class="price">
+                    <span class="number">150 000</span>
+                    <span class="currency">₽</span>
+                  </div>
+                  <button class="buyButton">
+                    <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M5.11344 3.94L4.91344 6.39C4.87344 6.86 5.24344 7.25 5.71344 7.25H21.0234C21.4434 7.25 21.7934 6.93 21.8234 6.51C21.9534 4.74 20.6034 3.3 18.8334 3.3H6.54344C6.44344 2.86 6.24344 2.44 5.93344 2.09C5.43344 1.56 4.73344 1.25 4.01344 1.25H2.27344C1.86344 1.25 1.52344 1.59 1.52344 2C1.52344 2.41 1.86344 2.75 2.27344 2.75H4.01344C4.32344 2.75 4.61344 2.88 4.82344 3.1C5.03344 3.33 5.13344 3.63 5.11344 3.94ZM10.2734 20.75C10.2734 21.7165 9.48994 22.5 8.52344 22.5C7.55694 22.5 6.77344 21.7165 6.77344 20.75C6.77344 19.7835 7.55694 19 8.52344 19C9.48994 19 10.2734 19.7835 10.2734 20.75ZM18.2734 20.75C18.2734 21.7165 17.4899 22.5 16.5234 22.5C15.5569 22.5 14.7734 21.7165 14.7734 20.75C14.7734 19.7835 15.5569 19 16.5234 19C17.4899 19 18.2734 19.7835 18.2734 20.75ZM5.44349 8.75H20.7835C21.2535 8.75 21.6135 9.14 21.5735 9.6L21.2435 14.27C21.1335 15.77 19.8135 17 18.3135 17H7.19349C5.48349 17 4.14349 15.54 4.28349 13.83L4.64349 9.48C4.68349 9.07 5.02349 8.75 5.44349 8.75Z"
+                        fill="#D9FF5A"
+                      />
+                    </svg>
+
+                    <span class="title">Купить</span>
+                  </button>
+                </div>
+              </li>
+            </ul>
+            <ul class="productsList">
+              <li class="product">
                 <div class="color gold"></div>
                 <div class="imgWrapper">
-                  <img src="/images/lamps/lamp-4.webp" alt="Лампа" loading="lazy" />
+                  <img src="/images/lamps/lamp-4.webp" alt="Лампа" />
                 </div>
                 <h2>Aubrey</h2>
                 <p>Лампа настольная</p>
@@ -602,7 +715,7 @@
               <li class="product">
                 <div class="color green"></div>
                 <div class="imgWrapper">
-                  <img src="/images/lamps/lamp-3.webp" alt="Лампа" loading="lazy" />
+                  <img src="/images/lamps/lamp-3.webp" alt="Лампа" />
                 </div>
                 <h2>Leslie</h2>
                 <p>Лампа настольная</p>
@@ -629,7 +742,7 @@
               <li class="product">
                 <div class="color pink"></div>
                 <div class="imgWrapper">
-                  <img src="/images/lamps/lamp-6.webp" alt="Лампа" loading="lazy" />
+                  <img src="/images/lamps/lamp-6.webp" alt="Лампа" />
                 </div>
                 <h2>Darrell</h2>
                 <p>Лампа настольная</p>
@@ -656,7 +769,7 @@
               <li class="product">
                 <div class="color cyan"></div>
                 <div class="imgWrapper">
-                  <img src="/images/lamps/lamp-5.webp" alt="Лампа" loading="lazy" />
+                  <img src="/images/lamps/lamp-5.webp" alt="Лампа" />
                 </div>
                 <h2>coppelia</h2>
                 <p>Лампа настольная</p>
@@ -683,7 +796,7 @@
               <li class="product">
                 <div class="color sky"></div>
                 <div class="imgWrapper">
-                  <img src="/images/lamps/lamp-7.webp" alt="Лампа" loading="lazy" />
+                  <img src="/images/lamps/lamp-7.webp" alt="Лампа" />
                 </div>
                 <h2>artemide</h2>
                 <p>Лампа настольная</p>
@@ -712,7 +825,7 @@
               <li class="product">
                 <div class="color orange"></div>
                 <div class="imgWrapper">
-                  <img src="/images/chairs/chair-3.webp" alt="Кресло" loading="lazy" />
+                  <img src="/images/chairs/chair-3.webp" alt="Кресло" />
                 </div>
                 <h2>Kathryn</h2>
                 <p>Кресло пристенное</p>
@@ -739,7 +852,7 @@
               <li class="product">
                 <div class="color green"></div>
                 <div class="imgWrapper">
-                  <img src="/images/chairs/chair-4.webp" alt="Кресло" loading="lazy" />
+                  <img src="/images/chairs/chair-4.webp" alt="Кресло" />
                 </div>
                 <h2>Wendy</h2>
                 <p>Кресло компактное</p>
@@ -766,7 +879,7 @@
               <li class="product">
                 <div class="color pink"></div>
                 <div class="imgWrapper">
-                  <img src="/images/chairs/chair-5.webp" alt="Лампа" loading="lazy" />
+                  <img src="/images/chairs/chair-5.webp" alt="Лампа" />
                 </div>
                 <h2>Judith</h2>
                 <p>Кресло компактное</p>
@@ -793,7 +906,7 @@
               <li class="product">
                 <div class="color black"></div>
                 <div class="imgWrapper">
-                  <img src="/images/chairs/chair-7.webp" alt="Лампа" loading="lazy" />
+                  <img src="/images/chairs/chair-7.webp" alt="Лампа" />
                 </div>
                 <h2>Jane</h2>
                 <p>Кресло пристенное</p>
@@ -822,7 +935,7 @@
               <li class="product">
                 <div class="color blue"></div>
                 <div class="imgWrapper">
-                  <img src="/images/tables/table-7.webp" alt="Стол" loading="lazy" />
+                  <img src="/images/tables/table-7.webp" alt="Стол" />
                 </div>
                 <h2>Kathryn</h2>
                 <p>Стол обеденный</p>
@@ -849,7 +962,7 @@
               <li class="product">
                 <div class="color ohra"></div>
                 <div class="imgWrapper">
-                  <img src="/images/tables/table-3.webp" alt="Стол" loading="lazy" />
+                  <img src="/images/tables/table-3.webp" alt="Стол" />
                 </div>
                 <h2>Wendy</h2>
                 <p>Стол рабочий</p>
@@ -876,7 +989,7 @@
               <li class="product">
                 <div class="color pink"></div>
                 <div class="imgWrapper">
-                  <img src="/images/tables/table-5.webp" alt="Стол" loading="lazy" />
+                  <img src="/images/tables/table-5.webp" alt="Стол" />
                 </div>
                 <h2>Judith</h2>
                 <p>Стол обеденный</p>
@@ -903,7 +1016,7 @@
               <li class="product">
                 <div class="color gray"></div>
                 <div class="imgWrapper">
-                  <img src="/images/tables/table-4.webp" alt="Стол" loading="lazy" />
+                  <img src="/images/tables/table-4.webp" alt="Стол" />
                 </div>
                 <h2>Jane</h2>
                 <p>Стол приставной</p>
@@ -930,7 +1043,7 @@
               <li class="product">
                 <div class="color lavender"></div>
                 <div class="imgWrapper">
-                  <img src="/images/tables/table-6.webp" alt="Стол" loading="lazy" />
+                  <img src="/images/tables/table-6.webp" alt="Стол" />
                 </div>
                 <h2>Darlene</h2>
                 <p>Стол рабочий</p>
@@ -957,7 +1070,7 @@
               <li class="product">
                 <div class="color blue"></div>
                 <div class="imgWrapper">
-                  <img src="/images/tables/table-7.webp" alt="Стол" loading="lazy" />
+                  <img src="/images/tables/table-7.webp" alt="Стол" />
                 </div>
                 <h2>Kathryn</h2>
                 <p>Стол обеденный</p>
@@ -984,7 +1097,7 @@
               <li class="product">
                 <div class="color ohra"></div>
                 <div class="imgWrapper">
-                  <img src="/images/tables/table-3.webp" alt="Стол" loading="lazy" />
+                  <img src="/images/tables/table-3.webp" alt="Стол" />
                 </div>
                 <h2>Wendy</h2>
                 <p>Стол рабочий</p>
@@ -1011,7 +1124,7 @@
               <li class="product">
                 <div class="color pink"></div>
                 <div class="imgWrapper">
-                  <img src="/images/tables/table-5.webp" alt="Стол" loading="lazy" />
+                  <img src="/images/tables/table-5.webp" alt="Стол" />
                 </div>
                 <h2>Judith</h2>
                 <p>Стол обеденный</p>
@@ -1038,7 +1151,7 @@
               <li class="product">
                 <div class="color gray"></div>
                 <div class="imgWrapper">
-                  <img src="/images/tables/table-4.webp" alt="Стол" loading="lazy" />
+                  <img src="/images/tables/table-4.webp" alt="Стол" />
                 </div>
                 <h2>Jane</h2>
                 <p>Стол приставной</p>
@@ -1065,7 +1178,7 @@
               <li class="product">
                 <div class="color lavender"></div>
                 <div class="imgWrapper">
-                  <img src="/images/tables/table-6.webp" alt="Стол" loading="lazy" />
+                  <img src="/images/tables/table-6.webp" alt="Стол" />
                 </div>
                 <h2>Darlene</h2>
                 <p>Стол рабочий</p>
@@ -1099,18 +1212,6 @@
                 </svg>
               </div>
             </button>
-            <script>
-              $(document).ready(function () {
-                $(".circleButton").click(function () {
-                  $(".category").addClass("expanded");
-                  $(".productsList").removeClass("expanded");
-                });
-                $(".moreButton").click(function () {
-                  $(".productsList").addClass("expanded");
-                  $(".moreButton").removeClass("expanded");
-                });
-              });
-            </script>
           </div>
         </section>
         <div class="stripes">
@@ -1349,6 +1450,119 @@
       </footer>
     </div>
     <div class="modalRoot">
+      <div class="categoryModal fullscreen">
+        <button class="closeButton">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M27 9L9 27" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M9 9L27 27" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </button>
+        <h1>Торшеры и лампы</h1>
+        <ul class="products">
+          <li class="product">
+            <div>
+              <img src="/images/cart/product-1.webp" alt="Лампа" loading="lazy" />
+            </div>
+            <div class="productInner">
+              <div class="innerDescription">
+                <div>
+                  <div>
+                    <div class="color cyan"></div>
+                    <span class="title">Coppelia</span>
+                  </div>
+                  <span class="text">Лампа настольная</span>
+                </div>
+              </div>
+              <hr />
+              <div class="innerBottom">
+                <div class="price">
+                  <span class="number">150 000</span>
+                  <span class="currency">₽</span>
+                </div>
+                <button class="buyButton">
+                  <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M5.11344 3.94L4.91344 6.39C4.87344 6.86 5.24344 7.25 5.71344 7.25H21.0234C21.4434 7.25 21.7934 6.93 21.8234 6.51C21.9534 4.74 20.6034 3.3 18.8334 3.3H6.54344C6.44344 2.86 6.24344 2.44 5.93344 2.09C5.43344 1.56 4.73344 1.25 4.01344 1.25H2.27344C1.86344 1.25 1.52344 1.59 1.52344 2C1.52344 2.41 1.86344 2.75 2.27344 2.75H4.01344C4.32344 2.75 4.61344 2.88 4.82344 3.1C5.03344 3.33 5.13344 3.63 5.11344 3.94ZM10.2734 20.75C10.2734 21.7165 9.48994 22.5 8.52344 22.5C7.55694 22.5 6.77344 21.7165 6.77344 20.75C6.77344 19.7835 7.55694 19 8.52344 19C9.48994 19 10.2734 19.7835 10.2734 20.75ZM18.2734 20.75C18.2734 21.7165 17.4899 22.5 16.5234 22.5C15.5569 22.5 14.7734 21.7165 14.7734 20.75C14.7734 19.7835 15.5569 19 16.5234 19C17.4899 19 18.2734 19.7835 18.2734 20.75ZM5.44349 8.75H20.7835C21.2535 8.75 21.6135 9.14 21.5735 9.6L21.2435 14.27C21.1335 15.77 19.8135 17 18.3135 17H7.19349C5.48349 17 4.14349 15.54 4.28349 13.83L4.64349 9.48C4.68349 9.07 5.02349 8.75 5.44349 8.75Z"
+                      fill="#D9FF5A"
+                    />
+                  </svg>
+                  <span class="title">Купить</span>
+                </button>
+              </div>
+            </div>
+          </li>
+          <li class="product">
+            <div>
+              <img src="/images/cart/product-2.webp" alt="Лампа" loading="lazy" />
+            </div>
+            <div class="productInner">
+              <div class="innerDescription">
+                <div>
+                  <div>
+                    <div class="color ohra"></div>
+                    <span class="title">Facchetta</span>
+                  </div>
+                  <span class="text">Лампа настольная</span>
+                </div>
+              </div>
+              <hr />
+              <div class="innerBottom">
+                <div class="price">
+                  <span class="number">150 000</span>
+                  <span class="currency">₽</span>
+                </div>
+                <button class="buyButton">
+                  <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M5.11344 3.94L4.91344 6.39C4.87344 6.86 5.24344 7.25 5.71344 7.25H21.0234C21.4434 7.25 21.7934 6.93 21.8234 6.51C21.9534 4.74 20.6034 3.3 18.8334 3.3H6.54344C6.44344 2.86 6.24344 2.44 5.93344 2.09C5.43344 1.56 4.73344 1.25 4.01344 1.25H2.27344C1.86344 1.25 1.52344 1.59 1.52344 2C1.52344 2.41 1.86344 2.75 2.27344 2.75H4.01344C4.32344 2.75 4.61344 2.88 4.82344 3.1C5.03344 3.33 5.13344 3.63 5.11344 3.94ZM10.2734 20.75C10.2734 21.7165 9.48994 22.5 8.52344 22.5C7.55694 22.5 6.77344 21.7165 6.77344 20.75C6.77344 19.7835 7.55694 19 8.52344 19C9.48994 19 10.2734 19.7835 10.2734 20.75ZM18.2734 20.75C18.2734 21.7165 17.4899 22.5 16.5234 22.5C15.5569 22.5 14.7734 21.7165 14.7734 20.75C14.7734 19.7835 15.5569 19 16.5234 19C17.4899 19 18.2734 19.7835 18.2734 20.75ZM5.44349 8.75H20.7835C21.2535 8.75 21.6135 9.14 21.5735 9.6L21.2435 14.27C21.1335 15.77 19.8135 17 18.3135 17H7.19349C5.48349 17 4.14349 15.54 4.28349 13.83L4.64349 9.48C4.68349 9.07 5.02349 8.75 5.44349 8.75Z"
+                      fill="#D9FF5A"
+                    />
+                  </svg>
+                  <span class="title">Купить</span>
+                </button>
+              </div>
+            </div>
+          </li>
+          <li class="product">
+            <div>
+              <img src="/images/cart/product-3.webp" alt="Лампа" />
+            </div>
+            <div class="productInner">
+              <div class="innerDescription">
+                <div>
+                  <div>
+                    <div class="color pink"></div>
+                    <span class="title">Coppelia</span>
+                  </div>
+                  <span class="text">Лампа настольная</span>
+                </div>
+              </div>
+              <hr />
+              <div class="innerBottom">
+                <div class="price">
+                  <span class="number">150 000</span>
+                  <span class="currency">₽</span>
+                </div>
+                <button class="buyButton">
+                  <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M5.11344 3.94L4.91344 6.39C4.87344 6.86 5.24344 7.25 5.71344 7.25H21.0234C21.4434 7.25 21.7934 6.93 21.8234 6.51C21.9534 4.74 20.6034 3.3 18.8334 3.3H6.54344C6.44344 2.86 6.24344 2.44 5.93344 2.09C5.43344 1.56 4.73344 1.25 4.01344 1.25H2.27344C1.86344 1.25 1.52344 1.59 1.52344 2C1.52344 2.41 1.86344 2.75 2.27344 2.75H4.01344C4.32344 2.75 4.61344 2.88 4.82344 3.1C5.03344 3.33 5.13344 3.63 5.11344 3.94ZM10.2734 20.75C10.2734 21.7165 9.48994 22.5 8.52344 22.5C7.55694 22.5 6.77344 21.7165 6.77344 20.75C6.77344 19.7835 7.55694 19 8.52344 19C9.48994 19 10.2734 19.7835 10.2734 20.75ZM18.2734 20.75C18.2734 21.7165 17.4899 22.5 16.5234 22.5C15.5569 22.5 14.7734 21.7165 14.7734 20.75C14.7734 19.7835 15.5569 19 16.5234 19C17.4899 19 18.2734 19.7835 18.2734 20.75ZM5.44349 8.75H20.7835C21.2535 8.75 21.6135 9.14 21.5735 9.6L21.2435 14.27C21.1335 15.77 19.8135 17 18.3135 17H7.19349C5.48349 17 4.14349 15.54 4.28349 13.83L4.64349 9.48C4.68349 9.07 5.02349 8.75 5.44349 8.75Z"
+                      fill="#D9FF5A"
+                    />
+                  </svg>
+                  <span class="title">Купить</span>
+                </button>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
       <div class="productModal fullscreen">
         <div class="closeButtonWrapper">
           <button class="closeButton">
@@ -1367,7 +1581,7 @@
           </button>
         </div>
         <div>
-          <span>Арт.GNM007</span>
+          <span>Арт. GNM<br />007</span>
           <button class="favouriteButton">
             <svg width="79" height="79" viewBox="0 0 79 79" fill="none" xmlns="http://www.w3.org/2000/svg">
               <circle cx="39.5" cy="39.5" r="38.5" fill="white" fill-opacity="0.19" stroke-width="2" />
@@ -1392,15 +1606,16 @@
             <div class="color"></div>
             <span>Лаванда</span>
           </div>
-          <div>Высота: 60см</div>
+          <span>Высота: 60см</span>
         </div>
         <div>
           <span>Benjamin Moore</span>
         </div>
-        <div>
-          <div>Функциональная дизайнерская лампа для создания максимально комфортного освещения</div>
+
+        <div class="bottomDesktop">
+          <span class="productDescription">Функциональная дизайнерская лампа для создания максимально комфортного освещения</span>
           <div>
-            <span>Santa Trinita</span>
+            <span class="productTitle">Santa Trinita</span>
             <div>
               <span class="number">150 000</span>
               <span class="currency">₽</span>
@@ -1419,6 +1634,31 @@
             </svg>
             <span class="title">Купить</span>
           </button>
+        </div>
+        <div class="bottomMobile">
+          <div>
+            <span class="productTitle">Santa Trinita</span>
+            <span class="productDescription">Функциональная дизайнерская лампа для создания максимально комфортного освещения</span>
+          </div>
+          <div>
+            <div>
+              <span class="number">150 000</span>
+              <span class="currency">₽</span>
+            </div>
+            <button class="buyButton">
+              <div class="ellipse"></div>
+              <div class="ellipse"></div>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  fillRule="evenodd"
+                  clipRule="evenodd"
+                  d="M4.84 3.94049L4.64 6.39049C4.6 6.86049 4.97 7.25049 5.44 7.25049H20.75C21.17 7.25049 21.52 6.93049 21.55 6.51049C21.68 4.74049 20.33 3.30049 18.56 3.30049H6.27C6.17 2.86049 5.97 2.44049 5.66 2.09049C5.16 1.56049 4.46 1.25049 3.74 1.25049H2C1.59 1.25049 1.25 1.59049 1.25 2.00049C1.25 2.41049 1.59 2.75049 2 2.75049H3.74C4.05 2.75049 4.34 2.88049 4.55 3.10049C4.76 3.33049 4.86 3.63049 4.84 3.94049ZM10 20.7505C10 21.717 9.2165 22.5005 8.25 22.5005C7.2835 22.5005 6.5 21.717 6.5 20.7505C6.5 19.784 7.2835 19.0005 8.25 19.0005C9.2165 19.0005 10 19.784 10 20.7505ZM18 20.7505C18 21.717 17.2165 22.5005 16.25 22.5005C15.2835 22.5005 14.5 21.717 14.5 20.7505C14.5 19.784 15.2835 19.0005 16.25 19.0005C17.2165 19.0005 18 19.784 18 20.7505ZM5.17005 8.75049H20.5101C20.9801 8.75049 21.3401 9.14049 21.3001 9.60049L20.9701 14.2705C20.8601 15.7705 19.5401 17.0005 18.0401 17.0005H6.92005C5.21005 17.0005 3.87005 15.5405 4.01005 13.8305L4.37005 9.48049C4.41005 9.07049 4.75005 8.75049 5.17005 8.75049Z"
+                  fill="#D9FF5A"
+                />
+              </svg>
+              <span class="title">Купить</span>
+            </button>
+          </div>
         </div>
         <img src="/images/product-modal.webp" alt="Лампа" />
       </div>

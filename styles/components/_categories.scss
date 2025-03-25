@@ -4,23 +4,25 @@
   display: flex;
   flex-direction: column;
 
-  margin: 170px 60px;
+  $verticalMargin: fluid(120, 170);
+  margin-top: $verticalMargin;
+  margin-bottom: $verticalMargin;
+  margin-left: fluid(15, 60);
+  margin-right: fluid(15, 45);
 
   text-align: center;
 
-  h1 {
-    font-family: "Euclid Circular A";
-    font-weight: 500;
-    font-size: getFontSize("h1");
-    color: getColor("white");
-    text-transform: uppercase;
+  @media (width < 901px) {
+    h1 {
+      text-align: left;
+    }
   }
 
   & > ul {
     display: flex;
-    gap: 30px;
+    gap: fluid(11, 30);
 
-    margin-top: 70px;
+    margin-top: fluid(35, 70);
 
     overflow-x: scroll;
 
@@ -28,22 +30,14 @@
       display: none;
     }
   }
-
-  @include mobile() {
-    margin-left: 15px;
-    margin-right: 15px;
-  }
 }
 
 .categoryCard {
   position: relative;
+  flex-shrink: 0;
 
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-
-  width: 428px;
-  height: 517px;
+  width: fluid(239, 428);
+  height: fluid(288, 517);
 
   cursor: pointer;
 
@@ -51,7 +45,8 @@
     position: absolute;
     top: 37px;
 
-    width: 184px;
+    font-size: fluid(15, 28);
+    width: fluid(99, 184);
 
     text-align: left;
   }
@@ -67,10 +62,8 @@
       transform: scale(1.1);
     }
 
-    .categoryQuanity {
-      .quanityTextWrapper {
-        transform: rotate(0);
-      }
+    .quanityTextWrapper {
+      transform: rotate(0);
     }
 
     .circleButton {
@@ -81,15 +74,6 @@
       }
     }
   }
-}
-
-h2 {
-  font-family: "Euclid Circular A";
-  font-weight: 500;
-  font-size: getFontSize("h2");
-  color: getColor("white");
-
-  text-transform: uppercase;
 }
 
 .categoryPreview {
@@ -103,41 +87,56 @@ h2 {
 
   img {
     position: absolute;
-    height: 248px;
+    height: fluid(138, 248);
 
     transition: transform 300ms ease-in-out;
   }
 
   svg {
     z-index: -1;
+
+    width: fluid(216, 389);
+    height: fluid(257, 462);
   }
 }
 
 .curvedText {
   font-family: "Euclid Circular A";
   font-weight: 500;
-  font-size: fluid(10, 16);
+  font-size: 16px;
   fill: getColor("white");
-  letter-spacing: 0.12em;
-
-  vertical-align: baseline;
-
+  letter-spacing: 0.08em;
   text-transform: lowercase;
 }
 
 .categoryQuanity {
   position: absolute;
   right: 0;
-  top: 29.2%;
+  top: fluid(85, 151);
 
   display: flex;
   align-items: center;
   justify-content: center;
+
+  svg {
+    width: fluid(46, 82);
+    height: fluid(40, 72);
+  }
 }
 
 .quanityTextWrapper {
   position: absolute;
-  top: 29%;
+  top: fluid(9, 18);
+
+  span {
+    &:nth-child(1) {
+      font-size: fluid(25, 40);
+    }
+
+    &:nth-child(2) {
+      font-size: fluid(10, 15);
+    }
+  }
 
   transition: transform 450ms ease-out;
   transform: rotate(-23deg);
@@ -157,15 +156,16 @@ h2 {
 
 .circleButton {
   position: absolute;
-  left: 147.5px;
+  left: fluid(85, 148);
   bottom: 0;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  width: 101px;
-  height: 101px;
+  $edge: fluid(56, 101);
+  width: $edge;
+  height: $edge;
   border: 2px solid getColor("lime");
   border-radius: 100%;
 
@@ -173,10 +173,15 @@ h2 {
 
   transition: background-color 500ms ease-out;
 
+  @media (width < 901px) {
+    border-width: 1px;
+  }
+
   svg {
     stroke: getColor("lime");
-
     transition: stroke 200ms ease-out;
+    width: fluid(11, 20);
+    height: fluid(19, 34);
   }
 }
 
@@ -225,6 +230,10 @@ h2 {
       letter-spacing: 0.1em;
       text-transform: uppercase;
     }
+  }
+
+  @media (width < 901px) {
+    display: none;
   }
 }
 
@@ -460,7 +469,7 @@ summary {
   overflow: hidden;
 
   max-height: 415px;
-  row-gap: 70px;
+  row-gap: fluid(26, 70);
   column-gap: 103px;
 
   list-style: none;

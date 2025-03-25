@@ -1,4 +1,43 @@
 $(document).ready(function () {
+  for (let i = 1; i < 5; i++) {
+    $(`.categories li:nth-child(${i}) .circleButton`).click(function () {
+      $("body").removeClass("noScroll");
+      $(".categoryModal").removeClass("open");
+      if ($(window).width() < 901) {
+        $("body").addClass("noScroll");
+        $(".categoryModal").removeClass("closed");
+        $(".categoryModal").addClass("open");
+      } else {
+        const amount = $(`.categoryCard:nth-child(${i}) .number`).text().split(" ")[0];
+        $(".category").addClass("expanded");
+        $(".productsList").removeClass("expanded");
+        $(".quanity").text(amount + " позиций в категории");
+        $(".productsList").addClass("disabled");
+        $(".productsList").removeClass("open");
+        $(`.productsList:nth-child(${i + 1})`).addClass("open");
+        $(`.productsList:nth-child(${i + 1})`).removeClass("disabled");
+
+        if ($(".productsList.open").width() < $(".category.expanded").width()) {
+          $(".moreButton").removeClass("expanded");
+        } else {
+          $(".moreButton").addClass("expanded");
+        }
+      }
+    });
+  }
+
+  $(".moreButton").click(function () {
+    $(".productsList").addClass("expanded");
+    $(this).removeClass("expanded");
+  });
+
+  $(".bannerItem").click(function () {
+    $(".bannerItem").removeClass("expanded");
+    $(".bannerItem").addClass("collapsed");
+    $(this).removeClass("collapsed");
+    $(this).addClass("expanded");
+  });
+
   const modalsNames = [".contacts", ".search", ".favourites", ".auth", ".cart", ".register"];
 
   const closeModals = () => {
@@ -46,26 +85,43 @@ $(document).ready(function () {
     closeModals();
   });
 
+  $(".categoryModal .closeButton").click(() => {
+    $(".categoryModal").removeClass("open");
+    $(".categoryModal").addClass("closed");
+  });
+
   $(".search").click(() => {
     $(".searchModal > input[type='text']").focus();
   });
 
   $(".product .imgWrapper").click(() => {
-    $("body").toggleClass("noScroll");
+    $("body").addClass("noScroll");
     $(".productModal").addClass("open");
   });
 
   $(".productModal .closeButton").click(() => {
-    $("body").toggleClass("noScroll");
+    $("body").removeClass("noScroll");
     $(".productModal").removeClass("open");
+    $(".productModal").addClass("closed");
+  });
+
+  $(".categoryModal .closeButton").click(() => {
+    $("body").removeClass("noScroll");
+    $(".categoryModal").removeClass("open");
+    $(".productModal").addClass("closed");
+  });
+
+  $(".categoryModal img").click(() => {
+    $(".productModal").addClass("open");
+    $(".productModal").removeClass("closed");
   });
 
   $(".contacts").click(() => {
-    $("body").toggleClass("noScroll");
+    $("body").addClass("noScroll");
   });
 
   $(".contacts .closeButton").click(() => {
-    $("body").toggleClass("noScroll");
+    $("body").removeClass("noScroll");
   });
 
   $(".favouriteButton").click(function () {

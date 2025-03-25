@@ -24,7 +24,7 @@
           display: none;
         }
 
-        .title {
+        > .title {
           margin-bottom: 14px;
         }
 
@@ -62,7 +62,7 @@
   overflow: hidden;
   cursor: pointer;
 
-  &.expdanded {
+  &.expanded {
     animation: bannerItemExpand 1.9s ease-out forwards;
 
     & img {
@@ -175,7 +175,7 @@
       }
     }
 
-    &.expdanded {
+    &.expanded {
       background-color: transparent;
     }
   }

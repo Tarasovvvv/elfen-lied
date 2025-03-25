@@ -6,13 +6,16 @@ body {
 
   background-color: getColor("lavender");
 
+  max-width: 1920px;
+  margin: 0 auto;
+
   & > div {
     position: absolute;
     width: 100%;
   }
 
   &.noScroll {
-    overflow-y: hidden;
+    overflow: hidden;
   }
 }
 
@@ -86,6 +89,23 @@ body {
       right: 61px;
     }
   }
+}
+
+h1,
+h2 {
+  font-family: "Euclid Circular A";
+  font-weight: 500;
+  color: getColor("white");
+  text-transform: uppercase;
+}
+
+h1 {
+  font-size: getFontSize("h1");
+  text-align: center;
+}
+
+h2 {
+  font-size: getFontSize("h2");
 }
 
 .price {
