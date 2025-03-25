@@ -124,7 +124,7 @@
   width: 100%;
   height: 100%;
 
-  & > div {
+  > div {
     &:nth-child(1) {
       display: flex;
       justify-content: space-between;
@@ -164,7 +164,7 @@
     }
   }
 
-  & img {
+  img {
     position: absolute;
     animation: successful 800ms ease;
 

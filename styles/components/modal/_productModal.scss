@@ -236,7 +236,7 @@
     justify-content: flex-end;
     align-items: center;
 
-    & .closeButton {
+    .closeButton {
       display: flex;
       align-items: center;
       gap: 17px;
@@ -265,12 +265,12 @@
       transform: translate(-50%, -50%);
     }
 
-    & .ellipse:nth-child(1) {
+    .ellipse:nth-child(1) {
       z-index: 3;
       transform: rotate(-2deg);
     }
 
-    & .ellipse:nth-child(2) {
+    .ellipse:nth-child(2) {
       backdrop-filter: blur(150px);
       background-color: getColor("white-0.2");
 
@@ -278,7 +278,7 @@
       transform: rotate(-13deg);
     }
 
-    & .title {
+    .title {
       letter-spacing: 0.04em;
     }
   }

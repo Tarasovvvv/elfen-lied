@@ -65,21 +65,21 @@
   &.expanded {
     animation: bannerItemExpand 1.9s ease-out forwards;
 
-    & img {
+    img {
       animation: imageExpand 1.9s ease-out forwards;
     }
 
-    & .buyButton {
+    .buyButton {
       animation: buttonHoist 1.9s ease-out forwards;
     }
 
-    & .preview {
+    .preview {
       opacity: 0;
       max-width: 0;
       max-height: 0;
     }
 
-    & .details {
+    .details {
       animation: detailsExpand 1.9s ease-out forwards;
 
       .productOfTheDay {
@@ -90,7 +90,7 @@
         animation: backgroundTextExpand 1.9s ease-out forwards;
       }
 
-      & .description {
+      .description {
         animation: descriptionExpand 1.9s ease-out forwards;
       }
     }
@@ -99,11 +99,11 @@
   &.collapsed {
     animation: bannerItemCollapse 1.9s ease-out forwards;
 
-    & img {
+    img {
       animation: imageCollapse 800ms ease-out forwards;
     }
 
-    & .buyButton {
+    .buyButton {
       opacity: 0;
 
       max-width: 0;
@@ -112,7 +112,7 @@
       animation: buttonDrow 1.9s ease-out forwards;
     }
 
-    & .details {
+    .details {
       opacity: 0;
 
       max-width: 0;
@@ -120,7 +120,7 @@
     }
   }
 
-  & img {
+  img {
     position: absolute;
     top: fluid(91, 155);
 
@@ -141,13 +141,13 @@
     opacity: 0;
     background-color: transparent;
 
-    & .ellipse:nth-child(1) {
+    .ellipse:nth-child(1) {
       transform: rotate(-2deg);
 
       z-index: 3;
     }
 
-    & .ellipse:nth-child(2) {
+    .ellipse:nth-child(2) {
       backdrop-filter: blur(150px);
       background-color: getColor("white-0.2");
 
@@ -156,7 +156,7 @@
       transform: rotate(-13deg);
     }
 
-    & .title {
+    .title {
       letter-spacing: 0.04em;
     }
   }
@@ -263,7 +263,7 @@
   height: fit-content;
   width: fit-content;
 
-  & .title {
+  .title {
     font-family: "Euclid Circular A";
     font-size: getFontSize("subtitle");
     font-weight: 500;
@@ -352,7 +352,7 @@
     line-height: 100%;
   }
 
-  & .hr {
+  .hr {
     background-color: getColor("white-0.2");
 
     height: 1px;

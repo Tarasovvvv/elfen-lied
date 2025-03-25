@@ -19,13 +19,13 @@
   background-color: rgba(51, 32, 101, 0.18);
   backdrop-filter: blur(200px);
 
-  & > .title {
+  > .title {
     margin-bottom: 66px;
     letter-spacing: 0.1em;
     font-size: getFontSize("text");
   }
 
-  & > .closeButton {
+  > .closeButton {
     position: absolute;
     top: 32px;
     right: 32px;
@@ -37,13 +37,13 @@
     display: flex;
   }
 
-  & > div:nth-child(3) {
+  > div:nth-child(3) {
     flex-direction: column;
     gap: 49px;
     margin-bottom: 70px;
   }
 
-  & > div:nth-child(4) {
+  > div:nth-child(4) {
     gap: 24px;
     font-size: getFontSize("subtitle");
     letter-spacing: 0.1em;

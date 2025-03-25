@@ -19,15 +19,15 @@
   background-color: getColor("white-0.2");
   backdrop-filter: blur(200px);
 
-  & > div:nth-child(1),
-  & > div:nth-child(2) {
+  > div:nth-child(1),
+  > div:nth-child(2) {
     display: flex;
     justify-content: space-between;
     height: 466px;
   }
 
-  & > div:nth-child(1) {
-    & > div:nth-child(1) {
+  > div:nth-child(1) {
+    > div:nth-child(1) {
       width: 52.28%;
       max-width: 954px;
       display: flex;
@@ -47,7 +47,7 @@
       font-weight: 500;
       font-size: getFontSize("text");
 
-      & > span:nth-child(1) {
+      > span:nth-child(1) {
         margin-bottom: 51px;
         font-size: getFontSize("subtitle");
         text-transform: uppercase;
@@ -69,7 +69,7 @@
         height: 43px;
       }
 
-      & > span:nth-child(4) {
+      > span:nth-child(4) {
         display: inline-flex;
         align-items: center;
         gap: 29px;
@@ -81,14 +81,14 @@
       display: flex;
       flex-direction: column;
 
-      & > span:nth-child(1) {
+      > span:nth-child(1) {
         font-size: getFontSize("subtitle");
         text-transform: uppercase;
         color: getColor("white-0.6");
         margin-bottom: 59px;
       }
 
-      & > span:nth-child(2) {
+      > span:nth-child(2) {
         display: inline-flex;
         align-items: center;
         font-family: Floreste;
@@ -101,7 +101,7 @@
         margin-bottom: 40px;
       }
 
-      & > span:nth-child(3) {
+      > span:nth-child(3) {
         margin-bottom: 114px;
       }
 
@@ -173,7 +173,7 @@
     }
   }
 
-  & .closeButton {
+  .closeButton {
     position: absolute;
     top: 91px;
     right: 89px;

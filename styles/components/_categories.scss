@@ -18,7 +18,7 @@
     }
   }
 
-  & > ul {
+  > ul {
     display: flex;
     gap: fluid(11, 30);
 
@@ -53,7 +53,7 @@
 
   &:hover {
     &:nth-child(2) {
-      & .curvedText {
+      .curvedText {
         fill: getColor("lime");
       }
     }
@@ -225,7 +225,7 @@
     max-width: 0;
     max-height: 0;
 
-    & > span {
+    > span {
       font-size: getFontSize("subtitle");
       letter-spacing: 0.1em;
       text-transform: uppercase;
@@ -267,7 +267,7 @@ summary {
   z-index: 11;
 
   &[open] {
-    & > ul {
+    > ul {
       margin-top: 32px;
     }
   }
@@ -500,7 +500,7 @@ summary {
     width: 274px;
     height: 415px;
 
-    & > .color {
+    > .color {
       position: absolute;
       top: 7px;
       left: 2px;
@@ -557,7 +557,7 @@ summary {
       }
     }
 
-    & .imgWrapper {
+    .imgWrapper {
       display: flex;
       justify-content: center;
       align-items: center;
@@ -566,13 +566,13 @@ summary {
 
       cursor: pointer;
 
-      & img {
+      img {
         width: auto;
         height: 100%;
       }
     }
 
-    & p {
+    p {
       font-family: "Euclid Circular A";
       font-weight: 500;
       font-size: getFontSize("subtitle");
@@ -582,7 +582,7 @@ summary {
       color: getColor("white");
     }
 
-    & .sale {
+    .sale {
       display: flex;
       justify-content: space-between;
 
@@ -596,17 +596,17 @@ summary {
         transform: translate(0, 26.5%);
       }
 
-      & .number {
+      .number {
         font-size: getFontSize("h2");
       }
 
-      & .currency {
+      .currency {
         align-self: flex-start;
         font-size: getFontSize("currency");
         transform: translate(50%, -10%);
       }
 
-      & .buyButton {
+      .buyButton {
         align-items: flex-end;
       }
     }
