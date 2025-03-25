@@ -6,8 +6,8 @@
   align-items: center;
 
   width: 100%;
-  height: 261px;
-  margin: 170px 0;
+  height: fluid(108, 261);
+  margin: fluid(120, 170) 0;
 
   overflow: hidden;
 }

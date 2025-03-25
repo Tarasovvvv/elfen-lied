@@ -4,32 +4,41 @@
 .blog {
   display: flex;
   flex-direction: column;
-  gap: 70px;
+  align-items: center;
+  gap: fluid(35, 70);
 
-  margin: 170px 60px;
+  margin: fluid(120, 170) fluid(15, 60);
   line-height: 1;
 
   font-family: "Euclid Circular A";
   font-weight: 500;
-  font-size: getFontSize("subtitle");
   text-transform: uppercase;
   color: getColor("white");
 
-  & > ul {
+  > ul {
     display: flex;
     gap: 30px;
 
-    @include mobile() {
-      margin-left: 15px;
-      margin-right: 15px;
+    @media (width < 1920px) {
+      > :nth-child(3) {
+        display: none;
+      }
+    }
 
-      & > :not(:nth-child(1)) {
+    @media (width < 1920px) {
+      > :nth-child(3) {
+        display: none;
+      }
+    }
+
+    @media (width < 1030px) {
+      > :not(:nth-child(1)) {
         display: none;
       }
     }
   }
 
-  @include mobile() {
+  @media (width < 901px) {
     margin-left: 15px;
     margin-right: 15px;
   }
@@ -44,7 +53,7 @@
 .blogPaginator {
   display: flex;
   align-items: center;
-  gap: 45px;
+  gap: fluid(20, 45);
 }
 
 .blogTitle {
@@ -79,18 +88,18 @@
 }
 
 .sliderNumber {
-  height: 28px;
+  height: fluid(25, 40);
 
   font-family: "Floreste";
   font-weight: 400;
-  font-size:getFontSize("numbers");
+  font-size: getFontSize("numbers");
 }
 
 .sliderHr {
-  width: 63px;
+  width: fluid(36, 63);
   height: 2px;
-  margin-left: 27px;
-  margin-right: 35px;
+  margin-left: fluid(20, 27);
+  margin-right: fluid(20, 35);
 
   background-color: getColor("lavender-light");
 }
@@ -100,17 +109,17 @@
 
   display: flex;
   align-items: flex-start;
-  gap: 14px;
+  gap: fluid(8, 14);
 
-  width: 580px;
-  height: 376px;
+  width: fluid(360, 580);
+  height: fluid(239, 376);
 
   &:hover {
     .cardButton {
       background-color: getColor("lime");
 
-      & .number,
-      & .buttonText {
+      .number,
+      .buttonText {
         color: getColor("lavender");
       }
     }
@@ -119,20 +128,24 @@
 
 .cardBackground {
   position: absolute;
+  top: fluid(-15, 0);
   z-index: -1;
+
+  width: fluid(360, 580);
+  height: fluid(243, 342);
 }
 
 .cardButton {
   position: absolute;
-  bottom: 0;
-  left: 130px;
+  top: fluid(184, 295);
+  left: fluid(77, 130);
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  width: 96px;
-  height: 81px;
+  width: fluid(66, 96);
+  height: fluid(55, 81);
   border: 2px solid getColor("lime");
   border-radius: 50%;
 
@@ -145,8 +158,9 @@
   transition-duration: 800ms;
   transition-timing-function: ease;
 
-  & .number {
+  .number {
     height: 28px;
+    font-size: fluid(25, 40);
   }
 }
 
@@ -155,10 +169,11 @@
 
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: fluid(-5, 5);
 
   color: getColor("white");
   text-transform: uppercase;
+  font-size: getFontSize("subtitle");
 }
 
 .cardLeft,
@@ -166,22 +181,22 @@
   display: flex;
   flex-direction: column;
 
-  width: 283px;
-  height: 342px;
+  width: fluid(176, 283);
+  height: fluid(213, 342);
 }
 
 .cardLeft {
-  padding: 25px;
+  padding: fluid(13, 25);
 }
 
 .cardRight {
   padding: 13px;
 
-  & .imgWrapper {
-    border-radius: 28px;
+  .imgWrapper {
+    border-radius: fluid(15, 28);
     overflow: hidden;
 
-    & img {
+    img {
       object-fit: cover;
 
       max-width: 200%;
@@ -203,31 +218,40 @@
 
   height: 36px;
 
-  margin-bottom: 31px;
+  margin-bottom: fluid(20, 31);
 }
 
 .topTitleNumber {
+  font-size: fluid(13, 15);
   color: getColor("white");
 }
 
 .topTitleAuthor {
-  width: 90px;
+  width: fluid(56, 90);
 
   font-size: getFontSize("text");
   text-transform: capitalize;
   text-align: right;
+
+  @media (width < 901px) {
+    line-height: 20px;
+  }
 }
 
 .middleTitle {
-  font-size: getFontSize("h2");
+  font-size: fluid(15, 28);
   line-height: 1.29;
+  margin-bottom: fluid(46, 88);
 
-  margin-bottom: 88px;
+  @media (width < 901px) {
+    line-height: 100%;
+  }
 }
 
 .bottomTitle {
   width: 82px;
   height: 29px;
 
+  font-size: getFontSize("subtitle");
   text-align: left;
 }
