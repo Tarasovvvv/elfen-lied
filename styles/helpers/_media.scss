@@ -1,5 +1,5 @@
 @mixin mobile {
-  @include mobile {
+  @media (width < 901px) {
     @content;
   }
 }

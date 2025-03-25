@@ -9,7 +9,7 @@ body {
   max-width: 1920px;
   margin: 0 auto;
 
-  & > div {
+  > div {
     position: absolute;
     width: 100%;
   }
@@ -27,10 +27,11 @@ body {
 
 .modalRoot {
   z-index: 100;
+  height: 100%;
 
   scrollbar-gutter: unset;
 
-  & > * {
+  > *:not(:first-child) {
     position: absolute;
     opacity: 0;
     pointer-events: none;
@@ -180,5 +181,34 @@ hr {
   &::placeholder {
     color: getColor("white");
     text-transform: uppercase;
+  }
+}
+
+.modalBackground {
+  position: fixed;
+  inset: 0;
+  display: none;
+  background-color: transparent;
+  z-index: -2;
+}
+
+@include mobile {
+  .modalRoot {
+    > *:not(:first-child) {
+      &:not(.fullscreen) {
+        top: 20px;
+        $padding: fluid(15, 346);
+        left: $padding;
+        right: $padding;
+      }
+
+      &.open {
+      }
+    }
+  }
+
+  .modalBackground.open {
+    display: block;
+    background-color: getColor("lavender");
   }
 }

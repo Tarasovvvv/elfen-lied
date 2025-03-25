@@ -18,7 +18,7 @@
   background-color: rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(60px);
 
-  & > .closeButton {
+  > .closeButton {
     margin: 25px;
     background-color: transparent;
   }
@@ -26,13 +26,12 @@
   input[type="text"] {
     flex-grow: 1;
     height: 100%;
-    min-width: 360px;
+    min-width: 35px;
 
     font-family: "Euclid Circular A";
     font-weight: 500;
     font-size: getFontSize("text");
 
-    color: getColor("white");
     background-color: transparent;
     outline: none;
 
@@ -47,7 +46,6 @@
     min-height: 57px;
     border: 1px solid getColor("white");
     border-radius: 100%;
-
     background-color: getColor("lavender");
   }
 }

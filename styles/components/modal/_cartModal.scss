@@ -1,5 +1,6 @@
 @use "../../helpers" as *;
 @use "../../variables" as *;
+
 .cartModal {
   display: flex;
   flex-direction: column;
@@ -13,11 +14,10 @@
   font-weight: 500;
   font-size: getFontSize("text");
   text-transform: uppercase;
-
   color: getColor("white");
   background-color: rgba(51, 32, 101, 0.18);
+
   backdrop-filter: blur(200px);
-  pointer-events: none;
 
   &.inOrder {
     opacity: 1;
@@ -37,13 +37,13 @@
     }
   }
 
-  & > .title {
-    margin-bottom: 53px;
+  > .title {
+    margin-bottom: fluid(50, 53);
     letter-spacing: 0.1em;
     font-size: getFontSize("text");
   }
 
-  & .currency {
+  .currency {
     display: inline-flex;
     align-items: center;
     height: 14px;
@@ -51,7 +51,7 @@
     font-size: getFontSize("currency");
   }
 
-  & > .closeButton {
+  > .closeButton {
     position: absolute;
     top: 32px;
     right: 32px;
@@ -59,25 +59,25 @@
     background-color: transparent;
   }
 
-  & .products {
+  .products {
     display: flex;
     flex-direction: column;
     gap: 60px;
 
-    margin-bottom: 83px;
+    margin-bottom: fluid(51, 83);
+  }
 
-    & .product {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
+  .product {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 
-      width: 522px;
-      height: 145px;
+    width: 522px;
+    height: 145px;
 
-      & img {
-        max-width: 129px;
-        height: 142px;
-      }
+    img {
+      max-width: 129px;
+      height: 142px;
     }
   }
 
@@ -88,8 +88,64 @@
 
     width: 393px;
 
-    & svg {
+    svg {
       margin-top: 4px;
+    }
+  }
+
+  .innerDescription {
+    display: flex;
+    justify-content: space-between;
+
+    > div {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: space-between;
+
+      height: fluid(39, 51);
+
+      .text {
+        display: inline-flex;
+        align-items: center;
+
+        height: 13px;
+        font-size: getFontSize("text");
+        text-transform: none;
+      }
+
+      > div {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        gap: 11px;
+
+        .color {
+          width: 14px;
+          height: 14px;
+
+          border: 2px solid getColor("white");
+          border-radius: 100%;
+          background-color: getColor("white");
+
+          &.cyan {
+            background-color: rgb(41, 208, 217);
+          }
+
+          &.ohra {
+            background-color: rgb(255, 196, 165);
+          }
+
+          &.pink {
+            background-color: rgb(250, 142, 239);
+          }
+        }
+
+        title {
+          font-size: 20px;
+          text-transform: uppercase;
+        }
+      }
     }
   }
 }
@@ -99,68 +155,12 @@
   background-color: transparent;
 }
 
-.innerDescription {
-  display: flex;
-  justify-content: space-between;
-
-  & div {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 13px;
-
-    height: 51px;
-
-    & .text {
-      display: inline-flex;
-      align-items: center;
-
-      height: 13px;
-      font-size: getFontSize("text");
-      text-transform: none;
-    }
-
-    & div {
-      display: flex;
-      align-items: center;
-      flex-direction: row;
-      gap: 11px;
-
-      & .color {
-        width: 14px;
-        height: 14px;
-
-        border: 2px solid getColor("white");
-        border-radius: 100%;
-        background-color: getColor("white");
-
-        &.cyan {
-          background-color: rgb(41, 208, 217);
-        }
-
-        &.ohra {
-          background-color: rgb(255, 196, 165);
-        }
-
-        &.pink {
-          background-color: rgb(250, 142, 239);
-        }
-      }
-
-      & title {
-        font-size: 20px;
-        text-transform: uppercase;
-      }
-    }
-  }
-}
-
 .innerBottom {
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
 
-  & .price {
+  .price {
     display: flex;
     align-items: flex-start;
     gap: 7px;
@@ -168,13 +168,13 @@
     margin-bottom: 9px;
   }
 
-  & .number {
+  .number {
     position: relative;
     top: -0.5px;
 
     display: inline-flex;
     height: inherit;
-    font-size: 28px;
+    font-size: fluid(25, 40);
   }
 }
 
@@ -183,11 +183,11 @@
   align-items: center;
   gap: 10px;
 
-  & span {
+  span {
     font-size: --font-size-text;
   }
 
-  & button {
+  button {
     width: 45px;
     height: 45px;
     border: 2px solid getColor("white");
@@ -219,10 +219,11 @@
   justify-content: space-between;
   height: 96px;
 
-  & .number {
+  .number {
     position: relative;
     top: -1px;
     height: 28px;
+    text-wrap: nowrap;
   }
 }
 
@@ -231,9 +232,9 @@
   flex-direction: column;
   gap: 15px;
 
-  font-size: 20px;
+  font-size: fluid(13, 20);
 
-  & div {
+  div {
     display: flex;
     gap: 7px;
   }
@@ -248,7 +249,7 @@
 
   gap: 7px;
 
-  width: 189px;
+  width: fluid(155, 189);
 
   color: getColor("white");
   font-family: "Euclid Circular A";
@@ -268,9 +269,53 @@
     border: 2px solid getColor("lime");
     border-radius: 50%;
 
-    width: 189px;
-    height: 93px;
+    width: fluid(156, 189);
+    height: fluid(87, 93);
     transform: rotate(-6deg);
     background-color: rgba(235, 227, 255, 0.19);
+  }
+}
+
+@include mobile {
+  .cartModal {
+    width: auto;
+    min-width: 360px;
+    padding: fluid(15, 48);
+
+    > .title {
+      margin-left: 5px;
+      margin-top: 10px;
+    }
+
+    .product {
+      width: fluid(330, 1134);
+      height: fluid(120, 145);
+
+      img {
+        height: fluid(120, 140);
+      }
+    }
+
+    .productInner {
+      width: fluid(224, 1000);
+    }
+
+    hr {
+      height: 1px;
+      width: 100%;
+      background-color: getColor("lime");
+      margin-top: fluid(14, 22);
+      margin-bottom: fluid(15, 22);
+    }
+
+    .innerBottom {
+      .price {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .orderButton::after {
+    transform: rotate(-11deg);
   }
 }

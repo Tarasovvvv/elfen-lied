@@ -1,7 +1,33 @@
 $(document).ready(function () {
+  const observer = new MutationObserver(() => {
+    if ($(window).width() < 886 && !scrollableModalsNames.some((name) => $(`${name}Modal`).hasClass("open"))) {
+      $("body").addClass("noScroll");
+    }
+    if ($(".modalRoot > *.open").length === 0) {
+      $("body").removeClass("noScroll");
+    }
+  });
+
+  observer.observe($(".modalRoot").get(0), { subtree: true, attributes: true, attributeFilter: ["class"] });
+
+  $(window).on("resize", function () {
+    if ($(".modalBackground").hasClass("open")) {
+      if ($(window).width() < 901) {
+        $("body").addClass("noScroll");
+      } else {
+        $("body").removeClass("noScroll");
+        $(".modalBackground").removeClass("open");
+      }
+    } else {
+      if ($(window).width() < 886 && $(".modalRoot > *.open").length > 0 && !scrollableModalsNames.some((name) => $(`${name}Modal`).hasClass("open"))) {
+        $(".modalBackground").addClass("open");
+      }
+      $("body").removeClass("noScroll");
+    }
+  });
+
   for (let i = 1; i < 5; i++) {
     $(`.categories li:nth-child(${i}) .circleButton`).click(function () {
-      $("body").removeClass("noScroll");
       $(".categoryModal").removeClass("open");
       if ($(window).width() < 901) {
         $("body").addClass("noScroll");
@@ -39,6 +65,7 @@ $(document).ready(function () {
   });
 
   const modalsNames = [".contacts", ".search", ".favourites", ".auth", ".cart", ".register"];
+  const scrollableModalsNames = [".search"];
 
   const closeModals = () => {
     modalsNames.forEach((name) => {
@@ -48,19 +75,26 @@ $(document).ready(function () {
         modal.removeClass("open");
       }
     });
+    $(".modalBackground").removeClass("open");
   };
 
   const toggleModal = (name) => {
     const modal = $(`${name}Modal`);
     const isOpen = modal.hasClass("open");
+
     closeModals();
     if (isOpen) {
       modal.addClass("closed");
       modal.removeClass("open");
+      $(".modalBackground").removeClass("open");
     } else {
       $(`${name}Modal input`).val("");
       modal.addClass("open");
       modal.removeClass("closed");
+
+      if (!scrollableModalsNames.includes(name) && $(window).width() < 901) {
+        $(".modalBackground").addClass("open");
+      }
     }
   };
 
@@ -85,11 +119,6 @@ $(document).ready(function () {
     closeModals();
   });
 
-  $(".categoryModal .closeButton").click(() => {
-    $(".categoryModal").removeClass("open");
-    $(".categoryModal").addClass("closed");
-  });
-
   $(".search").click(() => {
     $(".searchModal > input[type='text']").focus();
   });
@@ -100,7 +129,9 @@ $(document).ready(function () {
   });
 
   $(".productModal .closeButton").click(() => {
-    $("body").removeClass("noScroll");
+    if (!$(".categoryModal").hasClass("open")) {
+      $("body").removeClass("noScroll");
+    }
     $(".productModal").removeClass("open");
     $(".productModal").addClass("closed");
   });
@@ -108,10 +139,12 @@ $(document).ready(function () {
   $(".categoryModal .closeButton").click(() => {
     $("body").removeClass("noScroll");
     $(".categoryModal").removeClass("open");
+    $(".categoryModal").addClass("closed");
     $(".productModal").addClass("closed");
   });
 
   $(".categoryModal img").click(() => {
+    $("body").addClass("noScroll");
     $(".productModal").addClass("open");
     $(".productModal").removeClass("closed");
   });
