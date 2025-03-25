@@ -35,7 +35,7 @@
     transform: translateY(-50%) rotate(5deg);
     background-color: getColor("lavender-light");
 
-    @media (width < 901px) {
+    @include mobile {
       transform: translateY(-50%) rotate(9.1deg);
     }
   }
@@ -45,7 +45,7 @@
     transform: translateY(-50%) rotate(-2.2deg);
     background-color: getColor("blue");
 
-    @media (width < 901px) {
+    @include mobile {
       transform: translateY(-50%) rotate(-4.3deg);
     }
   }

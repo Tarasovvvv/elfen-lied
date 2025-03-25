@@ -59,7 +59,7 @@
 
       margin-bottom: 73px;
 
-      @media (width < 901px) {
+      @include mobile {
         margin-top: 0;
       }
 
@@ -69,7 +69,7 @@
         br {
           display: none;
 
-          @media (width < 901px) {
+          @include mobile {
             display: block;
           }
         }
@@ -120,7 +120,7 @@
         }
       }
 
-      @media (width < 901px) {
+      @include mobile {
         margin-bottom: 91px;
       }
     }
@@ -159,7 +159,7 @@
         background-color: rgb(147, 129, 216);
       }
 
-      @media (width < 901px) {
+      @include mobile {
         height: 56px;
         margin-bottom: 73px;
         order: 4;
@@ -210,7 +210,7 @@
         transform: translate(0, -10px);
       }
 
-      @media (width < 901px) {
+      @include mobile {
         order: 3;
       }
     }
@@ -227,7 +227,7 @@
     color: getColor("lime");
     font-size: getFontSize("currency");
 
-    @media (width < 901px) {
+    @include mobile {
       transform: none;
       margin-bottom: fluid(15, 24);
     }
@@ -302,7 +302,7 @@
     height: 28px;
   }
 
-  @media (width < 901px) {
+  @include mobile {
     order: 5;
     display: none;
     margin-top: 0;
@@ -336,7 +336,7 @@
     }
   }
 
-  @media (width < 901px) {
+  @include mobile {
     display: flex;
   }
 }
@@ -352,7 +352,7 @@
 
   font-size: fluid(23, 100);
 
-  @media (width < 901px) {
+  @include mobile {
     margin: 0;
     font-family: "Euclid Circular A";
   }
@@ -366,7 +366,7 @@
   text-transform: none;
   line-height: 1.54;
 
-  @media (width < 901px) {
+  @include mobile {
     width: 100%;
     margin: 0;
     line-height: 20px;

@@ -10,7 +10,7 @@
   margin-left: fluid(15, 67);
   margin-right: 56px;
 
-  @media (width < 901px) {
+  @include mobile {
     flex-direction: column-reverse;
     gap: 18px;
     justify-content: center;

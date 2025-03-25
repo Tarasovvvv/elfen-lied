@@ -1,9 +1,5 @@
-@use "functions" as *;
-
-$mobile: 500px;
-
 @mixin mobile {
-  @media (width <= $mobile) {
+  @include mobile {
     @content;
   }
 }

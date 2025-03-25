@@ -14,7 +14,7 @@
       }
     }
 
-    @media (width < 901px) {
+    @include mobile {
       > :nth-child(1) {
         &:not(.collapsed) {
           border-radius: 0;
@@ -216,7 +216,7 @@
     left: fluid(-30, 170);
   }
 
-  @media (width < 901px) {
+  @include mobile {
     top: fluid(317, 600);
     left: fluid(0, 390);
   }
@@ -311,7 +311,7 @@
       background-color: getColor("lavender");
     }
 
-    @media (width < 901px) {
+    @include mobile {
       display: flex;
     }
   }

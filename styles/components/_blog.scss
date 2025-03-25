@@ -38,7 +38,7 @@
     }
   }
 
-  @media (width < 901px) {
+  @include mobile {
     margin-left: 15px;
     margin-right: 15px;
   }
@@ -233,7 +233,7 @@
   text-transform: capitalize;
   text-align: right;
 
-  @media (width < 901px) {
+  @include mobile {
     line-height: 20px;
   }
 }
@@ -243,7 +243,7 @@
   line-height: 1.29;
   margin-bottom: fluid(46, 88);
 
-  @media (width < 901px) {
+  @include mobile {
     line-height: 100%;
   }
 }

@@ -846,7 +846,7 @@ header a {
     display: none;
   }
 }
-@media (width <= 500px) {
+@media (width < 901px) {
   .banner {
     margin: 15px;
   }

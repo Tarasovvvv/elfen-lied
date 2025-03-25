@@ -12,7 +12,7 @@
 
   text-align: center;
 
-  @media (width < 901px) {
+  @include mobile {
     h1 {
       text-align: left;
     }
@@ -173,7 +173,7 @@
 
   transition: background-color 500ms ease-out;
 
-  @media (width < 901px) {
+  @include mobile {
     border-width: 1px;
   }
 
@@ -232,7 +232,7 @@
     }
   }
 
-  @media (width < 901px) {
+  @include mobile {
     display: none;
   }
 }
