@@ -2663,6 +2663,21 @@ summary:hover .hoverableRect {
   text-transform: uppercase;
 }
 
+@media (width < 901px) {
+  .authModal {
+    width: auto;
+    min-width: 360px;
+    padding: clamp(0.9375rem, 0.4117647059rem + 2.1568627451vw, 3rem);
+  }
+  .authModal > .title {
+    margin-left: 5px;
+    margin-top: 10px;
+  }
+  .authModal .closeButton {
+    top: 21px;
+    right: 21px;
+  }
+}
 .registerModal {
   display: flex;
   flex-direction: column;

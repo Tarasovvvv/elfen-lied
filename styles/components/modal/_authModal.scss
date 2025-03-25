@@ -93,3 +93,21 @@
     text-transform: uppercase;
   }
 }
+
+@include mobile {
+  .authModal {
+    width: auto;
+    min-width: 360px;
+    padding: fluid(15, 48);
+
+    > .title {
+      margin-left: 5px;
+      margin-top: 10px;
+    }
+
+    .closeButton {
+      top: 21px;
+      right: 21px;
+    }
+  }
+}
