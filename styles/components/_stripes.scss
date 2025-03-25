@@ -1,5 +1,4 @@
 @use "../helpers" as *;
-@use "../variables" as *;
 
 .stripes {
   position: relative;
@@ -10,39 +9,54 @@
   height: 261px;
   margin: 170px 0;
 
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
-.srtipe {
+.stripe {
   position: absolute;
+  top: 50%;
+
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: 67px;
+  gap: fluid(10, 67);
 
-  height: 72px;
-  top: 50%;
+  height: fluid(42, 72);
 
   font-family: "Floreste";
-  font-size: getFontSize("numbers");
+  font-size: fluid(25, 40);
   color: getColor("white");
   text-transform: uppercase;
   letter-spacing: 0.04em;
-
   text-wrap: nowrap;
-  &:nth-child(1) {
-    transform: translate(-33px, -50%) rotate(5deg);
 
+  &:nth-child(1) {
+    left: fluid(-324, -15);
+    transform: translateY(-50%) rotate(5deg);
     background-color: getColor("lavender-light");
+
+    @media (width < 901px) {
+      transform: translateY(-50%) rotate(9.1deg);
+    }
   }
 
   &:nth-child(2) {
-    transform: translate(-190px, -50%) rotate(-2.2deg);
-
+    left: fluid(-408, -189);
+    transform: translateY(-50%) rotate(-2.2deg);
     background-color: getColor("blue");
+
+    @media (width < 901px) {
+      transform: translateY(-50%) rotate(-4.3deg);
+    }
   }
 
-  & span {
+  span {
     transform: translate(0, 10%);
+  }
+
+  svg {
+    $edge: fluid(11, 20);
+    width: $edge;
+    height: $edge;
   }
 }
