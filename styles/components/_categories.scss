@@ -491,6 +491,10 @@ summary {
     max-height: none;
   }
 
+  &.searchResult {
+    overflow: visible;
+  }
+
   .product {
     position: relative;
 
@@ -504,7 +508,9 @@ summary {
       position: absolute;
       top: 7px;
       left: 2px;
+    }
 
+    .color {
       width: 22px;
       height: 22px;
       border: 3px solid getColor("white");
@@ -557,21 +563,6 @@ summary {
       }
     }
 
-    .imgWrapper {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 260px;
-      margin-bottom: 32px;
-
-      cursor: pointer;
-
-      img {
-        width: auto;
-        height: 100%;
-      }
-    }
-
     p {
       font-family: "Euclid Circular A";
       font-weight: 500;
@@ -609,6 +600,21 @@ summary {
       .buyButton {
         align-items: flex-end;
       }
+    }
+  }
+
+  .imgWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 260px;
+    margin-bottom: 32px;
+
+    cursor: pointer;
+
+    img {
+      width: auto;
+      height: 100%;
     }
   }
 }

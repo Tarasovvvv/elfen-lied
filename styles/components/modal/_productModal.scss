@@ -8,6 +8,7 @@
   flex-direction: column;
   justify-content: space-between;
   width: 100%;
+  max-width: 1920px;
 
   padding-top: fluid(18, 30);
   padding-right: fluid(18, 60);
@@ -297,6 +298,7 @@
   align-items: center;
   justify-content: space-between;
 
+  
   margin-top: calc(192px - 10vw);
 
   > div div {

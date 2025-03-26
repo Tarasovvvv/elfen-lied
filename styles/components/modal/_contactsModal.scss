@@ -9,6 +9,7 @@
   flex-direction: column;
   padding: fluid(0, 60);
   width: 100%;
+  max-width: 1920px;
   height: 100%;
 
   font-family: "Euclid Circular A";
@@ -208,7 +209,7 @@
     padding: 20px 15px;
 
     backdrop-filter: none;
-    overflow-y: scroll;
+    overflow-y: auto;
 
     > div:nth-child(1) {
       flex-direction: column;
