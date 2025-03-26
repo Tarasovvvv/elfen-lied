@@ -11,7 +11,7 @@ $(document).ready(function () {
   observer.observe($(".modalRoot").get(0), { subtree: true, attributes: true, attributeFilter: ["class"] });
 
   $(window).on("resize", function () {
-    if ($(".modalBackground").hasClass("open")) {
+    if ($(".modalBackground").hasClass("open") ) {
       if ($(window).width() < 901) {
         $("body").addClass("noScroll");
       } else {
@@ -19,7 +19,11 @@ $(document).ready(function () {
         $(".modalBackground").removeClass("open");
       }
     } else {
-      if ($(window).width() < 886 && $(".modalRoot > *.open").length > 0 && !scrollableModalsNames.some((name) => $(`${name}Modal`).hasClass("open"))) {
+      if (
+        $(window).width() < 886 &&
+        $(".modalRoot > *.open").length > 0 &&
+        !scrollableModalsNames.some((name) => $(`${name}Modal`).hasClass("open"))
+      ) {
         $(".modalBackground").addClass("open");
       }
       $("body").removeClass("noScroll");
@@ -92,7 +96,7 @@ $(document).ready(function () {
       modal.addClass("open");
       modal.removeClass("closed");
 
-      if (!scrollableModalsNames.includes(name) && $(window).width() < 901) {
+      if (!scrollableModalsNames.includes(name) && $(window).width() < 901 && !window.location.href.includes('order.html')) {
         $(".modalBackground").addClass("open");
       }
     }
@@ -161,6 +165,23 @@ $(document).ready(function () {
   $(".favouriteButton").click(function () {
     $(this).toggleClass("pressed");
   });
+
+  function setupDetailsBehavior() {
+    const details = $(".cart");
+    if (details.length === 0) return;
+
+    if ($(window).width() >= 901) {
+      details.attr("open", true);
+
+      details.find("summary").on("click", function (e) {
+        e.preventDefault();
+      });
+    } else {
+      details.find("summary").off("click");
+    }
+  }
+
+  $(window).on("load resize", setupDetailsBehavior);
 
   ymaps.ready(init);
 

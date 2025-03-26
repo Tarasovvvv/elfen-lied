@@ -33,9 +33,12 @@
       display: flex;
       padding: fluid(17, 83);
       padding-bottom: fluid(0, 74);
-      gap: fluid(-10, 153);
+      gap: fluid(-10, 140);
       border-top-left-radius: 50px;
       background-color: getColor("lavender");
+      > div:nth-child(2) {
+        width: 100%;
+      }
     }
   }
 

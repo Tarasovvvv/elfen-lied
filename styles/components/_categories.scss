@@ -30,6 +30,25 @@
       display: none;
     }
   }
+
+  summary {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    font-size: fluid(13, 18);
+    text-transform: uppercase;
+
+    user-select: none;
+    list-style: none;
+    cursor: pointer;
+
+    &:hover {
+      .hoverableRect {
+        fill: getColor("lime");
+      }
+    }
+  }
 }
 
 .categoryCard {
@@ -240,25 +259,6 @@
 .hoverableRect {
   fill: transparent;
   transition: fill 200ms ease;
-}
-
-summary {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-
-  font-size: fluid(13, 18);
-  text-transform: uppercase;
-
-  user-select: none;
-  list-style: none;
-  cursor: pointer;
-
-  &:hover {
-    .hoverableRect {
-      fill: getColor("lime");
-    }
-  }
 }
 
 .filters {

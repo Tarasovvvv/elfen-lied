@@ -197,6 +197,18 @@
       color: rgb(190, 216, 255);
     }
   }
+
+  .ellipse {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+
+    width: inherit;
+    height: inherit;
+    border: 2px solid getColor("lime");
+    border-radius: 50%;
+  }
 }
 
 .productOfTheDay {
@@ -367,18 +379,6 @@
   font-size: getFontSize("currency");
 
   text-transform: uppercase;
-}
-
-.ellipse {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  translate: -50% -50%;
-
-  width: inherit;
-  height: inherit;
-  border: 2px solid getColor("lime");
-  border-radius: 50%;
 }
 
 @keyframes bannerItemExpand {

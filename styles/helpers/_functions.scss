@@ -2,7 +2,7 @@
 @use "sass:map";
 @use "../variables" as *;
 
-@function fluid($min: 10, $max: 100, $inDeg: false) {
+@function fluid($min: 10, $max: 100) {
   $maxViewportWidth: 1920;
   $minViewportWidth: 390;
 
@@ -14,9 +14,6 @@
   $slope: math.div(($maxSize - $minSize), ($maxWidth - $minWidth));
   $yAxisIntersection: -$minWidth * $slope + $minSize;
 
-  @if ($inDeg) {
-    @return clamp(#{$minSize}deg, #{$yAxisIntersection}deg + #{$slope * 100}vw, #{$maxSize}deg);
-  }
   @return clamp(#{$minSize}rem, #{$yAxisIntersection}rem + #{$slope * 100}vw, #{$maxSize}rem);
 }
 
