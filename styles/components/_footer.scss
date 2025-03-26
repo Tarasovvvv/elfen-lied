@@ -1,0 +1,50 @@
+@use "../helpers" as *;
+@use "../variables" as *;
+
+.mainFooter {
+  display: flex;
+  justify-content: space-between;
+
+  margin-top: fluid(120, 170);
+  margin-bottom: fluid(70, 101);
+  margin-left: fluid(15, 67);
+  margin-right: 56px;
+
+  @include mobile {
+    flex-direction: column-reverse;
+    gap: 18px;
+    justify-content: center;
+    margin-bottom: 70px;
+
+    span {
+      letter-spacing: 0;
+    }
+
+    .footerLogo {
+      display: block;
+    }
+
+    > :nth-child(2) {
+      width: 98px;
+
+      line-height: 20px;
+    }
+  }
+}
+
+.text {
+  font-family: "Gilroy";
+  font-size: var(--font-size-all-rights-resereved);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+
+  color: getColor("white");
+}
+
+.footerLogo {
+  position: absolute;
+  bottom: 59px;
+  right: 15px;
+  display: none;
+  transform: rotate(-15deg);
+}

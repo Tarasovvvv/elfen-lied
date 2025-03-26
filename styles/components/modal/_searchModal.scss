@@ -1,0 +1,57 @@
+@use "../../helpers" as *;
+@use "../../variables" as *;
+
+.searchModal {
+  left: 60px;
+  right: 60px;
+  z-index: -1;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  max-width: 1800px;
+  height: 70px;
+  border-radius: 100px;
+
+  color: getColor("white");
+  background-color: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(60px);
+
+  > .closeButton {
+    margin: 25px;
+    background-color: transparent;
+  }
+
+  input[type="text"] {
+    flex-grow: 1;
+    height: 100%;
+    min-width: 35px;
+
+    font-family: "Euclid Circular A";
+    font-weight: 500;
+    font-size: fluid(16, 18);
+
+    background-color: transparent;
+    outline: none;
+
+    &::placeholder {
+      color: getColor("white");
+    }
+  }
+
+  button[type="submit"] {
+    margin: 7px;
+    min-width: 57px;
+    min-height: 57px;
+    border: 1px solid getColor("white");
+    border-radius: 100%;
+    background-color: getColor("lavender");
+  }
+}
+
+@include mobile {
+  .searchModal {
+    top: 75px !important;
+  }
+}

@@ -1,0 +1,205 @@
+@use "../../helpers" as *;
+@use "../../variables" as *;
+
+.categoryModal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 43px;
+
+  inset: 0;
+  padding: 42px 15px 45px 15px;
+
+  font-family: "Euclid Circular A";
+  font-weight: 500;
+  text-transform: uppercase;
+
+  color: getColor("white");
+  background-color: getColor("lavender");
+
+  h1 {
+    font-size: 23px;
+    text-wrap: nowrap;
+    width: 100%;
+
+    text-align: center;
+  }
+
+  .currency {
+    display: inline-flex;
+    align-items: center;
+    height: 14px;
+
+    font-size: getFontSize("currency");
+  }
+
+  .closeButton {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+
+    background-color: transparent;
+  }
+
+  .products {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+
+    width: 100%;
+    max-width: 522px;
+
+    .product {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      width: 100%;
+      height: 120px;
+
+      > div:nth-child(1) {
+        flex-shrink: 0;
+        width: 106px;
+        height: 100%;
+
+        &:hover {
+          cursor: pointer;
+        }
+
+        img {
+          width: auto;
+          height: 120px;
+        }
+      }
+    }
+  }
+
+  .innerDescription {
+    display: flex;
+    justify-content: space-between;
+
+    .favouriteButton {
+      height: 54px;
+      border-radius: 100%;
+      background-color: getColor("white-0.2");
+      margin-bottom: 0;
+
+      .hearth {
+        stroke: transparent;
+        fill: transparent;
+      }
+      path {
+        fill: getColor("lime");
+        transition-property: fill;
+        transition-duration: 200ms;
+        transition-timing-function: ease;
+      }
+      circle {
+        stroke: getColor("lime");
+        transition-property: stroke;
+        transition-duration: 200ms;
+        transition-timing-function: ease;
+      }
+
+      &.pressed {
+        .hearth {
+          stroke: rgb(255, 177, 247);
+        }
+        path {
+          fill: getColor("white");
+        }
+        circle {
+          stroke: rgb(255, 177, 247);
+        }
+      }
+    }
+
+    div {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 13px;
+
+      height: 51px;
+
+      .text {
+        display: inline-flex;
+        align-items: center;
+
+        height: 13px;
+        font-size: getFontSize("text");
+        text-transform: none;
+      }
+
+      div {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        gap: 11px;
+
+        .color {
+          width: 14px;
+          height: 14px;
+
+          border: 2px solid getColor("white");
+          border-radius: 100%;
+          background-color: getColor("white");
+
+          &.cyan {
+            background-color: rgb(41, 208, 217);
+          }
+
+          &.ohra {
+            background-color: rgb(255, 196, 165);
+          }
+
+          &.pink {
+            background-color: rgb(250, 142, 239);
+          }
+        }
+
+        title {
+          font-size: 15px;
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
+
+  .productInner {
+    width: 100%;
+    min-width: 200px;
+
+    svg {
+      margin-top: 0;
+    }
+  }
+}
+
+.innerBottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .price {
+    display: flex;
+    align-items: flex-start;
+    text-wrap: nowrap;
+    gap: 7px;
+    height: 20px;
+    margin-bottom: 9px;
+  }
+
+  .number {
+    position: relative;
+    top: -0.5px;
+
+    display: inline-flex;
+    height: inherit;
+    font-size: 28px;
+  }
+
+  .buyButton {
+    align-items: flex-end;
+  }
+}

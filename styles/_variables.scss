@@ -1,10 +1,32 @@
-@use "helpers" as *;
+@use "sass:map";
 
-:root {
-  --color-pink: rgb(250, 143, 239);
-  --color-blue: rgb(174, 207, 255);
-  --color-lavender: rgb(174, 151, 232);
-  --color-lime: rgb(217, 255, 90);
-  --color-white: rgb(255, 255, 255);
-  --color-delete: rgb(121, 100, 174);
-}
+$colors: (
+  "lime": rgb(217, 255, 90),
+  "pink": rgb(250, 143, 239),
+  "blue": rgb(174, 207, 255),
+  "white": rgb(255, 255, 255),
+  "white-0.2": rgba(255, 255, 255, 0.2),
+  "white-0.6": rgba(255, 255, 255, 0.6),
+  "lavender": rgb(174, 151, 232),
+  "lavender-light": rgb(203, 182, 255),
+  "lavender-light-0.6": rgba(203, 182, 255, 0.6),
+);
+
+$fontSizes: (
+  "h1-min": 23,
+  "h1-max": 60,
+  "h2-min": 23,
+  "h2-max": 28,
+  "text-min": 13,
+  "text-max": 18,
+  "button-min": 16,
+  "button-max": 20,
+  "numbers-min": 28,
+  "numbers-max": 41,
+  "subtitle-min": 12,
+  "subtitle-max": 15,
+  "currency-min": 15,
+  "currency-max": 20,
+  "background-min": 67,
+  "background-max": 212,
+);

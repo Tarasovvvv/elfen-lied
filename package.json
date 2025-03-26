@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "devDependencies": {
-    "sass": "^1.85.1"
+    "sass": "^1.86.0"
   },
   "scripts": {
     "sass-watch": "sass --watch ."

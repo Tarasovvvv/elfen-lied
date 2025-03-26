@@ -1,0 +1,127 @@
+@use "../helpers" as *;
+
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+
+  width: auto;
+
+  margin-top: fluid(26, 53);
+  margin-left: fluid(15, 60);
+  margin-right: fluid(15, 123);
+
+  ul {
+    display: flex;
+
+    > :nth-child(1) {
+      flex-grow: 0;
+      font-family: "Le Murmure", sans-serif;
+
+      font-size: fluid(33, 45);
+      font-weight: 600;
+      text-wrap: nowrap;
+    }
+
+    > :nth-child(2) {
+      flex-grow: 133;
+    }
+
+    > :nth-child(3),
+    > :nth-child(5) {
+      flex-grow: 386;
+    }
+
+    > :nth-child(4) {
+      flex-grow: 30;
+
+      svg {
+        display: none;
+      }
+    }
+
+    > :nth-child(6) {
+      flex-grow: 250;
+      position: relative;
+    }
+
+    > :nth-child(7),
+    > :nth-child(8) {
+      flex-grow: 40;
+    }
+
+    > :nth-child(6),
+    > :nth-child(8) {
+      button {
+        gap: 0;
+      }
+      span {
+        align-self: flex-end;
+        padding-bottom: 9px;
+        font-size: 13px;
+        font-weight: 700;
+      }
+    }
+
+    @include mobile {
+      > :nth-child(2),
+      > :nth-child(3) {
+        display: none;
+      }
+
+      > :nth-child(4) {
+        flex-grow: 17;
+      }
+
+      > :nth-child(5) {
+        flex-grow: 92;
+      }
+
+      > :nth-child(7) {
+        flex-grow: 21;
+      }
+
+      > :nth-child(6) {
+        flex-grow: 24;
+      }
+
+      > :nth-child(8) {
+        order: 4;
+        flex-grow: 21;
+      }
+
+      > :nth-child(4) {
+        order: 8;
+
+        svg {
+          display: flex;
+        }
+      }
+
+      > :nth-child(n + 2):nth-child(-n + 5) {
+        span,
+        a {
+          display: none;
+        }
+      }
+    }
+  }
+
+  li {
+    display: flex;
+    justify-content: flex-end;
+    color: getColor("white");
+    font-size: getFontSize("text");
+
+    font-family: "Euclid Circular A", sans-serif;
+    font-weight: 500;
+  }
+
+  button,
+  a {
+    @include flexCenter;
+    gap: 12px;
+  }
+}

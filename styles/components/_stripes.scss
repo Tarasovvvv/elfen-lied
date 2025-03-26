@@ -1,0 +1,62 @@
+@use "../helpers" as *;
+
+.stripes {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+  height: fluid(207, 261);
+  margin: fluid(120, 170) 0;
+
+  overflow: hidden;
+}
+
+.stripe {
+  position: absolute;
+  top: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: fluid(10, 67);
+
+  height: fluid(42, 72);
+
+  font-family: "Floreste";
+  font-size: fluid(25, 40);
+  color: getColor("white");
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  text-wrap: nowrap;
+
+  &:nth-child(1) {
+    left: fluid(-324, -15);
+    transform: translateY(-50%) rotate(5deg);
+    background-color: getColor("lavender-light");
+
+    @include mobile {
+      transform: translateY(-50%) rotate(9.1deg);
+    }
+  }
+
+  &:nth-child(2) {
+    left: fluid(-408, -189);
+    transform: translateY(-50%) rotate(-2.2deg);
+    background-color: getColor("blue");
+
+    @include mobile {
+      transform: translateY(-50%) rotate(-4.3deg);
+    }
+  }
+
+  span {
+    transform: translate(0, 10%);
+  }
+
+  svg {
+    $edge: fluid(11, 20);
+    width: $edge;
+    height: $edge;
+  }
+}

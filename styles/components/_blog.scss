@@ -1,0 +1,252 @@
+@use "../helpers" as *;
+@use "../variables" as *;
+
+.blog {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: fluid(35, 70);
+
+  margin: fluid(120, 170) fluid(15, 60);
+  line-height: 1;
+
+  font-family: "Euclid Circular A";
+  font-weight: 500;
+  text-transform: uppercase;
+  color: getColor("white");
+
+  > ul {
+    display: flex;
+    gap: 30px;
+
+    @media (width < 1920px) {
+      > :nth-child(3) {
+        display: none;
+      }
+    }
+
+    @media (width < 1920px) {
+      > :nth-child(3) {
+        display: none;
+      }
+    }
+
+    @media (width < 1030px) {
+      > :nth-child(2) {
+        display: none;
+      }
+    }
+  }
+}
+
+.blogTop {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.blogPaginator {
+  display: flex;
+  align-items: center;
+  gap: fluid(20, 45);
+}
+
+.blogTitle {
+  display: inline-flex;
+  align-items: center;
+  height: 43px;
+
+  font-size: getFontSize("h1");
+}
+
+.paginatorDotsWrapper {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.paginatorDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 100%;
+
+  background-color: rgba(255, 255, 255, 0.3);
+
+  &.selected {
+    background-color: getColor("white");
+  }
+}
+
+.blogSlider {
+  display: flex;
+  align-items: center;
+}
+
+.sliderNumber {
+  height: fluid(25, 40);
+
+  font-family: "Floreste";
+  font-weight: 400;
+  font-size: getFontSize("numbers");
+}
+
+.sliderHr {
+  width: fluid(36, 63);
+  height: 2px;
+  margin-left: fluid(20, 27);
+  margin-right: fluid(20, 35);
+
+  background-color: getColor("lavender-light");
+}
+
+.blogCard {
+  position: relative;
+
+  display: flex;
+  align-items: flex-start;
+  gap: fluid(8, 14);
+
+  width: fluid(360, 580);
+  height: fluid(239, 376);
+
+  &:hover {
+    .cardButton {
+      background-color: getColor("lime");
+
+      .number,
+      .buttonText {
+        color: getColor("lavender");
+      }
+    }
+  }
+}
+
+.cardBackground {
+  position: absolute;
+  top: fluid(-15, 0);
+  z-index: -1;
+
+  width: fluid(360, 580);
+  height: fluid(243, 342);
+}
+
+.cardButton {
+  position: absolute;
+  top: fluid(184, 295);
+  left: fluid(77, 130);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: fluid(66, 96);
+  height: fluid(55, 81);
+  border: 2px solid getColor("lime");
+  border-radius: 50%;
+
+  background-color: var(--color-white-alsmost-transparent);
+
+  transform: rotate(-15deg);
+  backdrop-filter: blur(20px);
+
+  transition-property: background-color, color;
+  transition-duration: 800ms;
+  transition-timing-function: ease;
+
+  .number {
+    height: 28px;
+    font-size: fluid(25, 40);
+  }
+}
+
+.buttonText {
+  position: absolute;
+
+  display: flex;
+  flex-direction: column;
+  gap: fluid(-5, 5);
+
+  color: getColor("white");
+  text-transform: uppercase;
+  font-size: getFontSize("subtitle");
+}
+
+.cardLeft,
+.cardRight {
+  display: flex;
+  flex-direction: column;
+
+  width: fluid(176, 283);
+  height: fluid(213, 342);
+}
+
+.cardLeft {
+  padding: fluid(13, 25);
+}
+
+.cardRight {
+  padding: 13px;
+
+  .imgWrapper {
+    border-radius: fluid(15, 28);
+    overflow: hidden;
+
+    img {
+      object-fit: cover;
+
+      max-width: 200%;
+      max-height: 100%;
+      transition: transform 600ms ease-out;
+      transform-origin: right;
+
+      &:hover {
+        transform: scale(1.1) translate(3%);
+      }
+    }
+  }
+}
+
+.topTitle {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  height: 36px;
+
+  margin-bottom: fluid(20, 31);
+}
+
+.topTitleNumber {
+  font-size: fluid(13, 15);
+  color: getColor("white");
+}
+
+.topTitleAuthor {
+  width: fluid(56, 90);
+
+  font-size: getFontSize("text");
+  text-transform: capitalize;
+  text-align: right;
+
+  @include mobile {
+    line-height: 20px;
+  }
+}
+
+.middleTitle {
+  font-size: fluid(15, 28);
+  line-height: 1.29;
+  margin-bottom: fluid(46, 88);
+
+  @include mobile {
+    line-height: 100%;
+  }
+}
+
+.bottomTitle {
+  width: 82px;
+  height: 29px;
+
+  font-size: getFontSize("subtitle");
+  text-align: left;
+}
