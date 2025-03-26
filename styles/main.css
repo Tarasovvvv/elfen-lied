@@ -819,7 +819,8 @@ ul {
   text-transform: lowercase;
   font-size: clamp(1rem, 0.9681372549rem + 0.1307189542vw, 1.125rem);
 }
-.order .orderSuccess {
+
+.orderSuccess {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -827,7 +828,7 @@ ul {
   width: 100%;
   height: 100%;
 }
-.order .orderSuccess > div:nth-child(1) {
+.orderSuccess > div:nth-child(1) {
   display: flex;
   justify-content: space-between;
   height: 23px;
@@ -840,17 +841,17 @@ ul {
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
-.order .orderSuccess > div:nth-child(1) span:nth-child(1) {
+.orderSuccess > div:nth-child(1) span:nth-child(1) {
   animation: slideLeft 800ms ease;
 }
-.order .orderSuccess > div:nth-child(1) span:nth-child(2) {
+.orderSuccess > div:nth-child(1) span:nth-child(2) {
   animation: slideRight 800ms ease;
 }
-.order .orderSuccess > div:nth-child(2) {
+.orderSuccess > div:nth-child(2) {
   text-align: center;
   overflow-x: hidden;
 }
-.order .orderSuccess > div:nth-child(2) span {
+.orderSuccess > div:nth-child(2) span {
   color: rgba(203, 182, 255, 0.6);
   font-family: "Floreste";
   font-weight: 400;
@@ -858,39 +859,43 @@ ul {
   text-transform: uppercase;
   text-wrap: nowrap;
 }
-.order .orderSuccess img {
+.orderSuccess > div:nth-child(2) span:nth-child(2) {
+  display: none;
+}
+.orderSuccess img {
   position: absolute;
   animation: successful 800ms ease;
 }
-.order .orderSuccess img:nth-child(3) {
+.orderSuccess img:nth-child(3) {
   top: 181px;
   left: 50%;
-  height: 759px;
+  height: clamp(14.1875rem, 5.7120098039rem + 34.7712418301vw, 47.4375rem);
   transform: translate(-50%);
 }
-.order .orderSuccess img:nth-child(4) {
-  top: 540px;
-  left: 112px;
-  height: 224px;
+.orderSuccess img:nth-child(4) {
+  top: clamp(26.75rem, 24.9656862745rem + 7.3202614379vw, 33.75rem);
+  left: clamp(1.75rem, 0.4117647059rem + 5.4901960784vw, 7rem);
+  height: clamp(7rem, 5.2156862745rem + 7.3202614379vw, 14rem);
 }
-.order .orderSuccess img:nth-child(5) {
-  top: 686px;
-  left: 500px;
-  height: 200px;
+.orderSuccess img:nth-child(5) {
+  top: clamp(37.9375rem, 36.6789215686rem + 5.1633986928vw, 42.875rem);
+  left: clamp(7.25rem, 1.1323529412rem + 25.0980392157vw, 31.25rem);
+  height: clamp(7.5rem, 6.2254901961rem + 5.2287581699vw, 12.5rem);
   transform: rotate(-13deg);
 }
-.order .orderSuccess img:nth-child(6) {
-  top: 524px;
-  left: 1315px;
-  height: 258px;
+.orderSuccess img:nth-child(6) {
+  top: clamp(28.5rem, 27.4166666667rem + 4.4444444444vw, 32.75rem);
+  left: clamp(17.375rem, 0.8541666667rem + 67.7777777778vw, 82.1875rem);
+  height: clamp(8.0625rem, 6.0073529412rem + 8.431372549vw, 16.125rem);
   transform: rotate(7deg);
 }
-.order .orderSuccess img:nth-child(7) {
+.orderSuccess img:nth-child(7) {
   top: 725px;
   left: 1665px;
   height: 197px;
   transform: rotate(17deg);
 }
+
 @keyframes successful {
   from {
     opacity: 0;
@@ -919,7 +924,6 @@ ul {
     opacity: 1;
   }
 }
-
 @media (width < 901px) {
   .order {
     flex-direction: column;
@@ -941,6 +945,49 @@ ul {
   .order .cart {
     width: 100%;
     background-color: transparent;
+  }
+  .orderSuccess img:nth-child(7) {
+    display: none;
+  }
+}
+@media (width < 1666px) {
+  .orderSuccess {
+    gap: 0;
+  }
+  .orderSuccess div:nth-child(1) {
+    justify-content: center;
+    margin-top: 183px;
+    margin-bottom: 12px;
+  }
+  .orderSuccess div:nth-child(1) span:nth-child(1) {
+    animation: none;
+  }
+  .orderSuccess div:nth-child(1) span:nth-child(2) {
+    display: none;
+  }
+  .orderSuccess div:nth-child(2) span {
+    color: rgba(203, 182, 255, 0.6);
+    font-family: "Floreste";
+    font-weight: 400;
+    font-size: clamp(4.1875rem, 1.8774509804rem + 9.477124183vw, 13.25rem);
+    text-transform: uppercase;
+    text-wrap: nowrap;
+  }
+  .orderSuccess div:nth-child(2) span:nth-child(1) {
+    display: none;
+  }
+  .orderSuccess div:nth-child(2) span:nth-child(2) {
+    display: inline;
+  }
+  .orderSuccess img:nth-child(3) {
+    top: 276px;
+    transform: translate(-50%) rotate(-8deg);
+  }
+  .orderSuccess img:nth-child(6) {
+    transform: rotate(19deg);
+  }
+  .orderSuccess img:nth-child(7) {
+    display: none;
   }
 }
 header {
