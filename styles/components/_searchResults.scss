@@ -10,14 +10,8 @@
     color: getColor("white");
   }
 
-  p {
-    display: inline-flex;
-    align-items: center;
-    justify-content: flex-start;
-    height: fluid(9, 11);
-    margin-bottom: fluid(15, 19);
-    line-height: fluid(20, 23);
-    font-size: fluid(13, 15);
+  .productHr {
+    height: 2px;
   }
 
   .product > div:nth-child(3) {
@@ -30,6 +24,16 @@
       justify-content: center;
       gap: 11px;
       margin-bottom: 7px;
+    }
+
+    p {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      height: fluid(9, 11);
+      margin-bottom: fluid(15, 19);
+      line-height: fluid(20, 23);
+      font-size: fluid(13, 15);
     }
   }
 
@@ -98,6 +102,11 @@
             justify-content: flex-start;
             margin-bottom: 11px;
           }
+
+          p {
+            justify-content: flex-start;
+            margin-bottom: 15px;
+          }
         }
 
         > .color {
@@ -110,10 +119,6 @@
 
           width: 18px;
           height: 18px;
-        }
-
-        p {
-          margin-bottom: 15px;
         }
 
         .imgWrapper {

@@ -11,7 +11,7 @@ $(document).ready(function () {
   observer.observe($(".modalRoot").get(0), { subtree: true, attributes: true, attributeFilter: ["class"] });
 
   $(window).on("resize", function () {
-    if ($(".modalBackground").hasClass("open") ) {
+    if ($(".modalBackground").hasClass("open")) {
       if ($(window).width() < 901) {
         $("body").addClass("noScroll");
       } else {
@@ -19,11 +19,7 @@ $(document).ready(function () {
         $(".modalBackground").removeClass("open");
       }
     } else {
-      if (
-        $(window).width() < 886 &&
-        $(".modalRoot > *.open").length > 0 &&
-        !scrollableModalsNames.some((name) => $(`${name}Modal`).hasClass("open"))
-      ) {
+      if ($(window).width() < 886 && $(".modalRoot > *.open").length > 0 && !scrollableModalsNames.some((name) => $(`${name}Modal`).hasClass("open"))) {
         $(".modalBackground").addClass("open");
       }
       $("body").removeClass("noScroll");
@@ -96,7 +92,7 @@ $(document).ready(function () {
       modal.addClass("open");
       modal.removeClass("closed");
 
-      if (!scrollableModalsNames.includes(name) && $(window).width() < 901 && !window.location.href.includes('order.html')) {
+      if (!scrollableModalsNames.includes(name) && $(window).width() < 901 && !window.location.href.includes("order.html")) {
         $(".modalBackground").addClass("open");
       }
     }
@@ -190,13 +186,12 @@ $(document).ready(function () {
       center: [55.7568, 37.6434],
       zoom: 16,
     });
-
     const myPlacemark = new ymaps.Placemark(
       [55.7568, 37.6434],
       {},
       {
         iconLayout: "default#image",
-        iconImageHref: "/images/map-pin.png",
+        iconImageHref: "../images/map-pin.png",
         iconImageSize: [70, 96],
         iconImageOffset: [-35, -96],
       }

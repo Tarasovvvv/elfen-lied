@@ -213,56 +213,56 @@ ul {
 
 @font-face {
   font-family: "Le Murmure";
-  src: url(/fonts/le-murmure-600.woff2) format(woff2);
+  src: url(./../fonts/le-murmure-600.woff2) format("woff2");
   font-weight: 600;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Floreste";
-  src: url(/fonts/floreste-400.woff2) format(woff2);
+  src: url(./../fonts/floreste-400.woff2) format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Euclid Circular A";
-  src: url(/fonts/euclid-circular-a-700.woff2) format(woff2);
+  src: url(./../fonts/euclid-circular-a-700.woff2) format("woff2");
   font-weight: 700;
   font-style: bold;
   font-display: swap;
 }
 @font-face {
   font-family: "Euclid Circular A";
-  src: url(/fonts/euclid-circular-a-500.woff2) format(woff2);
+  src: url(./../fonts/euclid-circular-a-500.woff2) format("woff2");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Euclid Circular A";
-  src: url(/fonts/euclid-circular-a-400.woff2) format(woff2);
+  src: url(./../fonts/euclid-circular-a-400.woff2) format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Circe";
-  src: url(/fonts/circe-700.woff2) format(woff2);
+  src: url(./../fonts/circe-700.woff2) format("woff2");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Circe";
-  src: url(/fonts/circe-350.woff2) format(woff2);
+  src: url(./../fonts/circe-350.woff2) format("woff2");
   font-weight: 350;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Gilroy";
-  src: url(/fonts/gilroy-500.woff2) format(woff2);
+  src: url(./../fonts/gilroy-500.woff2) format("woff2");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -2114,14 +2114,8 @@ header a {
 .searchResults .currency {
   color: rgb(255, 255, 255);
 }
-.searchResults p {
-  display: inline-flex;
-  align-items: center;
-  justify-content: flex-start;
-  height: clamp(0.5625rem, 0.5306372549rem + 0.1307189542vw, 0.6875rem);
-  margin-bottom: clamp(0.9375rem, 0.8737745098rem + 0.2614379085vw, 1.1875rem);
-  line-height: clamp(1.25rem, 1.2022058824rem + 0.1960784314vw, 1.4375rem);
-  font-size: clamp(0.8125rem, 0.7806372549rem + 0.1307189542vw, 0.9375rem);
+.searchResults .productHr {
+  height: 2px;
 }
 .searchResults .product > div:nth-child(3) {
   display: flex;
@@ -2133,6 +2127,15 @@ header a {
   justify-content: center;
   gap: 11px;
   margin-bottom: 7px;
+}
+.searchResults .product > div:nth-child(3) p {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: clamp(0.5625rem, 0.5306372549rem + 0.1307189542vw, 0.6875rem);
+  margin-bottom: clamp(0.9375rem, 0.8737745098rem + 0.2614379085vw, 1.1875rem);
+  line-height: clamp(1.25rem, 1.2022058824rem + 0.1960784314vw, 1.4375rem);
+  font-size: clamp(0.8125rem, 0.7806372549rem + 0.1307189542vw, 0.9375rem);
 }
 .searchResults h2 {
   font-size: clamp(0.9375rem, 0.7303921569rem + 0.8496732026vw, 1.75rem);
@@ -2192,6 +2195,10 @@ header a {
     justify-content: flex-start;
     margin-bottom: 11px;
   }
+  .searchResults .productsList .product > div:nth-child(3) p {
+    justify-content: flex-start;
+    margin-bottom: 15px;
+  }
   .searchResults .productsList .product > .color {
     display: none;
   }
@@ -2200,9 +2207,6 @@ header a {
     display: block;
     width: 18px;
     height: 18px;
-  }
-  .searchResults .productsList .product p {
-    margin-bottom: 15px;
   }
   .searchResults .productsList .product .imgWrapper {
     width: 150px;
@@ -2685,10 +2689,11 @@ header a {
   background-color: transparent;
 }
 .productModal .buyButton .ellipse {
-  top: 50%;
-  left: 50%;
+  position: absolute;
   width: clamp(12.875rem, 10.4852941176rem + 9.8039215686vw, 22.25rem);
   height: clamp(4.875rem, 3.9669117647rem + 3.7254901961vw, 8.4375rem);
+  border-radius: 50%;
+  border: 2px solid rgb(217, 255, 90);
   transform: translate(-50%, -50%);
 }
 .productModal .buyButton .ellipse:nth-child(1) {
