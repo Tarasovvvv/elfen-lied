@@ -30,7 +30,7 @@
 
     font-family: "Euclid Circular A";
     font-weight: 500;
-    font-size: getFontSize("text");
+    font-size: fluid(16, 18);
 
     background-color: transparent;
     outline: none;
@@ -47,5 +47,11 @@
     border: 1px solid getColor("white");
     border-radius: 100%;
     background-color: getColor("lavender");
+  }
+}
+
+@include mobile {
+  .searchModal {
+    top: 75px !important;
   }
 }

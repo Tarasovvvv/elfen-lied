@@ -125,6 +125,7 @@ $(document).ready(function () {
 
   $(".product .imgWrapper").click(() => {
     $("body").addClass("noScroll");
+    $(".productModal").removeClass("closed");
     $(".productModal").addClass("open");
   });
 

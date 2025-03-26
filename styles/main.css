@@ -2263,6 +2263,14 @@ summary:hover .hoverableRect {
     order: 3;
   }
 }
+.productModal > div:nth-child(7) {
+  height: 100vh;
+}
+@media (width < 901px) {
+  .productModal > div:nth-child(7) {
+    display: none;
+  }
+}
 .productModal .number {
   color: rgb(217, 255, 90);
   text-wrap: nowrap;
@@ -2801,7 +2809,7 @@ summary:hover .hoverableRect {
   min-width: 35px;
   font-family: "Euclid Circular A";
   font-weight: 500;
-  font-size: clamp(0.8125rem, 0.7328431373rem + 0.3267973856vw, 1.125rem);
+  font-size: clamp(1rem, 0.9681372549rem + 0.1307189542vw, 1.125rem);
   background-color: transparent;
   outline: none;
 }
@@ -2817,6 +2825,11 @@ summary:hover .hoverableRect {
   background-color: rgb(174, 151, 232);
 }
 
+@media (width < 901px) {
+  .searchModal {
+    top: 75px !important;
+  }
+}
 .contactsModal {
   position: fixed;
   z-index: 11;

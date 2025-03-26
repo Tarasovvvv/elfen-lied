@@ -213,6 +213,14 @@
         order: 3;
       }
     }
+
+    &:nth-child(7) {
+      height: 100vh;
+
+      @include mobile {
+        display: none;
+      }
+    }
   }
 
   .number {
